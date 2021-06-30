@@ -21,13 +21,13 @@
     <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" media="print" onload="this.media='all'">
     <noscript>{{ 'theme.css' | asset_url | stylesheet_tag }}</noscript>
     <!-- Header hook for plugins -->
-    {{- content_for_header -}}
+    {{ content_for_header }}
   </head>
   <body>
     {%- section 'header' -%}
 
     <main id="MainContent" class="content-for-layout" role="main" tabindex="-1">
-      {{- content_for_layout -}}
+      {{ content_for_layout }}
     </main>
 
     {%- section 'footer' -%}
