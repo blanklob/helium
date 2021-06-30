@@ -17,7 +17,9 @@
     "lint:theme": "shopify theme check",
     "lint:scripts": " eslint src/**/*.js",
     "lint:styles": "stylelint 'src/**/*.scss'",
-    "log": "git log --oneline --decorate --graph"
+    "log": "git log --oneline --decorate --graph",
+    "push:prod": "git subtree push --prefix dist origin prod",
+    "push:dev": "git push origin dev"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
