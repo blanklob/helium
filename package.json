@@ -1,0 +1,36 @@
+{
+  "name": "shopify-webpack-with-os2-features",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features.git",
+  "author": "Youness Id bakkasse <std.youness@gmail.com>",
+  "license": "MIT",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "lint:theme": "shopify theme check",
+    "lint:scripts": " eslint src/app",
+    "lint:styles": "stylelint \"src/styles\""
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^5.2.6",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "mini-css-extract-plugin": "^1.6.2",
+    "prettier": "^2.3.2",
+    "sass": "^1.35.1",
+    "sass-loader": "^12.1.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "webpack": "^5.41.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
