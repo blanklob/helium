@@ -13,7 +13,7 @@ const distDir = path.join(__dirname, 'dist')
 const nodeDir = path.join(__dirname, 'node_modules')
 
 // Environment
-const DEV_ENV = 'development'
+const DEV_ENV = 'production'
 
 module.exports = {
   // Mode
