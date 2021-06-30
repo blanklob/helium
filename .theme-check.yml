@@ -1,4 +1,5 @@
-MatchingTranslations:
-  enabled: false
-MissingTemplate:
+root: src
+
+# Disable some checks
+RequiredDirectories:
   enabled: false

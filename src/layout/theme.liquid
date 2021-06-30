@@ -18,19 +18,19 @@
       render 'social-meta-tags'
     -%}
 
-    {{- 'theme.css' | asset_url | stylesheet_tag -}}
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>{{ 'theme.css' | asset_url | stylesheet_tag }}</noscript>
     <!-- Header hook for plugins -->
     {{- content_for_header -}}
   </head>
   <body>
-    {%- section 'main-announcement-bar' -%}
-    {%- section 'main-header' -%}
+    {%- section 'header' -%}
 
     <main id="MainContent" class="content-for-layout" role="main" tabindex="-1">
       {{- content_for_layout -}}
     </main>
 
-    {%- section 'main-footer' -%}
+    {%- section 'footer' -%}
     <script src="{{- 'theme.js' | asset_url -}}" defer></script>
   </body>
 </html>
