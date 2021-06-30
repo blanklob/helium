@@ -12,7 +12,7 @@
     "dev": "shopify theme serve dist",
     "watch": "webpack watch",
     "build": "webpack",
-    "zip": "shopify package",
+    "zip": "shopify theme package dist",
     "format": "prettier --write src",
     "lint:theme": "shopify theme check",
     "lint:scripts": " eslint src/**/*.js",

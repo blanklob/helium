@@ -44,6 +44,7 @@ module.exports = {
         { from: path.join(srcDir, 'snippets'), to: path.resolve(distDir, 'snippets')},
         { from: path.join(srcDir, 'locales'), to: path.resolve(distDir, 'locales')},
         { from: path.join(srcDir, 'layout'), to: path.resolve(distDir, 'layout')},
+        { from: path.join(srcDir, 'config'), to: path.resolve(distDir, 'config')},
       ],
     }),
   ],
