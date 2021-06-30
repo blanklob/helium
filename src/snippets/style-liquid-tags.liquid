@@ -1,0 +1,40 @@
+{% comment %}
+    Renders a specific icon for a given name.
+
+    Accepts:
+    - icon: {string} Icon name (required)
+
+    Usage:
+    {%- render 'icons' icon: 'account' -%}
+{% endcomment %}
+
+{% style %}
+
+  :root {
+    --color-brand-primary: {{ settings.color_brand_primary }};
+    --color-brand-secondary: {{ settings.color_brand_secondary }};
+    --color-text-heading: {{ settings.color_text_heading }};
+    --color-text-body: {{ settings.color_text_body }};
+    --color-text-links: {{ settings.color_text_links }};
+    --color-btn-primary: {{ settings.color_btn_primary }};
+    --color-btn-primary-text: {{ settings.color_btn_primary_text }};
+    --color-page-background: {{ settings.color_page_background }};
+    --font-heading-family: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
+    --font-heading-style: {{ settings.font_heading.style }};
+    --font-heading-weight: {{ settings.font_heading.weight }};
+    --font-heading-size: {{ settings.font_heading_size }};
+    --font-body-family: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
+    --font-body-style: {{ settings.font_body.style }};
+    --font-body-weight: {{ settings.font_body.weight }};
+    --font-body-size: {{ settings.font_body_size }};
+  }
+  {{- settings.font_heading | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
+  {{- settings.font_heading | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
+  {{- settings.font_heading | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}
+  {{- settings.font_heading | font_modify: 'weight', '800' | font_face: font_display: 'swap' -}}
+  {{- settings.font_body | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
+  {{- settings.font_body | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
+  {{- settings.font_body | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}
+  {{- settings.font_body | font_modify: 'weight', '800' | font_face: font_display: 'swap' -}}
+
+{% endstyle %}
