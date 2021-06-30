@@ -6,15 +6,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
 // Directories
-const viewsDir = path.join(__dirname, 'views')
-const stylesDir = path.join(__dirname, 'styles')
-const scriptsDir = path.join(__dirname, 'scripts')
-const settingsDir = path.join(__dirname, 'settings')
+const srcDir = path.join(__dirname, 'src')
+const stylesDir = path.join(srcDir, 'styles')
+const scriptsDir = path.join(srcDir, 'scripts')
 const distDir = path.join(__dirname, 'dist')
 const nodeDir = path.join(__dirname, 'node_modules')
 
-// Env variables
-const DEV_ENV = process.env.NODE_ENV || 'production'
+// Environment
+const DEV_ENV = 'development'
 
 module.exports = {
   // Mode
@@ -22,8 +21,8 @@ module.exports = {
   // Entry
   entry: {
     theme: [
-      path.join(scriptsDir, 'index.js'),
-      path.join(stylesDir, 'index.scss'),
+      path.join(scriptsDir, 'theme.js'),
+      path.join(stylesDir, 'theme.scss'),
     ],
   },
   // Output
@@ -40,8 +39,11 @@ module.exports = {
     // #2: Copy files from one dir to another
     new CopyPlugin({
       patterns: [
-        { from: settingsDir, to: distDir },
-        { from: viewsDir, to: distDir },
+        { from: path.join(srcDir, 'templates'), to: path.resolve(distDir, 'templates')},
+        { from: path.join(srcDir, 'sections'), to: path.resolve(distDir, 'sections')},
+        { from: path.join(srcDir, 'snippets'), to: path.resolve(distDir, 'snippets')},
+        { from: path.join(srcDir, 'locales'), to: path.resolve(distDir, 'locales')},
+        { from: path.join(srcDir, 'layout'), to: path.resolve(distDir, 'layout')},
       ],
     }),
   ],

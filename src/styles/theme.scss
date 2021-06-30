@@ -9,9 +9,12 @@
 
 // Utils
 @import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/mixins';
 
 // Base
-@import 'base/typefaces';
+@import 'core/base';
+@import 'core/typefaces';
 
 // Sections
 // @import 'sections/announcement-bar';

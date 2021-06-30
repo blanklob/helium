@@ -6,13 +6,15 @@
   "author": "Youness Id bakkasse <std.youness@gmail.com>",
   "license": "MIT",
   "browserslist": [
-    "defaults"
+    "> 1%"
   ],
   "scripts": {
-    "format": "prettier --write .",
+    "watch": "webpack watch",
+    "build": "webpack",
+    "format": "prettier --write src",
     "lint:theme": "shopify theme check",
-    "lint:scripts": " eslint src/app",
-    "lint:styles": "stylelint \"src/styles\""
+    "lint:scripts": " eslint src/**/*.js",
+    "lint:styles": "stylelint 'src/**/*.scss'"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -23,15 +25,20 @@
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "mini-css-extract-plugin": "^1.6.2",
+    "postcss": "^8.3.5",
+    "postcss-loader": "^6.1.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.3.2",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-sass-guidelines": "^8.0.0",
     "webpack": "^5.41.1",
     "webpack-cli": "^4.7.2"
   },
   "dependencies": {
+    "core-js": "^3.15.2",
     "normalize.css": "^8.0.1"
   }
 }
