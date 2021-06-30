@@ -45,13 +45,14 @@ module.exports = {
         { from: path.join(srcDir, 'locales'), to: path.resolve(distDir, 'locales')},
         { from: path.join(srcDir, 'layout'), to: path.resolve(distDir, 'layout')},
         { from: path.join(srcDir, 'config'), to: path.resolve(distDir, 'config')},
+        { from: path.join(srcDir, 'ci'), to: path.resolve(distDir, '.github/workflows')},
       ],
     }),
   ],
   // Webpack Loaders
   module: {
     rules: [
-      // #1: Bundling Javascript
+      // #1: Bundling JavaScript
       {
         test: /\.m?js$/,
         exclude: nodeDir,
@@ -70,7 +71,7 @@ module.exports = {
           },
         },
       },
-      // #2: Bundling CSS
+      // #2: Bundling SCSS
       {
         test: /\.(sa|sc|c)ss$/,
         use: [

@@ -1,1 +1,1 @@
-!function(){var o="Youness";console.log(o),console.log(o),console.log(o),new class{constructor(){console.log("Hi mate.")}}}();
+!function(){var o="Youness";console.log(o),console.log(o),console.log(o),new class{constructor(){console.log("Hi mate."),console.log("shit.")}}}();

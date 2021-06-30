@@ -9,7 +9,7 @@
     "> 1%"
   ],
   "scripts": {
-    "dev": "shopify theme serve dist",
+    "dev": "cd dist && shopify theme serve dist",
     "watch": "webpack watch",
     "build": "webpack",
     "zip": "shopify theme package dist",
