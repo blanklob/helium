@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-index"
+    }
+  },
+  "order": [
+    "banner"
+  ]
+}
