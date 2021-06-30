@@ -16,7 +16,8 @@
     "format": "prettier --write src",
     "lint:theme": "shopify theme check",
     "lint:scripts": " eslint src/**/*.js",
-    "lint:styles": "stylelint 'src/**/*.scss'"
+    "lint:styles": "stylelint 'src/**/*.scss'",
+    "log": "git log --oneline --decorate --graph"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
