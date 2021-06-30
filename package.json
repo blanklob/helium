@@ -9,6 +9,7 @@
     "defaults"
   ],
   "scripts": {
+    "format": "prettier --write .",
     "lint:theme": "shopify theme check",
     "lint:scripts": " eslint src/app",
     "lint:styles": "stylelint \"src/styles\""
