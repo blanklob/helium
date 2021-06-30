@@ -8,7 +8,6 @@ Thumbs.db
 
 # OS generated files #
 node_modules
-dist
 upload
 deploy.log
 npm-debug.log
