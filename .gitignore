@@ -15,7 +15,6 @@ npm-debug.log
 .env
 .env.*
 yarn-error.log
-.github
 
 # Packages #
 *.dmg

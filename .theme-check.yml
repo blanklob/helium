@@ -1,5 +1,0 @@
-root: src
-
-# Disable some checks
-RequiredDirectories:
-  enabled: false
