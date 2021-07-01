@@ -1,4 +1,4 @@
-root: src
+root: .
 
 # Disable some checks
 RequiredDirectories:

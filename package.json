@@ -12,7 +12,7 @@
     "start": "concurrently \"yarn watch\" \"yarn serve\"",
     "build": "webpack",
     "watch": "webpack watch",
-    "serve": "cd dist && shopify theme serve dist ",
+    "serve": "shopify theme serve",
     "shopify:zip": "shopify theme package dist",
     "lint:format": "prettier --write src",
     "lint:theme": "shopify theme check",

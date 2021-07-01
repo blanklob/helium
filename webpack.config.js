@@ -9,7 +9,6 @@ const CopyPlugin = require('copy-webpack-plugin')
 const srcDir = path.join(__dirname, 'src')
 const stylesDir = path.join(srcDir, 'styles')
 const scriptsDir = path.join(srcDir, 'scripts')
-const distDir = path.join(__dirname, 'dist')
 const nodeDir = path.join(__dirname, 'node_modules')
 
 // Environment
@@ -28,26 +27,14 @@ module.exports = {
   // Output
   output: {
     filename: '[name].js',
-    path: path.resolve(distDir, 'assets'),
+    path: path.resolve(__dirname, 'assets'),
   },
   // Plugins
   plugins: [
     // #1: Extract CSS from JS to separate css file
     new MiniCssExtractPlugin({
       filename: '[name].css',
-    }),
-    // #2: Copy files from one dir to another
-    new CopyPlugin({
-      patterns: [
-        { from: path.join(srcDir, 'templates'), to: path.resolve(distDir, 'templates')},
-        { from: path.join(srcDir, 'sections'), to: path.resolve(distDir, 'sections')},
-        { from: path.join(srcDir, 'snippets'), to: path.resolve(distDir, 'snippets')},
-        { from: path.join(srcDir, 'locales'), to: path.resolve(distDir, 'locales')},
-        { from: path.join(srcDir, 'layout'), to: path.resolve(distDir, 'layout')},
-        { from: path.join(srcDir, 'config'), to: path.resolve(distDir, 'config')},
-        { from: path.join(srcDir, 'ci'), to: path.resolve(distDir, '.github/workflows')},
-      ],
-    }),
+    })
   ],
   // Webpack Loaders
   module: {

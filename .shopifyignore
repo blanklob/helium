@@ -1,0 +1,15 @@
+*.jpg
+*.png
+*.md
+.DS_Store
+.DS_Store?
+*.config.js
+src/*
+dist/*
+node_modules/*
+.github
+package.json
+yarn.lock
+.vscode
+
+
