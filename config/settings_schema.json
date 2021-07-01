@@ -6,5 +6,199 @@
     "theme_author": "Youness Id bakkasse",
     "theme_documentation_url": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features",
     "theme_support_url": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features/issues"
+  },
+  {
+    "name": {
+      "en": "Colors",
+      "fr": "Couleurs"
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "en": "Brand",
+          "fr": "Marque"
+        }
+      },
+      {
+        "type": "color",
+        "id": "color_brand_primary",
+        "label": {
+          "en": "Primary color",
+          "fr": "Couleur primaire"
+        },
+        "default": "#e5e5e5"
+      },
+      {
+        "type": "color",
+        "id": "color_brand_secondary",
+        "label": {
+          "en": "Secondary color",
+          "fr": "Couleur secondaire"
+        },
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Text",
+          "fr": "Texte"
+        }
+      },
+      {
+        "type": "color",
+        "id": "color_text_heading",
+        "label": {
+          "en": "Heading",
+          "fr": "En-têtes"
+        },
+        "default": "#e5e5e5"
+      },
+      {
+        "type": "color",
+        "id": "color_text_body",
+        "label": {
+          "en": "Body text",
+          "fr": "Corps du texte"
+        },
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "color_text_links",
+        "label": {
+          "en": "Links",
+          "fr": "liens"
+        },
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Buttons",
+          "fr": "Bouttons"
+        }
+      },
+      {
+        "type": "color",
+        "id": "color_btn_primary",
+        "label": {
+          "en": "Primary button",
+          "fr": "Boutton primaire"
+        },
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "color_btn_primary_text",
+        "label": {
+          "en": "Primary button text",
+          "fr": "Texte du boutton primaire"
+        },
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Page",
+          "fr": "Page"
+        }
+      },
+      {
+        "type": "color",
+        "id": "color_page_background",
+        "label": {
+          "en": "Background",
+          "fr": "Fond"
+        },
+        "default": "#ffffff"
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Typefaces",
+      "fr": "Polices"
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "en": "Heading",
+          "fr": "Titre"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": {
+          "en": "Font family",
+          "fr": "Famille de police"
+        },
+        "default": "arapey_n4"
+      },
+      {
+        "type": "range",
+        "id": "font_heading_size",
+        "label": {
+          "en": "Heading font size",
+          "fr": "Taille de police des en-têtes"
+        },
+        "default": 26,
+        "min": 20,
+        "max": 36,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Body",
+          "fr": "Corps"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": {
+          "en": "Font family",
+          "fr": "Famille de police"
+        },
+        "default": "avenir_next_n4"
+      },
+      {
+        "type": "range",
+        "id": "font_body_size",
+        "label": {
+          "en": "Body text font size",
+          "fr": "Taille de police des en-têtes"
+        },
+        "default": 14,
+        "min": 12,
+        "max": 20,
+        "step": 1,
+        "unit": "px"
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Favicon",
+      "fr": "Favicon"
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": {
+          "en": "Favicon image",
+          "fr": "Image favicon"
+        },
+        "info": {
+          "en": "Will be scaled down to 32 x 32px",
+          "fr": "L'image sera réduite à 32 x 32 px"
+        }
+      }
+    ]
   }
 ]

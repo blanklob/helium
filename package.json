@@ -12,7 +12,7 @@
     "start": "yarn build && yarn serve",
     "build": "webpack",
     "watch": "webpack watch",
-    "serve": "shopify theme serve",
+    "shopify:serve": "shopify theme serve",
     "shopify:zip": "shopify theme package dist",
     "lint:format": "prettier --write src",
     "lint:theme": "shopify theme check",

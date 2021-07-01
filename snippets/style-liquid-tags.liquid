@@ -1,11 +1,9 @@
 {% comment %}
-    Renders a specific icon for a given name.
-
-    Accepts:
-    - icon: {string} Icon name (required)
+    Passes settings to CSS custom properties and
+    renders font-face for shopify typography.
 
     Usage:
-    {%- render 'icons' icon: 'account' -%}
+    {%- render 'style-liquid-tags' -%}
 {% endcomment %}
 
 {% style %}
@@ -28,6 +26,7 @@
     --font-body-weight: {{ settings.font_body.weight }};
     --font-body-size: {{ settings.font_body_size }};
   }
+
   {{- settings.font_heading | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
   {{- settings.font_heading | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
   {{- settings.font_heading | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}

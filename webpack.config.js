@@ -23,6 +23,10 @@ module.exports = {
       path.join(scriptsDir, 'theme.js'),
       path.join(stylesDir, 'theme.scss'),
     ],
+    password: [
+      path.join(scriptsDir, 'password.js'),
+      path.join(stylesDir, 'password.scss'),
+    ]
   },
   // Output
   output: {

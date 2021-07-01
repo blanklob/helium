@@ -1,11 +1,8 @@
 {% comment %}
-    Renders a specific icon for a given name.
-
-    Accepts:
-    - icon: {string} Icon name (required)
+    Renders all related SEO meta tags in the head
 
     Usage:
-    {%- render 'icons' icon: 'account' -%}
+    {%- render 'seo-meta-tags' -%}
 {% endcomment %}
 
 {%- if page_title != blank -%}
