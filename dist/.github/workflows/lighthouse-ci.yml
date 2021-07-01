@@ -12,9 +12,10 @@ jobs:
           app_id: ${{ secrets.SHOP_APP_ID }}
           app_password: ${{ secrets.SHOP_APP_PASSWORD }}
           store: ${{ secrets.SHOP_STORE }}
-          password: ${{ secrets.SHOP_PASSWORD }}
+          password:
+            ${{ secrets.SHOP_PASSWORD }}
 
-           ### Other optional parameters
+            ### Other optional parameters
 
           lhci_min_score_performance: 0.9
           lhci_min_score_accessibility: 0.8
@@ -28,4 +29,3 @@ jobs:
           lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
           # For more infos check out: https://shopify.dev/themes/tools/lighthouse-ci
-
