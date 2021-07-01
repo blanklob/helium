@@ -9,21 +9,20 @@
     "> 1%"
   ],
   "scripts": {
-    "start": "concurrently \"yarn watch\" \"yarn serve\"",
+    "start": "yarn build && yarn serve",
     "build": "webpack",
     "watch": "webpack watch",
     "serve": "shopify theme serve",
     "shopify:zip": "shopify theme package dist",
     "lint:format": "prettier --write src",
     "lint:theme": "shopify theme check",
-    "lint:scripts": " eslint src/**/*.js",
-    "lint:styles": "stylelint 'src/**/*.scss'"
+    "lint:scripts": " eslint src/**/**/*.js",
+    "lint:styles": "stylelint 'src/**/**/*.scss'"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
     "babel-loader": "^8.2.2",
-    "concurrently": "^6.2.0",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^5.2.6",
     "eslint": "^7.29.0",

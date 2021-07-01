@@ -8,11 +8,11 @@ const CopyPlugin = require('copy-webpack-plugin')
 // Directories
 const srcDir = path.join(__dirname, 'src')
 const stylesDir = path.join(srcDir, 'styles')
-const scriptsDir = path.join(srcDir, 'scripts')
+const scriptsDir = path.join(srcDir, 'app')
 const nodeDir = path.join(__dirname, 'node_modules')
 
 // Environment
-const DEV_ENV = 'production'
+const DEV_ENV = 'development'
 
 module.exports = {
   // Mode
@@ -27,7 +27,8 @@ module.exports = {
   // Output
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'assets'),
+    path: path.join(__dirname, 'assets'),
+    clean: true
   },
   // Plugins
   plugins: [
