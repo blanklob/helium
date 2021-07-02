@@ -12,20 +12,17 @@ jobs:
           app_id: ${{ secrets.SHOP_APP_ID }}
           app_password: ${{ secrets.SHOP_APP_PASSWORD }}
           store: ${{ secrets.SHOP_STORE }}
-          password:
-            ${{ secrets.SHOP_PASSWORD }}
+          password: ${{ secrets.SHOP_PASSWORD }}
 
-            ### Other optional parameters
-
-          lhci_min_score_performance: 0.7
-          lhci_min_score_accessibility: 0.7
+          # ### Other optional parameters
+          # lhci_min_score_performance: 0.7
+          # lhci_min_score_accessibility: 0.7
 
           # product_handle: 'draped-t-shirt'
           # collection_handle: 't-shirt-collection'
 
           ### If you want to add the ✅ status check on github,
           ### you need to configure these using github secrets.
-
           lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
           # For more infos check out: https://shopify.dev/themes/tools/lighthouse-ci
