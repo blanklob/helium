@@ -9,24 +9,24 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/app/theme.js":
-/*!**************************!*\
-  !*** ./src/app/theme.js ***!
-  \**************************/
+/***/ "./src/app/password.js":
+/*!*****************************!*\
+  !*** ./src/app/password.js ***!
+  \*****************************/
 /***/ (function() {
 
-eval("console.log('Hello world');\n\n//# sourceURL=webpack://shopify-webpack-with-os2-features/./src/app/theme.js?");
+eval("console.log('Hello from password page.');\n\n//# sourceURL=webpack://shopify-webpack-with-os2-features/./src/app/password.js?");
 
 /***/ }),
 
-/***/ "./src/styles/theme.scss":
-/*!*******************************!*\
-  !*** ./src/styles/theme.scss ***!
-  \*******************************/
+/***/ "./src/styles/password.scss":
+/*!**********************************!*\
+  !*** ./src/styles/password.scss ***!
+  \**********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://shopify-webpack-with-os2-features/./src/styles/theme.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://shopify-webpack-with-os2-features/./src/styles/password.scss?");
 
 /***/ })
 
@@ -52,9 +52,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	__webpack_modules__["./src/app/theme.js"](0, {}, __webpack_require__);
+/******/ 	__webpack_modules__["./src/app/password.js"](0, {}, __webpack_require__);
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/styles/theme.scss"](0, __webpack_exports__, __webpack_require__);
+/******/ 	__webpack_modules__["./src/styles/password.scss"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;
