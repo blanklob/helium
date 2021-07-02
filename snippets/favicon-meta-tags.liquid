@@ -1,3 +1,10 @@
+{% comment %}
+    Renders favicon links
+
+    Usage:
+    {%- render 'favicon-meta-tags' -%}
+{% endcomment %}
+
 {%- if settings.favicon != blank -%}
   <link rel="shortcut icon" href="{{ settings.favicon | img_url: '16x16' }}" sizes="16x16">
   <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" sizes="32x32">

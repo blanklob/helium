@@ -8,10 +8,8 @@
     <meta name="theme-color" content="{{- settings.primary_color -}}">
     <meta name="msapplication-TileColor" content="{{- settings.primary_color -}}">
     {%- endif -%}
-
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-
     {%- liquid
       render 'seo-meta-tags'
       render 'script-liquid-tags'
@@ -19,7 +17,6 @@
       render 'social-meta-tags'
       render 'favicon-meta-tags'
     -%}
-
     <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" media="print" onload="this.media='all'">
     <noscript>{{ 'theme.css' | asset_url | stylesheet_tag }}</noscript>
     <!-- Header hook for plugins -->
@@ -30,11 +27,9 @@
       {{- "accessibility.skip_to_content" | t -}}
     </a>
     {%- section 'header' -%}
-
     <main id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
-
     {%- section 'footer' -%}
     <script src="{{- 'theme.js' | asset_url -}}" defer></script>
   </body>
