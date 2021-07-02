@@ -12,10 +12,10 @@
     "start": "yarn build && yarn serve",
     "build": "webpack",
     "watch": "webpack watch",
-    "shopify:serve": "shopify theme serve",
-    "shopify:zip": "shopify theme package dist",
+    "serve": "shopify theme serve",
+    "zip": "shopify theme package dist",
     "lint:format": "prettier --write src",
-    "lint:theme": "shopify theme check",
+    "lint:theme": "shopify theme check -a",
     "lint:scripts": " eslint src/**/**/*.js",
     "lint:styles": "stylelint 'src/**/**/*.scss'"
   },

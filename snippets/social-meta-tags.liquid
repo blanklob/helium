@@ -6,10 +6,10 @@
 {% endcomment %}
 
 {%- liquid
-  assign og_title = page_title | default: shop.name
+  assign og_title = page_title | default: shop.name | escape
   assign og_url = canonical_url | default: shop.url
   assign og_type = 'website'
-  assign og_description = page_description | default: shop.description | default: shop.name
+  assign og_description = page_description | default: shop.description | default: shop.name | escape
 
   if request.page_type == 'product'
     assign og_type = 'product'
