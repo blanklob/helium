@@ -195,8 +195,8 @@
           "fr": "Image favicon"
         },
         "info": {
-          "en": "Will be scaled down to 32 x 32px",
-          "fr": "L'image sera réduite à 32 x 32 px"
+          "en": "Will be scaled down to 180x180px",
+          "fr": "L'image sera réduite à 180x180 px"
         }
       }
     ]

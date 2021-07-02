@@ -12,10 +12,10 @@
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- liquid
       render 'seo-meta-tags'
+      render 'favicon-meta-tags'
       render 'script-liquid-tags'
       render 'style-liquid-tags'
       render 'social-meta-tags'
-      render 'favicon-meta-tags'
     -%}
     <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" media="print" onload="this.media='all'">
     <noscript>{{ 'theme.css' | asset_url | stylesheet_tag }}</noscript>
