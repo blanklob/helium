@@ -14,10 +14,9 @@ jobs:
           store: ${{ secrets.SHOP_STORE }}
           password: ${{ secrets.SHOP_PASSWORD }}
 
-          # ### Other optional parameters
+          ### Other optional parameters
           lhci_min_score_performance: 0.7
           lhci_min_score_accessibility: 0.7
-
           # product_handle: 'draped-t-shirt'
           # collection_handle: 't-shirt-collection'
 
