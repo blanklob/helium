@@ -14,10 +14,7 @@
     "watch": "webpack watch",
     "serve": "shopify theme serve",
     "zip": "shopify theme package dist",
-    "lint:format": "prettier --write src",
-    "lint:theme": "shopify theme check -a",
-    "lint:scripts": " eslint src/**/**/*.js",
-    "lint:styles": "stylelint 'src/**/**/*.scss'",
+    "lint": "shopify theme check -a",
     "prepare": "husky install"
   },
   "devDependencies": {
@@ -50,7 +47,7 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
-    "*.css": "stylelint --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.scss": "stylelint --fix ",
+    "*.{js,scss,css,md}": "prettier --write"
   }
 }
