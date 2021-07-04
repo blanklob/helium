@@ -24,7 +24,7 @@ A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. 
 
 ## 🔥 Features
 
-### This woorkflow has loads of features based from hot reloading provided by the new shopify CLI Theme tools to linting assets and liquid files. This setup is totally flexible, you can easly extend it using the config files provided:
+### This workflow has loads of features based from hot reloading provided by the new shopify CLI Theme tools to linting assets and liquid files. This setup is totally flexible, you can easly extend it using the config files provided:
 
 - Wabpack 5
 - Shopify-CLI
@@ -49,7 +49,7 @@ A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. 
 - Populate test data for your theme, including products, customers, and draft orders
 - and more !
 
-#### To install it on macOs use either either [RubyGems.org](https://rubygems.org/) or [Homebrew](https://brew.sh/).
+#### To install it on macOs use either [RubyGems.org](https://rubygems.org/) or [Homebrew](https://brew.sh/).
 
 #### **RubyGems.org**
 
@@ -88,7 +88,19 @@ To get started, install the templates either by cloning this repository or using
 shopify theme init -u https://github.com/younessidbakkasse/shopify-webpack-with-os2-features
 ```
 
-This will clone the whole template to your local machine.
+This commande will prompt you to choose a Theme name then clones the template to your local machine.
+
+Then all you have to do is to install npm dependencies using the yarn command:
+
+```shell
+yarn install
+```
+
+After that, run the development server using the command below:
+
+```shell
+yarn start
+```
 
 ## ⚙️Tools
 
