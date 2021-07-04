@@ -15,7 +15,8 @@
     "serve": "shopify theme serve",
     "zip": "shopify theme package dist",
     "lint": "shopify theme check -a",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "log": "git log --graph --oneline --decorated"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -49,6 +50,6 @@
     "*.js": "eslint --cache --fix",
     "*.scss": "stylelint --fix",
     "*.{js,scss,css,md}": "prettier --write",
-    "*.{liquid}": "shopify theme check -a"
+    "*.liquid": "shopify theme check -a"
   }
 }

@@ -1,10 +1,65 @@
 .sr-only {
-  width: 1px;
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
   height: 1px;
-  padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  padding: 0;
   white-space: nowrap;
-  border-width: 0;
+  width: 1px;
+}
+
+.skip-to-content-link:focus {
+  clip: auto;
+  height: auto;
+  overflow: auto;
+  position: inherit;
+  width: auto;
+  z-index: 9999;
+}
+
+/* base-focus */
+/*
+  Focus ring - default (with offset)
+*/
+
+*:focus-visible {
+  box-shadow: 0 0 0 0.3rem #111, 0 0 0.5rem 0.4rem #111;
+  outline: 0.2rem solid #111;
+  outline-offset: 0.3rem;
+}
+
+/* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
+*:focus {
+  box-shadow: 0 0 0 0.3rem #111, 0 0 0.5rem 0.4rem #111;
+  outline: 0.2rem solid #111;
+  outline-offset: 0.3rem;
+}
+
+/* Negate the fallback side-effect for browsers that support :focus-visible */
+*:focus:not(:focus-visible) {
+  box-shadow: none;
+  outline: 0;
+}
+
+/*
+  Focus ring - inset
+*/
+
+.focus-inset:focus-visible {
+  box-shadow: 0 0 0.2rem 0 #111;
+  outline: 0.2rem solid #111;
+  outline-offset: -0.2rem;
+}
+
+/* Fallback */
+.focus-inset:focus {
+  box-shadow: 0 0 0.2rem 0 #111;
+  outline: 0.2rem solid #111;
+  outline-offset: -0.2rem;
+}
+
+.focus-inset:focus:not(:focus-visible) {
+  box-shadow: none;
+  outline: 0;
 }
