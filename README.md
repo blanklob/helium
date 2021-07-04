@@ -1,11 +1,8 @@
 # 🗂 Shopify webpack workflow with Online Store 2.0 features
 
 [![GitHub issues](https://img.shields.io/github/issues/younessidbakkasse/shopify-webpack-with-os2-features)](https://GitHub.com/younessidbakkasseshopify-webpack-with-os2-features/issues/)
-
 [![GitHub stars](https://img.shields.io/github/stars/younessidbakkasse/shopify-webpack-with-os2-features)](https://GitHub.com/younessidbakkasseshopify-webpack-with-os2-features/stargazers/)
-
 [![GitHub forks](https://img.shields.io/github/forks/younessidbakkasse/shopify-webpack-with-os2-features)](https://GitHub.com/younessidbakkasseshopify-webpack-with-os2-features/network/)
-
 [![GitHub license](https://img.shields.io/github/license/younessidbakkasse/shopify-webpack-with-os2-features)](https://github.com/younessidbakkasse/shopify-webpack-with-os2-features/blob/master/LICENSE)
 
 [Features](#features) |
@@ -101,8 +98,6 @@ After that, run the development server using the command below:
 ```shell
 yarn start
 ```
-
-## ⚙️Tools
 
 ## ✅Commandes
 
