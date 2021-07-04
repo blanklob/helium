@@ -6,7 +6,7 @@
 
 [![GitHub forks](https://img.shields.io/github/forks/younessidbakkasse/shopify-webpack-with-os2-features)](https://GitHub.com/younessidbakkasseshopify-webpack-with-os2-features/network/)
 
-[![GitHub license](https://img.shields.io/github/license/younessidbakkasseshopify-webpack-with-os2-features)](https://github.com/younessidbakkasse/shopify-webpack-with-os2-features/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/younessidbakkasse/shopify-webpack-with-os2-features)](https://github.com/younessidbakkasse/shopify-webpack-with-os2-features/blob/master/LICENSE)
 
 [Features](#features) |
 [Before you start](#before-you-start) |
@@ -78,7 +78,7 @@ shopify version
 
 You should get a version number like 2.0.1
 
-#### To learn how to install Shopify CLI on Windows or Linux refer to the other installation guides at [here](https://shopify.dev/themes/tools/cli/installation).
+#### To learn how to install Shopify CLI on Windows or Linux refer to the other installation guides [here](https://shopify.dev/themes/tools/cli/installation).
 
 ## ⚡️Getting started
 
