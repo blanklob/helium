@@ -1,14 +1,22 @@
 # 🗂 Shopify webpack workflow with Online Store 2.0 features
 
-[Features](#-features) |
-[Before you start](#-before-you-start) |
-[Requirements](#-tools) |
-[Getting started](#-getting-started) |
-[Tools](#-tools) |
-[Commandes](#-commandes) |
-[Changelog](#-changelog) |
-[Contributing](#-contributing) |
-[License](#-license)
+[![GitHub issues](https://img.shields.io/github/issues/younessidbakkasse/shopify-webpack-with-os2-features)](https://GitHub.com/younessidbakkasseshopify-webpack-with-os2-features/issues/)
+
+[![GitHub stars](https://img.shields.io/github/stars/younessidbakkasse/shopify-webpack-with-os2-features)](https://GitHub.com/younessidbakkasseshopify-webpack-with-os2-features/stargazers/)
+
+[![GitHub forks](https://img.shields.io/github/forks/younessidbakkasse/shopify-webpack-with-os2-features)](https://GitHub.com/younessidbakkasseshopify-webpack-with-os2-features/network/)
+
+[![GitHub license](https://img.shields.io/github/license/younessidbakkasseshopify-webpack-with-os2-features)](https://github.com/younessidbakkasse/shopify-webpack-with-os2-features/blob/master/LICENSE)
+
+[Features](#features) |
+[Before you start](#before-you-start) |
+[Requirements](#tools) |
+[Getting started](#getting-started) |
+[Tools](#tools) |
+[Commandes](#commandes) |
+[Changelog](#changelog) |
+[Contributing](#contributing) |
+[License](#license)
 
 This workflow was made as a fallow up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features for more infomation check [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store).
 
@@ -31,18 +39,50 @@ A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. 
 - Hot Module Reloading for rapid development
 - Editorconfig file (for better collaborations)
 
-## ‼️ Before you start
+## ‼️Before you start
 
-## ⚡️ Getting started
+#### You first need to install the Shopify-cli, it replaces Theme Kit for most Shopify theme development tasks, it also accelerates your theme development process with the following features:
 
-## ⚙️ Tools
+- Safely preview, test, and share changes to themes using development themes
+- Hot reload CSS and section changes when previewing a theme
+- Push/pull and publish themes from the command line
+- Populate test data for your theme, including products, customers, and draft orders
+- and more !
 
-## ✅ Commandes
+* To install it on macOs use either either [RubyGems.org](https://rubygems.org/) or [Homebrew](https://brew.sh/).
 
-## 📝 Changelog
+**RubyGems.org**
+In a new terminal window, navigate to your home directory and run the following command:
+`gem install shopify-cli`
 
-## 🙌 Contributing
+**Homebrew**
+You need to add Shopify's third-party repositories to Homebrew before you can install Shopify CLI.
+`brew tap shopify/shopify`
+`brew install shopify-cli`
 
-## 📄 License
+**Verify the installation**
+To verify that Shopify CLI is installed properly, run the following command:
+`shopify version`
+You should get a version number like 2.0.1
+
+- To learn how to install Shopify CLI on Windows or Linux refer to the other installation guides at [here](https://shopify.dev/themes/tools/cli/installation).
+
+## ⚡️Getting started
+
+To get started, install the templates either by cloning this repository or using the shopify cli init commande like so:
+
+`shopify theme init -u https://github.com/younessidbakkasse/shopify-webpack-with-os2-features`
+
+This will clone the whole template to your local machine.
+
+## ⚙️Tools
+
+## ✅Commandes
+
+## 📝Changelog
+
+## 🙌Contributing
+
+## 📄License
 
 Copyright (c) 2021 Youness Id bakkasse. See [LICENSE](/LICENSE) for further details.
