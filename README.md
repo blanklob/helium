@@ -41,7 +41,7 @@ A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. 
 
 ## ‼️Before you start
 
-#### You first need to install the Shopify-cli, it replaces Theme Kit for most Shopify theme development tasks, it also accelerates your theme development process with the following features:
+### You first need to install the Shopify-cli, it replaces Theme Kit for most Shopify theme development tasks, it also accelerates your theme development process with the following features:
 
 - Safely preview, test, and share changes to themes using development themes
 - Hot reload CSS and section changes when previewing a theme
@@ -49,29 +49,44 @@ A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. 
 - Populate test data for your theme, including products, customers, and draft orders
 - and more !
 
-* To install it on macOs use either either [RubyGems.org](https://rubygems.org/) or [Homebrew](https://brew.sh/).
+#### To install it on macOs use either either [RubyGems.org](https://rubygems.org/) or [Homebrew](https://brew.sh/).
 
-**RubyGems.org**
+#### **RubyGems.org**
+
 In a new terminal window, navigate to your home directory and run the following command:
-`gem install shopify-cli`
 
-**Homebrew**
+```shell
+gem install shopify-cli
+```
+
+#### **Homebrew**
+
 You need to add Shopify's third-party repositories to Homebrew before you can install Shopify CLI.
-`brew tap shopify/shopify`
-`brew install shopify-cli`
+
+```shell
+brew tap shopify/shopify
+brew install shopify-cli
+```
 
 **Verify the installation**
+
 To verify that Shopify CLI is installed properly, run the following command:
-`shopify version`
+
+```shell
+shopify version
+```
+
 You should get a version number like 2.0.1
 
-- To learn how to install Shopify CLI on Windows or Linux refer to the other installation guides at [here](https://shopify.dev/themes/tools/cli/installation).
+#### To learn how to install Shopify CLI on Windows or Linux refer to the other installation guides at [here](https://shopify.dev/themes/tools/cli/installation).
 
 ## ⚡️Getting started
 
 To get started, install the templates either by cloning this repository or using the shopify cli init commande like so:
 
-`shopify theme init -u https://github.com/younessidbakkasse/shopify-webpack-with-os2-features`
+```shell
+shopify theme init -u https://github.com/younessidbakkasse/shopify-webpack-with-os2-features
+```
 
 This will clone the whole template to your local machine.
 
