@@ -37,6 +37,6 @@
   {%- endstyle -%}
 {%- endcapture -%}
 
-{{- css | strip_newlines | replace: '  ', '' | replace: ': ', ':' | replace: ' {', '{' -}}
+{%- render 'string-terser' string: css -%}
 
 

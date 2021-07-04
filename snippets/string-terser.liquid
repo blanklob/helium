@@ -1,0 +1,11 @@
+{% comment %}
+    Minifies strings usefull for inline Stylesheet and JavaScript.
+
+    Usage:
+    {%- render 'string-terser' string: 'Hi .' -%}
+{% endcomment %}
+
+{%- if string -%}
+  {%- assign new_string =  string | strip | strip_newlines | replace: '  ', '' | replace: ': ', ':' | replace: ' {', '{' -%}
+  {{- new_string -}}
+{%- endif -%}

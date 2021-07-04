@@ -13,7 +13,7 @@
     "build": "webpack",
     "watch": "webpack watch",
     "serve": "shopify theme serve",
-    "zip": "shopify theme package dist",
+    "zip": "shopify theme package .",
     "lint": "shopify theme check -a",
     "prepare": "husky install",
     "log": "git log --graph --oneline --decorated"
