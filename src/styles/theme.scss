@@ -6,17 +6,17 @@
 
 // Depedencies
 @import '~normalize.css/normalize';
-@import '~avalanche-css/avalanche';
 
 // Utils
 @import 'utils/variables';
 @import 'utils/functions';
 @import 'utils/mixins';
-@import 'utils/accessibility';
+@import 'utils/helpers';
+@import 'utils/a11y';
 
 // Base
 @import 'core/base';
 @import 'core/typefaces';
 
 // Sections
-@import 'sections/header';
+@import 'sections/announcement-bar';

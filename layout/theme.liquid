@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="{{- request.locale.iso_code -}}">
+<html class="no-js" lang="fr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -17,22 +17,21 @@
       render 'style-liquid-tags'
       render 'social-meta-tags'
     -%}
-    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>{{ 'theme.css' | asset_url | stylesheet_tag }}</noscript>
     <script src="{{- 'theme.js' | asset_url -}}" defer></script>
     <!-- Header hook for plugins -->
     {{ content_for_header }}
   </head>
   <body>
-    <a role="button" class="skip-to-content-link button sr-only y11a" href="#MainContent">
+    <a role="button" class="skip-to-content-link button sr-only y11a" href="#shopify-section-announcement-bar">
       {{- "accessibility.skip_to_content" | t -}}
     </a>
-    {%- section 'header' -%}
+    {%- section 'announcement-bar' -%}
+    {% comment %} {%- section 'header' -%} {% endcomment %}
     <main id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
-    <button role="button">Hi there</button>
-    <input type="text">
-    {%- section 'footer' -%}
+    {% comment %} {%- section 'footer' -%} {% endcomment %}
   </body>
 </html>
