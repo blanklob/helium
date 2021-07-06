@@ -1,10 +1,15 @@
-.screen-reader-text {
-  position: absolute !important;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: 0;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  border: 0;
+@import '~avalanche-css/avalanche';
+
+.icon {
+  height: 22px;
+  width: 22px;
+}
+
+.container {
+  @include make-container($padding-x: 4rem);
+  max-width: 1200px;
+  position: relative;
+  @include av-mq(pocket) {
+    @include make-container($padding-x: 2rem);
+  }
 }
