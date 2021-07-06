@@ -1,6 +1,24 @@
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "home_page_only": true,
+          "show_announcement": true,
+          "announcement_menu": "main-menu",
+          "announcement_message": "I love eating pizza.",
+          "announcement_bg_color": "#333333",
+          "announcement_color": "#ffffff"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
   "presets": {
-    "Default": {}
+    "Default": {
+    }
   }
 }
