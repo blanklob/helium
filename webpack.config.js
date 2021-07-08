@@ -12,7 +12,7 @@ const scriptsDir = path.join(srcDir, 'app')
 const nodeDir = path.join(__dirname, 'node_modules')
 
 // Environment
-const DEV_ENV = 'development'
+const DEV_ENV = 'production'
 
 module.exports = {
   // Mode
