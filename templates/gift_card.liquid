@@ -1,39 +1,10 @@
-{%- layout none -%}
-<!doctype html>
-<head>
-  <script src="{{- 'vendor/qrcode.js' | shopify_asset_url -}}" defer></script>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="format-detection" content="telephone=no">
-  {%- if settings.primary_color -%}
-    <meta name="theme-color" content="{{- settings.primary_color -}}">
-  {%- endif -%}
+{%- layout 'giftcard' -%}
 
-  <title>{{- 'gift_cards.issued.title' -}}</title>
-  <meta name="description" content="{{- 'gift_cards.issued.subtext' -}}">
-
-  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-
-  {%- liquid
-    render 'script-liquid-tags'
-    render 'style-liquid-tags'
-    render 'social-meta-tags'
-  -%}
-
-  {{- 'giftcard.css' | asset_url | stylesheet_tag -}}
-  <!-- Header hook for plugins -->
-  {{- content_for_header -}}
-</head>
-<body>
-  <div id="qr-code"></div>
-  <script>
-    var qrCode = new QRCode(document.getElementById("qr-code"), {
-      text: "{{- gift_card.qr_identifier -}}",
-      width: 120,
-      height: 120
-    });
-  </script>
-</body>
-</html>
+<div id="qr-code"></div>
+<script>
+  var qrCode = new QRCode(document.getElementById("qr-code"), {
+    text: "{{- gift_card.qr_identifier -}}",
+    width: 120,
+    height: 120
+  });
+</script>
