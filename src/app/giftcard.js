@@ -1,1 +1,1 @@
-console.log('Hello giftcard')
+console.log('Hello giftcard.')
