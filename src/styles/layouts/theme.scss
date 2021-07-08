@@ -1,5 +1,5 @@
 /* ==========================================================================
-   GIFT-CARD.SCSS
+   THEME LAYOUT
    ========================================================================== */
 
 /**
@@ -9,7 +9,7 @@
  */
 
 /**
- * This is the main gift-card.scss file. DO NOT ADD CLASSES OR RULES IN THIS FILE DIRECTLY.
+ * This is the main theme.scss layout file. DO NOT ADD CLASSES OR RULES IN THIS FILE DIRECTLY.
  * Instead, use imports to add extensions or snippets you made along the project.
  */
 
@@ -36,7 +36,7 @@
  *
  * UTILITIES
  * Headings.............Reassigning our heading styles to helper classes.
- * Spacings.............Nudge bits of the DOM around with these spacing classes.
+ * Spacing.............Nudge bits of the DOM around with these spacing classes.
  * Hide.................Helper classes to hide content
  *
  * SECTIONS
@@ -47,38 +47,38 @@
  */
 
 // CORE
-@import 'core/core.elements';
-@import 'core/core.images';
-@import 'core/core.normalize';
-@import 'core/core.page';
-@import 'core/core.print';
+@import 'Styles/core/core.elements';
+@import 'Styles/core/core.images';
+@import 'Styles/core/core.normalize';
+@import 'Styles/core/core.page';
+@import 'Styles/core/core.print';
 
 // SETTINGS
-@import 'settings/settings.base';
-@import 'settings/settings.colors';
-@import 'settings/settings.fonts';
+@import 'Styles/settings/settings.base';
+@import 'Styles/settings/settings.colors';
+@import 'Styles/settings/settings.fonts';
 
 // TOOLS
 
 // Be aware that enabling offsets produces a large chunk of classes which might
 // bloat your CSS, depending on the amount of breakpoints you defined.
 // Only set this to `true` if you are absolutely sure about what you are doing.
-@import 'tools/tools.avalanche';
-@import 'tools/tools.container';
-@import 'tools/tools.font';
+@import 'Styles/tools/tools.avalanche';
+@import 'Styles/tools/tools.container';
+@import 'Styles/tools/tools.font';
 
 // UTILITIES
-@import 'utilities/utilities.headings';
-@import 'utilities/utilities.spacings';
-@import 'utilities/utilities.hide';
+@import 'Styles/utilities/utilities.headings';
+@import 'Styles/utilities/utilities.spacing';
+@import 'Styles/utilities/utilities.hide';
 
 // ELEMENTS
 //
 // Build and include your project’s UI components here.
 // Uncomment and add to this section as necessary.
-@import 'components/components.skip-to-content';
+@import 'Styles/components/components.skip-to-content';
 
 // SECTIONS
 //
 // Uncomment and add to this section as necessary.
-// @import 'sections/sections.announcement-bar';
+@import 'Styles/sections/sections.announcement-bar';

@@ -9,21 +9,21 @@
 /******/ ;(function () {
   // webpackBootstrap
   /******/ var __webpack_modules__ = {
-    /***/ './src/app/password.js':
+    /***/ './src/app/giftcard.js':
       /*!*****************************!*\
-  !*** ./src/app/password.js ***!
+  !*** ./src/app/giftcard.js ***!
   \*****************************/
       /***/ function () {
         eval(
-          "console.log('Hello from password page.');\n\n//# sourceURL=webpack://shopify-webpack-with-os2-features/./src/app/password.js?"
+          "console.log('Hello giftcard');\n\n//# sourceURL=webpack://shopify-webpack-with-os2-features/./src/app/giftcard.js?"
         )
 
         /***/
       },
 
-    /***/ './src/styles/layouts/password.scss':
+    /***/ './src/styles/layouts/giftcard.scss':
       /*!******************************************!*\
-  !*** ./src/styles/layouts/password.scss ***!
+  !*** ./src/styles/layouts/giftcard.scss ***!
   \******************************************/
       /***/ function (
         __unused_webpack_module,
@@ -32,7 +32,7 @@
       ) {
         'use strict'
         eval(
-          '__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://shopify-webpack-with-os2-features/./src/styles/layouts/password.scss?'
+          '__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://shopify-webpack-with-os2-features/./src/styles/layouts/giftcard.scss?'
         )
 
         /***/
@@ -66,13 +66,13 @@
   /******/ // startup
   /******/ // Load entry module and return exports
   /******/ // This entry module can't be inlined because the eval devtool is used.
-  /******/ __webpack_modules__['./src/app/password.js'](
+  /******/ __webpack_modules__['./src/app/giftcard.js'](
     0,
     {},
     __webpack_require__
   )
   /******/ var __webpack_exports__ = {}
-  /******/ __webpack_modules__['./src/styles/layouts/password.scss'](
+  /******/ __webpack_modules__['./src/styles/layouts/giftcard.scss'](
     0,
     __webpack_exports__,
     __webpack_require__
