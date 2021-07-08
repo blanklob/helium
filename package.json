@@ -46,6 +46,7 @@
     "core-js": "^3.15.2"
   },
   "lint-staged": {
+    "*.js": "eslint --cache --fix",
     "*.{js,scss,css,md}": "prettier --write",
     "*.liquid": "shopify theme check -a"
   }

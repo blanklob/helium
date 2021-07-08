@@ -1,0 +1,84 @@
+/* ==========================================================================
+   GIFT-CARD.SCSS
+   ========================================================================== */
+
+/**
+ * by @yidbakkasse
+ *
+ * github.com/younessidbakkasse
+ */
+
+/**
+ * This is the main gift-card.scss file. DO NOT ADD CLASSES OR RULES IN THIS FILE DIRECTLY.
+ * Instead, use imports to add extensions or snippets you made along the project.
+ */
+
+/**
+ * CONTENTS
+ *
+ * CORE
+ * Elements.............Sensibly and tersely share some global commonalities.
+ * Images...............Base image styles.
+ * Normalize............A level playing field using @necolas’s Normalize.
+ * Page.................Set up our document’s defaults sizings.
+ * Print................Reset-like styles for print media.
+ *
+ * SETTINGS
+ * Base.................Theme-wide variables and settings.
+ * Colors...............Theme color variables and settings.
+ * Fonts................Theme font/typo variables and settings.
+ *
+ * TOOLS
+ * Avalanche............Powerful, responsive grid system.
+ * Container............Mixin for creating responsive containers.
+ * Font.................Mixin for creating fonts.
+ *
+ *
+ * UTILITIES
+ * Headings.............Reassigning our heading styles to helper classes.
+ * Spacings.............Nudge bits of the DOM around with these spacing classes.
+ * Hide.................Helper classes to hide content
+ *
+ * SECTIONS
+ * Anouncement bar......Shopify section.
+ *
+ * COMPONENTS/SNIPPETS
+ * Skip to content......Shopify snippet for a11y.
+ */
+
+// CORE
+@import 'core/core.elements';
+@import 'core/core.images';
+@import 'core/core.normalize';
+@import 'core/core.page';
+@import 'core/core.print';
+
+// SETTINGS
+@import 'settings/settings.base';
+@import 'settings/settings.colors';
+@import 'settings/settings.fonts';
+
+// TOOLS
+
+// Be aware that enabling offsets produces a large chunk of classes which might
+// bloat your CSS, depending on the amount of breakpoints you defined.
+// Only set this to `true` if you are absolutely sure about what you are doing.
+@import 'tools/tools.avalanche';
+@import 'tools/tools.container';
+@import 'tools/tools.font';
+
+// UTILITIES
+@import 'utilities/utilities.headings';
+@import 'utilities/utilities.spacings';
+@import 'utilities/utilities.hide';
+
+// ELEMENTS
+//
+// Build and include your project’s UI components here.
+// Uncomment and add to this section as necessary.
+@import 'components/components.skip-to-content';
+
+// SECTIONS
+//
+// Uncomment and add to this section as necessary.
+// @import 'sections/sections.announcement-bar';
