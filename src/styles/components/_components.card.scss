@@ -2,12 +2,12 @@
  * Exemple of a compononent
  */
 
-.card {
+.c-card {
   position: relative;
   margin: 2em auto;
 }
 
-.card__title {
+.c-card__title {
   font-size: 1.4rem;
   color: $color-text-body;
 }

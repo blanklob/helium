@@ -1,0 +1,17 @@
+//// ========================================================================
+///   #CORE CONFIG
+//   ========================================================================
+
+// Baseline grid lines height.
+// Every spacing metric should be based on this.
+
+$global-baseline: 6px !default;
+
+// How many grid lines should our spacing unit variants span?
+// Each value should be an unitless integer.
+
+$global-spacing-unit-factor-tiny: 1 !default; // 6px
+$global-spacing-unit-factor-small: 2 !default; // 12px
+$global-spacing-unit-factor: 4 !default; // 24px
+$global-spacing-unit-factor-large: 8 !default; // 48px
+$global-spacing-unit-factor-huge: 16 !default;

@@ -1,0 +1,23 @@
+/* ==========================================================================
+   # HEADINGS
+   ========================================================================== */
+
+/**
+ * Redefine all of our basic heading styles against utility classes so as to
+ * allow for double stranded heading hierarchy (a11y thing), e.g. we semantically need an H2,
+ * but we want it to be sized like an H1:
+ *
+ * Example usage:
+ *
+ * <h2 class="u-h1"></h2>
+ *
+ */
+
+.u-h1,
+.u-h2,
+.u-h3,
+.u-h4,
+.u-h5,
+.u-h6 {
+  font-family: serif;
+}
