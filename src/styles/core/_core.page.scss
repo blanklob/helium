@@ -1,24 +1,31 @@
+/* ==========================================================================
+   #PAGE
+   ========================================================================== */
+
+/**
+ * Simple page-level setup.
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ *
+ * 2. Ensure the page always fills at least the entire height of the viewport.
+ */
+
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
-  line-height: 1.4;
-  min-height: 100%;
+  font-size: 62.5%; /* [1] */
+  line-height: 1.4; /* [1] */
+  min-height: 100%; /* [2] */
   overflow-x: hidden;
-  width: 100vw;
 }
+
+/**
+ * More sensible box-sizing
+ */
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
-}
-
-body {
-  display: grid;
-  font-size: 1.5rem;
-  grid-template-columns: 100%;
-  grid-template-rows: auto auto 1fr auto;
-  letter-spacing: 0.06rem;
-  margin: 0;
-  min-height: 100%;
 }

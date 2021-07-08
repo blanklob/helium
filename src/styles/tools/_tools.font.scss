@@ -1,10 +1,11 @@
 /* ==========================================================================
-   #BASE CONFIG
+   #FONTS
    ========================================================================== */
 
 /**
- * Baseline grid lines height. Every spacing metric should be based on this.
+ * Utility classes for font
+ *
+ *   .u-font-primary {}
+ *   .u-font-secondary {}
  *
  */
-
-$global-baseline: 6px !default;

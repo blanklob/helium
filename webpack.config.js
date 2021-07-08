@@ -26,20 +26,20 @@ module.exports = {
     password: [
       path.join(scriptsDir, 'password.js'),
       path.join(stylesDir, 'password.scss'),
-    ]
+    ],
   },
   // Output
   output: {
     filename: '[name].js',
     path: path.join(__dirname, 'assets'),
-    clean: true
+    clean: true,
   },
   // Plugins
   plugins: [
     // #1: Extract CSS from JS to separate css file
     new MiniCssExtractPlugin({
       filename: '[name].css',
-    })
+    }),
   ],
   // Webpack Loaders
   module: {

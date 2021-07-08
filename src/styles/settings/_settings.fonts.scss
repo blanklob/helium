@@ -1,6 +1,12 @@
-//// ========================================================================
-///   #FONT CONFIG
-//   ========================================================================
+/* ==========================================================================
+   #FONT CONFIG
+   ========================================================================== */
+
+/**
+ * Basic Theme font variables extracted from css custom properties
+ * defined in the "snippets/style-liquid-tags.liquid" file.
+ *
+ */
 
 $font-heading-family: var(--font-heading-family);
 $font-heading-style: var(--font-heading-style);

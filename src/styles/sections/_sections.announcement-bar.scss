@@ -1,20 +1,28 @@
-.announcement-bar {
+/* ==========================================================================
+   #SHOPIFY SECTION: ANOUNCEMENT BAR
+   ========================================================================== */
+
+/**
+ * Base wrapper
+ */
+
+.s-announcement-bar {
   left: 0;
   position: relative;
   top: 0;
   z-index: 100;
 }
 
-.announcement-bar_wrapper,
-.announcement-bar_list,
-.announcement-bar_socials-list {
+.s-announcement-bar_wrapper,
+.s-announcement-bar_list,
+.s-announcement-bar_socials-list {
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
 
-.announcement-bar_item,
-.announcement-bar_socials-item {
+.s-announcement-bar_item,
+.s-announcement-bar_socials-item {
   font-size: 13px;
   padding: 0 1rem;
 }
