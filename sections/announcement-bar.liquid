@@ -1,44 +1,44 @@
 {%- if section.settings.show_announcement -%}
   {% if section.settings.home_page_only == false or request.page_type == 'index' %}
   <style>
-    .announcement-bar {
+    .s-announcement-bar {
       background-color: {{- section.settings.announcement_bg_color -}}
     }
 
-    .announcement-bar_link,
-    .announcement-bar_message,
-    .announcement-bar_social-link {
+    .s-announcement-bar_link,
+    .s-announcement-bar_message,
+    .s-announcement-bar_social-link {
       color: {{- section.settings.announcement_color -}}
     }
   </style>
-  <div class="announcement-bar" data-section-id="{{ section.id }}">
-    <div class="container">
-      <div class="announcement-bar_wrapper">
-        <nav class="announcement-bar_navigation" role="navigation">
-          <ul class="announcement-bar_list">
+  <div class="s-announcement-bar" data-section-id="{{ section.id }}">
+    <div class="u-container">
+      <div class="s-announcement-bar_wrapper">
+        <nav class="s-announcement-bar_navigation" role="navigation">
+          <ul class="s-announcement-bar_list">
           {%- assign nav_list = section.settings.announcement_menu.links | slice: 0, 4 -%}
           {%- for link in nav_list -%}
-            <li class="announcement-bar_item">
+            <li class="s-announcement-bar_item">
               <a href="{{ link.url }}" class="announcement-bar_link">{{ link.title }}</a>
             </li>
           {%- endfor -%}
           </ul>
         </nav>
-        <div class="announcement-bar_message-wrapper">
-          <p class="announcement-bar_message" aria-label="Announcement message" tabindex="0">{{ section.settings.announcement_message | escape }}</p>
+        <div class="s-announcement-bar_message-wrapper">
+          <p class="s-announcement-bar_message" aria-label="Announcement message" tabindex="0">{{ section.settings.announcement_message | escape }}</p>
         </div>
-        <div class="announcement-bar_socials">
-          <ul class="announcement-bar_socials-list" role="list" aria-label="Announcement social links">
-            <li class="announcement-bar_socials-item">
-              <a href="#" class="announcement-bar_social-link" aria-description="Link to our Tiktok account.">
+        <div class="s-announcement-bar_socials">
+          <ul class="s-announcement-bar_socials-list" role="list" aria-label="Announcement social links">
+            <li class="s-announcement-bar_socials-item">
+              <a href="#" class="s-announcement-bar_social-link" aria-description="Link to our Tiktok account.">
                 {%- render 'icons' icon: 'account' -%}
                 <span class="sr-only">Tiktok</span>
               </a>
             </li>
-            <li class="announcement-bar_socials-item">
-              <a href="#" class="announcement-bar_social-link" aria-description="Link to our Twitter account.">
+            <li class="s-announcement-bar_socials-item">
+              <a href="#" class="s-announcement-bar_social-link" aria-description="Link to our Twitter account.">
                 {%- render 'icons' icon: 'close' -%}
-                <span class="sr-only">Twitter</span>
+                <span class="u-hidden-visually">Twitter</span>
               </a>
             </li>
           </ul>

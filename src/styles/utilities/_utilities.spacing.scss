@@ -1,30 +1,23 @@
 /* ==========================================================================
-   #SPACING
+   #SPACING UTILITIES
    ========================================================================== */
 
 /**
  * Utility classes to put specific spacing values onto elements. The below loop
  * will generate us a suite of classes like:
  *
- *   .u-pt-sm {}
- *   .u-pt-md {}
- *   .u-pt-l {}
- *   .u-pt-xl {}
+ *   .u-pv-sm {}
+ *   .u-pv-sm {}
+ *
  *
  */
 
-.u-pt-sm {
+.u-pv-sm {
   padding-top: 1em;
+  padding-bottom: 1em;
 }
 
-.u-pt-md {
-  padding-top: 2em;
-}
-
-.u-pt-l {
-  padding-top: 3em;
-}
-
-.u-pt-xl {
-  padding-top: 4em;
+.u-ph-sm {
+  padding-left: 1em;
+  padding-right: 1em;
 }

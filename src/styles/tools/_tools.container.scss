@@ -11,6 +11,11 @@
 
 @mixin container($padding-x) {
   margin: 0 auto;
-  padding: 0 $padding-x;
+  padding-left: $padding-x;
+  padding-right: $padding-x;
   width: 100%;
+}
+
+.u-container {
+  @include container(2em);
 }

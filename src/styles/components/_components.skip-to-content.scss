@@ -1,13 +1,13 @@
 /* ==========================================================================
-   #SHOPIFY SNIPPET/COMPONENT: SKIP TO CONTENT
+   #SHOPIFY SNIPPET/COMPONENT: SKIP TO CONTENT (A11Y)
    ========================================================================== */
 
-.c-skip-to-content:focus {
-  clip: auto;
-  height: auto;
-  overflow: auto;
-  padding: 1em 2em;
-  position: absolute;
-  width: auto;
-  z-index: 9999;
+.c-skip-to-content {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eeeeee;
+  font-family: $font-body-family;
+  font-weight: bold;
+  z-index: 99;
 }

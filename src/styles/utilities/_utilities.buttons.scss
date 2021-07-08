@@ -1,0 +1,79 @@
+/* ==========================================================================
+   #BUTTONS UTILITIES
+   ========================================================================== */
+
+/**
+ * Utility classes to style buttons into multiple categories.
+ * This file contains suite of classes like:
+ *
+ *   .u-btn {}
+ *   .u-btn.--primary {}
+ *   .u-btn.--secondary {}
+ *
+ */
+
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ * 6. Prevent button from moving due to border size change.
+ */
+
+.u-btn {
+  display: inline-block; /* [1] */
+  vertical-align: middle; /* [2] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin: 0; /* [4] */
+  cursor: pointer; /* [5] */
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  border: 1px solid #727272;
+  box-sizing: border-box;
+  transition: none;
+
+  /* Variants
+   ========================================================================== */
+  &.--primary {
+    background-color: inherit;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none; /* [4] */
+      color: #727272;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: #d1d1d1;
+      border: 2px solid #727272;
+      margin: -1px; /* [6] */
+    }
+
+    &.--rounded {
+      border-radius: 100%;
+    }
+  }
+
+  &.--secondary {
+    background-color: #2f4054;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: #1d2733;
+    }
+  }
+}

@@ -36,8 +36,9 @@
  *
  * UTILITIES
  * Headings.............Reassigning our heading styles to helper classes.
- * Spacing.............Nudge bits of the DOM around with these spacing classes.
+ * Spacing..............Nudge bits of the DOM around with these spacing classes.
  * Hide.................Helper classes to hide content
+ * Buttons..............Helper classes to for button and there variations
  *
  * SECTIONS
  * Anouncement bar......Shopify section.
@@ -71,6 +72,7 @@
 @import 'Styles/utilities/utilities.headings';
 @import 'Styles/utilities/utilities.spacing';
 @import 'Styles/utilities/utilities.hide';
+@import 'Styles/utilities/utilities.buttons';
 
 // ELEMENTS
 //

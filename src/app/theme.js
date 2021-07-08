@@ -1,1 +1,1 @@
-console.log('Hello world')
+import 'App/components/skip-to-content'

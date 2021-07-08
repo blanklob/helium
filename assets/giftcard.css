@@ -55,8 +55,9 @@ ul {
   padding: 0;
 }
 
-button {
-  cursor: pointer;
+svg {
+  width: 18px;
+  height: 18px;
 }
 
 a {
@@ -445,13 +446,14 @@ template {
  */
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 16px;
   /* [1] */
   line-height: 1.4;
   /* [1] */
   min-height: 100%;
   /* [2] */
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /**
@@ -864,6 +866,13 @@ html {
  *   @include container(2rem);
  *
  */
+.u-container {
+  margin: 0 auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  width: 100%;
+}
+
 /* ==========================================================================
    #FONTS
    ========================================================================== */
@@ -875,7 +884,7 @@ html {
  *
  */
 /* ==========================================================================
-   # HEADINGS
+   # HEADINGS UTILITIES
    ========================================================================== */
 /**
  * Redefine all of our basic heading styles against utility classes so as to
@@ -905,36 +914,29 @@ html {
 }
 
 /* ==========================================================================
-   #SPACING
+   #SPACING UTILITIES
    ========================================================================== */
 /**
  * Utility classes to put specific spacing values onto elements. The below loop
  * will generate us a suite of classes like:
  *
- *   .u-pt-sm {}
- *   .u-pt-md {}
- *   .u-pt-l {}
- *   .u-pt-xl {}
+ *   .u-pv-sm {}
+ *   .u-pv-sm {}
+ *
  *
  */
-.u-pt-sm {
+.u-pv-sm {
   padding-top: 1em;
+  padding-bottom: 1em;
 }
 
-.u-pt-md {
-  padding-top: 2em;
-}
-
-.u-pt-l {
-  padding-top: 3em;
-}
-
-.u-pt-xl {
-  padding-top: 4em;
+.u-ph-sm {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 /* ==========================================================================
-   #COLOR CONFIG
+   #HIDING UTILITIES
    ========================================================================== */
 /**
  * Utility classes to put hide elements.
@@ -967,14 +969,14 @@ html {
 }
 
 /* ==========================================================================
-   #SHOPIFY SNIPPET/COMPONENT: SKIP TO CONTENT
+   #SHOPIFY SNIPPET/COMPONENT: SKIP TO CONTENT (A11Y)
    ========================================================================== */
-.c-skip-to-content:focus {
-  clip: auto;
-  height: auto;
-  overflow: auto;
-  padding: 1em 2em;
-  position: absolute;
-  width: auto;
-  z-index: 9999;
+.c-skip-to-content {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eeeeee;
+  font-family: var(--font-body-family);
+  font-weight: bold;
+  z-index: 99;
 }

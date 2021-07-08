@@ -34,8 +34,9 @@
  *
  * UTILITIES
  * Headings.............Reassigning our heading styles to helper classes.
- * Spacing.............Nudge bits of the DOM around with these spacing classes.
+ * Spacing..............Nudge bits of the DOM around with these spacing classes.
  * Hide.................Helper classes to hide content
+ * Buttons..............Helper classes to for button and there variations
  *
  * SECTIONS
  * Anouncement bar......Shopify section.
@@ -55,8 +56,9 @@ ul {
   padding: 0;
 }
 
-button {
-  cursor: pointer;
+svg {
+  width: 18px;
+  height: 18px;
 }
 
 a {
@@ -445,13 +447,14 @@ template {
  */
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 16px;
   /* [1] */
   line-height: 1.4;
   /* [1] */
   min-height: 100%;
   /* [2] */
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /**
@@ -864,6 +867,13 @@ html {
  *   @include container(2rem);
  *
  */
+.u-container {
+  margin: 0 auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  width: 100%;
+}
+
 /* ==========================================================================
    #FONTS
    ========================================================================== */
@@ -875,7 +885,7 @@ html {
  *
  */
 /* ==========================================================================
-   # HEADINGS
+   # HEADINGS UTILITIES
    ========================================================================== */
 /**
  * Redefine all of our basic heading styles against utility classes so as to
@@ -905,36 +915,29 @@ html {
 }
 
 /* ==========================================================================
-   #SPACING
+   #SPACING UTILITIES
    ========================================================================== */
 /**
  * Utility classes to put specific spacing values onto elements. The below loop
  * will generate us a suite of classes like:
  *
- *   .u-pt-sm {}
- *   .u-pt-md {}
- *   .u-pt-l {}
- *   .u-pt-xl {}
+ *   .u-pv-sm {}
+ *   .u-pv-sm {}
+ *
  *
  */
-.u-pt-sm {
+.u-pv-sm {
   padding-top: 1em;
+  padding-bottom: 1em;
 }
 
-.u-pt-md {
-  padding-top: 2em;
-}
-
-.u-pt-l {
-  padding-top: 3em;
-}
-
-.u-pt-xl {
-  padding-top: 4em;
+.u-ph-sm {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 /* ==========================================================================
-   #COLOR CONFIG
+   #HIDING UTILITIES
    ========================================================================== */
 /**
  * Utility classes to put hide elements.
@@ -967,16 +970,94 @@ html {
 }
 
 /* ==========================================================================
-   #SHOPIFY SNIPPET/COMPONENT: SKIP TO CONTENT
+   #BUTTONS UTILITIES
    ========================================================================== */
-.c-skip-to-content:focus {
-  clip: auto;
-  height: auto;
-  overflow: auto;
-  padding: 1em 2em;
-  position: absolute;
-  width: auto;
-  z-index: 9999;
+/**
+ * Utility classes to style buttons into multiple categories.
+ * This file contains suite of classes like:
+ *
+ *   .u-btn {}
+ *   .u-btn.--primary {}
+ *   .u-btn.--secondary {}
+ *
+ */
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ * 6. Prevent button from moving due to border size change.
+ */
+.u-btn {
+  display: inline-block;
+  /* [1] */
+  vertical-align: middle;
+  /* [2] */
+  font: inherit;
+  /* [3] */
+  text-align: center;
+  /* [4] */
+  margin: 0;
+  /* [4] */
+  cursor: pointer;
+  /* [5] */
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  border: 1px solid #727272;
+  box-sizing: border-box;
+  transition: none;
+  /* Variants
+   ========================================================================== */
+}
+.u-btn.--primary {
+  background-color: inherit;
+}
+.u-btn.--primary,
+.u-btn.--primary:hover,
+.u-btn.--primary:active,
+.u-btn.--primary:focus {
+  text-decoration: none;
+  /* [4] */
+  color: #727272;
+}
+.u-btn.--primary:hover,
+.u-btn.--primary:focus {
+  background-color: #d1d1d1;
+  border: 2px solid #727272;
+  margin: -1px;
+  /* [6] */
+}
+.u-btn.--primary.--rounded {
+  border-radius: 100%;
+}
+.u-btn.--secondary {
+  background-color: #2f4054;
+}
+.u-btn.--secondary,
+.u-btn.--secondary:hover,
+.u-btn.--secondary:active,
+.u-btn.--secondary:focus {
+  text-decoration: none;
+  color: #fff;
+}
+.u-btn.--secondary:hover,
+.u-btn.--secondary:focus {
+  background-color: #1d2733;
+}
+
+/* ==========================================================================
+   #SHOPIFY SNIPPET/COMPONENT: SKIP TO CONTENT (A11Y)
+   ========================================================================== */
+.c-skip-to-content {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eeeeee;
+  font-family: var(--font-body-family);
+  font-weight: bold;
+  z-index: 99;
 }
 
 /* ==========================================================================

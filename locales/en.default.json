@@ -55,7 +55,7 @@
     }
   },
   "accessibility": {
-    "skip_to_content": "Skip to content",
+    "skip_to_content": "Skip to main content",
     "close": "Close"
   }
 }
