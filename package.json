@@ -47,7 +47,7 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
-    "*.{js,scss}": "prettier --write",
+    "*.{js,scss}": "prettier --write src",
     "*.liquid": "shopify theme check -a"
   }
 }
