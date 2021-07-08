@@ -5,6 +5,9 @@
   "repository": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features.git",
   "author": "Youness Id bakkasse <std.youness@gmail.com>",
   "license": "MIT",
+  "prettierIgnore": [
+    "assets"
+  ],
   "browserslist": [
     "> 1%"
   ],
@@ -47,7 +50,7 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
-    "*.{js,scss}": "prettier --write src",
+    "*.{js,scss}": "prettier --write",
     "*.liquid": "shopify theme check -a"
   }
 }

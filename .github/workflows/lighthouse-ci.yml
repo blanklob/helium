@@ -14,7 +14,6 @@ jobs:
           store: ${{ secrets.SHOP_STORE }}
           password: ${{ secrets.SHOP_PASSWORD }}
 
-
           ### Lighthouse CI settings
           # lhci_min_score_performance: 0.4
           # lhci_min_score_accessibility: 0.4
