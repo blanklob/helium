@@ -19,8 +19,8 @@ jobs:
           # lhci_min_score_performance: 0.4
           # lhci_min_score_accessibility: 0.4
 
-          # product_handle: 'draped-t-shirt'
-          # collection_handle: 't-shirt-collection'
+          product_handle: 'black-field'
+          collection_handle: 'frontpage'
 
           ### If you want to add the ✅ status check on github,
           ### you need to configure these using github secrets.
