@@ -4,7 +4,6 @@ module.exports = {
     es2021: true,
   },
   ignorePatterns: [
-    'dist',
     'node_modules',
     '*.config.js',
     'assets',

@@ -6,9 +6,8 @@
 ehthumbs.db
 Thumbs.db
 
-# OS generated files #
+# Environment files #
 node_modules
-upload
 deploy.log
 npm-debug.log
 .env

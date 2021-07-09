@@ -1,14 +1,18 @@
-*.jpg
-*.png
-*.md
+# OS generated files #
 .DS_Store
 .DS_Store?
+
+# Environment files #
 *.config.js
 src/*
-dist/*
 node_modules/*
 .github
 package.json
 yarn.lock
 .vscode
 .husky
+
+# Other files #
+*.jpg
+*.png
+*.md
