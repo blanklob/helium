@@ -75,6 +75,7 @@ module.exports = {
       },
     ],
   },
+  // Extracting vendor code into a seperate file for caching.
   optimization: {
     splitChunks: {
       chunks: 'all',
