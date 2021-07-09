@@ -3,11 +3,11 @@
    ========================================================================== */
 
 .c-skip-to-content {
-  position: fixed;
+  background-color: #eee;
   display: flex;
-  justify-content: space-between;
-  background-color: #eeeeee;
   font-family: $font-body-family;
   font-weight: bold;
+  justify-content: space-between;
+  position: fixed;
   z-index: 99;
 }

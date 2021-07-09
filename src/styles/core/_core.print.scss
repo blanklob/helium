@@ -12,11 +12,11 @@
  */
 
   *,
-  *:before,
-  *:after {
+  *::before,
+  *::after {
     background: transparent !important;
-    color: #000 !important; /* [1] */
     box-shadow: none !important;
+    color: #000 !important; /* [1] */
     text-shadow: none !important;
   }
 
@@ -25,11 +25,11 @@
     text-decoration: underline;
   }
 
-  a[href]:after {
+  a[href]::after {
     content: ' (' attr(href) ')';
   }
 
-  abbr[title]:after {
+  abbr[title]::after {
     content: ' (' attr(title) ')';
   }
 
@@ -38,8 +38,8 @@
  * pseudo protocol.
  */
 
-  a[href^='#']:after,
-  a[href^='javascript:']:after {
+  a[href^='#']::after,
+  a[href^='javascript:']::after {
     content: '';
   }
 

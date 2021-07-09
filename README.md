@@ -30,8 +30,8 @@ A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. 
 - Shopify lighthouse CI
 - Shopify Online Store 2 (Sections everywhere and JSON templates)
 - Shopify Linting (Theme Inspector)
-- ESlint/stylelint/Prettier (Linting and formating static assets )
-- Precommit linting with Husky (Run linters against staged git files (.liquid, .scss etc) and don't let 💩 slip into your Shopify Theme in the online store channel)
+- ESlint/Prettier (Linting and formating static assets )
+- Precommit linting with Husky (Run linters against staged git files (.liquid, .js) and don't let 💩 slip into your Shopify Theme in the online store channel)
 - SCSS/Postcss (Autoprefixer and all postcss plugins)
 - Hot Module Reloading for rapid development
 - Editorconfig file (for better collaborations)

@@ -50,7 +50,6 @@
 // CORE
 @import 'Styles/core/core.elements';
 @import 'Styles/core/core.images';
-@import 'Styles/core/core.normalize';
 @import 'Styles/core/core.page';
 @import 'Styles/core/core.print';
 
@@ -64,6 +63,7 @@
 // Be aware that enabling offsets produces a large chunk of classes which might
 // bloat your CSS, depending on the amount of breakpoints you defined.
 // Only set this to `true` if you are absolutely sure about what you are doing.
+@import 'Styles/tools/tools.normalize';
 @import 'Styles/tools/tools.avalanche';
 @import 'Styles/tools/tools.container';
 @import 'Styles/tools/tools.font';

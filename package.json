@@ -18,7 +18,7 @@
     "watch": "webpack watch",
     "serve": "shopify theme serve",
     "zip": "shopify theme package .",
-    "lint": "shopify theme check -a",
+    "lint": "shopify theme check -a && eslint --cache --fix",
     "format": "prettier --write .",
     "prepare": "husky install",
     "log": "git log --graph --oneline --decorated"
@@ -40,16 +40,12 @@
     "prettier": "^2.3.2",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
-    "stylelint": "^13.13.1",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-sass-guidelines": "^8.0.0",
     "webpack": "^5.41.1",
     "webpack-cli": "^4.7.2"
   },
   "lint-staged": {
-    "*.scss": "stylelint --fix",
     "*.js": "eslint --cache --fix",
-    "*.{js,scss}": "prettier --write",
+    "*.{js,scss,json}": "prettier --write",
     "*.liquid": "shopify theme check -a"
   },
   "dependencies": {}

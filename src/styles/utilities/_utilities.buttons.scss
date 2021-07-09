@@ -23,17 +23,17 @@
  */
 
 .u-btn {
-  display: inline-block; /* [1] */
-  vertical-align: middle; /* [2] */
-  font: inherit; /* [3] */
-  text-align: center; /* [4] */
-  margin: 0; /* [4] */
-  cursor: pointer; /* [5] */
-  padding: 0.5em 1em;
-  border-radius: 50px;
   border: 1px solid #727272;
+  border-radius: 50px;
   box-sizing: border-box;
+  cursor: pointer; /* [5] */
+  display: inline-block; /* [1] */
+  font: inherit; /* [3] */
+  margin: 0; /* [4] */
+  padding: 0.5em 1em;
+  text-align: center; /* [4] */
   transition: none;
+  vertical-align: middle; /* [2] */
 
   /* Variants
    ========================================================================== */
@@ -44,8 +44,8 @@
     &:hover,
     &:active,
     &:focus {
-      text-decoration: none; /* [4] */
       color: #727272;
+      text-decoration: none; /* [4] */
     }
 
     &:hover,
@@ -67,8 +67,8 @@
     &:hover,
     &:active,
     &:focus {
-      text-decoration: none;
       color: #fff;
+      text-decoration: none;
     }
 
     &:hover,
