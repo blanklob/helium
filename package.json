@@ -9,7 +9,8 @@
     "assets"
   ],
   "browserslist": [
-    "> 1%"
+    "> 0.25%",
+    "not dead"
   ],
   "scripts": {
     "start": "yarn build && yarn serve",
@@ -45,12 +46,10 @@
     "webpack": "^5.41.1",
     "webpack-cli": "^4.7.2"
   },
-  "dependencies": {
-    "core-js": "^3.15.2"
-  },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*.{js,scss}": "prettier --write",
     "*.liquid": "shopify theme check -a"
-  }
+  },
+  "dependencies": {}
 }

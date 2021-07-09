@@ -21,15 +21,15 @@ module.exports = {
   entry: {
     theme: [
       path.join(scriptsDir, 'theme.js'),
-      path.join(stylesDir, 'layouts/theme.scss'),
+      path.join(stylesDir, 'layouts/_layouts.theme.scss'),
     ],
     password: [
       path.join(scriptsDir, 'password.js'),
-      path.join(stylesDir, 'layouts/password.scss'),
+      path.join(stylesDir, 'layouts/_layouts.password.scss'),
     ],
     giftcard: [
       path.join(scriptsDir, 'giftcard.js'),
-      path.join(stylesDir, 'layouts/giftcard.scss'),
+      path.join(stylesDir, 'layouts/_layouts.giftcard.scss'),
     ],
   },
   // Output
@@ -55,15 +55,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              [
-                '@babel/preset-env',
-                {
-                  useBuiltIns: 'usage',
-                  corejs: 3,
-                },
-              ],
-            ],
+            presets: ['@babel/preset-env'],
           },
         },
       },

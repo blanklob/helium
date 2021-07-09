@@ -5,9 +5,9 @@
     {%- render 'skip-to-content' -%}
 {% endcomment %}
 
-<div class="c-skip-to-content u-container u-hidden-visually u-pv-sm" data-skip-to-content>
+<c-skip-to-content class="c-skip-to-content u-container u-hidden-visually u-pv-sm" data-skip-to-content>
   <a role="button" class="c-skip-to-content_link u-btn --primary" href="#MainContent">
     {{- "accessibility.skip_to_content" | t -}}
   </a>
   <button type="button" class="c-skip-to-content_close u-btn --primary" aria-label="Close skip to content bar" data-close>{{- "accessibility.close" | t -}}</button>
-</div>
+</c-skip-to-content>

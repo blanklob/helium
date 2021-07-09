@@ -1,37 +1,35 @@
 import checkFocus from 'App/utils/checkFocus'
 
-class SkipToContent {
+class SkipToContent extends HTMLElement {
   constructor() {
-    this.el = document.querySelector('[data-skip-to-content]')
-    this.children = Array.from(this.el.children)
-
-    this.children.forEach((child) => {
+    super()
+    this.isActive = false
+    Array.from(this.children).forEach((child) => {
       child.addEventListener('click', () => {
-        this.deactivate()
+        this.changeState()
+        this.isActive = false
       })
 
       child.addEventListener('focus', () => {
-        this.activate()
+        this.changeState()
+        this.isActive = true
       })
     })
 
-    this.el.addEventListener('keydown', (event) => {
-      if (event.keyCode == 9)
-        this.children.forEach((child) => {
-          if (!checkFocus(child)) this.deactivate()
+    this.addEventListener('keydown', (event) => {
+      if (event.code.toUpperCase() === 'TAB') {
+        Array.from(this.children).forEach((child) => {
+          if (!checkFocus(child)) this.changeState()
+          this.isActive = false
         })
+      }
     })
   }
 
-  activate() {
-    this.el.classList.remove('u-hidden-visually')
-    this.el.classList.add('--active')
-  }
-
-  deactivate() {
-    this.el.classList.add('u-hidden-visually')
-    this.el.classList.remove('--active')
+  changeState() {
+    this.classList.toggle('u-hidden-visually', this.isActive)
+    this.classList.toggle('--active', !this.isActive)
   }
 }
 
-export default new SkipToContent()
+customElements.define('c-skip-to-content', SkipToContent)
