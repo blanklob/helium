@@ -19,6 +19,7 @@ html {
   min-height: 100%; /* [2] */
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: white;
 }
 
 /**
@@ -29,4 +30,11 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+[tabindex] {
+  &:focus,
+  &:active {
+    outline: 2px solid #999999;
+  }
 }

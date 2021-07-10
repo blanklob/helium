@@ -23,57 +23,38 @@
  */
 
 .u-btn {
-  border: 1px solid #727272;
-  border-radius: 50px;
-  box-sizing: border-box;
-  cursor: pointer; /* [5] */
   display: inline-block; /* [1] */
   font: inherit; /* [3] */
   margin: 0; /* [4] */
-  padding: 0.5em 1em;
+  padding: 0.4em 1em;
   text-align: center; /* [4] */
-  transition: none;
   vertical-align: middle; /* [2] */
+  background-color: $color-btn-primary;
+  color: $color-btn-primary-text;
+  transition: color 0.2s ease-in;
+  cursor: pointer; /* [5] */
+  border: 1px solid $color-btn-primary;
+  border-radius: 0;
 
   /* Variants
    ========================================================================== */
   &.--primary {
-    background-color: inherit;
-
     &,
     &:hover,
     &:active,
     &:focus {
-      color: #727272;
       text-decoration: none; /* [4] */
     }
 
     &:hover,
     &:focus {
-      background-color: #d1d1d1;
-      border: 2px solid #727272;
-      margin: -1px; /* [6] */
+      background-color: #999999;
+      border-color: #999999;
     }
 
-    &.--rounded {
-      border-radius: 100%;
-    }
-  }
-
-  &.--secondary {
-    background-color: #2f4054;
-
-    &,
-    &:hover,
     &:active,
     &:focus {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: #1d2733;
+      outline: 2px solid #999999;
     }
   }
 }

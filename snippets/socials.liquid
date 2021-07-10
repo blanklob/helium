@@ -1,0 +1,21 @@
+{% comment %}
+    Renders all social icons.
+
+    Usage:
+    {%- render 'socials' -%}
+{% endcomment %}
+
+<ul class="c-socials" role="list" aria-label="Social links">
+  <li class="c-socials_item">
+    <a href="#" class="c-socials_link" aria-label="Our Tiktok account">
+      {%- render 'icons' icon: 'account' -%}
+      <span class="u-hidden-visually">Tiktok</span>
+    </a>
+  </li>
+  <li class="c-socials_item">
+    <a href="#" class="c-socials_link" aria-label="Our Twitter account">
+      {%- render 'icons' icon: 'close' -%}
+      <span class="u-hidden-visually">Twitter</span>
+    </a>
+  </li>
+</ul>

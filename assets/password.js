@@ -1,1 +1,1 @@
-console.log("Hello from password page.");
+console.log("Hello world. (from password layout)");

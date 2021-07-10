@@ -34,16 +34,18 @@
     {{ content_for_header }}
   </head>
   <body>
+    {% comment %} Accessibilty snippet {% endcomment %}
     {%- render 'skip-to-content' -%}
 
-    {% comment %} {%- section 'announcement-bar' -%} {% endcomment %}
+    {%- section 'announcement-bar' -%}
 
-    {% comment %} {%- section 'header' -%} {% endcomment %}
+    {%- section 'header' -%}
 
-    <main id="MainContent" role="main" tabindex="-1">
+    <main id="MainContent" role="main" class="u-focus-none" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
-    {% comment %} {%- section 'footer' -%} {% endcomment %}
+    {%- section 'footer' -%}
+
   </body>
 </html>

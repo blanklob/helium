@@ -1,5 +1,19 @@
-<div class="header-container">
-  <h1 class="header__logo">This is a header</h1>
+<div class="s-header u-container u-pv-sm">
+  <nav class="s-header_nav u-b1" role="navigation">
+    <ul class="s-header_list">
+      <li class="s-header_item">
+        <a class="s-header_link" href="#">link</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="s-header_logo-container">
+    <span class="s-header_logo u-h4">Logo</span>
+  </div>
+  <ul class="s-header_menu">
+    <li class="s-header_menu-item">
+      <a class="s-header_link" href="#">{%- render 'icons' icon: 'account' -%}</a>
+    </li>
+  </ul>
 </div>
 
 {% schema %}

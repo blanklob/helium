@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /**
- * Redefine all of our basic heading styles against utility classes so as to
+ * Redefine all of our basic heading and body text styles against utility classes so as to
  * allow for double stranded heading hierarchy (a11y thing), e.g. we semantically need an H2,
  * but we want it to be sized like an H1:
  *
@@ -24,8 +24,54 @@
 .u-h1,
 .u-h2,
 .u-h3,
-.u-h4,
+.u-h4 {
+  font-family: $font-heading-family;
+  font-style: $font-heading-style;
+  font-weight: $font-heading-weight;
+}
+
 .u-h5,
+.u-h6,
+.u-b1,
+.u-b2,
+.u-b3 {
+  font-family: $font-body-family;
+  font-style: $font-body-style;
+  font-weight: $font-body-weight;
+}
+
+.u-h1 {
+  @include font-size($theme-base-unit * 12);
+}
+
+.u-h2 {
+  @include font-size($theme-base-unit * 10);
+}
+
+.u-h3 {
+  @include font-size($theme-base-unit * 8);
+}
+
+.u-h4 {
+  @include font-size($theme-base-unit * 6);
+}
+
+.u-h5 {
+  @include font-size($theme-base-unit * 4);
+}
+
 .u-h6 {
-  font-family: serif;
+  @include font-size($theme-base-unit * 2);
+}
+
+.u-b1 {
+  @include font-size($theme-base-unit * 3.5);
+}
+
+.u-b2 {
+  @include font-size($theme-base-unit * 3);
+}
+
+.u-b3 {
+  @include font-size($theme-base-unit * 2.5);
 }

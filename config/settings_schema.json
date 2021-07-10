@@ -86,7 +86,7 @@
           "en": "Primary button",
           "fr": "Boutton primaire"
         },
-        "default": "#333333"
+        "default": "#222222"
       },
       {
         "type": "color",
@@ -95,7 +95,7 @@
           "en": "Primary button text",
           "fr": "Texte du boutton primaire"
         },
-        "default": "#333333"
+        "default": "#F6F6F6"
       },
       {
         "type": "header",

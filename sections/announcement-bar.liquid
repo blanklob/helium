@@ -1,138 +1,46 @@
-{%- if section.settings.show_announcement -%}
-  {% if section.settings.home_page_only == false or request.page_type == 'index' %}
-  <style>
-    .s-announcement-bar {
-      background-color: {{- section.settings.announcement_bg_color -}}
-    }
-
-    .s-announcement-bar_link,
-    .s-announcement-bar_message,
-    .s-announcement-bar_social-link {
-      color: {{- section.settings.announcement_color -}}
-    }
-  </style>
-  <div class="s-announcement-bar" data-section-id="{{ section.id }}">
-    <div class="u-container">
-      <div class="s-announcement-bar_wrapper">
-        <nav class="s-announcement-bar_navigation" role="navigation">
-          <ul class="s-announcement-bar_list">
-          {%- assign nav_list = section.settings.announcement_menu.links | slice: 0, 4 -%}
-          {%- for link in nav_list -%}
-            <li class="s-announcement-bar_item">
-              <a href="{{ link.url }}" class="announcement-bar_link">{{ link.title }}</a>
-            </li>
-          {%- endfor -%}
-          </ul>
-        </nav>
-        <div class="s-announcement-bar_message-wrapper">
-          <p class="s-announcement-bar_message" aria-label="Announcement message" tabindex="0">{{ section.settings.announcement_message | escape }}</p>
-        </div>
-        <div class="s-announcement-bar_socials">
-          <ul class="s-announcement-bar_socials-list" role="list" aria-label="Announcement social links">
-            <li class="s-announcement-bar_socials-item">
-              <a href="#" class="s-announcement-bar_social-link" aria-description="Link to our Tiktok account.">
-                {%- render 'icons' icon: 'account' -%}
-                <span class="sr-only">Tiktok</span>
-              </a>
-            </li>
-            <li class="s-announcement-bar_socials-item">
-              <a href="#" class="s-announcement-bar_social-link" aria-description="Link to our Twitter account.">
-                {%- render 'icons' icon: 'close' -%}
-                <span class="u-hidden-visually">Twitter</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+<div class="s-announcement-bar u-pv-sm" data-section-id="{{ section.id }}">
+  <div class="s-announcement-bar_wrapper u-container">
+    <p class="s-announcement-bar_message  u-b3" aria-label="Announcement message" tabindex="0">{{ section.settings.message | escape }}</p>
   </div>
-  {%- endif -%}
-{%- endif -%}
+</div>
 
+{%- style -%}
+.s-announcement-bar {
+  background-color: {{- section.settings.bg_color -}};
+  color: {{- section.settings.text_color -}};
+}
+{%- endstyle -%}
 
 {% schema %}
-  {
-    "name": {
-      "en": "Announcement bar",
-      "fr": "Barre d'announce"
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
     },
-    "tag": "aside",
-    "settings": [
-      {
-        "type": "header",
-        "content": {
-          "en": "Content",
-          "fr": "Contenu"
-        }
-      },
-      {
-        "type": "checkbox",
-        "id": "home_page_only",
-        "label": {
-          "en": "Home page only",
-          "fr": "Page d'accueil uniquement"
-        },
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "show_announcement",
-        "label": {
-          "en": "Show announcement",
-          "fr": "Afficher l'annonce"
-        },
-        "default": true
-      },
-      {
-        "type": "link_list",
-        "id": "announcement_menu",
-        "label": {
-          "en": "Menu",
-          "fr": "Menu"
-        },
-        "default": "main-menu",
-        "info": {
-          "en": "Use a menu with a maximum 4 links",
-          "fr": "Utilise un menu avec un maximum 4 liens"
-        }
-      },
-      {
-        "type": "text",
-        "id": "announcement_message",
-        "label": {
-          "en": "Text",
-          "fr": "Texte"
-        },
-        "default": {
-          "en": "Hi There.",
-          "fr": "Bonjour mec."
-        }
-      },
-      {
-        "type": "header",
-        "content": {
-          "en": "Colors",
-          "fr": "Couleurs"
-        }
-      },
-      {
-        "type": "color",
-        "id": "announcement_bg_color",
-        "label": {
-          "en": "Bar",
-          "fr": "Barre"
-        },
-        "default": "#111111"
-      },
-      {
-        "type": "color",
-        "id": "announcement_color",
-        "label": {
-          "en": "Text",
-          "fr": "Texte"
-        },
-        "default": "#ffffff"
-      }
-    ]
-  }
+    {
+      "type": "text",
+      "id": "message",
+      "label": "Text",
+      "default": "Free shipping on orders over 100$."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Bar",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    }
+  ]
+}
 {% endschema %}

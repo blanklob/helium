@@ -7,17 +7,45 @@
  * will generate us a suite of classes like:
  *
  *   .u-pv-sm {}
- *   .u-pv-sm {}
+ *   .u-ph-s {}
+ *   .u-p-s {}
+ *   .u-mv-none {} etc..
  *
  *
  */
 
-.u-pv-sm {
-  padding-bottom: 1em;
-  padding-top: 1em;
-}
+$theme-spacing-directions: (
+  null: null,
+  't': '-top',
+  'r': '-right',
+  'b': '-bottom',
+  'l': '-left',
+  'h': '-left' '-right',
+  'v': '-top' '-bottom',
+) !default;
 
-.u-ph-sm {
-  padding-left: 1em;
-  padding-right: 1em;
+$theme-spacing-properties: (
+  'p': 'padding',
+  'm': 'margin',
+) !default;
+
+$theme-spacing-sizes: (
+  '-sm': $theme-spacing-sm,
+  '-s': $theme-spacing-s,
+  '-md': $theme-spacing-md,
+  '-l': $theme-spacing-l,
+  '-xl': $theme-spacing-xl,
+  '-none': 0,
+) !default;
+
+@each $property-namespace, $property in $theme-spacing-properties {
+  @each $direction-namespace, $direction-rules in $theme-spacing-directions {
+    @each $size-namespace, $size in $theme-spacing-sizes {
+      .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
+        @each $direction in $direction-rules {
+          #{$property}#{$direction}: $size !important;
+        }
+      }
+    }
+  }
 }

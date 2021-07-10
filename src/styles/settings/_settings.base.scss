@@ -1,10 +1,38 @@
 /* ==========================================================================
-   #BASE CONFIG
+   #BASE
    ========================================================================== */
 
 /**
- * Baseline grid lines height. Every spacing metric should be based on this.
- *
+ * This core file sets up most important setup variables. They underpin
+ * a lot of how the framework functions and should be modified and
+ * preconfigured with caution.
  */
 
-$global-baseline: 6px !default;
+// Baseline grid lines height.
+// Every spacing metric should be based on this.
+
+$theme-base-unit: 6px !default;
+
+// How many grid lines should our spacing unit variants span?
+// Each value should be an unitless integer.
+
+$theme-spacing-unit-sm: 1 !default; // 6px
+$theme-spacing-unit-s: 2 !default; // 12px
+$theme-spacing-unit-md: 4 !default; // 24px
+$theme-spacing-unit-l: 8 !default; // 48px
+$theme-spacing-unit-xl: 16 !default; // 96px
+
+// Spacing values are determined based on your project’s global baseline grid.
+// It is not recommended that you modify these following variables
+// (it can break your vertical rhythm), but if you need to, you can.
+
+$theme-spacing-sm: $theme-base-unit * $theme-spacing-unit-sm !default;
+$theme-spacing-s: $theme-base-unit * $theme-spacing-unit-s !default;
+$theme-spacing-md: $theme-base-unit * $theme-spacing-unit-md !default;
+$theme-spacing-l: $theme-base-unit * $theme-spacing-unit-l !default;
+$theme-spacing-xl: $theme-base-unit * $theme-spacing-unit-xl !default;
+
+// Base typographical styles.
+
+$theme-font-size: 16px !default;
+$theme-line-height: $theme-base-unit !default;

@@ -35,9 +35,10 @@
     {{ content_for_header }}
   </head>
   <body>
+    {% comment %} Accessibilty snippet {% endcomment %}
     {%- render 'skip-to-content' -%}
 
-    <main id="MainContent" role="main" tabindex="-1">
+    <main id="MainContent" role="main" class="l-giftcard u-focus-none" tabindex="-1">
       {{ content_for_layout }}
     </main>
 

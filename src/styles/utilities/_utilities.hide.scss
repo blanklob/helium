@@ -16,13 +16,13 @@
  */
 
 .u-hidden-visually {
+  position: absolute !important;
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
   margin: -1px;
   overflow: hidden;
   padding: 0;
-  position: absolute !important;
   width: 1px;
   word-wrap: normal !important;
 }
@@ -33,4 +33,13 @@
 
 .u-hidden {
   display: none !important;
+}
+
+/**
+ * Dangerous for a11y - Use with care
+ */
+
+.u-focus-none {
+  box-shadow: none !important;
+  outline: 0 !important;
 }

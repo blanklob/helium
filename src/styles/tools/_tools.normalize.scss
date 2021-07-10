@@ -4,13 +4,11 @@
    ========================================================================== */
 
 /**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 1. Prevent adjustments of font size after orientation changes in iOS.
  */
 
 html {
-  line-height: 1.15; /* 1 */
-  text-size-adjust: 100%; /* 2 */
+  text-size-adjust: 100%; /* 1 */
 }
 
 /* Sections
@@ -20,7 +18,8 @@ html {
  * Remove the margin in all browsers.
  */
 
-body {
+body,
+p {
   margin: 0;
 }
 

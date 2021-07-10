@@ -3,11 +3,18 @@
    ========================================================================== */
 
 .c-skip-to-content {
-  background-color: #eee;
+  position: absolute;
   display: flex;
   font-family: $font-body-family;
-  font-weight: bold;
+  font-style: $font-body-style;
+  font-weight: $font-body-weight;
   justify-content: space-between;
-  position: fixed;
-  z-index: 99;
+  z-index: 999;
+  background-color: $color-page-background;
+  transform: translateY(-100%);
+
+  &:focus-within {
+    position: relative;
+    transform: translateY(0%);
+  }
 }

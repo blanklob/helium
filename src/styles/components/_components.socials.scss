@@ -1,9 +1,13 @@
 /* ==========================================================================
-   #SHOPIFY SECTION: ANOUNCEMENT BAR
+   #SHOPIFY SNIPPET/COMPONENT: SOCIAL LINKS
    ========================================================================== */
 
-.s-announcement-bar_wrapper {
+.c-socials {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.c-socials_link {
+  margin-left: 1em;
+  color: $color-text-links;
 }
