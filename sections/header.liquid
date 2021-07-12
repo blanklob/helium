@@ -1,24 +1,84 @@
-<div class="s-header u-container u-pv-sm">
-  <nav class="s-header_nav u-b1" role="navigation">
-    <ul class="s-header_list">
-      <li class="s-header_item">
-        <a class="s-header_link" href="#">link</a>
+<div class="s-header u-container u-pv-l">
+  <div class="s-header_wrapper u-grid u-grid--middle">
+    <nav class="s-header_nav u-grid_cell u-1/3 u-1/4:pocket" role="navigation">
+      <ul class="s-header_menu">
+      {%- assign header_menu = section.settings.header_menu.links | slice: 0, 3 -%}
+      {%- for link in header_menu -%}
+        <li class="s-header_item u-pr-md u-hidden">
+          <a class="s-header_link u-h5" href="{{- link.url -}}">{{- link.title -}}</a>
+        </li>
+      {%- endfor -%}
+      <li class="s-header_item u-pr-md">
+        <button type="button" class="s-header_cart u-btn-none u-h5">Menu</button>
       </li>
-    </ul>
-  </nav>
-  <div class="s-header_logo-container">
-    <span class="s-header_logo u-h4">Logo</span>
+      </ul>
+    </nav>
+    <div class="s-header_logo-container u-grid_cell u-1/3 u-1/2:pocket">
+      <a href="{{ routes.root_url }}" class="s-header_link">
+        {%- if section.settings.logo != blank -%}
+          {%- assign image_size = section.settings.logo_width | append: 'x' -%}
+          <img  class="header_logo"
+                srcset="{{ section.settings.logo | img_url: image_size }} 1x,
+                        {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                src="{{ section.settings.logo | img_url: image_size }}"
+                loading="lazy"
+                width="{{ section.settings.logo.width }}"
+                height="{{ section.settings.logo.height }}"
+                alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
+          >
+        {%- else -%}
+          <span class="u-h5">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+    </div>
+    <nav class="s-header_nav u-grid_cell u-1/3 u-1/4:pocket" role="navigation">
+      <ul class="s-header_list">
+        <li class="s-header_item u-pl-md u-hidden">
+          <a class="s-header_link u-h5" href="#">Shop</a>
+        </li>
+        <li class="s-header_item u-pl-md u-hidden">
+          <a class="s-header_link u-h5" href="#">Account</a>
+        </li>
+        <li class="s-header_item u-pl-md">
+          <button type="button" class="s-header_cart u-btn-none u-h5">Bag(<span class="s-header_cart-count">0</span>)</button>
+        </li>
+      </ul>
+    </nav>
   </div>
-  <ul class="s-header_menu">
-    <li class="s-header_menu-item">
-      <a class="s-header_link" href="#">{%- render 'icons' icon: 'account' -%}</a>
-    </li>
-  </ul>
 </div>
 
 {% schema %}
-  {
-    "name": "Header",
-    "tag": "header"
-  }
+{
+  "name": "Header",
+  "tag": "header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info": "200 x 200 recommended"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "default": 100,
+      "unit": "px",
+      "label": "Logo width"
+    },
+    {
+      "type": "link_list",
+      "id": "header_menu",
+      "label": "Header menu",
+      "default": "main-menu",
+      "info": "Max 3 links"
+    }
+  ]
+}
 {% endschema %}

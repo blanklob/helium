@@ -2,8 +2,21 @@
    #SHOPIFY SECTION: HEADER
    ========================================================================== */
 
-.s-header {
+.header_logo {
+  height: auto;
+  width: 100%;
+}
+
+.s-header_logo-container {
+  text-align: center;
+}
+
+.s-header_list,
+.s-header_menu {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
+}
+
+.s-header_list {
+  justify-content: flex-end;
 }

@@ -3,7 +3,6 @@ const path = require('path')
 
 // Webpack plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
 
 // Directories
 const srcDir = path.join(__dirname, 'src')
@@ -11,12 +10,8 @@ const stylesDir = path.join(srcDir, 'styles')
 const scriptsDir = path.join(srcDir, 'app')
 const nodeDir = path.join(__dirname, 'node_modules')
 
-// Environment
-const DEV_ENV = 'production'
-
+// Common configuration
 module.exports = {
-  // Mode
-  mode: DEV_ENV,
   // Entry
   entry: {
     theme: [

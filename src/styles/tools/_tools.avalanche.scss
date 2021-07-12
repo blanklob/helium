@@ -1,16 +1,17 @@
-/* Avalanche | MIT License | @colourgarden */
-
 /* ==========================================================================
-   # SETTINGS
+   # AVALANCHE | MIT License | @colourgarden
    ========================================================================== */
 
 @use 'sass:math';
 
-$av-namespace: 'u-grid' !default; // Prefix namespace for grid layout and cells
+/**
+ * SETTINGS
+ */
+$av-namespace: 'grid' !default; // Prefix namespace for grid layout and cells
 $av-element-name: 'cell' !default; // Element/cell name
 $av-element-class-chain: '__' !default; // Chain characters between block and element
 $av-modifier-class-chain: '--' !default; // Chain characters between block and modifier
-$av-breakpoint-class-chain: ':' !default; // Chain characters between width and breakpoint
+$av-breakpoint-class-chain: '--' !default; // Chain characters between width and breakpoint
 
 $av-gutter: 20px !default; // Gutter between grid cells
 
@@ -51,10 +52,9 @@ $av-enable-grid-huge: false !default;
 $av-enable-grid-auto: false !default;
 $av-enable-grid-rev: false !default;
 
-/* ==========================================================================
-   # THE MAGIC
-   ========================================================================== */
-
+/**
+  * LOGIC aka THE MAGIC
+  */
 @function av-create-width-class-name(
   $style,
   $numerator,
@@ -162,28 +162,27 @@ $av-enable-grid-rev: false !default;
   }
 }
 
-/* ==========================================================================
-   # GRID LAYOUT
-   ========================================================================== */
-
+/**
+  * GRID LAYOUT
+  */
 .#{avCreateBlockClassName()} {
   display: block;
-  font-size: 0;
   list-style: none;
+  padding: 0;
   margin: 0;
   margin-left: -($av-gutter);
-  padding: 0;
+  font-size: 0;
 }
 
 .#{avCreateElementClassName()} {
   box-sizing: border-box;
   display: inline-block;
-  font-size: 1rem;
-  margin: 0;
+  width: 100%;
   padding: 0;
   padding-left: $av-gutter;
+  margin: 0;
   vertical-align: top;
-  width: 100%;
+  font-size: 1rem;
 }
 
 @if $av-enable-grid-center {
@@ -297,9 +296,9 @@ $av-enable-grid-rev: false !default;
   }
 }
 
-/* ==========================================================================
-  # GRID WIDTHS
-  ========================================================================== */
+/**
+  * GRID WIDTHS
+  */
 
 // Loop default widths
 @include av-create-widths($av-widths);

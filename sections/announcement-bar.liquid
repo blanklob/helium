@@ -1,6 +1,7 @@
+{%- if section.settings.show -%}
 <div class="s-announcement-bar u-pv-sm" data-section-id="{{ section.id }}">
   <div class="s-announcement-bar_wrapper u-container">
-    <p class="s-announcement-bar_message  u-b3" aria-label="Announcement message" tabindex="0">{{ section.settings.message | escape }}</p>
+    <p class="s-announcement-bar_message u-b3" aria-label="Announcement message">{{ section.settings.message | escape }}</p>
   </div>
 </div>
 
@@ -10,6 +11,7 @@
   color: {{- section.settings.text_color -}};
 }
 {%- endstyle -%}
+{%- endif -%}
 
 {% schema %}
 {
@@ -24,6 +26,12 @@
       "id": "message",
       "label": "Text",
       "default": "Free shipping on orders over 100$."
+    },
+    {
+      "type": "checkbox",
+      "id": "show",
+      "label": "Show announcement",
+      "default": true
     },
     {
       "type": "header",

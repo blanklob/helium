@@ -16,12 +16,6 @@
 /**
  * CONTENTS
  *
- * CORE
- * Elements.............Sensibly and tersely share some global commonalities.
- * Images...............Base image styles.
- * Normalize............A level playing field using @necolas’s Normalize.
- * Page.................Set up our document’s defaults sizings.
- * Print................Reset-like styles for print media.
  *
  * SETTINGS
  * Base.................Theme-wide variables and settings.
@@ -40,6 +34,15 @@
  * Hide.................Helper classes to hide content
  * Buttons..............Helper classes to for button and there variations
  *
+ *
+ * CORE
+ * Elements.............Sensibly and tersely share some global commonalities.
+ * Images...............Base image styles.
+ * Normalize............A level playing field using @necolas’s Normalize.
+ * Page.................Set up our document’s defaults sizings.
+ * Print................Reset-like styles for print media.
+ *
+ *
  * SECTIONS
  * Anouncement bar......Shopify section.
  *
@@ -47,26 +50,29 @@
  * Skip to content......Shopify snippet for a11y.
  */
 
-// CORE
-@import 'Styles/core/core.elements';
-@import 'Styles/core/core.images';
-@import 'Styles/core/core.page';
-@import 'Styles/core/core.print';
-
-// SETTINGS
-@import 'Styles/settings/settings.base';
-@import 'Styles/settings/settings.colors';
-@import 'Styles/settings/settings.fonts';
-
 // TOOLS
 
 // Be aware that enabling offsets produces a large chunk of classes which might
 // bloat your CSS, depending on the amount of breakpoints you defined.
 // Only set this to `true` if you are absolutely sure about what you are doing.
+@use 'Styles/tools/tools.avalanche' with (
+  $av-namespace: 'u-grid',
+  $av-element-class-chain: '_',
+  $av-breakpoint-class-chain: ':',
+  $av-width-class-namespace: 'u-',
+  $av-enable-grid-center: true,
+  $av-enable-grid-middle: true,
+  $av-enable-grid-auto: true,
+  $av-enable-grid-flush: true
+);
 @import 'Styles/tools/tools.normalize';
-@import 'Styles/tools/tools.avalanche';
 @import 'Styles/tools/tools.container';
 @import 'Styles/tools/tools.font';
+
+// SETTINGS
+@import 'Styles/settings/settings.base';
+@import 'Styles/settings/settings.colors';
+@import 'Styles/settings/settings.fonts';
 
 // UTILITIES
 @import 'Styles/utilities/utilities.headings';
@@ -74,12 +80,17 @@
 @import 'Styles/utilities/utilities.hide';
 @import 'Styles/utilities/utilities.buttons';
 
+// CORE
+@import 'Styles/core/core.elements';
+@import 'Styles/core/core.images';
+@import 'Styles/core/core.page';
+@import 'Styles/core/core.print';
+
 // ELEMENTS
 //
 // Build and include your project’s UI components here.
 // Uncomment and add to this section as necessary.
 @import 'Styles/components/components.skip-to-content';
-@import 'Styles/components/components.socials';
 
 // SECTIONS
 //
