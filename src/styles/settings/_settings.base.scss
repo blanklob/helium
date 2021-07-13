@@ -26,13 +26,27 @@ $theme-spacing-unit-xl: 16 !default; // 96px
 // It is not recommended that you modify these following variables
 // (it can break your vertical rhythm), but if you need to, you can.
 
-$theme-spacing-sm: $theme-base-unit * $theme-spacing-unit-sm !default;
-$theme-spacing-s: $theme-base-unit * $theme-spacing-unit-s !default;
-$theme-spacing-md: $theme-base-unit * $theme-spacing-unit-md !default;
-$theme-spacing-l: $theme-base-unit * $theme-spacing-unit-l !default;
-$theme-spacing-xl: $theme-base-unit * $theme-spacing-unit-xl !default;
+$theme-spacing-sm: $theme-base-unit * $theme-spacing-unit-sm;
+$theme-spacing-s: $theme-base-unit * $theme-spacing-unit-s;
+$theme-spacing-md: $theme-base-unit * $theme-spacing-unit-md;
+$theme-spacing-l: $theme-base-unit * $theme-spacing-unit-l;
+$theme-spacing-xl: $theme-base-unit * $theme-spacing-unit-xl;
 
 // Base typographical styles.
 
 $theme-font-size: 16px !default;
 $theme-line-height: $theme-base-unit !default;
+
+// Theme breakpoints.
+
+$theme-breakpoints: (
+  'sm': 'screen and (max-width: 499px)',
+  'from-sm': 'screen and (min-width: 500px)',
+  'md': 'screen and (max-width: 800px)',
+  'from-md': 'screen and (min-width: 801px)',
+  'l': 'screen and (max-width: 1024px)',
+  'from-l': 'screen and (min-width: 1025px)',
+  'xl': 'screen and (min-width: 1160px)',
+  'retina':
+    'screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx)',
+) !default;

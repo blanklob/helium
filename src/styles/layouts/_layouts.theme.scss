@@ -22,9 +22,11 @@
  * Colors...............Theme color variables and settings.
  * Fonts................Theme font/typo variables and settings.
  *
+ *
  * TOOLS
  * Avalanche............Powerful, responsive grid system.
  * Container............Mixin for creating responsive containers.
+ * Normalize............A level playing field using @necolas’s Normalize.
  * Font.................Mixin for creating fonts.
  *
  *
@@ -38,7 +40,6 @@
  * CORE
  * Elements.............Sensibly and tersely share some global commonalities.
  * Images...............Base image styles.
- * Normalize............A level playing field using @necolas’s Normalize.
  * Page.................Set up our document’s defaults sizings.
  * Print................Reset-like styles for print media.
  *
@@ -50,35 +51,27 @@
  * Skip to content......Shopify snippet for a11y.
  */
 
+// SETTINGS
+@import 'Styles/settings/settings.base';
+@import 'Styles/settings/settings.colors';
+@import 'Styles/settings/settings.fonts';
+
 // TOOLS
 
 // Be aware that enabling offsets produces a large chunk of classes which might
 // bloat your CSS, depending on the amount of breakpoints you defined.
 // Only set this to `true` if you are absolutely sure about what you are doing.
-@use 'Styles/tools/tools.avalanche' with (
-  $av-namespace: 'u-grid',
-  $av-element-class-chain: '_',
-  $av-breakpoint-class-chain: ':',
-  $av-width-class-namespace: 'u-',
-  $av-enable-grid-center: true,
-  $av-enable-grid-middle: true,
-  $av-enable-grid-auto: true,
-  $av-enable-grid-flush: true
-);
+@import 'Styles/tools/tools.avalanche';
 @import 'Styles/tools/tools.normalize';
 @import 'Styles/tools/tools.container';
 @import 'Styles/tools/tools.font';
-
-// SETTINGS
-@import 'Styles/settings/settings.base';
-@import 'Styles/settings/settings.colors';
-@import 'Styles/settings/settings.fonts';
 
 // UTILITIES
 @import 'Styles/utilities/utilities.headings';
 @import 'Styles/utilities/utilities.spacing';
 @import 'Styles/utilities/utilities.hide';
 @import 'Styles/utilities/utilities.buttons';
+@import 'Styles/utilities/utilities.alignement';
 
 // CORE
 @import 'Styles/core/core.elements';
@@ -95,7 +88,5 @@
 // SECTIONS
 //
 // Uncomment and add to this section as necessary.
-@import 'Styles/sections/sections.announcement-bar';
 @import 'Styles/sections/sections.header';
-@import 'Styles/sections/sections.404';
 @import 'Styles/sections/sections.footer';

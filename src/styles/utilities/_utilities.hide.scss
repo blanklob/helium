@@ -27,19 +27,25 @@
   word-wrap: normal !important;
 }
 
-/**
- * Always hide an element
- */
+// Always hide an element
 
 .u-hidden {
   display: none !important;
 }
 
-/**
- * Dangerous for a11y - Use with care
- */
+// Dangerous for a11y - Use with care
 
 .u-focus-none {
   box-shadow: none !important;
   outline: 0 !important;
+}
+
+// Utilities for hiding depending on breakpoint
+
+@each $breakpoint-namespace, $breakpoint in $theme-breakpoints {
+  @include av-mq($breakpoint-namespace) {
+    [class~='u-hide:#{$breakpoint-namespace}'] {
+      display: none !important;
+    }
+  }
 }

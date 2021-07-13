@@ -11,9 +11,10 @@
 $font-heading-family: var(--font-heading-family);
 $font-heading-style: var(--font-heading-style);
 $font-heading-weight: var(--font-heading-weight);
-$font-heading-size: calc(var(--font-heading-size) * 1px);
 
 $font-body-family: var(--font-body-family);
 $font-body-style: var(--font-body-style);
 $font-body-weight: var(--font-body-weight);
-$font-body-size: calc(var(--font-body-size) * 1px);
+
+$font-heading-base-size: calc(var(--font-heading-base-size) * 1px);
+$font-body-base-size: calc(var(--font-body-base-size) * 1px);

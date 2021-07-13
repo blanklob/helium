@@ -56,6 +56,7 @@
   },
   "accessibility": {
     "skip_to_content": "Skip to main content",
+    "refresh_page": "Choosing a selection results in a full page refresh.",
     "close": "Close"
   }
 }
