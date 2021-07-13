@@ -16,11 +16,10 @@
 
 
     {%- liquid
-      render 'seo-meta-tags'
-      render 'favicon-meta-tags'
-      render 'script-liquid-tags'
-      render 'style-liquid-tags'
-      render 'social-meta-tags'
+      render 'head-seo-tags'
+      render 'head-script-tags'
+      render 'head-style-tags'
+      render 'head-social-tags'
     -%}
 
 
@@ -37,13 +36,15 @@
     {% comment %} Accessibilty snippet {% endcomment %}
     {%- render 'skip-to-content' -%}
 
-    {%- section 'announcement-bar' -%}
+    {%- section 'announcement' -%}
 
     {%- section 'header' -%}
 
     <main id="MainContent" role="main" class="u-focus-none" tabindex="-1">
       {{ content_for_layout }}
     </main>
+
+    {%- section 'footer' -%}
 
   </body>
 </html>

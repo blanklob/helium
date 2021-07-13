@@ -17,12 +17,21 @@
     <title>{{- 'gift_cards.issued.title' -}}</title>
     <meta name="description" content="{{- 'gift_cards.issued.subtext' -}}">
 
+    {%- if canonical_url != blank -%}
+      <link rel="canonical" href="{{ canonical_url }}">
+    {%- endif -%}
+
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '16x16' }}" sizes="16x16">
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" sizes="32x32">
+      <link rel="apple-touch-icon" href="{{ settings.favicon | img_url: '180x180' }}" sizes="180x180">
+    {%- endif -%}
+
 
     {%- liquid
-      render 'favicon-meta-tags'
-      render 'script-liquid-tags'
-      render 'style-liquid-tags'
-      render 'social-meta-tags'
+      render 'head-script-tags'
+      render 'head-style-tags'
+      render 'head-social-tags'
     -%}
 
 

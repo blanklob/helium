@@ -1,19 +1,15 @@
-<div class="s-header u-container u-pv-l">
-  <div class="s-header_wrapper u-grid u-grid--middle">
-    <nav class="s-header_nav u-grid_cell u-1/3 u-1/4:pocket" role="navigation">
+<div class="s-header u-container u-pv-md">
+  <div class="s-header_wrapper u-grid">
+    <nav class="s-header_nav u-grid_cell u-1/3" role="navigation">
       <ul class="s-header_menu">
-      {%- assign header_menu = section.settings.header_menu.links | slice: 0, 3 -%}
-      {%- for link in header_menu -%}
-        <li class="s-header_item u-pr-md u-hidden">
-          <a class="s-header_link u-h5" href="{{- link.url -}}">{{- link.title -}}</a>
+      {%- for link in section.settings.header_menu.links -%}
+        <li class="s-header_item u-pr-md">
+          <a class="s-header_link u-b1" href="{{- link.url -}}">{{- link.title -}}</a>
         </li>
       {%- endfor -%}
-      <li class="s-header_item u-pr-md">
-        <button type="button" class="s-header_cart u-btn-none u-h5">Menu</button>
-      </li>
       </ul>
     </nav>
-    <div class="s-header_logo-container u-grid_cell u-1/3 u-1/2:pocket">
+    <div class="s-header_logo-container u-grid_cell u-1/3">
       <a href="{{ routes.root_url }}" class="s-header_link">
         {%- if section.settings.logo != blank -%}
           {%- assign image_size = section.settings.logo_width | append: 'x' -%}
@@ -31,16 +27,13 @@
         {%- endif -%}
       </a>
     </div>
-    <nav class="s-header_nav u-grid_cell u-1/3 u-1/4:pocket" role="navigation">
+    <nav class="s-header_nav u-grid_cell u-1/3" role="navigation">
       <ul class="s-header_list">
-        <li class="s-header_item u-pl-md u-hidden">
-          <a class="s-header_link u-h5" href="#">Shop</a>
-        </li>
-        <li class="s-header_item u-pl-md u-hidden">
-          <a class="s-header_link u-h5" href="#">Account</a>
+        <li class="s-header_item u-pl-md">
+          <a class="s-header_link u-b1" href="{{ routes.account_url }}">Account</a>
         </li>
         <li class="s-header_item u-pl-md">
-          <button type="button" class="s-header_cart u-btn-none u-h5">Bag(<span class="s-header_cart-count">0</span>)</button>
+          <a class="s-header_link u-b1" href="{{ routes.cart_url }}">Cart</a>
         </li>
       </ul>
     </nav>
@@ -76,8 +69,7 @@
       "type": "link_list",
       "id": "header_menu",
       "label": "Header menu",
-      "default": "main-menu",
-      "info": "Max 3 links"
+      "default": "main-menu"
     }
   ]
 }

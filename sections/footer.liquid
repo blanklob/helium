@@ -1,10 +1,66 @@
-<div class="footer-container">
-  <h1 class="footer__logo">This is a good footer.</h1>
+<div class="s-footer u-container u-pv-md">
+  <div class="s-footer_wrapper u-grid">
+    <div class="s-footer_logo-container u-grid_cell u-1/4">
+      <a href="{{ routes.root_url }}" class="s-footer_link">
+        {%- if section.settings.logo != blank -%}
+          {%- assign image_size = section.settings.logo_width | append: 'x' -%}
+          <img  class="footer_logo"
+                srcset="{{ section.settings.logo | img_url: image_size }} 1x,
+                        {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                src="{{ section.settings.logo | img_url: image_size }}"
+                loading="lazy"
+                width="{{ section.settings.logo.width }}"
+                height="{{ section.settings.logo.height }}"
+                alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
+          >
+        {%- else -%}
+          <span class="u-b1">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+    </div>
+    <nav class="s-footer_nav u-grid_cell u-3/4" role="navigation">
+      <ul class="s-footer_menu">
+      {%- for link in section.settings.footer_menu.links -%}
+        <li class="s-footer_item u-pl-md">
+          <a class="s-footer_link u-b1" href="{{- link.url -}}">{{- link.title -}}</a>
+        </li>
+      {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
 </div>
 
 {% schema %}
-  {
-    "name": "Footer",
-    "tag": "footer"
-  }
+{
+  "name": "Footer",
+  "tag": "footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info": "100 x 100 recommended"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "default": 80,
+      "unit": "px",
+      "label": "Logo width"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Footer menu",
+      "default": "footer"
+    }
+  ]
+}
 {% endschema %}

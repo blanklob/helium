@@ -139,14 +139,14 @@
       },
       {
         "type": "range",
-        "id": "font_heading_size",
+        "id": "font_heading_base_size",
         "label": {
           "en": "Heading font size",
           "fr": "Taille de police des en-têtes"
         },
         "default": 26,
-        "min": 20,
-        "max": 36,
+        "min": 24,
+        "max": 28,
         "step": 1,
         "unit": "px"
       },
@@ -168,14 +168,14 @@
       },
       {
         "type": "range",
-        "id": "font_body_size",
+        "id": "font_body_base_size",
         "label": {
           "en": "Body text font size",
           "fr": "Taille de police des en-têtes"
         },
         "default": 14,
         "min": 12,
-        "max": 20,
+        "max": 16,
         "step": 1,
         "unit": "px"
       }

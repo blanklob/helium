@@ -1,9 +1,13 @@
 /* ==========================================================================
-   #SHOPIFY SECTION: ANOUNCEMENT BAR
+   #SHOPIFY SECTION: FOOTER
    ========================================================================== */
 
-.s-announcement_wrapper {
+.footer_logo {
+  height: auto;
+  width: 100%;
+}
+
+.s-footer_menu {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
 }

@@ -1,18 +1,18 @@
-<div class="template-404">
-  <p class='subtext'>
+<div class="s-404 u-m-xl">
+  <p class='s-404_subtitle u-h5'>
     {{ 'general.404.subtitle' | t }}
   </p>
-  <h1 class="title">
+  <h1 class="s-404_title u-h2">
     {{ 'general.404.title' | t }}
   </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="link body-large">
+  <a  class="s-404_link u-btn" href="{{ routes.all_products_collection_url }}">
     {{ 'general.continue_shopping' | t }}
   </a>
 </div>
 
 {% schema %}
 {
-  "name": "Main 404",
+  "name": "404",
   "tag": "section"
 }
 {% endschema %}

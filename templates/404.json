@@ -2,7 +2,7 @@
   "name": "404",
   "sections": {
     "main": {
-      "type": "main-404"
+      "type": "404"
     }
   },
   "order": ["main"]

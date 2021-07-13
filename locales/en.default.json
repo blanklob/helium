@@ -1,7 +1,7 @@
 {
   "general": {
     "404": {
-      "title": "Not found",
+      "title": "Page not found",
       "subtitle": "The page you were looking for does not exist"
     },
     "password_page": {

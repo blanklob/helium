@@ -5,7 +5,7 @@ module.exports = {
   },
   ignorePatterns: [
     'node_modules',
-    '*.config.js',
+    '*.config.*.js',
     'assets',
     '.eslintrc.js',
   ],
