@@ -1,0 +1,10 @@
+{% comment %}
+    Renders a hidden skip to content bar for accessibilty.
+
+    Usage example:
+    {%- render 'skip-to-content' -%}
+{% endcomment %}
+
+<ul class="c-refresh-page" hidden>
+  <li id="a11y-refresh-page_message">{{ 'accessibility.refresh_page' | t }}</li>
+</ul>

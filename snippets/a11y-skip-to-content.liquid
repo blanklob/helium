@@ -1,0 +1,13 @@
+{% comment %}
+    Renders a hidden skip to content bar for accessibilty.
+
+    Usage example:
+    {%- render 'skip-to-content' -%}
+{% endcomment %}
+
+<div class="c-skip-to-content u-container u-pv-sm" tabindex="-1">
+  <a role="button" class="c-skip-to-content_link u-btn --primary" href="#MainContent">
+    {{- "accessibility.skip_to_content" | t -}}
+  </a>
+  <button type="button" class="c-skip-to-content_close u-btn --primary" onclick="this.blur();">{{- "accessibility.close" | t -}}</button>
+</div>

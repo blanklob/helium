@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #ALIGNENEMENT UTILITIES
+   ========================================================================== */
+
+/**
+ * Utility classes to put specific for text and container alignments
+ * This file contains a suite of classes like:
+ *
+ *   .u-text-center {}
+ *   .u-text-left {}
+ *   .u-text-right {}
+ *
+ *
+ */
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+.u-text-center {
+  text-align: center;
+}
