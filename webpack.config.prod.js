@@ -5,10 +5,10 @@ const common = require('./webpack.config.js')
 
 module.exports = merge(common, {
   mode: 'production',
-  plugins: [
-    // #2: Remove unused CSS classes from production build.
-    new PurgecssPlugin({
-      paths: glob.sync(`./**/*.liquid`, { nodir: true }),
-    }),
-  ],
+  // plugins: [
+  //   // #2: Remove unused CSS classes from production build.
+  //   new PurgecssPlugin({
+  //     paths: glob.sync(`./**/*.liquid`, { nodir: true }),
+  //   }),
+  // ],
 })
