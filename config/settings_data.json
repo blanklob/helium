@@ -1,21 +1,39 @@
 {
   "current": {
+    "font_body": "helvetica_n3",
     "sections": {
-      "announcement-bar": {
-        "type": "announcement-bar",
+      "announcement": {
+        "type": "announcement",
         "settings": {
-          "home_page_only": true,
-          "show_announcement": true,
-          "announcement_menu": "main-menu",
-          "announcement_message": "I love eating pizza.",
-          "announcement_bg_color": "#333333",
-          "announcement_color": "#ffffff"
+          "message": "Modern workflow on Shopify with Online Store 2.0 features.",
+          "show": true,
+          "bg_color": "#111111",
+          "text_color": "#ffffff"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "logo_width": 160,
+          "header_menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "logo_width": 100,
+          "footer_menu": "footer"
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+
+    ]
   },
   "presets": {
-    "Default": {}
+    "Default": {
+    }
   }
 }
