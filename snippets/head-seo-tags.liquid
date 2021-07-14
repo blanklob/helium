@@ -2,23 +2,24 @@
     Renders all related SEO meta tags in the head
 
     Usage:
-    {%- render 'seo-meta-tags' -%}
+    {%- render 'head-seo-tags' -%}
 {% endcomment %}
 
+
 {%- if page_title != blank -%}
-  <title>{{ page_title | escape }}</title>
+  <title>{{- page_title | escape -}}</title>
 {%- endif -%}
 
 {%- if page_description != blank -%}
-  <meta name="description" content="{{ page_description | escape }}">
+  <meta name="description" content="{{- page_description | escape -}}">
 {%- endif -%}
 
 {%- if canonical_url != blank -%}
-  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="canonical" href="{{- canonical_url -}}">
 {%- endif -%}
 
 {%- if settings.favicon != blank -%}
-  <link rel="shortcut icon" href="{{ settings.favicon | img_url: '16x16' }}" sizes="16x16">
-  <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" sizes="32x32">
-  <link rel="apple-touch-icon" href="{{ settings.favicon | img_url: '180x180' }}" sizes="180x180">
+  <link rel="shortcut icon" href="{{- settings.favicon | img_url: '16x16' -}}" sizes="16x16">
+  <link rel="shortcut icon" href="{{- settings.favicon | img_url: '32x32' -}}" sizes="32x32">
+  <link rel="apple-touch-icon" href="{{- settings.favicon | img_url: '180x180' -}}" sizes="180x180">
 {%- endif -%}

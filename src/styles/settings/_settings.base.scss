@@ -40,8 +40,8 @@ $theme-line-height: $theme-base-unit !default;
 // Theme breakpoints.
 
 $theme-breakpoints: (
-  'sm': 'screen and (max-width: 499px)',
-  'from-sm': 'screen and (min-width: 500px)',
+  'sm': 'screen and (max-width: 500px)',
+  'from-sm': 'screen and (min-width: 501px)',
   'md': 'screen and (max-width: 800px)',
   'from-md': 'screen and (min-width: 801px)',
   'l': 'screen and (max-width: 1024px)',

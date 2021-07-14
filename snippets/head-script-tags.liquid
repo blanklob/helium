@@ -2,30 +2,49 @@
     Passes liquid settings to Javascript global THEME variable.
 
     Usage:
-    {%- render 'script-liquid-tags' -%}
+    {%- render 'head-script-tags' -%}
 
 {% endcomment %}
 
 <script type="text/javascript">
   var THEME = {
-      color: {
-          brandPrimary: "{{ settings.color_brand_primary }}",
-          brandSecondary: "{{ settings.color_brand_secondary }}",
-          textHeading: "{{ settings.color_text_heading }}",
-          textBody: "{{ settings.color_text_body }}",
-          textLinks: "{{ settings.color_text_links }}",
-          btnPrimary: "{{ settings.color_btn_primary }}",
-          btnPrimaryText: "{{ settings.color_btn_primary_text }}",
-          pageBackground: "{{ settings.color_page_background }}",
+      colors: {
+          brandPrimary: "{{- settings.color_brand_primary -}}",
+          brandSecondary: "{{- settings.color_brand_secondary -}}",
+          textHeading: "{{- settings.color_text_heading -}}",
+          textBody: "{{- settings.color_text_body -}}",
+          textLinks: "{{- settings.color_text_links -}}",
+          btnPrimary: "{{- settings.color_btn_primary -}}",
+          btnPrimaryText: "{{- settings.color_btn_primary_text -}}",
+          pageBackground: "{{- settings.color_page_background -}}",
       },
-      breakpoint: {
-          medium: 750,
-          large: 990,
-          widescreen: 1400
+
+      breakpoints: {
+          sm: 500,
+          md: 800,
+          l: 1024,
+          xl: 1160
       },
-      asset: {
-          stylesheet: "{{ 'theme.css' | asset_url }}",
-          script: "{{ 'theme.js' | asset_url }}",
+
+      strings: {
+        itemAddedCart: "{{- 'general.cart.item_added' | t -}}",
+        search: "{{- 'general.search.search' | t -}}",
+      },
+
+      settings: {
+        moneyFormat: "{{- shop.money_format | json -}}"
+      },
+
+      routes: {
+        root: "{{- routes.root_url -}}",
+        account: "{{- routes.account_url -}}",
+        search: "{{- routes.search_url -}}",
+        cart: "{{- routes.cart_url -}}",
+        addCartItem: "{{- routes.cart_add_url -}}",
+        changeCart: "{{- routes.cart_change_url -}}",
+        clearCart: "{{- routes.cart_clear_url -}}",
+        updateCart: "{{- routes.cart_update_url -}}",
+        productRecommendations: "{{- routes.product_recommendations_url -}}"
       }
   };
   document.documentElement.className = document.documentElement.className.replace('no-js', 'js');

@@ -5,12 +5,8 @@
 .c-skip-to-content {
   position: absolute;
   display: flex;
-  font-family: $font-body-family;
-  font-style: $font-body-style;
-  font-weight: $font-body-weight;
   justify-content: space-between;
   z-index: 999;
-  background-color: $color-page-background;
   transform: translateY(-150%);
 
   &:focus-within {
