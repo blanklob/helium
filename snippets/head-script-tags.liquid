@@ -1,51 +1,53 @@
 {% comment %}
-    Passes liquid settings to Javascript global THEME variable.
+  Passes liquid settings to Javascript global THEME variable.
+  Use old javascript in this file!
 
-    Usage:
-    {%- render 'head-script-tags' -%}
-
+  Usage:
+  {%- render 'head-script-tags' -%}
 {% endcomment %}
 
 <script type="text/javascript">
   var THEME = {
       colors: {
-          brandPrimary: "{{- settings.color_brand_primary -}}",
-          brandSecondary: "{{- settings.color_brand_secondary -}}",
-          textHeading: "{{- settings.color_text_heading -}}",
-          textBody: "{{- settings.color_text_body -}}",
-          textLinks: "{{- settings.color_text_links -}}",
-          btnPrimary: "{{- settings.color_btn_primary -}}",
-          btnPrimaryText: "{{- settings.color_btn_primary_text -}}",
-          pageBackground: "{{- settings.color_page_background -}}",
+        primary:     "{{- settings.theme_color_primary -}}",
+        secondary:   "{{- settings.theme_color_secondary -}}",
+        textHeading: "{{- settings.theme_color_text_heading -}}",
+        textBody:    "{{- settings.theme_color_text_body -}}",
+        btn:         "{{- settings.theme_color_btn -}}",
+        btnText:     "{{- settings.theme_color_btn_text -}}",
+        background:  "{{- settings.theme_color_background -}}",
+      },
+
+      fonts: {
+        heading: "{{- settings.theme_font_heading.family -}}",
+        body:    "{{- settings.theme_font_body.family -}}"
       },
 
       breakpoints: {
-          sm: 500,
-          md: 800,
-          l: 1024,
-          xl: 1160
+        base: 0,
+        xs:   320,
+        s:    500,
+        md:   800,
+        l:    1025,
+        xl:   1200,
+        xxl:  1440
       },
 
       strings: {
-        itemAddedCart: "{{- 'general.cart.item_added' | t -}}",
-        search: "{{- 'general.search.search' | t -}}",
-      },
-
-      settings: {
-        moneyFormat: "{{- shop.money_format | json -}}"
+        addedCart: "{{- 'general.cart.item_added' | t -}}",
+        search:    "{{- 'general.search.search' | t -}}",
       },
 
       routes: {
-        root: "{{- routes.root_url -}}",
-        account: "{{- routes.account_url -}}",
-        search: "{{- routes.search_url -}}",
-        cart: "{{- routes.cart_url -}}",
+        root:        "{{- routes.root_url -}}",
+        account:     "{{- routes.account_url -}}",
+        search:      "{{- routes.search_url -}}",
+        cart:        "{{- routes.cart_url -}}",
         addCartItem: "{{- routes.cart_add_url -}}",
-        changeCart: "{{- routes.cart_change_url -}}",
-        clearCart: "{{- routes.cart_clear_url -}}",
-        updateCart: "{{- routes.cart_update_url -}}",
-        productRecommendations: "{{- routes.product_recommendations_url -}}"
+        changeCart:  "{{- routes.cart_change_url -}}",
+        clearCart:   "{{- routes.cart_clear_url -}}",
+        updateCart:  "{{- routes.cart_update_url -}}",
       }
   };
-  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  document.documentElement.className = document.documentElement.className.replace('is-loading', 'is-loaded');
 </script>

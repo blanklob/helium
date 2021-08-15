@@ -1,6 +1,6 @@
 {
   "name": "shopify-webpack-with-os2-features",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "theme.js",
   "repository": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features.git",
   "author": "Youness Id bakkasse <std.youness@gmail.com>",

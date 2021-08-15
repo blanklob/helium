@@ -1,0 +1,17 @@
+{% comment %}
+  To keep it clean, use this to add third party CDN libaries,
+  tho it's recommended to use ES6 imports in order to build your
+  libaries in vendors assets, since it's faster to serve files
+  on shopify CDN.
+
+  Check for more info: https://github.com/Shopify/theme-check/blob/main/docs/checks/remote_asset.md
+
+  Usage:
+  {%- render 'head-vendors-tags' -%}
+{% endcomment %}
+
+<!-- Start vendor third party libaries -->
+{% comment %} Alpine: lightweight, JavaScript framework {% endcomment %}
+{% comment %} <script src="//unpkg.com/alpinejs" defer></script> {% endcomment %}
+<!-- End vendor third party libaries -->
+

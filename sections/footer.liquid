@@ -1,66 +1,9 @@
-<div class="s-footer u-container u-pv-md">
-  <div class="s-footer_wrapper u-grid">
-    <div class="s-footer_logo-container u-grid_cell u-1/2">
-      <a href="{{ routes.root_url }}" class="s-footer_link">
-        {%- if section.settings.logo != blank -%}
-          {%- assign image_size = section.settings.logo_width | append: 'x' -%}
-          <img  class="footer_logo"
-                srcset="{{ section.settings.logo | img_url: image_size }} 1x,
-                        {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-                src="{{ section.settings.logo | img_url: image_size }}"
-                loading="lazy"
-                width="{{ section.settings.logo.width }}"
-                height="{{ section.settings.logo.height }}"
-                alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
-          >
-        {%- else -%}
-          <span class="u-b1">{{ shop.name }}</span>
-        {%- endif -%}
-      </a>
-    </div>
-    <nav class="s-footer_nav u-grid_cell u-1/2" role="navigation">
-      <ul class="s-footer_menu">
-      {%- for link in section.settings.footer_menu.links -%}
-        <li class="s-footer_item u-pl-md">
-          <a class="s-footer_link u-b1" href="{{- link.url -}}">{{- link.title -}}</a>
-        </li>
-      {%- endfor -%}
-      </ul>
-    </nav>
-  </div>
-</div>
+<div class="s-footer o-container o-container--md" data-section-id="{{- section.id -}}"></div>
 
 {% schema %}
 {
   "name": "Footer",
   "tag": "footer",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Logo"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo",
-      "info": "150 x 150 recommended"
-    },
-    {
-      "type": "range",
-      "id": "logo_width",
-      "min": 80,
-      "max": 150,
-      "step": 10,
-      "default": 120,
-      "unit": "px",
-      "label": "Logo width"
-    },
-    {
-      "type": "link_list",
-      "id": "footer_menu",
-      "label": "Footer menu",
-      "default": "footer"
-    }
-  ]
+  "settings": []
 }
 {% endschema %}

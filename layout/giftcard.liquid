@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="is-loading" lang="{{- request.locale.iso_code -}}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -34,11 +34,8 @@
       render 'head-social-tags'
     -%}
 
-
-    <link rel="preload" href="{{ 'giftcard.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>{{ 'giftcard.css' | asset_url | stylesheet_tag }}</noscript>
-
-    <script src="{{- 'giftcard.js' | asset_url -}}" defer></script>
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {% comment %} TODO: ADD JAVASCRIPT ASSET {% endcomment %}
 
     <!-- Header hook for plugins -->
     {{ content_for_header }}
@@ -47,11 +44,9 @@
     {% comment %} Accessibilty snippet {% endcomment %}
     {%- render 'a11y-skip-to-content' -%}
 
-    <main id="MainContent" role="main" class="t-giftcard u-focus-none" tabindex="-1">
+    <main id="MainContent" role="main" class="o-giftcard u-focus-none" tabindex="-1">
       {{ content_for_layout }}
     </main>
-
-    {%- render 'a11y-refresh-page' -%}
 
   </body>
 </html>

@@ -1,18 +1,9 @@
-<div class="s-404 u-text-center u-m-xl">
-  <p class='s-404_subtitle u-h5'>
-    {{ 'general.404.subtitle' | t }}
-  </p>
-  <h1 class="s-404_title u-h2">
-    {{ 'general.404.title' | t }}
-  </h1>
-  <a  class="s-404_link u-btn" href="{{ routes.all_products_collection_url }}">
-    {{ 'general.continue_shopping' | t }}
-  </a>
-</div>
+<div class="s-404 o-container o-container--md" data-section-id="{{- section.id -}}"></div>
 
 {% schema %}
 {
   "name": "404",
-  "tag": "section"
+  "tag": "section",
+  "settings": []
 }
 {% endschema %}

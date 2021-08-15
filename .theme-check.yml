@@ -3,3 +3,6 @@ root: .
 # Disable some checks
 RequiredDirectories:
   enabled: false
+
+RemoteAsset:
+  enabled: false

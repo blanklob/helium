@@ -15,11 +15,11 @@ module.exports = {
   // Entry
   entry: {
     theme: [
-      path.join(scriptsDir, 'theme.js'),
+      path.join(scriptsDir, 'layouts/layouts.theme.js'),
       path.join(stylesDir, 'layouts/_layouts.theme.scss'),
     ],
     password: [
-      path.join(scriptsDir, 'password.js'),
+      path.join(scriptsDir, 'layouts/layouts.password.js'),
       path.join(stylesDir, 'layouts/_layouts.password.scss'),
     ],
   },

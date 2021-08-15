@@ -1,8 +1,8 @@
 {
   "sections": {
-    "banner": {
-      "type": "main-collection"
+    "main": {
+      "type": "collection"
     }
   },
-  "order": ["banner"]
+  "order": ["main"]
 }

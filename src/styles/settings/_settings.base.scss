@@ -50,3 +50,13 @@ $theme-spacing-xl: $theme-base-unit * $theme-base-factor-xl; // 96px
 /// @access public
 ///
 $theme-context: development !default;
+
+// Mobile First ******************
+// This switch controls media queries generation.
+// Available values: mobile, desktop, both.
+/// @type Boolean
+/// @access public
+///
+/// @todo Implimentation.
+///
+$theme-reponsive-first-on: both !default;

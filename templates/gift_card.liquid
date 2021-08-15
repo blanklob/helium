@@ -1,10 +1,10 @@
 {%- layout 'giftcard' -%}
 
-<div id="qr-code"></div>
-<script>
-  var qrCode = new QRCode(document.getElementById("qr-code"), {
-    text: "{{- gift_card.qr_identifier -}}",
-    width: 120,
+<div id="qrCode" title="{{- gift_card.qr_identifier -}}"></div>
+<script type="text/javascript">
+  var qrCode = new QRCode(document.getElementById("qrCode"), {
+    text:   "{{- gift_card.qr_identifier -}}",
+    width:  120,
     height: 120
   });
 </script>
