@@ -1,5 +1,5 @@
 /* ==========================================================================
-   #SHOPIFY SNIPPET/COMPONENT: SKIP TO CONTENT (A11Y)
+   ## COMPONENTS: SKIP TO CONTENT (A11Y)
    ========================================================================== */
 
 .c-skip-to-content {
@@ -8,6 +8,7 @@
   justify-content: space-between;
   z-index: 999;
   transform: translateY(-150%);
+  transition: none;
 
   &:focus-within {
     position: relative;

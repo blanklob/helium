@@ -1,0 +1,41 @@
+/* ==========================================================================
+   ## OBJECTS: CONTAINER
+   ========================================================================== */
+
+/// @content Object classes for diffrentes container sizes.
+///
+///   .o-container {}      - base container.
+///   .o-container--sm {}  - small container.
+///   .o-container--xl {}  - large container.
+///   and others, add as you like...
+///
+
+.o-container {
+  margin: 0 auto;
+  width: 100%;
+
+  &.o-container--xs {
+    padding-left: $theme-spacing-xs;
+    padding-right: $theme-spacing-xs;
+  }
+
+  &.o-container--s {
+    padding-left: $theme-spacing-s;
+    padding-right: $theme-spacing-s;
+  }
+
+  &.o-container--md {
+    padding-left: $theme-spacing-md;
+    padding-right: $theme-spacing-md;
+  }
+
+  &.o-container--l {
+    padding-left: $theme-spacing-l;
+    padding-right: $theme-spacing-l;
+  }
+
+  &.o-container--xl {
+    padding-left: $theme-spacing-xl;
+    padding-right: $theme-spacing-xl;
+  }
+}

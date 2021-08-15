@@ -1,26 +1,54 @@
 /* ==========================================================================
-   #ALIGNENEMENT UTILITIES
+   ## UTILITIES: ALIGNING
    ========================================================================== */
 
-/**
- * Utility classes to put specific for text and container alignments
- * This file contains a suite of classes like:
- *
- *   .u-text-center {}
- *   .u-text-left {}
- *   .u-text-right {}
- *
- *
- */
+/// @content Utility classes to align elements inside containers.
+///
+///   .u-float-left {}    - Float to the left.
+///   .u-align-middle {}  - Align in the middle.
+///   .u-align-top {}     - Align tp the top.
+///   and others...
+///
 
-.u-text-left {
-  text-align: left;
+// Floats ***************
+.u-float-left {
+  float: left !important;
 }
 
-.u-text-right {
-  text-align: right;
+.u-float-right {
+  float: right !important;
 }
 
-.u-text-center {
-  text-align: center;
+// Horizontal alignement ***************
+.u-align-left {
+  text-align: left !important;
+}
+
+.u-align-right {
+  text-align: right !important;
+}
+
+.u-align-center {
+  text-align: center !important;
+}
+
+// Vertical alignement ***************
+.u-align-top {
+  vertical-align: top !important;
+}
+
+.u-align-baseline {
+  vertical-align: baseline !important;
+}
+
+.u-align-bottom {
+  vertical-align: bottom !important;
+}
+
+.u-align-middle {
+  vertical-align: middle !important;
+}
+
+.u-align-top {
+  vertical-align: top !important;
 }

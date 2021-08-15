@@ -44,7 +44,6 @@
     "webpack-merge": "^5.8.0"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
     "*.{js,scss,json}": "prettier --write",
     "*.liquid": "shopify theme check"
   },

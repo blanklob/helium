@@ -1,0 +1,49 @@
+/* ==========================================================================
+   ## TOOLS: USEFUL FUNCTIONS
+   ========================================================================== */
+
+@use 'sass:math';
+
+/// @content Function that converts the given pixel value to its EM quivalent.
+///
+/// @param {Number} $size
+///   The pixel value to convert.
+///
+/// @return {Number}
+///   Scalable pixel value in EMs.
+///
+/// @access public
+///
+@function em($size) {
+  @if (type-of($size) == number) {
+    @if (unit($size) != 'px') {
+      @error "`#{$size}` needs to be a pixel value.";
+    }
+  } @else {
+    @error "`#{$size}` needs to be a number.";
+  }
+
+  @return math.div($size, $theme-font-base-size) * 1em;
+}
+
+/// @content Function that converts the given pixel value to its REM quivalent.
+///
+/// @param {Number} $size
+///   The pixel value to convert.
+///
+/// @return {Number}
+///   Scalable pixel value in REMs.
+///
+/// @access public
+///
+@function rem($size) {
+  @if (type-of($size) == number) {
+    @if (unit($size) != 'px') {
+      @error "`#{$size}` needs to be a pixel value.";
+    }
+  } @else {
+    @error "`#{$size}` needs to be a number.";
+  }
+
+  @return math.div($size, $theme-font-base-size) * 1rem;
+}

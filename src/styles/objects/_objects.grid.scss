@@ -1,35 +1,44 @@
 /* ==========================================================================
-   # AVALANCHE | MIT License | @colourgarden
+   ## OBJECTS: GRID
    ========================================================================== */
+
+/// @author Tom Hare (colourgarden) <https://github.com/colourgarden>
+/// @link https://github.com/colourgarden/avalanche for more Docs.
+///
+/// @content Object classes to create responsive grid layouts.
+//
+///   .o-grid {}
+///   .o-grid__cell {}
+///   .o-grid--middle {}
+///   .o-grid--auto {}
+///   and others...
+///
 
 @use 'sass:math';
 
-/**
- * SETTINGS
- */
-$av-namespace: 'u-grid' !default; // Prefix namespace for grid layout and cells
+// The grid system settings
+$av-namespace: 'o-grid' !default; // Prefix namespace for grid layout and cells
 $av-element-name: 'cell' !default; // Element/cell name
-$av-element-class-chain: '_' !default; // Chain characters between block and element
+$av-element-class-chain: '__' !default; // Chain characters between block and element
 $av-modifier-class-chain: '--' !default; // Chain characters between block and modifier
-$av-breakpoint-class-chain: ':' !default; // Chain characters between width and breakpoint
+$av-breakpoint-class-chain: '@' !default; // Chain characters between width and breakpoint
 
-$av-gutter: 20px !default; // Gutter between grid cells
-
-$av-width-class-namespace: 'u-' !default; // Prefix namespace for width classes. For example; 'col-'
+/// @see {settings.breakpoints.scss} - $theme-spacing-md and $theme-breakpoints-queries
+$av-breakpoints: $theme-breakpoints-queries !default; // Map of media queries.
+$av-gutter: $theme-spacing-md !default; // Gutter between grid cells.
+$av-width-class-namespace: 'u-' !default; // Prefix namespace for width classes.
 $av-width-class-style: 'fraction' !default; // Width class naming style. Can be 'fraction', 'percentage' or 'fragment'
 $av-widths: (
   1,
   2,
   3,
-  4
+  4,
+  5,
+  6
 ) !default; // Width denominator values. 2 = 1/2, 3 = 1/3 etc. Add/remove as appropriate
 
-$av-enable-responsive: true !default;
-
-// $theme-breakpoints from ../settings/_settings.base.scss
-$av-breakpoints: $theme-breakpoints !default; // Responsive breakpoints. Add/remove as appropriate
-
 // Enable/disable grid layouts
+$av-enable-responsive: true !default;
 $av-enable-grid-center: true !default;
 $av-enable-grid-cell-center: true !default;
 $av-enable-grid-right: true !default;
@@ -43,9 +52,7 @@ $av-enable-grid-huge: true !default;
 $av-enable-grid-auto: true !default;
 $av-enable-grid-rev: true !default;
 
-/**
-  * LOGIC aka THE MAGIC
-  */
+// The grid system logique/functions
 @function av-create-width-class-name(
   $style,
   $numerator,
@@ -142,7 +149,6 @@ $av-enable-grid-rev: true !default;
 @mixin av-mq($alias) {
   // Search breakpoint map for alias
   $query: map-get($av-breakpoints, $alias);
-
   // If alias exists, print out media query
   @if $query {
     @media #{$query} {

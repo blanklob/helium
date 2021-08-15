@@ -1,0 +1,154 @@
+/* ==========================================================================
+   ## TOOLS: USEFUL MIXINS
+   ========================================================================== */
+
+@use 'sass:math';
+
+/// @content Generates a rem font-size (with pixel fallback) and a baseline-compatible.
+/// unitless line-height from a pixel font-size value.
+///
+/// @param {Number} $font-size
+///   The pixel pixel font-size value.
+///
+/// @param {String | Number } $line-height
+///   The unitless absolute value of line height or 'normal', 'inherit',
+///   it's 'auto' by default.
+///
+/// @param {Number} $modifier
+///   You can also modify the line-height by increments, while staying in the
+///   baseline grid, by setting the `$modifier` parameter. It takes a positive
+///   or negative integer, and it will add or remove "lines" to the  generated
+///   line-height.
+///
+/// @example scss - basic usage: add 2 lines
+///   @include font-size(24px, $modifier: +2);
+///
+/// @example scss - basic usage: subtract 1 lines
+///   @include font-size(24px, $modifier: -1);
+///
+/// @example scss - basic usage
+///   .foo {
+///     @include font-size(24px);
+///   }
+///
+/// @output css
+///  .foo {
+///    font-size: 24px; `px` fallback for old IEs not supporting `rem` values.
+///    font-size: 1.25rem;
+///    line-height: 1.25;
+///  }
+///
+/// @type Mixin
+/// @access public
+///
+@mixin font-size($font-size, $line-height: auto, $modifier: 0) {
+  @if (type-of($font-size) == number) {
+    @if (unit($font-size) != 'px') {
+      @error "`#{$font-size}` needs to be a pixel value.";
+    }
+  } @else {
+    @error "`#{$font-size}` needs to be a number.";
+  }
+
+  font-size: $font-size;
+  font-size: rem($font-size);
+
+  @if ($line-height == 'auto') {
+    // Define how many grid lines each text line should span.
+    // By default, we set it to the minimum number of lines necessary,
+    // in order to contain the defined font-size, +1 for some breathing room.
+    $lines: ceil(math.div($font-size, $theme-base-unit)) + $modifier + 1;
+    $line-height: $lines * $theme-font-base-line-height;
+
+    line-height: math.div($line-height, $font-size);
+  } @else {
+    @if (
+      type-of($line-height) ==
+        number or
+        $line-height ==
+        'inherit' or
+        $line-height ==
+        'normal'
+    ) {
+      line-height: $line-height;
+    } @else if ($line-height != 'none' and $line-height != false) {
+      @error "`#{$line-height}` is not a valid value for `$line-height`.";
+    }
+  }
+}
+
+/// @content Generate `:hover` and `:focus` styles in one go.
+///
+/// @example scss - basic usage
+///   .foo {
+///     @include hocus {
+///        color: black;
+///     }
+///   }
+///
+/// @output Wraps the given content in `:focus` and `:hover` pseudo-classes.
+///   .foo:focus,
+///   .foo:hover {
+///     color: black;
+///   }
+///
+/// @type Mixin
+/// @access public
+///
+@mixin hocus {
+  &:focus,
+  &:hover {
+    @content;
+  }
+}
+
+/// @content Generate `:active` and `:focus` styles in one go.
+///
+/// @example scss - basic usage
+///   .foo {
+///     @include actus {
+///        color: white;
+///     }
+///   }
+///
+/// @output Wraps the given content in `:active` and `:focus` pseudo-classes.
+///   .foo:focus,
+///   .foo:active {
+///     color: white;
+///   }
+///
+/// @type Mixin
+/// @access public
+///
+@mixin actus {
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+/// @content Prevent text from wrapping into multiple lines for the current element.
+///
+/// 1. Ensure that the node has a maximum width after which truncation can occur.
+/// 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor nodes.
+///
+/// @param {Number} $width
+///   The maximum width of element, it's '100%' by default.
+///
+/// @example scss - basic usage
+///   .foo {
+///     @include truncate();
+///   }
+///
+/// @type Mixin
+/// @access public
+///
+@mixin truncate($width: 100%) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal; // [2]
+  @if $width {
+    max-width: $width; // [1]
+  }
+}

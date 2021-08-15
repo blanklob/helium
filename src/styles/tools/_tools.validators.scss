@@ -1,0 +1,53 @@
+/* ==========================================================================
+   ## TOOLS: VALIDATORS
+   ========================================================================== */
+
+/// @content Validator that checks if the current context is development.
+///
+/// @requires {String} $theme-context
+///   The global context of the stylesheet.
+///
+/// @return {Boolean}
+///   True if the $theme-context is set to "development".
+///
+/// @access public
+///
+@function is-dev() {
+  @return ('development' == $theme-context);
+}
+
+/// @content Validator that checks if the current context is production.
+///
+/// @requires {String} $theme-context
+///   The global context of the stylesheet.
+///
+/// @return {Boolean}
+///   True if the $theme-context is set to "production".
+///
+/// @access public
+///
+@function is-prod() {
+  @return ('production' == $theme-context);
+}
+
+/// @content Validator that checks if a list contains a value(s).
+///
+/// @argument {List} $list
+///   The list to check against.
+///
+/// @argument {List} $values
+///   A single value or list of values to check for.
+///
+/// @return {Boolean}
+///
+/// @access public
+///
+@function contains($list, $values...) {
+  @each $value in $values {
+    @if type-of(index($list, $value)) != 'number' {
+      @return false;
+    }
+  }
+
+  @return true;
+}

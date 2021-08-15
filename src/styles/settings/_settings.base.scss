@@ -1,52 +1,52 @@
 /* ==========================================================================
-   #BASE
+   ## BASE THEME SETTINGS
    ========================================================================== */
 
-/**
- * This core file sets up most important setup variables. They underpin
- * a lot of how the framework functions and should be modified and
- * preconfigured with caution.
- */
+/// @content This core file sets up most important setup variables. They underpin
+/// a lot of how the framework functions and should be modified and
+/// preconfigured with caution.
+///
+///
+/// @throw
+///   Global variable name must always start with '$theme-' prefix/namespace.
+///
 
-// Baseline grid lines height.
-// Every spacing metric should be based on this.
-
+/// Base factors and ** THE BASE THEME UNIT ** CAUTION!
+/// Every spacing metric should be based on this!!
+/// @type Number | Unit
+/// @access public
+///
 $theme-base-unit: 6px !default;
 
 // How many grid lines should our spacing unit variants span?
 // Each value should be an unitless integer.
+/// @type Number
+/// @access public
+///
+$theme-base-factor-xs: 1 !default;
+$theme-base-factor-s: 2 !default;
+$theme-base-factor-md: 4 !default;
+$theme-base-factor-l: 8 !default;
+$theme-base-factor-xl: 16 !default;
 
-$theme-spacing-unit-sm: 1 !default; // 6px
-$theme-spacing-unit-s: 2 !default; // 12px
-$theme-spacing-unit-md: 4 !default; // 24px
-$theme-spacing-unit-l: 8 !default; // 48px
-$theme-spacing-unit-xl: 16 !default; // 96px
+// Base spacing settings ****************
 
 // Spacing values are determined based on your project’s global baseline grid.
 // It is not recommended that you modify these following variables
 // (it can break your vertical rhythm), but if you need to, you can.
+/// @type Number | Unit
+/// @access public
+///
+$theme-spacing-xs: $theme-base-unit * $theme-base-factor-xs; // 6px
+$theme-spacing-s: $theme-base-unit * $theme-base-factor-s; // 12px
+$theme-spacing-md: $theme-base-unit * $theme-base-factor-md; // 24px
+$theme-spacing-l: $theme-base-unit * $theme-base-factor-l; // 48px
+$theme-spacing-xl: $theme-base-unit * $theme-base-factor-xl; // 96px
 
-$theme-spacing-sm: $theme-base-unit * $theme-spacing-unit-sm;
-$theme-spacing-s: $theme-base-unit * $theme-spacing-unit-s;
-$theme-spacing-md: $theme-base-unit * $theme-spacing-unit-md;
-$theme-spacing-l: $theme-base-unit * $theme-spacing-unit-l;
-$theme-spacing-xl: $theme-base-unit * $theme-spacing-unit-xl;
-
-// Base typographical styles.
-
-$theme-font-size: 16px !default;
-$theme-line-height: $theme-base-unit !default;
-
-// Theme breakpoints.
-
-$theme-breakpoints: (
-  'sm': 'screen and (max-width: 500px)',
-  'from-sm': 'screen and (min-width: 501px)',
-  'md': 'screen and (max-width: 800px)',
-  'from-md': 'screen and (min-width: 801px)',
-  'l': 'screen and (max-width: 1024px)',
-  'from-l': 'screen and (min-width: 1025px)',
-  'xl': 'screen and (min-width: 1160px)',
-  'retina':
-    'screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx)',
-) !default;
+// Context ******************
+// The current stylesheet context.
+// Available values: production, development.
+/// @type String
+/// @access public
+///
+$theme-context: development !default;

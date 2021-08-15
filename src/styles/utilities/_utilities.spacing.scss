@@ -1,20 +1,16 @@
 /* ==========================================================================
-   #SPACING UTILITIES
+   ## UTILITIES: SPACING
    ========================================================================== */
 
-/**
- * Utility classes to put specific spacing values onto elements. The below loop
- * will generate us a suite of classes like:
- *
- *   .u-pv-sm {}
- *   .u-ph-s {}
- *   .u-p-s {}
- *   .u-mv-none {} etc..
- *
- *
- */
+/// @content Utility classes to put specific spacing values into elements.
+///
+///   .u-ph-s {}     - small horizontal padding
+///   .u-m-l {}      - large margin
+///   .u-mv-none {}  - no vertical margin
+///   and others...
+///
 
-$theme-spacing-directions: (
+$u-spacing-directions: (
   null: null,
   't': '-top',
   'r': '-right',
@@ -24,13 +20,13 @@ $theme-spacing-directions: (
   'v': '-top' '-bottom',
 ) !default;
 
-$theme-spacing-properties: (
+$u-spacing-properties: (
   'p': 'padding',
   'm': 'margin',
 ) !default;
 
-$theme-spacing-sizes: (
-  '-sm': $theme-spacing-sm,
+$u-spacing-sizes: (
+  '-xs': $theme-spacing-xs,
   '-s': $theme-spacing-s,
   '-md': $theme-spacing-md,
   '-l': $theme-spacing-l,
@@ -38,9 +34,9 @@ $theme-spacing-sizes: (
   '-none': 0,
 ) !default;
 
-@each $property-namespace, $property in $theme-spacing-properties {
-  @each $direction-namespace, $direction-rules in $theme-spacing-directions {
-    @each $size-namespace, $size in $theme-spacing-sizes {
+@each $property-namespace, $property in $u-spacing-properties {
+  @each $direction-namespace, $direction-rules in $u-spacing-directions {
+    @each $size-namespace, $size in $u-spacing-sizes {
       .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
         @each $direction in $direction-rules {
           #{$property}#{$direction}: $size !important;

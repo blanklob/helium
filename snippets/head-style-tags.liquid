@@ -4,62 +4,51 @@
 
     Usage:
     {%- render 'head-style-tags' -%}
+
+    Warning:
+      This file is mounted to the global settings files in
+      'src/styles/settings' directory, any modification need
+      to also be applied to the other file and vice versa.
 {% endcomment %}
 
 
 {%- style -%}
 
   :root {
+    {% comment %} Theme colors declaration {% endcomment %}
+    --theme-color-primary:      {{ settings.theme_color_primary }};
+    --theme-color-secondary:    {{ settings.theme_color_secondary }};
+    --theme-color-text-heading: {{ settings.theme_color_text_heading }};
+    --theme-color-text-body:    {{ settings.theme_color_text_body }};
+    --theme-color-btn:          {{ settings.theme_color_btn }};
+    --theme-color-btn-text:     {{ settings.theme_color_btn_text }};
+    --theme-color-background:   {{ settings.theme_color_background }};
 
-    --color-brand-primary: {{ settings.color_brand_primary }};
-    --color-brand-secondary: {{ settings.color_brand_secondary }};
-    --color-text-heading: {{ settings.color_text_heading }};
-    --color-text-body: {{ settings.color_text_body }};
-    --color-text-links: {{ settings.color_text_links }};
-    --color-btn-primary: {{ settings.color_btn_primary }};
-    --color-btn-primary-text: {{ settings.color_btn_primary_text }};
-    --color-page-background: {{ settings.color_page_background }};
-
-    {%- assign font_heading = settings.font_heading -%}
-    {%- assign font_body = settings.font_body -%}
+    {%- assign theme_font_heading = settings.theme_font_heading -%}
+    {%- assign theme_font_body    = settings.theme_font_body -%}
 
     {% comment %} Heading font declaration {% endcomment %}
-    --font-heading-family: {{ font_heading.family }}, {{ font_heading.fallback_families }};
-    --font-heading-style: {{ font_heading.style }};
-    --font-heading-base-weight: {{ font_heading.weight }};
-    --font-heading-base-size: {{ settings.font_heading_base_size }};
+    --theme-font-heading-family:      {{ theme_font_heading.family }}, {{ theme_font_heading.fallback_families }};
+    --theme-font-heading-style:       {{ theme_font_heading.style }};
+    --theme-font-heading-base-weight: {{ theme_font_heading.weight }};
 
     {% comment %} Body font declaration {% endcomment %}
-    --font-body-family: {{ font_body.family }}, {{ font_body.fallback_families }};
-    --font-body-style: {{ font_body.style }};
-    --font-body-base-weight: {{ font_body.weight }};
-    --font-body-base-size: {{ settings.font_body_base_size }};
+    --theme-font-body-family:      {{ theme_font_body.family }}, {{ theme_font_body.fallback_families }};
+    --theme-font-body-style:       {{ theme_font_body.style }};
+    --theme-font-body-base-weight: {{ theme_font_body.weight }};
   }
 
-  {% comment %} Checking if the user choosed same font. {% endcomment %}
-
-  {%- if font_heading.family == font_body.family -%}
-
-  {% comment %} Font call {% endcomment %}
-  {{- font_heading | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
-  {{- font_heading | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
-  {{- font_heading | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}
-  {{- font_heading | font_modify: 'weight', '800' | font_face: font_display: 'swap' -}}
-
-  {% else %}
-
   {% comment %} Heading font call {% endcomment %}
-  {{- font_heading | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
-  {{- font_heading | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
-  {{- font_heading | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}
-  {{- font_heading | font_modify: 'weight', '800' | font_face: font_display: 'swap' -}}
+  {{- theme_font_heading | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
+  {{- theme_font_heading | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
+  {{- theme_font_heading | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}
+  {{- theme_font_heading | font_modify: 'weight', '800' | font_face: font_display: 'swap' -}}
 
   {% comment %} Body font call {% endcomment %}
-  {{- font_body | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
-  {{- font_body | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
-  {{- font_body | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}
-  {{- font_body | font_modify: 'weight', '800' | font_face: font_display: 'swap' -}}
+  {{- theme_font_body | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
+  {{- theme_font_body | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
+  {{- theme_font_body | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}
+  {{- theme_font_body | font_modify: 'weight', '800' | font_face: font_display: 'swap' -}}
 
-  {% endif %}
-{%- endstyle -%}
+  {%- endstyle -%}
 

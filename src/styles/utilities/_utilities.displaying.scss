@@ -1,0 +1,86 @@
+/* ==========================================================================
+   ## UTILITIES: DISPLAYING
+   ========================================================================== */
+
+/// @content Utility classes to hide/show elements.
+///
+///   .u-hidden-visually {}   - hide and visible for a11y.
+///   .u-hide {}              - always hidden.
+///   .u-visible {}           - always visible.
+///   .u-show {}              - always shown.
+///   and others...
+///
+
+// Always hide an element.
+.u-hide {
+  display: none !important;
+}
+
+/// @content Reponsive hiding utility classes.
+/// The loop below will generate classes like:
+///
+///  .u-hide@md {}       - Hide the element from 'md' breakpoint.
+///  .u-hide@from-sm {}  - Hide the element from 'sm' breakpoint.
+///   and others...
+///
+@each $breakpoint-namespace, $breakpoint-query in $theme-breakpoints-queries {
+  @include av-mq($breakpoint-namespace) {
+    [class~='u-hide@#{$breakpoint-namespace}'] {
+      display: none !important;
+    }
+  }
+}
+
+// Hide only visually, but have it available for screen readers.
+.u-hide-visually {
+  position: absolute !important;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0 !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+// Allows an accessibly hidden element to be focusable via keyboard navigation.
+.u-hide-visually-focusable {
+  position: absolute !important;
+  word-wrap: normal !important;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0 !important;
+  width: 1px;
+  @include actus {
+    clip: auto;
+    width: auto;
+    height: auto;
+  }
+}
+
+// Always show an element.
+.u-shown {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/// @throw Dangerous for a11y - Use with care
+.u-focus-none {
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+// Control visibility without affecting flow.
+.u-visible {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.u-invisible {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}

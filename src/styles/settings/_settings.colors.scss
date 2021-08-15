@@ -1,34 +1,36 @@
 /* ==========================================================================
-   #COLOR CONFIG
+   ## BASE THEME COLOR SETTINGS
    ========================================================================== */
 
-/**
- *
- * This file sets up the theme palette/color variables. Bisacly
- * we take the custom properties defined in the "snippets/style-liquid-tags.liquid"
- * file and turn theme into SASS variables in order to get autocomplition and more
- * variables from the already difined css ones.
- *
- */
+/// @content This file sets up the theme color variables.
+/// Basically, take the custom properties defined in the "snippets/style-liquid-tags.liquid"
+/// file and turned them to SCSS $variables.
+///
+/// @throw
+///   Global variable name must always start with '$theme-' prefix/namespace.
+///
+/// @throw
+///   This file is mounted to the global settings liquid file
+///   in 'snippets/head-style-tags.liquid', any modification need
+///   to also be applied to the other file and vice versa.
 
-// Primary colors and accent color, These two variables can be changed in the theme
-// global settings editor.
+// All these colors can be changed in the theme customizer/editor,
+// they should never be hardcoded!
+/// @type String
+/// @access public
 
-$color-brand-primary: var(--color-brand-primary);
-$color-brand-secondary: var(--color-brand-secondary);
+// Global brand colors *********************
+$theme-color-primary: var(--theme-color-primary) !default;
+$theme-color-secondary: var(--theme-color-secondary) !default;
 
-// Text colors global settings.
+// Headings and body **************
+$theme-color-text-heading: var(--theme-color-text-heading) !default;
+$theme-color-text-body: var(--theme-color-text-body) !default;
 
-$color-text-heading: var(--color-text-heading);
-$color-text-body: var(--color-text-body);
-$color-text-links: var(--color-text-links);
+// Buttons ************************
+// Secondary button style can be added if needed.
+$theme-color-btn: var(--theme-color-btn) !default;
+$theme-color-btn-text: var(--theme-color-btn-text) !default;
 
-// Button and button text colors
-// Secondary button style should be added here if needed.
-
-$color-btn-primary: var(--color-btn-primary);
-$color-btn-primary-text: var(--color-btn-primary-text);
-
-// Global background color controled in the theme global settings.
-
-$color-page-background: var(--color-page-background);
+// Background ********************
+$theme-color-background: var(--theme-color-background) !default;

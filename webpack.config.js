@@ -22,10 +22,6 @@ module.exports = {
       path.join(scriptsDir, 'password.js'),
       path.join(stylesDir, 'layouts/_layouts.password.scss'),
     ],
-    giftcard: [
-      path.join(scriptsDir, 'giftcard.js'),
-      path.join(stylesDir, 'layouts/_layouts.giftcard.scss'),
-    ],
   },
   // Output
   output: {
