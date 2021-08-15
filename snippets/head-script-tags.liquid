@@ -19,8 +19,8 @@
       },
 
       fonts: {
-        heading: "{{- settings.theme_font_heading.family -}}",
-        body:    "{{- settings.theme_font_body.family -}}"
+        heading: "{{- settings.theme_font_heading.family | remove: '"' -}}",
+        body:    "{{- settings.theme_font_body.family | remove: '"' -}}"
       },
 
       breakpoints: {

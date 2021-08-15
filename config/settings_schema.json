@@ -2,10 +2,10 @@
   {
     "name": "theme_info",
     "theme_name": "Shopify Theme with OS 2",
-    "theme_version": "1.0.0",
+    "theme_version": "1.0.1",
     "theme_author": "Youness Id bakkasse",
-    "theme_documentation_url": "https:\/\/github.com\/younessidbakkasse\/shopify-webpack-with-os2-features",
-    "theme_support_url": "https:\/\/github.com\/younessidbakkasse\/shopify-webpack-with-os2-features\/issues"
+    "theme_documentation_url": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features",
+    "theme_support_url": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features/issues"
   },
   {
     "name": {
@@ -22,7 +22,7 @@
       },
       {
         "type": "color",
-        "id": "color_brand_primary",
+        "id": "theme_color_primary",
         "label": {
           "en": "Primary color",
           "fr": "Couleur primaire"
@@ -31,7 +31,7 @@
       },
       {
         "type": "color",
-        "id": "color_brand_secondary",
+        "id": "theme_color_secondary",
         "label": {
           "en": "Secondary color",
           "fr": "Couleur secondaire"
@@ -47,7 +47,7 @@
       },
       {
         "type": "color",
-        "id": "color_text_heading",
+        "id": "theme_color_text_heading",
         "label": {
           "en": "Heading",
           "fr": "En-têtes"
@@ -56,19 +56,10 @@
       },
       {
         "type": "color",
-        "id": "color_text_body",
+        "id": "theme_color_text_body",
         "label": {
           "en": "Body text",
           "fr": "Corps du texte"
-        },
-        "default": "#333333"
-      },
-      {
-        "type": "color",
-        "id": "color_text_links",
-        "label": {
-          "en": "Links",
-          "fr": "liens"
         },
         "default": "#333333"
       },
@@ -81,19 +72,19 @@
       },
       {
         "type": "color",
-        "id": "color_btn_primary",
+        "id": "theme_color_btn",
         "label": {
-          "en": "Primary button",
-          "fr": "Boutton primaire"
+          "en": "Button",
+          "fr": "Boutton"
         },
         "default": "#222222"
       },
       {
         "type": "color",
-        "id": "color_btn_primary_text",
+        "id": "theme_color_btn_text",
         "label": {
-          "en": "Primary button text",
-          "fr": "Texte du boutton primaire"
+          "en": "Button text",
+          "fr": "Texte du boutton"
         },
         "default": "#F6F6F6"
       },
@@ -106,7 +97,7 @@
       },
       {
         "type": "color",
-        "id": "color_page_background",
+        "id": "theme_color_background",
         "label": {
           "en": "Background",
           "fr": "Fond"
@@ -130,25 +121,12 @@
       },
       {
         "type": "font_picker",
-        "id": "font_heading",
+        "id": "theme_font_heading",
         "label": {
           "en": "Font family",
           "fr": "Famille de police"
         },
-        "default": "arapey_n4"
-      },
-      {
-        "type": "range",
-        "id": "font_heading_base_size",
-        "label": {
-          "en": "Heading font size",
-          "fr": "Taille de police des en-têtes"
-        },
-        "default": 26,
-        "min": 24,
-        "max": 28,
-        "step": 1,
-        "unit": "px"
+        "default": "helvetica_n4"
       },
       {
         "type": "header",
@@ -159,25 +137,12 @@
       },
       {
         "type": "font_picker",
-        "id": "font_body",
+        "id": "theme_font_body",
         "label": {
           "en": "Font family",
           "fr": "Famille de police"
         },
         "default": "avenir_next_n4"
-      },
-      {
-        "type": "range",
-        "id": "font_body_base_size",
-        "label": {
-          "en": "Body text font size",
-          "fr": "Taille de police des en-têtes"
-        },
-        "default": 14,
-        "min": 12,
-        "max": 16,
-        "step": 1,
-        "unit": "px"
       }
     ]
   },
@@ -196,7 +161,7 @@
         },
         "info": {
           "en": "Will be scaled down to 180x180px",
-          "fr": "L'image sera réduite à 180x180 px"
+          "fr": "Sera réduite à 180x180 px"
         }
       }
     ]

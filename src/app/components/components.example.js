@@ -7,8 +7,11 @@ class Example extends Core {
   }
 
   init() {
-    console.log(this.$(''))
+    this.$('title')[0].innerText =
+      'Thanks for chosing this setup for your Shopify Theme.'
   }
 }
 
-export default new Example()
+export default new Example({
+  name: 'example',
+})

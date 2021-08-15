@@ -11,7 +11,6 @@
   transition: none;
 
   &:focus-within {
-    position: relative;
     transform: translateY(0%);
   }
 }

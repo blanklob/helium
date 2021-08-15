@@ -1,0 +1,24 @@
+/* ==========================================================================
+   #SHOPIFY SECTION: INDEX
+   ========================================================================== */
+
+/// @todo - Add other sections scoped styles.
+.s-index {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .s-index__title {
+    font-family: $theme-font-heading-family;
+    font-style: $theme-font-heading-style;
+    @include font-size(45px);
+
+    // Responsive easy & effortless media query.
+    /// @see 'tools.slicer.scss' for docs.
+    ///
+    @include to(md) {
+      @include font-size(28px);
+    }
+  }
+}
