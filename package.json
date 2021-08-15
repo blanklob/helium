@@ -20,7 +20,7 @@
     "lint": "shopify theme check -a && eslint --cache --fix",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "log": "git log --graph --oneline --decorated"
+    "log": "git log --graph --oneline --decorate"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
