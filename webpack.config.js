@@ -1,4 +1,4 @@
-// General libs
+// General
 const path = require('path')
 
 // Webpack plugins
@@ -31,7 +31,7 @@ module.exports = {
   },
   // Plugins
   plugins: [
-    // #1: Extract CSS from JS to separate css file
+    // #1: Extract CSS to separate css file
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),

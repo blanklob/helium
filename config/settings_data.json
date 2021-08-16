@@ -1,39 +1,6 @@
 {
-  "current": {
-    "font_body": "helvetica_n3",
-    "sections": {
-      "announcement": {
-        "type": "announcement",
-        "settings": {
-          "message": "Modern workflow on Shopify with Online Store 2.0 features.",
-          "show": true,
-          "bg_color": "#111111",
-          "text_color": "#ffffff"
-        }
-      },
-      "header": {
-        "type": "header",
-        "settings": {
-          "logo": "shopify:\/\/shop_images\/logo.png",
-          "logo_width": 160,
-          "header_menu": "main-menu"
-        }
-      },
-      "footer": {
-        "type": "footer",
-        "settings": {
-          "logo": "shopify:\/\/shop_images\/logo.png",
-          "logo_width": 100,
-          "footer_menu": "footer"
-        }
-      }
-    },
-    "content_for_index": [
-
-    ]
-  },
+  "current": {},
   "presets": {
-    "Default": {
-    }
+    "Default": {}
   }
 }

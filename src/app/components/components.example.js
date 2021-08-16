@@ -7,8 +7,10 @@ class Example extends Core {
   }
 
   init() {
-    this.$('title')[0].innerText =
-      'Thanks for chosing this setup for your Shopify Theme.'
+    this.$('heading')[0].innerText =
+      'Thanks for choosing this setup for your Shopify Theme.'
+    this.$('subheading')[0].innerHTML =
+      'Modern development on Shopify using Webpack 5 fully supporting<br>Online Store 2.0 features and github integration.'
   }
 }
 

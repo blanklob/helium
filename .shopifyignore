@@ -9,6 +9,7 @@ Thumbs.db
 
 # Environment files #
 *.config.*.js
+*.config.js
 .eslint*.js
 /\.(sass|scss)$/
 src

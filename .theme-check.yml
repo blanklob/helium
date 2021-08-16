@@ -1,6 +1,6 @@
 root: .
 
-# Disable some checks
+# Disabling some checks
 RequiredDirectories:
   enabled: false
 

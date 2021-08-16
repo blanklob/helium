@@ -8,17 +8,27 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: $theme-font-heading-family;
+  font-style: $theme-font-heading-style;
 
-  .s-index__title {
-    font-family: $theme-font-heading-family;
-    font-style: $theme-font-heading-style;
-    @include font-size(45px);
+  .s-index__heading {
+    color: $theme-color-text-heading;
+    @include font-size(35px);
 
     // Responsive easy & effortless media query.
     /// @see 'tools.slicer.scss' for docs.
     ///
     @include to(md) {
       @include font-size(28px);
+    }
+  }
+
+  .s-index__subheading {
+    color: $theme-color-text-body;
+    @include font-size(24px);
+
+    @include to(md) {
+      @include font-size(18px);
     }
   }
 }

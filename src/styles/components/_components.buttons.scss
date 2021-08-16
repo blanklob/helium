@@ -5,9 +5,9 @@
 /// @content Component specific classes for buttons.
 /// This file contains suite of classes like.
 ///
-///   .u-btn {}           - base btn.
-///   .u-btn--primary {}  - primary btn.
-///   and add others if you want...
+///   .c-btn {}           - base btn.
+///   .c-btn--primary {}  - primary btn.
+///   ...add others if you want.
 ///
 
 // 1. Allow us to style box model properties.
@@ -23,8 +23,8 @@
   text-decoration: none; // [3]
   cursor: pointer; // [4]
   border: 0;
-  border-radius: 0;
-  padding: em($theme-spacing-md) em($theme-spacing-l);
+  border-radius: 9999px;
+  padding: em($theme-spacing-s) em($theme-spacing-l);
   font-family: $theme-font-heading-family;
   font-style: $theme-font-heading-style;
   font-weight: $theme-font-heading-weight;
@@ -37,7 +37,10 @@
     @include hocus {
       background-color: $theme-color-btn-text;
       color: $theme-color-btn;
-      outline: dotted 1px gray;
+    }
+
+    @include actus {
+      outline: dashed 1px $theme-color-btn;
     }
   }
 }

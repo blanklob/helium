@@ -52,7 +52,7 @@
           "en": "Heading",
           "fr": "En-têtes"
         },
-        "default": "#e5e5e5"
+        "default": "#222222"
       },
       {
         "type": "color",
@@ -61,7 +61,7 @@
           "en": "Body text",
           "fr": "Corps du texte"
         },
-        "default": "#333333"
+        "default": "#777777"
       },
       {
         "type": "header",
@@ -102,7 +102,7 @@
           "en": "Background",
           "fr": "Fond"
         },
-        "default": "#e2e2e2"
+        "default": "#f7f7f7"
       }
     ]
   },
