@@ -20,7 +20,7 @@ A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. 
 
 ### This workflow has loads of features based from hot reloading provided by the new shopify CLI Theme tools to linting assets and liquid files. This setup is totally flexible, you can easly extend it using the config files provided:
 
-- Wabpack 5
+- Webpack 5
 - Shopify-CLI
 - Shopify github Integration
 - ES2021 features compiled to legacy code using Babel
