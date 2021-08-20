@@ -77,13 +77,13 @@ You should get a version number like 2.0.1
 
 ## ⚡️Getting started
 
-To get started, install the templates either by cloning this repository or using the shopify cli init commande like so:
+To get started, install the templates either by cloning this repository or using the shopify cli init command like so:
 
 ```shell
 shopify theme init -u https://github.com/younessidbakkasse/shopify-webpack-with-os2-features
 ```
 
-This commande will prompt you to choose a Theme name then clones the template to your local machine.
+This command will prompt you to choose a Theme name then clones the template to your local machine.
 
 Then all you have to do is to install npm dependencies using the yarn command:
 
@@ -122,7 +122,7 @@ yarn build
 yarn lint
 ```
 
-- This commande packages your local theme files into a ZIP file that can be uploaded to Shopify.
+- This command packages your local theme files into a ZIP file that can be uploaded to Shopify.
 
 ```shell
 yarn zip
