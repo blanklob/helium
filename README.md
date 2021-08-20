@@ -8,17 +8,17 @@
 [Features](#features) |
 [Before you start](#before-you-start) |
 [Getting started](#getting-started) |
-[Commandes](#commandes) |
+[Commands](#commands) |
 [Contributing](#contributing) |
 [License](#license)
 
-This workflow was made as a follow up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features for more infomation check [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store).
+This workflow was made as a follow-up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features for more information check [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store).
 
 A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. It's Shopify's first source available theme with performance, flexibility, and built-in and acts as a reference for building Shopify themes.
 
 ## 🔥 Features
 
-### This workflow has loads of features based from hot reloading provided by the new shopify CLI Theme tools to linting assets and liquid files. This setup is totally flexible, you can easly extend it using the config files provided:
+### This workflow has loads of features based from hot reloading provided by the new shopify CLI Theme tools to linting assets and liquid files. This setup is totally flexible, you can easily extend it using the config files provided:
 
 - Webpack 5
 - Shopify-CLI
@@ -27,9 +27,9 @@ A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. 
 - Shopify lighthouse CI Github actions
 - Shopify Online Store 2 (Sections everywhere and JSON templates)
 - Shopify Linting (Theme Inspector) 
-- ESlint/Prettier (Linting and formating static assets )
+- ESlint/Prettier (Linting and formatting static assets)
 - Precommit linting with Husky (Run linters against staged git files (.liquid, .js) and don't let 💩 slip into your Shopify Theme in the online store channel)
-- SCSS/Postcss (Autoprefixer and all postcss plugins)
+- SCSS/PostCSS (Autoprefixer and all PostCSS plugins)
 - Hot Module Reloading for rapid development
 - Editorconfig file (for better collaborations)
 - Extensible, scalable, Sass-based, OOCSS and BEM architecture for large and long-lasting UI projects
@@ -44,7 +44,7 @@ A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. 
 - Populate test data for your theme, including products, customers, and draft orders
 - and more !
 
-#### To install it on macOs use either [RubyGems.org](https://rubygems.org/) or [Homebrew](https://brew.sh/).
+#### To install it on macOS use either [RubyGems.org](https://rubygems.org/) or [Homebrew](https://brew.sh/).
 
 #### **RubyGems.org**
 
@@ -77,13 +77,13 @@ You should get a version number like 2.0.1
 
 ## ⚡️Getting started
 
-To get started, install the templates either by cloning this repository or using the shopify cli init commande like so:
+To get started, install the templates either by cloning this repository or using the shopify cli init command like so:
 
 ```shell
 shopify theme init -u https://github.com/younessidbakkasse/shopify-webpack-with-os2-features
 ```
 
-This commande will prompt you to choose a Theme name then clones the template to your local machine.
+This command will prompt you to choose a Theme name then clones the template to your local machine.
 
 Then all you have to do is to install npm dependencies using the yarn command:
 
@@ -97,7 +97,7 @@ After that, run the development server using the command below:
 yarn start
 ```
 
-## ✅Commandes
+## ✅Commands
 - To run the shopify development server, same as `shopify theme serve`
 
 ```shell
@@ -110,7 +110,7 @@ yarn start
 yarn watch
 ```
 
-- To build static files for production (minification, ..) run the command below.
+- To build static files for production (minification, ...) run the command below.
 
 ```shell
 yarn build
@@ -122,13 +122,13 @@ yarn build
 yarn lint
 ```
 
-- This commande packages your local theme files into a ZIP file that can be uploaded to Shopify.
+- This command packages your local theme files into a ZIP file that can be uploaded to Shopify.
 
 ```shell
 yarn zip
 ```
 
-- Run prettier formating on static .scss and .js files.
+- Run prettier formatting on static .scss and .js files.
 
 ```shell
 yarn format
