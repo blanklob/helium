@@ -134,6 +134,12 @@ yarn zip
 yarn format
 ```
 
+- Saves all the settings that you've made in the Shopify cutomizer editor, so next time you restart the server you will continue where you left.
+
+```shell
+yarn save
+```
+
 
 ## 🙌Contributing
 

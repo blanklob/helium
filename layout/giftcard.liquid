@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta name="format-detection" content="telephone=no">
 
-    {%- if settings.primary_color -%}
-    <meta name="theme-color" content="{{- settings.primary_color -}}">
-    <meta name="msapplication-TileColor" content="{{- settings.primary_color -}}">
-    {%- endif -%}
-
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
 
@@ -21,20 +16,13 @@
       <link rel="canonical" href="{{ canonical_url }}">
     {%- endif -%}
 
-    {%- if settings.favicon != blank -%}
-      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '16x16' }}" sizes="16x16">
-      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" sizes="32x32">
-      <link rel="apple-touch-icon" href="{{ settings.favicon | img_url: '180x180' }}" sizes="180x180">
-    {%- endif -%}
-
-
     {%- liquid
-      render 'head-script-tags'
-      render 'head-style-tags'
-      render 'head-social-tags'
+      render 'head.metas'
+      render 'head.settings'
+      render 'head.vendors'
     -%}
 
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'giftcard.css' | asset_url | stylesheet_tag }}
     {% comment %} TODO: ADD JAVASCRIPT ASSET {% endcomment %}
 
     <!-- Header hook for plugins -->
@@ -42,7 +30,7 @@
   </head>
   <body>
     {% comment %} Accessibilty snippet {% endcomment %}
-    {%- render 'a11y-skip-to-content' -%}
+    {%- render 'components.a11y' -%}
 
     <main id="MainContent" role="main" class="o-giftcard u-focus-none" tabindex="-1">
       {{ content_for_layout }}

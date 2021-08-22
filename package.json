@@ -1,6 +1,6 @@
 {
   "name": "shopify-webpack-with-os2-features",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "theme.js",
   "repository": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features.git",
   "author": "Youness Id bakkasse <std.youness@gmail.com>",
@@ -9,8 +9,7 @@
     "assets"
   ],
   "browserslist": [
-    "> 0.25%",
-    "not dead"
+    "defaults"
   ],
   "scripts": {
     "serve": "shopify theme serve",
@@ -20,6 +19,7 @@
     "lint": "shopify theme check -a && eslint --cache --fix",
     "format": "prettier --write .",
     "prepare": "husky install",
+    "save": "shopify theme pull -n",
     "log": "git log --graph --oneline --decorate"
   },
   "devDependencies": {

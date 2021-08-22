@@ -19,12 +19,13 @@
 /// @content Reponsive hiding utility classes.
 /// The loop below will generate classes like:
 ///
-///  .u-hide@md {}       - Hide the element from 'md' breakpoint.
+///  .u-hide@to-l {}     - Hide the element from 'md' breakpoint.
 ///  .u-hide@from-sm {}  - Hide the element from 'sm' breakpoint.
 ///   and others...
 ///
+
 @each $breakpoint-namespace, $breakpoint-query in $theme-breakpoints-queries {
-  @include av-mq($breakpoint-namespace) {
+  @include mq($breakpoint-namespace) {
     [class~='u-hide@#{$breakpoint-namespace}'] {
       display: none !important;
     }
@@ -63,7 +64,8 @@
 }
 
 // Always show an element.
-.u-shown {
+.u-shown,
+.u-hide-none {
   display: block !important;
   visibility: visible !important;
 }

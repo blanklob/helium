@@ -17,13 +17,14 @@
 ///
 /// Add as you wish.
 $theme-breakpoints: (
+  // Dont remove base!
   'base': 0px,
   'xs': 320px,
   's': 500px,
   'md': 800px,
   'l': 1025px,
   'xl': 1200px,
-  'xxl': 1440px,
+  'xxl': 1440px
 ) !default;
 
 /// @type Map
@@ -62,10 +63,11 @@ $theme-breakpoints-keys: map.keys($theme-breakpoints);
       'screen and (min-width: #{$breakpoint})'
     );
   } @else {
+    /// @todo
     $theme-breakpoints-queries: map.set(
       $theme-breakpoints-queries,
       $alias,
-      'screen and (min-width: #{$breakpoint}) and (max-width: #{$breakpoint - 1})'
+      'screen and (min-width: #{$breakpoint}) and (max-width: #{map.get($theme-breakpoints, list.nth($theme-breakpoints-keys, $alias-order + 1)) - 1})'
     );
     $theme-breakpoints-queries: map.set(
       $theme-breakpoints-queries,
@@ -75,7 +77,7 @@ $theme-breakpoints-keys: map.keys($theme-breakpoints);
     $theme-breakpoints-queries: map.set(
       $theme-breakpoints-queries,
       'to-#{$alias}',
-      'screen and (max-width: #{$breakpoint - 1})'
+      'screen and (max-width: #{map.get($theme-breakpoints, list.nth($theme-breakpoints-keys, $alias-order + 1)) - 1})'
     );
   }
 }

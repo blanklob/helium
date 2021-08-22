@@ -1,0 +1,15 @@
+/* ==========================================================================
+   ## COMPONENTS: ICONS
+   ========================================================================== */
+
+/// @content Component specific classes for icons only.
+/// This file contains suite of classes like.
+///
+///   .c-icon {}                - Base icon.
+///   .c-icon--placeholder {}   - Placeholder icon.
+
+.c-icon {
+  &--placeholder {
+    border: 1px solid gray;
+  }
+}

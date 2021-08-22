@@ -152,3 +152,51 @@
     max-width: $width; // [1]
   }
 }
+
+/// @content A generator that makes working with media queries effortless and fun.
+///
+///
+/// @param {String} $alias
+///   The alias for the breakpoint example: xs, s, from-md...
+///
+/// @example scss - basic usage
+///   .foo {
+///     @include mq('from-xs') {
+///        color: black;
+///     }
+///   }
+///
+/// @type Mixin
+/// @access public
+///
+@mixin mq($alias) {
+  // Search breakpoint map for alias
+  $query: map-get($theme-breakpoints-queries, $alias);
+  // If alias exists, print out media query
+  @if $query {
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error "No breakpoint found for #{$alias}";
+  }
+}
+
+/// @content A mixin that makes elements fluid in there containers.
+///
+///
+/// @param none
+///
+/// @example scss - basic usage
+///   .foo {
+///     @include fluid;
+///   }
+///
+/// @type Mixin
+/// @access public
+///
+@mixin fluid() {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}

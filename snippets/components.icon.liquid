@@ -1,10 +1,15 @@
 {% comment %}
     Renders a specific icon for a given name.
+
     Accepts:
     - icon: {string} Icon name (required)
     - icon_size: {integer} Icon size (required)
+
     Usage:
-    {%- render 'tools-icons' icon: 'arrow', icon_size: 40 -%}
+    {%- render 'components.icon'
+      icon: 'arrow',
+      icon_size: 40
+    -%}
 {% endcomment %}
 
 {%- capture icon_class -%}c-icon c-icon--{{ icon }}{%- endcapture -%}

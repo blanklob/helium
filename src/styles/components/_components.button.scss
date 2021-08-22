@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ## COMPONENTS: BUTTONS
+   ## COMPONENTS: BUTTON
    ========================================================================== */
 
 /// @content Component specific classes for buttons.
@@ -43,13 +43,19 @@
       outline: dashed 1px $theme-color-btn;
     }
   }
-}
 
-// Remove button agent styles
-.c-btn-none {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
+  // Remove button agent styles
+  &--none {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background: transparent;
+    margin: 0;
+    border: 0;
+    padding: 0;
+
+    @include actus {
+      outline: dashed 1px $theme-color-btn;
+    }
+  }
 }

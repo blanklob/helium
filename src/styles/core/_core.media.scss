@@ -18,5 +18,5 @@ img {
 // let’s not make the image fluid.
 img[width],
 img[height] {
-  max-width: fit-content;
+  max-width: auto;
 }

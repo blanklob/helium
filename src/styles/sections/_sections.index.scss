@@ -16,9 +16,9 @@
     @include font-size(35px);
 
     // Responsive easy & effortless media query.
-    /// @see 'tools.slicer.scss' for docs.
+    /// @see 'tools.mixins.scss' for more info.
     ///
-    @include to(md) {
+    @include mq('to-md') {
       @include font-size(28px);
     }
   }
@@ -27,7 +27,7 @@
     color: $theme-color-text-body;
     @include font-size(24px);
 
-    @include to(md) {
+    @include mq('to-md') {
       @include font-size(18px);
     }
   }

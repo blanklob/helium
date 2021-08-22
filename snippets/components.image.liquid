@@ -1,0 +1,44 @@
+{% comment %}
+    Renders a responsive image tag.
+
+    Accepts:
+    - image: {object} (required)
+    - image_width:  {number} (optional)
+    - image_type:  {string} (optional)
+
+    Usage:
+    {%- render 'components.image'
+      image: image,
+      image_width: 300
+    -%}
+{% endcomment %}
+
+{%- capture image_class -%}c-img c-img--{{ image_type | default: 'default' }}{%- endcapture -%}
+{%- liquid
+  assign image_final_width = ''
+  assign image_final_height = ''
+
+  if image_width
+    assign image_ratio = image.width | times: 1.0 | divided_by: image.height
+    assign image_final_width = image_width
+    assign image_final_height = image_width | divided_by: image_ratio | round
+  else
+    assign image_final_width = image.width
+    assign image_final_height = image.height
+  endif
+-%}
+
+
+<img srcset="{%- if image.width >= 165 -%}{{ image | img_url: '165x' }} 165w,{%- endif -%}
+  {%- if image.width >= 360 -%}{{ image | img_url: '360x' }} 360w,{%- endif -%}
+  {%- if image.width >= 533 -%}{{ image | img_url: '533x' }} 533w,{%- endif -%}
+  {%- if image.width >= 720 -%}{{ image | img_url: '720x' }} 720w,{%- endif -%}
+  {%- if image.width >= 940 -%}{{ image | img_url: '940x' }} 940w,{%- endif -%}
+  {%- if image.width >= 1066 -%}{{ image | img_url: '1066x' }} 1066w{%- endif -%}"
+  src="{{ image | img_url: '533x' }}"
+  class="{{ image_class }}"
+  alt="{{ image.alt | default: 'An image' | escape }}"
+  loading="lazy"
+  width="{{ image_final_width }}"
+  height="{{ image_final_height }}"
+>

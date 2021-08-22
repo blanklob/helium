@@ -146,19 +146,6 @@ $av-enable-grid-rev: true !default;
   }
 }
 
-@mixin av-mq($alias) {
-  // Search breakpoint map for alias
-  $query: map-get($av-breakpoints, $alias);
-  // If alias exists, print out media query
-  @if $query {
-    @media #{$query} {
-      @content;
-    }
-  } @else {
-    @error "No breakpoint found for #{$alias}";
-  }
-}
-
 /**
   * GRID LAYOUT
   */
@@ -179,7 +166,6 @@ $av-enable-grid-rev: true !default;
   padding-left: $av-gutter;
   margin: 0;
   vertical-align: top;
-  font-size: 1rem;
 }
 
 @if $av-enable-grid-center {

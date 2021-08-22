@@ -1,9 +1,9 @@
 {% comment %}
-  Passes settings to CSS custom properties and
-  renders font-face for shopify typography.
+  Passes global shopify settings to CSS custom properties and
+  Theme global object. Use good old ES5 in this file!
 
   Usage:
-  {%- render 'head-style-tags' -%}
+  {%- render 'head.settings' -%}
 
   Warning:
     This file is mounted to the global settings files in
@@ -11,9 +11,8 @@
     to also be applied to the other file and vice versa.
 {% endcomment %}
 
-
-{%- style -%}
-
+{% comment %} Style/Liquid Settings {% endcomment %}
+<style>
   :root {
     {% comment %} Theme colors declaration {% endcomment %}
     --theme-color-primary:      {{ settings.theme_color_primary }};
@@ -24,31 +23,79 @@
     --theme-color-btn-text:     {{ settings.theme_color_btn_text }};
     --theme-color-background:   {{ settings.theme_color_background }};
 
-    {%- assign theme_font_heading = settings.theme_font_heading -%}
-    {%- assign theme_font_body    = settings.theme_font_body -%}
 
     {% comment %} Heading font declaration {% endcomment %}
+    {%- assign theme_font_heading = settings.theme_font_heading -%}
+
     --theme-font-heading-family:      {{ theme_font_heading.family }}, {{ theme_font_heading.fallback_families }};
     --theme-font-heading-style:       {{ theme_font_heading.style }};
     --theme-font-heading-base-weight: {{ theme_font_heading.weight }};
 
     {% comment %} Body font declaration {% endcomment %}
+    {%- assign theme_font_body    = settings.theme_font_body -%}
+
     --theme-font-body-family:      {{ theme_font_body.family }}, {{ theme_font_body.fallback_families }};
     --theme-font-body-style:       {{ theme_font_body.style }};
     --theme-font-body-base-weight: {{ theme_font_body.weight }};
   }
 
-  {% comment %} Heading font call {% endcomment %}
+  {% comment %} Heading font face {% endcomment %}
   {{- theme_font_heading | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
   {{- theme_font_heading | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
   {{- theme_font_heading | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}
   {{- theme_font_heading | font_modify: 'weight', '800' | font_face: font_display: 'swap' -}}
 
-  {% comment %} Body font call {% endcomment %}
+  {% comment %} Body font face {% endcomment %}
   {{- theme_font_body | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
   {{- theme_font_body | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
   {{- theme_font_body | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}
   {{- theme_font_body | font_modify: 'weight', '800' | font_face: font_display: 'swap' -}}
+</style>
 
-  {%- endstyle -%}
 
+{% comment %} JavaScript/Liquid Settings {% endcomment %}
+<script>
+  var Theme = {
+      colors: {
+        primary:     "{{- settings.theme_color_primary -}}",
+        secondary:   "{{- settings.theme_color_secondary -}}",
+        textHeading: "{{- settings.theme_color_text_heading -}}",
+        textBody:    "{{- settings.theme_color_text_body -}}",
+        btn:         "{{- settings.theme_color_btn -}}",
+        btnText:     "{{- settings.theme_color_btn_text -}}",
+        background:  "{{- settings.theme_color_background -}}",
+      },
+
+      fonts: {
+        heading: "{{- settings.theme_font_heading.family | remove: '"' -}}",
+        body:    "{{- settings.theme_font_body.family | remove: '"' -}}"
+      },
+
+      breakpoints: {
+        base: 0,
+        xs:   320,
+        s:    500,
+        md:   800,
+        l:    1025,
+        xl:   1200,
+        xxl:  1440
+      },
+
+      strings: {
+        addedCart: "{{- 'general.cart.item_added' | t -}}",
+        search:    "{{- 'general.search.search' | t -}}",
+      },
+
+      routes: {
+        root:        "{{- routes.root_url -}}",
+        account:     "{{- routes.account_url -}}",
+        search:      "{{- routes.search_url -}}",
+        cart:        "{{- routes.cart_url -}}",
+        addCartItem: "{{- routes.cart_add_url -}}",
+        changeCart:  "{{- routes.cart_change_url -}}",
+        clearCart:   "{{- routes.cart_clear_url -}}",
+        updateCart:  "{{- routes.cart_update_url -}}",
+      }
+  };
+  document.documentElement.className = document.documentElement.className.replace('--is-loading', '--is-loaded');
+</script>

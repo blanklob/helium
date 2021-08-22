@@ -20,5 +20,4 @@
 // Uncomment and add to this section as necessary.
 import example from 'App/components/components.example'
 
-console.clear()
 console.log('Hello world. (from theme layout)')

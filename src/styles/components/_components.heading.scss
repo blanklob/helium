@@ -1,0 +1,50 @@
+/* ==========================================================================
+   ## COMPONENTS: HEADINGS & PARAGRAPHS
+   ========================================================================== */
+
+/// @content Component specific classes for headings.
+/// This file contains suite of classes like.
+///
+///   .c-header {}             - Base heading font.
+///   .c-header--h1 {}         - H1 size heading.
+///   .c-paragraph--p1 {}      - Small paragraph font.
+///   ...add others if you want.
+///
+
+.c-header {
+  font-family: $theme-font-heading-family;
+  font-style: $theme-font-heading-style;
+  color: $theme-color-text-heading;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+
+  &,
+  &.c-header--h1 {
+    // Font size: tools.mixins.scss
+    @include font-size(51px, 58px);
+    @include mq('to-xs') {
+      @include font-size(40px, 44px);
+    }
+  }
+
+  &.c-header--h2 {
+    @include font-size(38px, 46px);
+    @include mq('to-xs') {
+      @include font-size(30px, 39px);
+    }
+  }
+}
+
+.c-paragraph {
+  font-family: $theme-font-body-family;
+  font-style: $theme-font-body-style;
+  color: $theme-color-text-body;
+  font-weight: normal;
+  text-decoration: none;
+
+  &,
+  &.c-paragraph--p1 {
+    @include font-size(15px, 27px);
+  }
+}
