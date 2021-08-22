@@ -1,12 +1,9 @@
-import Core from './components.core'
-
-class Example extends Core {
-  constructor(m) {
-    super(m)
-    this.init()
+class Example extends HTMLElement {
+  constructor() {
+    super()
   }
 
-  init() {
+  connectedCallback() {
     // doT is imported in the 'head.vendors.liquid'
     const temp = doT.template(`
       <h2 class="s-index__heading u-mb-s">{{=it.heading}}</h2>
@@ -16,13 +13,11 @@ class Example extends Core {
         target="_blank"> Check Github Repo
       </a>`)
 
-    this.$('root')[0].innerHTML = temp({
+    this.innerHTML = temp({
       heading: THEME.sections.index.heading,
       subheading: THEME.sections.index.subheading,
     })
   }
 }
 
-export default new Example({
-  name: 'example',
-})
+customElements.define('c-example', Example)
