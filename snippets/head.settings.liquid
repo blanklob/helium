@@ -55,7 +55,7 @@
 
 {% comment %} JavaScript/Liquid Settings {% endcomment %}
 <script>
-  var Theme = {
+  var THEME = {
       colors: {
         primary:     "{{- settings.theme_color_primary -}}",
         secondary:   "{{- settings.theme_color_secondary -}}",
@@ -95,7 +95,8 @@
         changeCart:  "{{- routes.cart_change_url -}}",
         clearCart:   "{{- routes.cart_clear_url -}}",
         updateCart:  "{{- routes.cart_update_url -}}",
-      }
+      },
+      sections: {}
   };
   document.documentElement.className = document.documentElement.className.replace('--is-loading', '--is-loaded');
 </script>

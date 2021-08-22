@@ -33,6 +33,7 @@ A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. 
 - Hot Module Reloading for rapid development
 - Editorconfig file (for better collaborations)
 - Extensible, scalable, Sass-based, OOCSS and BEM architecture for large and long-lasting UI projects
+- doTjs The fastest + concise javascript template engine for browsers.
 
 ## ‼️Before you start
 

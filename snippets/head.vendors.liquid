@@ -10,8 +10,8 @@
   {%- render 'head.vendors' -%}
 
   Content:
-    Vanilla-lazyload:
-    - description: lightweight, flexible lazyloading script
+    doTjs:
+    - description: Template engine for the browser.
     - docs: <https://www.andreaverlicchi.eu/vanilla-lazyload/>
 
 {% endcomment %}
@@ -19,7 +19,8 @@
 <!-- Start vendor third party libaries -->
 {% comment %} <script src="{{- 'vendors.js' | asset_url -}}" type="text/javascript" defer></script> {% endcomment %}
 
-{% comment %} Vanilla-lazyload is a lightweight, flexible script that defers the loading of content {% endcomment %}
-{% comment %} <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js" async></script> {% endcomment %}
+{% comment %} doTjs is a lightweight, fastest javascript template engine browsers.{% endcomment %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dot/1.1.3/doT.min.js" async></script>
+
 <!-- End vendor third party libaries -->
 
