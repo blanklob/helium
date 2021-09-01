@@ -102,7 +102,7 @@ yarn start
 - To run the shopify development server, same as `shopify theme serve`
 
 ```shell
-yarn start
+yarn serve
 ```
 
 - To watch over static file changes, this will run webpack bundling for the development configuration.
