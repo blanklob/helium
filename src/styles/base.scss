@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ## LAYOUT: THEME (OUTPUT FILE)
+   ## BASE (COMMON FILE)
    ========================================================================== */
 
 /// @author Youness Id bakkasse <https://github.com/younessidbakkasse>
@@ -11,21 +11,10 @@
 ///   Instead, use imports to add extensions or snippets you made along the project.
 ///
 ///
-/// @content Production build weights only ~23kb (~7kb gzipped)
-///
-/// - SETTINGS
-/// Base.................Theme-wide global variables and settings.
-/// Breakpoints..........Theme responsive breakpoints declaration.
-/// Colors...............Theme color variables and settings.
-/// Fonts................Theme font/typo variables and settings.
-///
+/// @content Production build weights only ~14kb (~5kb gzipped)
 ///
 /// - TOOLS
-/// Functions............Some useful functions.
-/// Validators...........Some other useful functions.
-/// Mixins...............Some useful mixins.
-/// Vendors..............Some required vendors.
-///
+/// Tools................Sharable settings and tools between section files and this file.
 ///
 /// - CORE
 /// Normalize............A level playing field using @necolas’s Normalize.
@@ -36,7 +25,7 @@
 ///
 ///
 /// - SECTIONS
-/// Password.............Scoped shopify section styles.
+/// Header...............Scoped shopify section styles.
 ///
 ///
 /// - COMPONENTS
@@ -60,16 +49,7 @@
 ////
 
 // SETTINGS
-@import 'Styles/settings/settings.base';
-@import 'Styles/settings/settings.breakpoints';
-@import 'Styles/settings/settings.colors';
-@import 'Styles/settings/settings.fonts';
-
-// TOOLS
-@import 'Styles/tools/tools.functions';
-@import 'Styles/tools/tools.validators';
-@import 'Styles/tools/tools.mixins';
-@import 'Styles/tools/tools.vendors';
+@import 'Styles/tools';
 
 // CORE
 @import 'Styles/core/core.normalize';
@@ -79,8 +59,8 @@
 @import 'Styles/core/core.elements';
 
 // SECTIONS
-// Uncomment and add to this section as necessary.
-// @import 'Styles/sections/sections.password';
+// Uncomment and add header or footer sections.
+// @import 'Styles/sections/sections.header';
 
 // COMPONENTS
 // Build and include your project’s UI components here.

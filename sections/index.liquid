@@ -1,18 +1,18 @@
+{{ 'section-index.css' | asset_url | stylesheet_tag }}
+
 <div class="s-index" data-section-id="{{- section.id -}}">
-  <div class="o-container o-container--s u-align-center" data-component-example>
+  <div class="o-container --s u-align-center" data-component-example>
     <div class="s-index__logo u-mb-md">{%- render 'components.icon' icon: 'shopify', icon_size: 120 -%}</div>
-    {% comment %} Content injected by JS {% endcomment %}
-    <c-example class="s-index__wrapper" data-component-example="root"></c-example>
+    <div class="s-index__wrapper">
+      <h2 class="s-index__heading u-mb-md">{{ section.settings.heading }}</h2>
+      <p class="s-index__subheading u-mb-l">{{ section.settings.subheading }}</p>
+      <a class="s-index__link c-btn --primary"
+        href="https://github.com/younessidbakkasse/shopify-webpack-with-os2-features"
+        target="_blank">{{ section.settings.link_label }}</a>
+    </div>
   </div>
 </div>
 
-
-<script type="text/javascript">
-THEME.sections.index = {
-  heading: "{{- section.settings.heading -}}",
-  subheading: "{{- section.settings.subheading -}}"
-}
-</script>
 
 
 {% schema %}
@@ -24,13 +24,19 @@ THEME.sections.index = {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Modern development on Shopify using Webpack 5 fully supporting<br>Online Store 2.0 features and github integration."
+      "default": "Modern development on Shopify using Webpack 5 fully supporting Online Store 2.0 features and github integration."
     },
     {
       "type": "textarea",
       "id": "subheading",
       "label": "Subeading",
       "default": "Thanks for choosing this setup for your Shopify Theme."
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "Check Github"
     }
   ]
 }

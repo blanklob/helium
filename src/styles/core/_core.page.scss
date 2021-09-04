@@ -21,6 +21,10 @@ html {
   background-color: $theme-color-background;
 }
 
+.--loading:not(html) {
+  display: none !important;
+}
+
 // More sensible box-sizing
 *,
 *::before,

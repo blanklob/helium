@@ -63,12 +63,6 @@ $theme-breakpoints-keys: map.keys($theme-breakpoints);
       'screen and (min-width: #{$breakpoint})'
     );
   } @else {
-    /// @todo
-    $theme-breakpoints-queries: map.set(
-      $theme-breakpoints-queries,
-      $alias,
-      'screen and (min-width: #{$breakpoint}) and (max-width: #{map.get($theme-breakpoints, list.nth($theme-breakpoints-keys, $alias-order + 1)) - 1})'
-    );
     $theme-breakpoints-queries: map.set(
       $theme-breakpoints-queries,
       'from-#{$alias}',

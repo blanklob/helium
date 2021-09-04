@@ -13,10 +13,3 @@ img {
   font-style: italic; // [2]
   vertical-align: middle; // [3]
 }
-
-// If a `width` and/or `height` attribute has been explicitly defined,
-// let’s not make the image fluid.
-img[width],
-img[height] {
-  max-width: auto;
-}

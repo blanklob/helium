@@ -1,10 +1,18 @@
 {
   "name": "shopify-webpack-with-os2-features",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "theme.js",
+  "description": "Modern development on Shopify using Webpack 5 fully supporting the new Shopify Theme CLI and Online Store 2.0 features.",
   "repository": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features.git",
   "author": "Youness Id bakkasse <std.youness@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "boilerplate",
+    "webpack",
+    "typescript",
+    "shopify",
+    "sass"
+  ],
   "prettierIgnore": [
     "assets"
   ],
@@ -12,25 +20,19 @@
     "defaults"
   ],
   "scripts": {
-    "serve": "shopify theme serve",
+    "start": "shopify theme serve",
     "build": "webpack --config webpack.config.prod.js",
     "watch": "webpack watch --config webpack.config.dev.js",
     "zip": "shopify theme package .",
-    "lint": "shopify theme check -a && eslint --cache --fix",
+    "lint": "shopify theme check -a && lit-analyzer",
     "format": "prettier --write .",
-    "prepare": "husky install",
-    "save": "shopify theme pull -n",
-    "log": "git log --graph --oneline --decorate"
+    "pull": "shopify theme pull -n",
+    "push": "shopify theme push",
+    "stats": "webpack --profile --json > stats.json"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.7",
-    "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
-    "eslint": "^7.29.0",
-    "eslint-config-prettier": "^8.3.0",
-    "husky": "^7.0.0",
-    "lint-staged": ">=10",
+    "media-query-plugin": "^1.5.0",
     "mini-css-extract-plugin": "^1.6.2",
     "postcss": "^8.3.5",
     "postcss-loader": "^6.1.0",
@@ -38,14 +40,13 @@
     "prettier": "^2.3.2",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
+    "ts-lit-plugin": "^1.2.1",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.2",
     "webpack": "^5.41.1",
     "webpack-cli": "^4.7.2",
-    "webpack-merge": "^5.8.0"
-  },
-  "lint-staged": {
-    "*.{js}": "eslint --cache --fix",
-    "*.{js,scss,json}": "prettier --write",
-    "*.liquid": "shopify theme check"
+    "webpack-merge": "^5.8.0",
+    "webpack-remove-empty-scripts": "^0.7.1"
   },
   "dependencies": {}
 }

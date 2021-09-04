@@ -3,25 +3,37 @@ const path = require('path')
 
 // Webpack plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts')
+const MediaQueryPlugin = require('media-query-plugin')
 
 // Directories
 const srcDir = path.join(__dirname, 'src')
 const stylesDir = path.join(srcDir, 'styles')
 const scriptsDir = path.join(srcDir, 'app')
 const nodeDir = path.join(__dirname, 'node_modules')
+const entries = new Object()
+
+// Add sections ass you wish (must be the same name as file)
+const sections = [
+  'index',
+]
+
+// Creating entries
+sections.map(sectionName => {
+  let sectionPath = path.join(stylesDir, `sections/_sections.${sectionName}.scss`)
+  let entryName = `section-${sectionName}`
+  entries[entryName] = sectionPath
+})
 
 // Common configuration
 module.exports = {
   // Entry
   entry: {
-    theme: [
-      path.join(scriptsDir, 'layouts/layouts.theme.js'),
-      path.join(stylesDir, 'layouts/_layouts.theme.scss'),
+    base: [
+      path.join(scriptsDir, 'base.ts'),
+      path.join(stylesDir, 'base.scss')
     ],
-    password: [
-      path.join(scriptsDir, 'layouts/layouts.password.js'),
-      path.join(stylesDir, 'layouts/_layouts.password.scss'),
-    ],
+    ...entries
   },
   // Output
   output: {
@@ -31,24 +43,33 @@ module.exports = {
   },
   // Plugins
   plugins: [
-    // #1: Extract CSS to separate css file
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
+    // #1: Remove empty JS files
+    new RemoveEmptyScriptsPlugin(),
+    // #2: Extract CSS to separate css file
+    new MiniCssExtractPlugin({filename: '[name].css'}),
+    // #3: Split CSS using media queries
+    new MediaQueryPlugin({
+      include: ['base'],
+      queries: {
+        'screen and (min-width: 1440px)': 'desktop',
+        'screen and (min-width: 1200px)': 'desktop',
+        'screen and (min-width: 1025px)': 'desktop',
+        'screen and (min-width: 800px)': 'desktop',
+
+        'screen and (max-width: 799px)': 'mobile',
+        'screen and (max-width: 499px)': 'mobile',
+        'screen and (max-width: 319px)': 'mobile',
+      }
+  })
   ],
   // Webpack Loaders
   module: {
     rules: [
       // #1: Bundling JavaScript
       {
-        test: /\.m?js$/,
+        test: /\.ts?$/,
+        use: 'ts-loader',
         exclude: nodeDir,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
       },
       // #2: Bundling SCSS
       {
@@ -58,6 +79,7 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           // Translates CSS into CommonJS
           'css-loader',
+          MediaQueryPlugin.loader,
           // Postcss
           'postcss-loader',
           // Compiles Sass to CSS
@@ -70,6 +92,7 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: 'all',
+      minSize: 30000,
       name: 'vendors',
     },
   },
@@ -79,5 +102,6 @@ module.exports = {
       Styles: stylesDir,
       NodeModules: nodeDir,
     },
+    extensions: ['.ts', '.js']
   },
 }

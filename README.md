@@ -14,7 +14,7 @@
 
 This workflow was made as a follow-up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features for more information check [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store).
 
-A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. It's Shopify's first source available theme with performance, flexibility, and built-in and acts as a reference for building Shopify themes.
+A Webpack, HTML-first, Typescript-only-as-needed approach to theme development. It's Shopify's first open source boilerplate available after 2.0 update with performance, flexibility, and built-in and acts as a reference for building Shopify themes.
 
 ## 🔥 Features
 
@@ -23,17 +23,17 @@ A Webpack, HTML-first, JavaScript-only-as-needed approach to theme development. 
 - Webpack 5
 - Shopify-CLI
 - Shopify github Integration
-- ES2021 features compiled to legacy code using Babel
+- Typescript features compiled to legacy code using TSCompiler.
 - Shopify lighthouse CI Github actions
 - Shopify Online Store 2 (Sections everywhere and JSON templates)
-- Shopify Linting (Theme Inspector) 
-- ESlint/Prettier (Linting and formatting static assets)
-- Precommit linting with Husky (Run linters against staged git files (.liquid, .js) and don't let 💩 slip into your Shopify Theme in the online store channel)
+- Shopify Linting (Theme Inspector)
+- Prettier (Formatting static assets) and Editorconfig file (for better collaborations)
 - SCSS/PostCSS (Autoprefixer and all PostCSS plugins)
-- Hot Module Reloading for rapid development
-- Editorconfig file (for better collaborations)
-- Extensible, scalable, Sass-based, OOCSS and BEM architecture for large and long-lasting UI projects
-- doTjs The fastest + concise javascript template engine for browsers.
+- Hot Module Reloading on sass/typescript file changes for rapid development
+- Extensible, scalable, Sass-based, OOCSS and BEM architecture for large and long-lasting UI projects.
+- Built with SEO and Accessibilty in mind.
+- Media queries code splitting built in.
+- Dependencies free, Progressively enhance Javascript and component based.
 
 ## ‼️Before you start
 
@@ -99,10 +99,11 @@ yarn start
 ```
 
 ## ✅Commands
+
 - To run the shopify development server, same as `shopify theme serve`
 
 ```shell
-yarn serve
+yarn start
 ```
 
 - To watch over static file changes, this will run webpack bundling for the development configuration.
@@ -117,7 +118,7 @@ yarn watch
 yarn build
 ```
 
-- To lint shopify linting and ESLINT for javascript use the command.
+- To run shopify theme linting use the command.
 
 ```shell
 yarn lint
@@ -138,9 +139,14 @@ yarn format
 - Saves all the settings that you've made in the Shopify cutomizer editor, so next time you restart the server you will continue where you left.
 
 ```shell
-yarn save
+yarn pull
 ```
 
+- Push and saves the theme to Shopify online store, same as `shopify theme push`.
+
+```shell
+yarn push
+```
 
 ## 🙌Contributing
 

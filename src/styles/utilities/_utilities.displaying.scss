@@ -63,6 +63,13 @@
   }
 }
 
+// Reduce motion for accessibility
+@media (prefers-reduced-motion) {
+  .u-motion-reduce {
+    transition: none !important;
+  }
+}
+
 // Always show an element.
 .u-shown,
 .u-hide-none {

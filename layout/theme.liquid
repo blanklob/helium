@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="--is-loading" lang="fr">
+<html class="--loading" lang="fr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,12 +12,8 @@
       render 'head.seo'
       render 'head.metas'
       render 'head.settings'
-      render 'head.vendors'
+      render 'head.assets'
     -%}
-
-
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
-    <script src="{{- 'theme.js' | asset_url -}}" type="text/javascript" defer></script>
 
     <!-- Header hook for plugins -->
     {{ content_for_header }}

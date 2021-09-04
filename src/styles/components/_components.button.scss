@@ -5,57 +5,64 @@
 /// @content Component specific classes for buttons.
 /// This file contains suite of classes like.
 ///
-///   .c-btn {}           - base btn.
-///   .c-btn--primary {}  - primary btn.
+///   .c-btn {}         - base btn.
+///   .--primary {}     - primary btn.
 ///   ...add others if you want.
 ///
-
-// 1. Allow us to style box model properties.
-// 2. Line different sized buttons up a little nicer.
-// 3. Reset/normalize some styles.
-// 4. Force all button-styled elements to appear clickable.
-//
 .c-btn {
-  display: inline-block; // [1]
-  vertical-align: middle; // [2]
-  margin: 0; // [3]
-  text-align: center; // [3]
-  text-decoration: none; // [3]
-  cursor: pointer; // [4]
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
   border: 0;
-  border-radius: 9999px;
+  border-radius: 0;
   padding: em($theme-spacing-s) em($theme-spacing-l);
   font-family: $theme-font-heading-family;
   font-style: $theme-font-heading-style;
   font-weight: $theme-font-heading-weight;
-  background-color: $theme-color-btn;
-  color: $theme-color-btn-text;
+  min-width: 16rem;
+  min-height: 3rem;
+  user-select: none;
+  appearance: none;
   transition: all 200ms ease-in;
+  text-transform: uppercase;
 
-  /// variants
-  &.c-btn--primary {
-    @include hocus {
-      background-color: $theme-color-btn-text;
-      color: $theme-color-btn;
-    }
+  /// Color variants
+  &,
+  &.--primary {
+    background-color: $theme-color-btn;
+    color: $theme-color-btn-text;
 
     @include actus {
       outline: dashed 1px $theme-color-btn;
     }
   }
 
-  // Remove button agent styles
-  &--none {
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
+  /// State variation
+  &.--loading {
+    background-color: transparent;
+  }
+
+  &.--disabled,
+  &:disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+    background-color: rgba($color: $theme-color-btn, $alpha: .5);
+  }
+
+  // Type variations
+  &.--none {
     background: transparent;
     margin: 0;
     border: 0;
     padding: 0;
+  }
 
-    @include actus {
-      outline: dashed 1px $theme-color-btn;
-    }
+  .--tertiary {
+    min-width: 9rem;
+    min-height: 3.5rem;
   }
 }

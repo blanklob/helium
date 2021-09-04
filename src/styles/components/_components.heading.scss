@@ -5,46 +5,52 @@
 /// @content Component specific classes for headings.
 /// This file contains suite of classes like.
 ///
-///   .c-header {}             - Base heading font.
-///   .c-header--h1 {}         - H1 size heading.
-///   .c-paragraph--p1 {}      - Small paragraph font.
+///   .c-heading {}       - Base heading font.
+///   .c-heading.--h1 {}  - H1 size heading.
+///   .--b1 {}            - Small body font.
 ///   ...add others if you want.
 ///
 
-.c-header {
+.c-heading {
   font-family: $theme-font-heading-family;
   font-style: $theme-font-heading-style;
   color: $theme-color-text-heading;
   font-weight: normal;
-  letter-spacing: 0.01em;
+  letter-spacing: .05em;
   text-decoration: none;
 
+  // Size variants
   &,
-  &.c-header--h1 {
+  &.--h1 {
     // Font size: tools.mixins.scss
-    @include font-size(51px, 58px);
+    @include font-size(50px);
     @include mq('to-xs') {
-      @include font-size(40px, 44px);
+      @include font-size(40px);
     }
   }
 
-  &.c-header--h2 {
-    @include font-size(38px, 46px);
+  &.--h2 {
+    @include font-size(38px);
     @include mq('to-xs') {
-      @include font-size(30px, 39px);
+      @include font-size(30px);
     }
   }
 }
 
-.c-paragraph {
+.c-body {
   font-family: $theme-font-body-family;
   font-style: $theme-font-body-style;
   color: $theme-color-text-body;
   font-weight: normal;
   text-decoration: none;
 
+  // Size variants
   &,
-  &.c-paragraph--p1 {
-    @include font-size(15px, 27px);
+  &.--b1 {
+    @include font-size(18px);
+  }
+
+  &.--b2 {
+    @include font-size(15px);
   }
 }

@@ -2,7 +2,12 @@
    #SHOPIFY SECTION: INDEX
    ========================================================================== */
 
-/// @todo - Add other sections scoped styles.
+///
+// TOOLS:
+// Sharable settings and tools.
+// Must be included in order to use tools, mixins & settings.
+@import 'Styles/tools';
+///
 .s-index {
   display: grid;
   justify-content: center;
@@ -10,6 +15,12 @@
   height: 100vh;
   font-family: $theme-font-heading-family;
   font-style: $theme-font-heading-style;
+
+  .s-index__wrapper {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
 
   .s-index__heading {
     color: $theme-color-text-heading;

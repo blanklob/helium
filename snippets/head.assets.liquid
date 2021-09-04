@@ -1,0 +1,31 @@
+{% comment %}
+  To keep it clean, use this to add third party CDN libaries,
+  tho it's recommended to use ES6 imports in order to build your
+  libaries in vendors assets, since it's faster to serve files
+  on shopify CDN.
+
+  Check for more info: https://github.com/Shopify/theme-check/blob/main/docs/checks/remote_asset.md
+
+  Usage:
+  {%- render 'head.assets' -%}
+
+{% endcomment %}
+<link rel="preload" href="{{ 'base.css' | asset_url }}" as="style">
+<link rel="preload" href="{{ 'base-desktop.css' | asset_url }}" media="screen and (min-width: 800px)" as="style">
+<link rel="preload" href="{{ 'base-mobile.css' | asset_url }}" media="screen and (max-width: 799px)" as="style">
+
+<link rel="preload" href="{{ 'base.js' | asset_url }}" as="script">
+<link rel="preload" href="{{ 'vendors.js' | asset_url }}" as="script">
+
+
+{% comment %} Code splitting {% endcomment %}
+<link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'base-desktop.css' | asset_url }}" media="screen and (min-width: 800px)">
+<link rel="stylesheet" href="{{ 'base-mobile.css' | asset_url }}" media="screen and (max-width: 799px)">
+
+<script src="{{- 'base.js' | asset_url -}}" defer></script>
+
+<!-- Start vendor third party libaries -->
+<script src="{{- 'vendors.js' | asset_url -}}" async></script>
+<!-- End vendor third party libaries -->
+

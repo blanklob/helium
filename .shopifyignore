@@ -8,6 +8,7 @@ ehthumbs.db
 Thumbs.db
 
 # Environment files #
+tsconfig.json
 *.config.*.js
 *.config.js
 .eslint*.js

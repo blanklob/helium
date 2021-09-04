@@ -20,16 +20,16 @@
 
 {% comment %} Strcutured data {% endcomment %}
 <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "name": "{{- shop.name -}}",
-    {%- if settings.logo -%}"logo": "https:{{- settings.logo | image_url: 'master' -}}",{% endif %}
-    {%- if seo_email -%}"email": "{{- seo_email -}}",{% endif %}
-    {%- if seo_phone -%}"telephone": "{{- seo_phone -}}",{% endif %}
-    "url": "{{- seo_url -}}",
-    "description": "{{- seo_description | escape -}}"
-  }
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "{{- shop.name -}}",
+  {%- if settings.logo -%}"logo": "https:{{- settings.logo | image_url: 'master' -}}",{% endif %}
+  {%- if seo_email -%}"email": "{{- seo_email -}}",{% endif %}
+  {%- if seo_phone -%}"telephone": "{{- seo_phone -}}",{% endif %}
+  "url": "{{- seo_url -}}",
+  "description": "{{- seo_description | escape -}}"
+}
 </script>
 
 {% comment %} Favicons {% endcomment %}

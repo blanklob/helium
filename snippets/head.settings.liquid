@@ -12,6 +12,17 @@
 {% endcomment %}
 
 {% comment %} Style/Liquid Settings {% endcomment %}
+{%- assign theme_font_heading = settings.theme_font_heading -%}
+{%- assign theme_font_body    = settings.theme_font_body -%}
+
+
+{%- unless theme_font_heading.system? -%}
+  <link rel="preload" href="{{ theme_font_heading | font_url }}" type="font/woff2" as="font" crossorigin>
+{%- endunless -%}
+{%- unless theme_font_body.system? -%}
+  <link rel="preload" href="{{ theme_font_body | font_url }}" type="font/woff2" as="font" crossorigin>
+{%- endunless -%}
+
 <style>
   :root {
     {% comment %} Theme colors declaration {% endcomment %}
@@ -25,78 +36,77 @@
 
 
     {% comment %} Heading font declaration {% endcomment %}
-    {%- assign theme_font_heading = settings.theme_font_heading -%}
-
     --theme-font-heading-family:      {{ theme_font_heading.family }}, {{ theme_font_heading.fallback_families }};
     --theme-font-heading-style:       {{ theme_font_heading.style }};
     --theme-font-heading-base-weight: {{ theme_font_heading.weight }};
 
     {% comment %} Body font declaration {% endcomment %}
-    {%- assign theme_font_body    = settings.theme_font_body -%}
-
     --theme-font-body-family:      {{ theme_font_body.family }}, {{ theme_font_body.fallback_families }};
     --theme-font-body-style:       {{ theme_font_body.style }};
     --theme-font-body-base-weight: {{ theme_font_body.weight }};
   }
 
+  {% comment %}
   {% comment %} Heading font face {% endcomment %}
   {{- theme_font_heading | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
-  {{- theme_font_heading | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
-  {{- theme_font_heading | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}
-  {{- theme_font_heading | font_modify: 'weight', '800' | font_face: font_display: 'swap' -}}
+  {{- theme_font_heading | font_modify: 'weight', '400' | font_face: font_display: 'swap' -}}
+  {{- theme_font_heading | font_modify: 'weight', '700' | font_face: font_display: 'swap' -}}
 
   {% comment %} Body font face {% endcomment %}
   {{- theme_font_body | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
-  {{- theme_font_body | font_modify: 'weight', 'normal' | font_face: font_display: 'swap' -}}
-  {{- theme_font_body | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' -}}
-  {{- theme_font_body | font_modify: 'weight', '800' | font_face: font_display: 'swap' -}}
+  {{- theme_font_body | font_modify: 'weight', '400' | font_face: font_display: 'swap' -}}
+  {{- theme_font_body | font_modify: 'weight', '700' | font_face: font_display: 'swap' -}}
+  {% endcomment %}
 </style>
-
 
 {% comment %} JavaScript/Liquid Settings {% endcomment %}
 <script>
-  var THEME = {
-      colors: {
-        primary:     "{{- settings.theme_color_primary -}}",
-        secondary:   "{{- settings.theme_color_secondary -}}",
-        textHeading: "{{- settings.theme_color_text_heading -}}",
-        textBody:    "{{- settings.theme_color_text_body -}}",
-        btn:         "{{- settings.theme_color_btn -}}",
-        btnText:     "{{- settings.theme_color_btn_text -}}",
-        background:  "{{- settings.theme_color_background -}}",
-      },
+if ((typeof window.Shopify) == 'undefined') {
+  window.Shopify = {};
+}
 
-      fonts: {
-        heading: "{{- settings.theme_font_heading.family | remove: '"' -}}",
-        body:    "{{- settings.theme_font_body.family | remove: '"' -}}"
-      },
+Shopify = {
+    colors: {
+      primary:     "{{- settings.theme_color_primary -}}",
+      secondary:   "{{- settings.theme_color_secondary -}}",
+      textHeading: "{{- settings.theme_color_text_heading -}}",
+      textBody:    "{{- settings.theme_color_text_body -}}",
+      btn:         "{{- settings.theme_color_btn -}}",
+      btnText:     "{{- settings.theme_color_btn_text -}}",
+      background:  "{{- settings.theme_color_background -}}",
+    },
 
-      breakpoints: {
-        base: 0,
-        xs:   320,
-        s:    500,
-        md:   800,
-        l:    1025,
-        xl:   1200,
-        xxl:  1440
-      },
+    fonts: {
+      heading: "{{- settings.theme_font_heading.family | remove: '"' -}}",
+      body:    "{{- settings.theme_font_body.family | remove: '"' -}}"
+    },
 
-      strings: {
-        addedCart: "{{- 'general.cart.item_added' | t -}}",
-        search:    "{{- 'general.search.search' | t -}}",
-      },
+    breakpoints: {
+      base: 0,
+      xs:   320,
+      s:    500,
+      md:   800,
+      l:    1025,
+      xl:   1200,
+      xxl:  1440
+    },
 
-      routes: {
-        root:        "{{- routes.root_url -}}",
-        account:     "{{- routes.account_url -}}",
-        search:      "{{- routes.search_url -}}",
-        cart:        "{{- routes.cart_url -}}",
-        addCartItem: "{{- routes.cart_add_url -}}",
-        changeCart:  "{{- routes.cart_change_url -}}",
-        clearCart:   "{{- routes.cart_clear_url -}}",
-        updateCart:  "{{- routes.cart_update_url -}}",
-      },
-      sections: {}
-  };
-  document.documentElement.className = document.documentElement.className.replace('--is-loading', '--is-loaded');
+    strings: {
+      addedCart: "{{- 'general.cart.item_added' | t -}}",
+      search:    "{{- 'general.search.search' | t -}}",
+    },
+
+    routes: {
+      root:        "{{- routes.root_url -}}",
+      account:     "{{- routes.account_url -}}",
+      search:      "{{- routes.search_url -}}",
+      cart:        "{{- routes.cart_url -}}",
+      addCartItem: "{{- routes.cart_add_url -}}",
+      changeCart:  "{{- routes.cart_change_url -}}",
+      clearCart:   "{{- routes.cart_clear_url -}}",
+      updateCart:  "{{- routes.cart_update_url -}}",
+    },
+    sections: {}
+};
+document.documentElement.className = document.documentElement.className.replace('--loading', '--loaded');
 </script>
