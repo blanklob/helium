@@ -1,0 +1,50 @@
+{% comment %}
+  Renders all social sharing and theme color meta tags.
+
+  Usage:
+  {%- render 'head-metas' -%}
+{% endcomment %}
+
+
+{% comment %} Social sharing {% endcomment %}
+{%- liquid
+  assign metas_title = page_title | default: shop.name
+  assign metas_url = canonical_url | default: shop.secure_url
+  assign metas_type = 'website'
+  assign metas_description = page_description | default: shop.description | default: shop.name
+  assign metas_color = settings.primary_color | default: false
+
+  if request.page_type == 'product'
+    assign metas_type = 'product'
+  elsif request.page_type == 'article'
+    assign metas_type = 'article'
+  elsif request.page_type == 'collection'
+    assign metas_type = 'product.group'
+  elsif request.page_type == 'password'
+    assign metas_url = shop.url
+  endif
+-%}
+
+<meta property="og:site_name" content="{{ shop.name }}">
+<meta property="og:url" content="{{ metas_url }}">
+<meta property="og:title" content="{{ metas_title }}">
+<meta property="og:type" content="{{ metas_type }}">
+<meta property="og:description" content="{{ metas_description | escape }}">
+
+{%- if request.page_type == 'product' -%}
+  <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
+  <meta property="og:price:currency" content="{{ cart.currency.iso_code }}">
+{%- endif -%}
+
+{%- if page_image -%}
+  <meta property="og:image" content="http:{{ page_image | img_url: 'master' }}">
+  <meta property="og:image:secure_url" content="https:{{ page_image | img_url: 'master' }}">
+  <meta property="og:image:width" content="{{ page_image.width }}">
+  <meta property="og:image:height" content="{{ page_image.height }}">
+{%- endif -%}
+
+{% comment %} Theme color {% endcomment %}
+{%- if metas_color -%}
+  <meta name="theme-color" content="{{- metas_color -}}">
+  <meta name="msapplication-TileColor" content="{{- metas_color -}}">
+{%- endif -%}

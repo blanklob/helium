@@ -17,9 +17,9 @@
     {%- endif -%}
 
     {%- liquid
-      render 'head.metas'
-      render 'head.settings'
-      render 'head.assets'
+      render 'head-metas'
+      render 'head-settings'
+      render 'head-assets'
     -%}
 
     {% comment %} TODO: ADD CSS ASSET {% endcomment %}
@@ -30,9 +30,9 @@
   </head>
   <body>
     {% comment %} Accessibilty snippet {% endcomment %}
-    {%- render 'components.a11y' -%}
+    {%- render 'component-a11y' -%}
 
-    <main id="MainContent" role="main" class="o-giftcard u-focus-none" tabindex="-1">
+    <main id="MainContent" role="main" class="l-giftcard u-focus-none" tabindex="-1">
       {{ content_for_layout }}
     </main>
 

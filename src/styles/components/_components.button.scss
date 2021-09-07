@@ -50,7 +50,7 @@
   &:disabled,
   &[aria-disabled='true'] {
     cursor: not-allowed;
-    background-color: rgba($color: $theme-color-btn, $alpha: .5);
+    background-color: rgba($color: $theme-color-btn, $alpha: 0.5);
   }
 
   // Type variations

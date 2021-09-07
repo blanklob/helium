@@ -45,6 +45,7 @@
 /// Spacing..............Nudge bits of the DOM around with these spacing classes.
 /// Displaying...........Helper utility classes to hide/show content.
 /// Alignement...........Helper classes for aligning elements inside containers.
+/// Vendors..............Vendor css core styles.
 ////
 ////
 
@@ -82,3 +83,4 @@
 @import 'Styles/utilities/utilities.spacing';
 @import 'Styles/utilities/utilities.displaying';
 @import 'Styles/utilities/utilities.alignement';
+@import 'Styles/utilities/utilities.vendors';

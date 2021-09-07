@@ -26,13 +26,3 @@ jobs:
           lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
           # For more infos check out: https://shopify.dev/themes/tools/lighthouse-ci
-
-  # Theme check Github action
-
-  # theme-check:
-  #   name: Theme Check
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Theme Check
-  #       uses: shopify/theme-check-action@v1

@@ -13,6 +13,7 @@ node_modules
 .github
 .vscode
 package.json
+tsconfig.json
 
 # Other files #
 /\.(txt|gif|jpg|png|md|lock)$/

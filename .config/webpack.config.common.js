@@ -1,42 +1,40 @@
 // General
-const path = require('path');
+const path = require('path')
 
 // Webpack plugins
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
-const MediaQueryPlugin = require('media-query-plugin');
-const SizePlugin = require('size-plugin');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts')
+const MediaQueryPlugin = require('media-query-plugin')
+const SizePlugin = require('size-plugin')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 // Directories
-const rootDir = path.dirname(__dirname);
-const nodeDir = path.join(rootDir, 'node_modules');
-const srcDir = path.join(rootDir, 'src');
-const stylesDir = path.join(srcDir, 'styles');
-const scriptsDir = path.join(srcDir, 'app');
-const entries = new Object();
+const rootDir = path.dirname(__dirname)
+const nodeDir = path.join(rootDir, 'node_modules')
+const srcDir = path.join(rootDir, 'src')
+const stylesDir = path.join(srcDir, 'styles')
+const scriptsDir = path.join(srcDir, 'app')
+const entries = new Object()
 
 // Add sections ass you wish (must be the same name as file)
-const sections = [
-  'index',
-];
+const sections = ['index']
 
 // Creating entries
-sections.map(sectionName => {
-  let sectionPath = path.join(stylesDir, `sections/_sections.${sectionName}.scss`);
-  let entryName = `section-${sectionName}`;
-  entries[entryName] = sectionPath;
-});
+sections.map((sectionName) => {
+  let sectionPath = path.join(
+    stylesDir,
+    `sections/_sections.${sectionName}.scss`
+  )
+  let entryName = `section-${sectionName}`
+  entries[entryName] = sectionPath
+})
 
 // Common configuration
 module.exports = {
   // Entry
   entry: {
-    base: [
-      path.join(scriptsDir, 'base.ts'),
-      path.join(stylesDir, 'base.scss')
-    ],
-    ...entries
+    base: [path.join(scriptsDir, 'base.ts'), path.join(stylesDir, 'base.scss')],
+    ...entries,
   },
   // Output
   output: {
@@ -49,7 +47,7 @@ module.exports = {
     // #1: Remove empty JS files
     new RemoveEmptyScriptsPlugin(),
     // #2: Extract CSS to separate css file
-    new MiniCssExtractPlugin({filename: '[name].css'}),
+    new MiniCssExtractPlugin({ filename: '[name].css' }),
     // #3: Split CSS using media queries
     new MediaQueryPlugin({
       include: ['base'],
@@ -62,12 +60,12 @@ module.exports = {
         'screen and (max-width: 799px)': 'mobile',
         'screen and (max-width: 499px)': 'mobile',
         'screen and (max-width: 319px)': 'mobile',
-      }
+      },
     }),
     // #4: Prints the gzipped sizes of assets.
     new SizePlugin({
       publish: false,
-      writeFile: false
+      writeFile: false,
     }),
   ],
   // Webpack Loaders
@@ -92,8 +90,11 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              postcssOptions: require(path.join(__dirname, 'postcss.config.js'))
-            }
+              postcssOptions: require(path.join(
+                __dirname,
+                'postcss.config.js'
+              )),
+            },
           },
           // Compiles Sass to CSS
           'sass-loader',
@@ -116,10 +117,14 @@ module.exports = {
       NodeModules: nodeDir,
     },
     extensions: ['.ts', '.js'],
-    plugins: [new TsconfigPathsPlugin({ configFile: path.join(rootDir, 'tsconfig.json') })]
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: path.join(rootDir, 'tsconfig.json'),
+      }),
+    ],
   },
   stats: {
     preset: 'errors-warnings',
-    version: false
+    version: false,
   },
-};
+}

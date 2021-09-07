@@ -1,9 +1,15 @@
-root: ../
+root: .
 
 # Disabling some checks
 RequiredDirectories:
   enabled: false
 
+# Must be enabled if you care about translations
+MatchingTranslations:
+  enabled: false
+
+# Ignoring some files
 ignore:
-  - ../.config
-  - ../package.json
+  - .config
+  - tsconfig.json
+  - package.json

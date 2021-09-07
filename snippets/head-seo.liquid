@@ -1,0 +1,47 @@
+{% comment %}
+  Renders all related SEO and favicon tags in the head.
+
+  Usage:
+  {%- render 'head-seo' -%}
+{% endcomment %}
+
+{%- liquid
+  assign seo_title = page_title | default: shop.name
+  assign seo_description = page_description | default: shop.description | default: shop.name
+  assign seo_url = canonical_url | default: shop.secure_url
+  assign seo_email = shop.email | default: false
+  assign seo_phone = shop.phone | default: false
+-%}
+
+<title>{{- seo_title | escape -}}</title>
+<meta name="description" content="{{- seo_description | escape -}}">
+<link rel="canonical" href="{{- seo_url -}}">
+<meta name="author" content="{{- shop.name -}}">
+
+{% comment %} Strcutured data {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "{{- shop.name -}}",
+  {%- if settings.logo -%}"logo": "https:{{- settings.logo | image_url: 'master' -}}",{% endif %}
+  {%- if seo_email -%}"email": "{{- seo_email -}}",{% endif %}
+  {%- if seo_phone -%}"telephone": "{{- seo_phone -}}",{% endif %}
+  "url": "{{- seo_url -}}",
+  "description": "{{- seo_description | escape -}}"
+}
+</script>
+
+{% comment %} Favicons {% endcomment %}
+{%- if settings.favicon != blank -%}
+  <link rel="shortcut icon" href="{{- settings.favicon | img_url: '16x16' -}}" sizes="16x16">
+  <link rel="shortcut icon" href="{{- settings.favicon | img_url: '32x32' -}}" sizes="32x32">
+  <link rel="shortcut icon" href="{{- settings.favicon | img_url: '48x48' -}}" sizes="48x48">
+  <link rel="shortcut icon" href="{{- settings.favicon | img_url: '96x96' -}}" sizes="48x48">
+  <link rel="apple-touch-icon" href="{{- settings.favicon | img_url: '180x180' -}}" sizes="180x180">
+  <link rel="apple-touch-icon" href="{{- settings.favicon | img_url: '192x192' -}}" sizes="192x192">
+{%- endif -%}
+
+
+
+

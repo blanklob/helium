@@ -1,43 +1,40 @@
 {{ 'section-index.css' | asset_url | stylesheet_tag }}
 
-<div class="s-index" data-section-id="{{- section.id -}}">
-  <div class="o-container --s u-align-center" data-component-example>
-    <div class="s-index__logo u-mb-md">{%- render 'components.icon' icon: 'shopify', icon_size: 120 -%}</div>
-    <div class="s-index__wrapper">
-      <h2 class="c-heading --h2 --bold u-mb-md">{{ section.settings.heading }}</h2>
-      <p class="c-body --b1 u-mb-l">{{ section.settings.subheading }}</p>
-      <a class="s-index__link c-btn c--primary"
-        href="https://github.com/younessidbakkasse/shopify-webpack-with-os2-features"
-        target="_blank" rel="noreferrer noopener">{{ section.settings.link_label }}</a>
-    </div>
-    <simple-greeting class="c-greeting"></simple-greeting>
+<div class="o-container o-container--s u-align-center" data-section-id="{{- section.id -}}">
+  <div class="s-index__logo u-mb-md">{%- render 'component-icon' icon: 'shopify', icon_size: 120 -%}</div>
+  <div class="s-index__wrapper">
+    <h2 class="c-heading --h2 --bold u-mb-md">{{ section.settings.heading }}</h2>
+    <p class="c-body --b1 u-mb-l">{{ section.settings.subheading }}</p>
+    <a class="s-index__link c-btn c--primary"
+      href="https://github.com/younessidbakkasse/shopify-webpack-with-os2-features"
+      target="_blank" rel="noreferrer noopener">{{ section.settings.link_label }}</a>
   </div>
+  <simple-greeting class="c-greeting"></simple-greeting>
 </div>
-
-
 
 {% schema %}
 {
   "name": "Index",
   "tag": "section",
+  "class": "s-index",
   "settings": [
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Modern development on Shopify using Webpack 5 fully supporting Online Store 2.0 features and github integration."
+      "default": "Modern Shopify development ⚙️ workflow, with Online Store 2.0 features and built with performance ⚡️ and accessibility in mind.."
     },
     {
       "type": "textarea",
       "id": "subheading",
       "label": "Subeading",
-      "default": "Thanks for choosing this setup for your Shopify Theme."
+      "default": "Thanks for choosing workflow for your Shopify Theme setup 👍."
     },
     {
       "type": "text",
       "id": "link_label",
       "label": "Link label",
-      "default": "Check Github"
+      "default": "Check docs on Github"
     }
   ]
 }

@@ -18,5 +18,5 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["node_modules", "worker", "public"],
+  "exclude": ["node_modules", "worker", "public"]
 }

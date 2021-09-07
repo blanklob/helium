@@ -25,12 +25,18 @@ a {
 }
 
 // Hide empty elements
-a:empty, ul:empty,
-dl:empty, div:empty,
-section:empty, article:empty,
-p:empty, h1:empty,
-h2:empty, h3:empty,
-h4:empty, h5:empty,
+a:empty,
+ul:empty,
+dl:empty,
+div:empty,
+section:empty,
+article:empty,
+p:empty,
+h1:empty,
+h2:empty,
+h3:empty,
+h4:empty,
+h5:empty,
 h6:empty {
   display: none;
 }

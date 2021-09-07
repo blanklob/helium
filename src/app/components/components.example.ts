@@ -1,14 +1,12 @@
 class SimpleGreeting extends HTMLElement {
-  greeting: string;
+  greeting: string
 
   constructor() {
-    super();
-    this.greeting = 'Hello, world';
+    super()
+    this.greeting = 'Hello, world'
   }
-};
+}
 
-customElements.define('simple-greeting', SimpleGreeting);
+customElements.define('simple-greeting', SimpleGreeting)
 
-export type { SimpleGreeting };
-
-
+export type { SimpleGreeting }

@@ -6,8 +6,7 @@
   "recommendations": [
     "shopify.theme-check-vscode",
     "editorconfig.editorconfig",
-    "esbenp.prettier-vscode",
-    "runem.lit-plugin"
+    "esbenp.prettier-vscode"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []

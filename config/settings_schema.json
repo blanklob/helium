@@ -1,17 +1,14 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Shopify Theme with OS 2",
-    "theme_version": "1.0.3",
+    "theme_name": "Workflow",
+    "theme_version": "1.1.0",
     "theme_author": "Youness Id bakkasse",
-    "theme_documentation_url": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features",
-    "theme_support_url": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features/issues"
+    "theme_documentation_url": "https://github.com/younessidbakkasse/workflow",
+    "theme_support_url": "https://github.com/younessidbakkasse/workflow/issues"
   },
   {
-    "name": {
-      "en": "Colors",
-      "fr": "Couleurs"
-    },
+    "name": "t:settings_schema.colors.name",
     "settings": [
       {
         "type": "header",

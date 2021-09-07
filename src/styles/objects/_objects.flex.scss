@@ -15,7 +15,6 @@
 // By default this is an empty string
 $reflex-prefix: null !default;
 
-
 // Legacy support
 // -------------------------
 // Reflex adds a lot of css propertie to support older browsers that don't support flexbox layout.
@@ -52,7 +51,7 @@ $reflex-breakpoints: (
   sm: $reflex-sm,
   md: $reflex-md,
   lg: $reflex-lg,
-  xlg: $reflex-xlg
+  xlg: $reflex-xlg,
 );
 
 // Spacing
@@ -61,20 +60,19 @@ $reflex-grid-spacing: 15px !default;
 
 // Custom properties so others can reference the variables.
 :root {
-  --reflex-columns: #{ $reflex-columns };
-  --reflex-grid-spacing: #{ $reflex-grid-spacing };
-  --reflex-xs: #{ $reflex-xs };
-  --reflex-sm: #{ $reflex-sm };
-  --reflex-md: #{ $reflex-md };
-  --reflex-lg: #{ $reflex-lg };
-  --reflex-xlg: #{ $reflex-xlg };
-  --reflex-xxs-max: #{ $reflex-xxs-max };
-  --reflex-xs-max: #{ $reflex-xs-max };
-  --reflex-sm-max: #{ $reflex-sm-max };
-  --reflex-md-max: #{ $reflex-md-max };
-  --reflex-lg-max: #{ $reflex-lg-max };
+  --reflex-columns: #{$reflex-columns};
+  --reflex-grid-spacing: #{$reflex-grid-spacing};
+  --reflex-xs: #{$reflex-xs};
+  --reflex-sm: #{$reflex-sm};
+  --reflex-md: #{$reflex-md};
+  --reflex-lg: #{$reflex-lg};
+  --reflex-xlg: #{$reflex-xlg};
+  --reflex-xxs-max: #{$reflex-xxs-max};
+  --reflex-xs-max: #{$reflex-xs-max};
+  --reflex-sm-max: #{$reflex-sm-max};
+  --reflex-md-max: #{$reflex-md-max};
+  --reflex-lg-max: #{$reflex-lg-max};
 }
-
 
 // --------------------------------------------------
 // reflex mixins
@@ -90,20 +88,20 @@ $reflex-grid-spacing: 15px !default;
 
 @mixin calc-reflex-columns($index, $class, $type) {
   @if $type == width and $index > 0 {
-      .#{$reflex-prefix}#{$class}#{$index} {
-          width: percentage(($index / $reflex-columns));
-          @if $legacy-support == true {
-              *width: percentage(($index / $reflex-columns)) - .1; // ie7 css hack
-          }
+    .#{$reflex-prefix}#{$class}#{$index} {
+      width: percentage(($index / $reflex-columns));
+      @if $legacy-support == true {
+        *width: percentage(($index / $reflex-columns)) - 0.1; // ie7 css hack
       }
+    }
   }
 }
 
 @mixin loop-reflex-columns($index, $class, $type) {
   @if $index >= 0 {
-      @include calc-reflex-columns($index, $class, $type);
-      // next iteration
-      @include loop-reflex-columns(($index - 1), $class, $type);
+    @include calc-reflex-columns($index, $class, $type);
+    // next iteration
+    @include loop-reflex-columns(($index - 1), $class, $type);
   }
 }
 
@@ -112,7 +110,7 @@ $reflex-grid-spacing: 15px !default;
   @include flex(1, 0, 0px); // a unit on last value is required by IE10-11
 
   @if $legacy-support == true {
-      width: auto;
+    width: auto;
   }
 }
 
@@ -122,17 +120,17 @@ $reflex-grid-spacing: 15px !default;
 
 @mixin setup-whitespace() {
   @if $legacy-support == true {
-      letter-spacing: -.31em;
-      *letter-spacing: normal;
-      word-spacing: -.43em;
+    letter-spacing: -0.31em;
+    *letter-spacing: normal;
+    word-spacing: -0.43em;
   }
 }
 
 @mixin reset-whitespace() {
   @if $legacy-support == true {
-      letter-spacing: normal;
-      word-spacing: normal;
-      white-space: normal;
+    letter-spacing: normal;
+    word-spacing: normal;
+    white-space: normal;
   }
 }
 
@@ -171,11 +169,11 @@ $reflex-grid-spacing: 15px !default;
 
 @mixin loop-order-helpers($index, $breakpoint: null) {
   @if $index >= 0 {
-      .#{$reflex-prefix}order#{$breakpoint}-#{$index} {
-          @include order($index);
-      }
-      // next iteration
-      @include loop-order-helpers(($index - 1), $breakpoint);
+    .#{$reflex-prefix}order#{$breakpoint}-#{$index} {
+      @include order($index);
+    }
+    // next iteration
+    @include loop-order-helpers(($index - 1), $breakpoint);
   }
 }
 
@@ -186,11 +184,11 @@ $reflex-grid-spacing: 15px !default;
   $offset: ($index / $reflex-columns);
   // convert to percentage only if not zero
   @if $offset != 0 {
-      $offset: percentage($offset);
+    $offset: percentage($offset);
   }
   margin-left: $offset;
   @if $legacy-support == true {
-      *margin-left: percentage(($index / $reflex-columns)) - .1; // ie7 css hack
+    *margin-left: percentage(($index / $reflex-columns)) - 0.1; // ie7 css hack
   }
 }
 
@@ -200,17 +198,17 @@ $reflex-grid-spacing: 15px !default;
 
 @mixin loop-offset-helpers($index, $breakpoint: null) {
   @if $index > 0 and $breakpoint == null {
-      .#{$reflex-prefix}offset#{$breakpoint}-#{$index} {
-          @include offset($index);
-      }
-      // next iteration
-      @include loop-offset-helpers(($index - 1), $breakpoint);
+    .#{$reflex-prefix}offset#{$breakpoint}-#{$index} {
+      @include offset($index);
+    }
+    // next iteration
+    @include loop-offset-helpers(($index - 1), $breakpoint);
   } @else if $index >= 0 and $breakpoint != null {
-      .#{$reflex-prefix}offset#{$breakpoint}-#{$index} {
-          @include offset($index);
-      }
-      // next iteration
-      @include loop-offset-helpers(($index - 1), $breakpoint);
+    .#{$reflex-prefix}offset#{$breakpoint}-#{$index} {
+      @include offset($index);
+    }
+    // next iteration
+    @include loop-offset-helpers(($index - 1), $breakpoint);
   }
 }
 
@@ -234,28 +232,28 @@ $reflex-grid-spacing: 15px !default;
 
 @mixin flex($grow: 0, $shrink: 1, $basis: auto) {
   @if $basis == 0 {
-      -ms-flex: $grow $shrink auto; //ie10 needs auto
+    -ms-flex: $grow $shrink auto; //ie10 needs auto
   } @else {
-      -ms-flex: $grow $shrink $basis;
+    -ms-flex: $grow $shrink $basis;
   }
 
   -webkit-flex: $grow $shrink $basis;
   flex: $grow $shrink $basis;
 }
 
-@mixin flex-grow($grow:1) {
+@mixin flex-grow($grow: 1) {
   -ms-flex-positive: $grow;
   -webkit-flex-grow: $grow;
   flex-grow: $grow;
 }
 
-@mixin flex-shrink($shrink:1) {
+@mixin flex-shrink($shrink: 1) {
   -ms-flex-negative: $shrink;
   -webkit-flex-shrink: $shrink;
   flex-shrink: $shrink;
 }
 
-@mixin flex-basis($basis:auto) {
+@mixin flex-basis($basis: auto) {
   -ms-flex-preferred-size: $basis;
   -webkit-flex-basis: $basis;
   flex-basis: $basis;
@@ -308,35 +306,35 @@ $reflex-grid-spacing: 15px !default;
 
 @mixin ms-align-items($align) {
   @if $align == 'flex-start' {
-      -ms-flex-align: start;
+    -ms-flex-align: start;
   } @else if $align == 'flex-end' {
-      -ms-flex-align: end;
+    -ms-flex-align: end;
   } @else {
-      -ms-flex-align: $align;
+    -ms-flex-align: $align;
   }
 }
 
 @mixin ms-align-self($align) {
   @if $align == 'flex-start' {
-      -ms-flex-item-align: start;
+    -ms-flex-item-align: start;
   } @else if $align == 'flex-end' {
-      -ms-flex-item-align: end;
+    -ms-flex-item-align: end;
   } @else {
-      -ms-flex-item-align: $align;
+    -ms-flex-item-align: $align;
   }
 }
 
 @mixin ms-align-content($align) {
   @if $align == 'flex-start' {
-      -ms-flex-line-pack: start;
+    -ms-flex-line-pack: start;
   } @else if $align == 'flex-end' {
-      -ms-flex-line-pack: end;
+    -ms-flex-line-pack: end;
   } @else if $align == 'space-between' {
-      -ms-flex-line-pack: justify;
+    -ms-flex-line-pack: justify;
   } @else if $align == 'space-around' {
-      -ms-flex-line-pack: distribute;
+    -ms-flex-line-pack: distribute;
   } @else {
-      -ms-flex-line-pack: $align;
+    -ms-flex-line-pack: $align;
   }
 }
 
@@ -384,41 +382,40 @@ $reflex-grid-spacing: 15px !default;
 
 @mixin responsive-visibility-helpers() {
   @if $visibility-helpers == true {
-      // We need to handle xxs and xlg breakpoints differently
-      $map-reflex-breakpoints: map-remove($reflex-breakpoints, xxs, xlg);
+    // We need to handle xxs and xlg breakpoints differently
+    $map-reflex-breakpoints: map-remove($reflex-breakpoints, xxs, xlg);
 
-      .#{$reflex-prefix}hidden-xxs {
-          @include media-breakpoint-only('xxs') {
-              display: none;
-          }
+    .#{$reflex-prefix}hidden-xxs {
+      @include media-breakpoint-only('xxs') {
+        display: none;
+      }
+    }
+
+    @each $bp in map-keys($map-reflex-breakpoints) {
+      .#{$reflex-prefix}hidden-#{$bp}-up {
+        @include media-breakpoint-up($bp) {
+          display: none;
+        }
       }
 
-      @each $bp in map-keys($map-reflex-breakpoints) {
-          .#{$reflex-prefix}hidden-#{$bp}-up {
-              @include media-breakpoint-up($bp) {
-                  display: none;
-              }
-          }
-
-
-          .#{$reflex-prefix}hidden-#{$bp}-down {
-              @include media-breakpoint-down($bp) {
-                  display: none;
-              }
-          }
-
-          .#{$reflex-prefix}hidden-#{$bp} {
-              @include media-breakpoint-only($bp) {
-                  display: none;
-              }
-          }
+      .#{$reflex-prefix}hidden-#{$bp}-down {
+        @include media-breakpoint-down($bp) {
+          display: none;
+        }
       }
 
-      .#{$reflex-prefix}hidden-xlg {
-          @include media-breakpoint-only('xlg') {
-              display: none;
-          }
+      .#{$reflex-prefix}hidden-#{$bp} {
+        @include media-breakpoint-only($bp) {
+          display: none;
+        }
       }
+    }
+
+    .#{$reflex-prefix}hidden-xlg {
+      @include media-breakpoint-only('xlg') {
+        display: none;
+      }
+    }
   }
 }
 
@@ -431,9 +428,17 @@ $reflex-grid-spacing: 15px !default;
 // >> breakpoint-next(sm) -> md
 // >> breakpoint-next(sm, $breakpoints: (xs: 576px, sm: 768px, md: 992px)) -> md
 // >> breakpoint-next(sm, $breakpoint-names: (xs sm md)) -> md
-@function breakpoint-next($name, $breakpoints: $reflex-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+@function breakpoint-next(
+  $name,
+  $breakpoints: $reflex-breakpoints,
+  $breakpoint-names: map-keys($breakpoints)
+) {
   $n: index($breakpoint-names, $name);
-  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+  @return if(
+    $n < length($breakpoint-names),
+    nth($breakpoint-names, $n + 1),
+    null
+  );
 }
 
 // Minimum breakpoint width. Null for the smallest (first) breakpoint.
@@ -457,13 +462,11 @@ $reflex-grid-spacing: 15px !default;
   $min: breakpoint-min($name, $breakpoints);
 
   @if $min {
-      @media (min-width: $min) {
-          @content;
-      }
-  }
-
-  @else {
+    @media (min-width: $min) {
       @content;
+    }
+  } @else {
+    @content;
   }
 }
 
@@ -473,13 +476,11 @@ $reflex-grid-spacing: 15px !default;
   $max: breakpoint-max($name, $breakpoints);
 
   @if $max {
-      @media (max-width: $max) {
-          @content;
-      }
-  }
-
-  @else {
+    @media (max-width: $max) {
       @content;
+    }
+  } @else {
+    @content;
   }
 }
 
@@ -488,9 +489,9 @@ $reflex-grid-spacing: 15px !default;
 // Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
 @mixin media-breakpoint-only($name, $breakpoints: $reflex-breakpoints) {
   @include media-breakpoint-up($name, $breakpoints) {
-      @include media-breakpoint-down($name, $breakpoints) {
-          @content;
-      }
+    @include media-breakpoint-down($name, $breakpoints) {
+      @content;
+    }
   }
 }
 
@@ -513,22 +514,22 @@ $reflex-grid-spacing: 15px !default;
 // --------------------------------------------------
 
 .#{$reflex-prefix}wrap {
-    @include flex-wrap(wrap);
+  @include flex-wrap(wrap);
 }
 
 .#{$reflex-prefix}no-wrap {
-    @include flex-wrap(nowrap);
+  @include flex-wrap(nowrap);
 
-    // This is mostly needed to stop the grid contents overflowing in the
-    // ie10 implementation of flexbox but it can't hurt in other browsers
-    // as it is the desired behaviour of non wrapping flex items
-    [class*="#{$reflex-prefix}col-"] {
-        @include flex-shrink(1);
-    }
+  // This is mostly needed to stop the grid contents overflowing in the
+  // ie10 implementation of flexbox but it can't hurt in other browsers
+  // as it is the desired behaviour of non wrapping flex items
+  [class*='#{$reflex-prefix}col-'] {
+    @include flex-shrink(1);
+  }
 }
 
 .#{$reflex-prefix}wrap-reverse {
-    @include flex-wrap(wrap-reverse);
+  @include flex-wrap(wrap-reverse);
 }
 
 // --------------------------------------------------
@@ -536,19 +537,19 @@ $reflex-grid-spacing: 15px !default;
 // --------------------------------------------------
 
 .#{$reflex-prefix}direction-row {
-    @include flex-direction(row);
+  @include flex-direction(row);
 }
 
 .#{$reflex-prefix}direction-row-reverse {
-    @include flex-direction(row-reverse);
+  @include flex-direction(row-reverse);
 }
 
 .#{$reflex-prefix}direction-column {
-    @include flex-direction(column);
+  @include flex-direction(column);
 }
 
 .#{$reflex-prefix}direction-column-reverse {
-    @include flex-direction(column-reverse);
+  @include flex-direction(column-reverse);
 }
 
 // --------------------------------------------------
@@ -556,33 +557,33 @@ $reflex-grid-spacing: 15px !default;
 // --------------------------------------------------
 
 .#{$reflex-prefix}align-start {
-    @include align-items(flex-start);
+  @include align-items(flex-start);
 }
 
 .#{$reflex-prefix}align-end {
-    @include align-items(flex-end);
+  @include align-items(flex-end);
 
-    @if $legacy-support == true {
-        // fallback to legacy vertical-align
-        [class*="#{$reflex-prefix}col-"] {
-            vertical-align: bottom;
-        }
+  @if $legacy-support == true {
+    // fallback to legacy vertical-align
+    [class*='#{$reflex-prefix}col-'] {
+      vertical-align: bottom;
     }
+  }
 }
 
 .#{$reflex-prefix}align-center {
-    @include align-items(center);
+  @include align-items(center);
 
-    @if $legacy-support == true {
-        // fallback to legacy vertical-align
-        [class*="#{$reflex-prefix}col-"] {
-            vertical-align: middle;
-        }
+  @if $legacy-support == true {
+    // fallback to legacy vertical-align
+    [class*='#{$reflex-prefix}col-'] {
+      vertical-align: middle;
     }
+  }
 }
 
 .#{$reflex-prefix}align-baseline {
-    @include align-items(baseline);
+  @include align-items(baseline);
 }
 
 // --------------------------------------------------
@@ -590,28 +591,28 @@ $reflex-grid-spacing: 15px !default;
 // --------------------------------------------------
 
 .#{$reflex-prefix}align-content-start {
-    @include align-content(flex-start);
+  @include align-content(flex-start);
 }
 
 .#{$reflex-prefix}align-content-end {
-    @include align-content(flex-end);
+  @include align-content(flex-end);
 
-    // fallback to legacy vertical-align
-    [class*="#{$reflex-prefix}col-"] {
-        vertical-align: bottom;
-    }
+  // fallback to legacy vertical-align
+  [class*='#{$reflex-prefix}col-'] {
+    vertical-align: bottom;
+  }
 }
 
 .#{$reflex-prefix}align-content-center {
-    @include align-content(center);
+  @include align-content(center);
 }
 
 .#{$reflex-prefix}align-content-space-between {
-    @include align-content(space-between);
+  @include align-content(space-between);
 }
 
 .#{$reflex-prefix}align-content-space-around {
-    @include align-content(space-around);
+  @include align-content(space-around);
 }
 
 // --------------------------------------------------
@@ -619,26 +620,26 @@ $reflex-grid-spacing: 15px !default;
 // --------------------------------------------------
 
 .#{$reflex-prefix}align-self-stretch {
-    @include align-self(stretch);
+  @include align-self(stretch);
 }
 
 .#{$reflex-prefix}align-self-start {
-    @include align-self(flex-start);
+  @include align-self(flex-start);
 }
 
 .#{$reflex-prefix}align-self-end {
-    @include align-self(flex-end);
-    vertical-align: bottom;
+  @include align-self(flex-end);
+  vertical-align: bottom;
 }
 
 .#{$reflex-prefix}align-self-center {
-    @include align-self(center);
-    vertical-align: middle;
+  @include align-self(center);
+  vertical-align: middle;
 }
 
 .#{$reflex-prefix}align-self-baseline {
-    @include align-self(baseline);
-    vertical-align: baseline;
+  @include align-self(baseline);
+  vertical-align: baseline;
 }
 
 // --------------------------------------------------
@@ -646,77 +647,77 @@ $reflex-grid-spacing: 15px !default;
 // --------------------------------------------------
 
 .#{$reflex-prefix}justify-start {
-    @include justify-content-start();
+  @include justify-content-start();
 
-    @if $legacy-support == true {
-        &.grid {
-            text-align: left;
-        }
+  @if $legacy-support == true {
+    &.grid {
+      text-align: left;
     }
+  }
 }
 
 .#{$reflex-prefix}justify-end {
-    @include justify-content-end();
+  @include justify-content-end();
 
-    @if $legacy-support == true {
-        &.grid {
-            text-align: right;
-            -moz-text-align-last: right;
-            text-align-last: right;
+  @if $legacy-support == true {
+    &.grid {
+      text-align: right;
+      -moz-text-align-last: right;
+      text-align-last: right;
 
-            [class*="#{$reflex-prefix}col-"] {
-                @include reset-text-align();
-            }
-        }
+      [class*='#{$reflex-prefix}col-'] {
+        @include reset-text-align();
+      }
     }
+  }
 }
 
 .#{$reflex-prefix}justify-center {
-    @include justify-content-center();
+  @include justify-content-center();
 
-    @if $legacy-support == true {
-        &.grid {
-            text-align: center;
-            -moz-text-align-last: center;
-            text-align-last: center;
+  @if $legacy-support == true {
+    &.grid {
+      text-align: center;
+      -moz-text-align-last: center;
+      text-align-last: center;
 
-            [class*="#{$reflex-prefix}col-"] {
-                @include reset-text-align();
-            }
-        }
+      [class*='#{$reflex-prefix}col-'] {
+        @include reset-text-align();
+      }
     }
+  }
 }
 
 .#{$reflex-prefix}justify-space-between {
-    @include justify-content-space-between();
+  @include justify-content-space-between();
 
-    @if $legacy-support == true {
-        &.grid {
-            text-align: justify;
-            -moz-text-align-last: justify;
-            text-align-last: justify;
+  @if $legacy-support == true {
+    &.grid {
+      text-align: justify;
+      -moz-text-align-last: justify;
+      text-align-last: justify;
 
-            [class*="#{$reflex-prefix}col-"] {
-                @include reset-text-align();
-            }
-        }
+      [class*='#{$reflex-prefix}col-'] {
+        @include reset-text-align();
+      }
     }
+  }
 }
 
 .#{$reflex-prefix}justify-space-around {
-    @include justify-content-space-around();
+  @include justify-content-space-around();
 
-    @if $legacy-support == true {
-        &.grid {
-            text-align: justify;
-            -moz-text-align-last: justify;
-            text-align-last: justify;
+  @if $legacy-support == true {
+    &.grid {
+      text-align: justify;
+      -moz-text-align-last: justify;
+      text-align-last: justify;
 
-            [class*="#{$reflex-prefix}col-"] {
-                @include reset-text-align();
-            }
-        }
+      [class*='#{$reflex-prefix}col-'] {
+        @include reset-text-align();
+      }
     }
+  }
 }
 
 // --------------------------------------------------
@@ -725,9 +726,9 @@ $reflex-grid-spacing: 15px !default;
 
 // Removes internal padding from all columns in a grid
 .#{$reflex-prefix}grid-bleed {
-    [class*="#{$reflex-prefix}col-"] {
-        padding: 0;
-    }
+  [class*='#{$reflex-prefix}col-'] {
+    padding: 0;
+  }
 }
 
 // --------------------------------------------------
@@ -736,27 +737,27 @@ $reflex-grid-spacing: 15px !default;
 
 // Makes a column element into a flexbox column
 .#{$reflex-prefix}col-grid {
-    @include display-flex();
-    @include flex-direction(column);
+  @include display-flex();
+  @include flex-direction(column);
 
-    &.#{$reflex-prefix}direction-row {
-        @include flex-direction(row);
-    }
+  &.#{$reflex-prefix}direction-row {
+    @include flex-direction(row);
+  }
 }
 
 // Removes internal padding from all columns in a grid
 .#{$reflex-prefix}col-bleed {
-    padding: 0;
+  padding: 0;
 }
 
 // Removes horizontal padding from all columns in a grid
 .#{$reflex-prefix}col-bleed-x {
-    padding: $reflex-grid-spacing 0;
+  padding: $reflex-grid-spacing 0;
 }
 
 // Removes vertical padding from all columns in a grid
 .#{$reflex-prefix}col-bleed-y {
-    padding: 0 $reflex-grid-spacing;
+  padding: 0 $reflex-grid-spacing;
 }
 
 // --------------------------------------------------
@@ -764,24 +765,24 @@ $reflex-grid-spacing: 15px !default;
 // --------------------------------------------------
 
 .#{$reflex-prefix}flex-img {
-    display: block;
-    @include flex(0, 0, auto);
-    max-width: 100%;
-    height: auto;
-    width: 100%;
-    @if $legacy-support == true {
-        *width: auto;
-    }
+  display: block;
+  @include flex(0, 0, auto);
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  @if $legacy-support == true {
+    *width: auto;
+  }
 }
 
 .#{$reflex-prefix}flex-footer {
-    width: 100%;
-    margin-top: auto;
-    margin-bottom: 0;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 0;
 
-    > :last-child {
-        margin-bottom: 0;
-    }
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
 
 // --------------------------------------------------
@@ -796,39 +797,39 @@ $reflex-grid-spacing: 15px !default;
 
 .#{$reflex-prefix}container,
 .#{$reflex-prefix}container-full {
-    @include box-sizing(border-box);
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: ($reflex-grid-spacing * 2);
-    padding-left: ($reflex-grid-spacing * 2);
+  @include box-sizing(border-box);
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: ($reflex-grid-spacing * 2);
+  padding-left: ($reflex-grid-spacing * 2);
 
-    .#{$reflex-prefix}grid {
-        margin-right: -$reflex-grid-spacing;
-        margin-left: -$reflex-grid-spacing;
-    }
+  .#{$reflex-prefix}grid {
+    margin-right: -$reflex-grid-spacing;
+    margin-left: -$reflex-grid-spacing;
+  }
 }
 
 .#{$reflex-prefix}container {
-    @media (min-width: $reflex-xs) {
-        max-width: $reflex-xs;
-    }
+  @media (min-width: $reflex-xs) {
+    max-width: $reflex-xs;
+  }
 
-    @media (min-width: $reflex-sm) {
-        max-width: $reflex-sm;
-    }
+  @media (min-width: $reflex-sm) {
+    max-width: $reflex-sm;
+  }
 
-    @media (min-width: $reflex-md) {
-        max-width: $reflex-md;
-    }
+  @media (min-width: $reflex-md) {
+    max-width: $reflex-md;
+  }
 
-    @media (min-width: $reflex-lg) {
-        max-width: $reflex-lg;
-    }
+  @media (min-width: $reflex-lg) {
+    max-width: $reflex-lg;
+  }
 
-    @media (min-width: $reflex-xlg) {
-        max-width: $reflex-xlg;
-    }
+  @media (min-width: $reflex-xlg) {
+    max-width: $reflex-xlg;
+  }
 }
 
 // --------------------------------------------------
@@ -836,54 +837,54 @@ $reflex-grid-spacing: 15px !default;
 // --------------------------------------------------
 
 .#{$reflex-prefix}grid {
+  @include box-sizing(border-box);
+  display: block;
+  @include display-flex();
+  @include flex-wrap();
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  @include setup-whitespace();
+
+  &::before,
+  &::after {
     @include box-sizing(border-box);
-    display: block;
-    @include display-flex();
-    @include flex-wrap();
-    padding: 0;
-    margin: 0 auto;
-    position: relative;
-    @include setup-whitespace();
+    @include reset-whitespace();
+  }
 
-    &::before,
-    &::after {
-        @include box-sizing(border-box);
-        @include reset-whitespace();
-    }
-
-    // handle when lists are used as a grid
-    list-style-type: none;
+  // handle when lists are used as a grid
+  list-style-type: none;
 }
 
 // --------------------------------------------------
 // reflex col defaults
 // --------------------------------------------------
 
-[class*="#{$reflex-prefix}col-"] {
+[class*='#{$reflex-prefix}col-'] {
+  @include box-sizing(border-box);
+  @include reset-whitespace();
+  position: relative;
+  width: 100%;
+  vertical-align: top;
+  padding: $reflex-grid-spacing;
+
+  &::before,
+  &::after {
     @include box-sizing(border-box);
     @include reset-whitespace();
-    position: relative;
-    width: 100%;
-    vertical-align: top;
-    padding: $reflex-grid-spacing;
+  }
 
-    &::before,
-    &::after {
-        @include box-sizing(border-box);
-        @include reset-whitespace();
-    }
+  // handle grids nested in columns
+  .#{$reflex-prefix}grid {
+    @include flex(1, 1, auto);
+    margin: -$reflex-grid-spacing;
+  }
 
-    // handle grids nested in columns
-    .#{$reflex-prefix}grid {
-        @include flex(1, 1, auto);
-        margin: -$reflex-grid-spacing;
-    }
-
-    @if $legacy-support == true {
-        display: inline-block;
-        *display: inline;
-        zoom: 1;
-    }
+  @if $legacy-support == true {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
 }
 
 // --------------------------------------------------
@@ -893,23 +894,23 @@ $reflex-grid-spacing: 15px !default;
 @include make-reflex-grid(col-);
 
 @media (min-width: $reflex-xs) {
-    @include make-reflex-grid(col-xs-);
+  @include make-reflex-grid(col-xs-);
 }
 
 @media (min-width: $reflex-sm) {
-    @include make-reflex-grid(col-sm-);
+  @include make-reflex-grid(col-sm-);
 }
 
 @media (min-width: $reflex-md) {
-    @include make-reflex-grid(col-md-);
+  @include make-reflex-grid(col-md-);
 }
 
 @media (min-width: $reflex-lg) {
-    @include make-reflex-grid(col-lg-);
+  @include make-reflex-grid(col-lg-);
 }
 
 @media (min-width: $reflex-xlg) {
-    @include make-reflex-grid(col-xlg-);
+  @include make-reflex-grid(col-xlg-);
 }
 
 // --------------------------------------------------
@@ -917,37 +918,37 @@ $reflex-grid-spacing: 15px !default;
 // --------------------------------------------------
 
 .#{$reflex-prefix}col-auto {
-    @include setup-auto-cols();
+  @include setup-auto-cols();
 }
 
 @media (min-width: $reflex-xs) {
-    .#{$reflex-prefix}col-xs-auto {
-        @include setup-auto-cols();
-    }
+  .#{$reflex-prefix}col-xs-auto {
+    @include setup-auto-cols();
+  }
 }
 
 @media (min-width: $reflex-sm) {
-    .#{$reflex-prefix}col-sm-auto {
-        @include setup-auto-cols();
-    }
+  .#{$reflex-prefix}col-sm-auto {
+    @include setup-auto-cols();
+  }
 }
 
 @media (min-width: $reflex-md) {
-    .#{$reflex-prefix}col-md-auto {
-        @include setup-auto-cols();
-    }
+  .#{$reflex-prefix}col-md-auto {
+    @include setup-auto-cols();
+  }
 }
 
 @media (min-width: $reflex-lg) {
-    .#{$reflex-prefix}col-lg-auto {
-        @include setup-auto-cols();
-    }
+  .#{$reflex-prefix}col-lg-auto {
+    @include setup-auto-cols();
+  }
 }
 
 @media (min-width: $reflex-xlg) {
-    .#{$reflex-prefix}col-xlg-auto {
-        @include setup-auto-cols();
-    }
+  .#{$reflex-prefix}col-xlg-auto {
+    @include setup-auto-cols();
+  }
 }
 
 // --------------------------------------------------
@@ -957,23 +958,23 @@ $reflex-grid-spacing: 15px !default;
 @include make-order-helpers();
 
 @media (min-width: $reflex-xs) {
-    @include loop-order-helpers($reflex-columns, '-xs');
+  @include loop-order-helpers($reflex-columns, '-xs');
 }
 
 @media (min-width: $reflex-sm) {
-    @include loop-order-helpers($reflex-columns, '-sm');
+  @include loop-order-helpers($reflex-columns, '-sm');
 }
 
 @media (min-width: $reflex-md) {
-    @include loop-order-helpers($reflex-columns, '-md');
+  @include loop-order-helpers($reflex-columns, '-md');
 }
 
 @media (min-width: $reflex-lg) {
-    @include loop-order-helpers($reflex-columns, '-lg');
+  @include loop-order-helpers($reflex-columns, '-lg');
 }
 
 @media (min-width: $reflex-xlg) {
-    @include loop-order-helpers($reflex-columns, '-xlg');
+  @include loop-order-helpers($reflex-columns, '-xlg');
 }
 
 // --------------------------------------------------
@@ -983,21 +984,21 @@ $reflex-grid-spacing: 15px !default;
 @include make-offset-helpers();
 
 @media (min-width: $reflex-xs) {
-    @include loop-offset-helpers($reflex-columns - 1, '-xs');
+  @include loop-offset-helpers($reflex-columns - 1, '-xs');
 }
 
 @media (min-width: $reflex-sm) {
-    @include loop-offset-helpers($reflex-columns - 1, '-sm');
+  @include loop-offset-helpers($reflex-columns - 1, '-sm');
 }
 
 @media (min-width: $reflex-md) {
-    @include loop-offset-helpers($reflex-columns - 1, '-md');
+  @include loop-offset-helpers($reflex-columns - 1, '-md');
 }
 
 @media (min-width: $reflex-lg) {
-    @include loop-offset-helpers($reflex-columns - 1, '-lg');
+  @include loop-offset-helpers($reflex-columns - 1, '-lg');
 }
 
 @media (min-width: $reflex-xlg) {
-    @include loop-offset-helpers($reflex-columns - 1, '-xlg');
+  @include loop-offset-helpers($reflex-columns - 1, '-xlg');
 }
