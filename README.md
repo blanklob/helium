@@ -1,9 +1,10 @@
-# 🗂 Shopify webpack workflow with Online Store 2.0 features
+# Workflow ⚙️: Modern developement Boilerplate on Shopify
 
-[![GitHub issues](https://img.shields.io/github/issues/younessidbakkasse/shopify-webpack-with-os2-features)](https://GitHub.com/younessidbakkasseshopify-webpack-with-os2-features/issues/)
-[![GitHub stars](https://img.shields.io/github/stars/younessidbakkasse/shopify-webpack-with-os2-features)](https://GitHub.com/younessidbakkasseshopify-webpack-with-os2-features/stargazers/)
-[![GitHub forks](https://img.shields.io/github/forks/younessidbakkasse/shopify-webpack-with-os2-features)](https://GitHub.com/younessidbakkasseshopify-webpack-with-os2-features/network/)
-[![GitHub license](https://img.shields.io/github/license/younessidbakkasse/shopify-webpack-with-os2-features)](https://github.com/younessidbakkasse/shopify-webpack-with-os2-features/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/younessidbakkasse/workflow)](https://GitHub.com/younessidbakkasse/workflow/issues/)
+[![GitHub stars](https://img.shields.io/github/stars/younessidbakkasse/workflow)](https://GitHub.com/younessidbakkasse/workflow/stargazers/)
+[![GitHub forks](https://img.shields.io/github/forks/younessidbakkasse/workflow)](https://GitHub.com/younessidbakkasse/workflow/network/)
+[![GitHub license](https://img.shields.io/github/license/younessidbakkasse/workflow)](https://github.com/younessidbakkasse/workflow/blob/master/LICENSE)
+[![Shopify Theme Check CI](https://github.com/younessidbakkasse/workflow/actions/workflows/theme-check-ci.yml/badge.svg)](https://github.com/younessidbakkasse/workflow/actions/workflows/theme-check-ci.yml)
 
 [Features](#features) |
 [Before you start](#before-you-start) |
@@ -23,10 +24,10 @@ A Webpack, HTML-first, Typescript-only-as-needed approach to theme development. 
 - Webpack 5
 - Shopify-CLI
 - Shopify github Integration
-- Typescript features compiled to legacy code using TSCompiler.
+- Typescript features compiled to legacy code using the TSCompiler.
 - Shopify lighthouse CI Github actions
 - Shopify Online Store 2 (Sections everywhere and JSON templates)
-- Shopify Linting (Theme Inspector)
+- Shopify Linting (Theme Check)
 - Prettier (Formatting static assets) and Editorconfig file (for better collaborations)
 - SCSS/PostCSS (Autoprefixer and all PostCSS plugins)
 - Hot Module Reloading on sass/typescript file changes for rapid development
@@ -72,7 +73,6 @@ To verify that Shopify CLI is installed properly, run the following command:
 shopify version
 ```
 
-You should get a version number like 2.0.1
 
 #### To learn how to install Shopify CLI on Windows or Linux refer to the other installation guides [here](https://shopify.dev/themes/tools/cli/installation).
 
@@ -81,7 +81,7 @@ You should get a version number like 2.0.1
 To get started, install the templates either by cloning this repository or using the shopify cli init command like so:
 
 ```shell
-shopify theme init -u https://github.com/younessidbakkasse/shopify-webpack-with-os2-features
+shopify theme init -u https://github.com/younessidbakkasse/workflow
 ```
 
 This command will prompt you to choose a Theme name then clones the template to your local machine.
@@ -100,10 +100,16 @@ yarn start
 
 ## ✅Commands
 
-- To run the shopify development server, same as `shopify theme serve`
+- To run the shopify development server and watch for file transformation changes.
 
 ```shell
 yarn start
+```
+
+- To only run the shopify development server, same as `shopify theme serve`
+
+```shell
+yarn serve
 ```
 
 - To watch over static file changes, this will run webpack bundling for the development configuration.
@@ -130,10 +136,17 @@ yarn lint
 yarn zip
 ```
 
-- Run prettier formatting on static .scss and .js files.
+- Run Shopify theme linting manually.
 
 ```shell
 yarn format
+```
+
+
+- Fix auto simple liquid bugs same as `shopify theme check -a`.
+
+```shell
+yarn fix
 ```
 
 - Saves all the settings that you've made in the Shopify cutomizer editor, so next time you restart the server you will continue where you left.
@@ -146,6 +159,12 @@ yarn pull
 
 ```shell
 yarn push
+```
+
+- Format and build files for production then pushes the theme to Shopify servers.
+
+```shell
+yarn deploy
 ```
 
 ## 🙌Contributing
