@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "es2015",
     "module": "es2020",
     "lib": ["es2020", "DOM", "DOM.Iterable"],
@@ -15,13 +16,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "plugins": [
-      {
-        "name": "ts-lit-plugin",
-        "strict": true
-      }
-    ]
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": ["node_modules", "worker", "public"],
 }

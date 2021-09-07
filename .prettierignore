@@ -1,6 +1,0 @@
-# Env files #
-######################
-node_modules
-*.config.js
-assets
-*.json

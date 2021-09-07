@@ -1,8 +1,9 @@
-root: .
+root: ../
 
 # Disabling some checks
 RequiredDirectories:
   enabled: false
 
-RemoteAsset:
-  enabled: false
+ignore:
+  - ../.config
+  - ../package.json

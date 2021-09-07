@@ -23,8 +23,6 @@ yarn-error.log
 *.zip
 
 # Others #
-.husky
-/.vscode
 *.sass-cache*
 .cache/*
 _site

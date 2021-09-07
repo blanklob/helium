@@ -12,34 +12,11 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: $theme-font-heading-family;
-  font-style: $theme-font-heading-style;
+  height: 45em;
 
   .s-index__wrapper {
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
-  }
-
-  .s-index__heading {
-    color: $theme-color-text-heading;
-    @include font-size(35px);
-
-    // Responsive easy & effortless media query.
-    /// @see 'tools.mixins.scss' for more info.
-    ///
-    @include mq('to-md') {
-      @include font-size(28px);
-    }
-  }
-
-  .s-index__subheading {
-    color: $theme-color-text-body;
-    @include font-size(24px);
-
-    @include mq('to-md') {
-      @include font-size(18px);
-    }
   }
 }

@@ -21,7 +21,8 @@ html {
   background-color: $theme-color-background;
 }
 
-.--loading:not(html) {
+// Hide anything that has class '--loading' if javascript is disabled
+.j--disabled:not(html) {
   display: none !important;
 }
 

@@ -35,6 +35,15 @@
       @include font-size(30px);
     }
   }
+
+  // Size variants
+  &.--bold {
+    font-weight: 700;
+  }
+
+  &.--light {
+    font-weight: 300;
+  }
 }
 
 .c-body {
@@ -47,10 +56,10 @@
   // Size variants
   &,
   &.--b1 {
-    @include font-size(18px);
+    @include font-size(24px);
   }
 
   &.--b2 {
-    @include font-size(15px);
+    @include font-size(18px);
   }
 }

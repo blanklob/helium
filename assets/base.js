@@ -1,1 +1,0 @@
-!function(){"use strict";!function(){class e extends HTMLElement{constructor(){super()}}customElements.define("simple-greeting",e)}()}();

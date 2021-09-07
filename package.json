@@ -1,31 +1,29 @@
 {
-  "name": "shopify-webpack-with-os2-features",
-  "version": "1.0.3",
-  "main": "theme.js",
-  "description": "Modern development on Shopify using Webpack 5 fully supporting the new Shopify Theme CLI and Online Store 2.0 features.",
-  "repository": "https://github.com/younessidbakkasse/shopify-webpack-with-os2-features.git",
-  "author": "Youness Id bakkasse <std.youness@gmail.com>",
+  "name": "flow",
+  "version": "1.0.4",
+  "main": "base.js",
+  "description": "Modern Shopify development workflow, with Online Store 2.0 features and built with performance and accessibility in mind..",
+  "repository": "https://github.com/younessidbakkasse/flow.git",
+  "author": "Youness Id bakkasse",
   "license": "MIT",
   "keywords": [
     "boilerplate",
     "webpack",
     "typescript",
     "shopify",
-    "sass"
-  ],
-  "prettierIgnore": [
-    "assets"
+    "sass",
+    "postcss"
   ],
   "browserslist": [
     "defaults"
   ],
   "scripts": {
     "start": "shopify theme serve",
-    "build": "webpack --config webpack.config.prod.js",
-    "watch": "webpack watch --config webpack.config.dev.js",
+    "build": "webpack --config .config/webpack.config.prod.js",
+    "watch": "webpack watch --config .config/webpack.config.dev.js",
     "zip": "shopify theme package .",
     "lint": "shopify theme check -a && lit-analyzer",
-    "format": "prettier --write .",
+    "format": "prettier --config .config/.prettier.config.js --ignore-path .config/.prettierignore --write .",
     "pull": "shopify theme pull -n",
     "push": "shopify theme push",
     "stats": "webpack --profile --json > stats.json"
@@ -34,14 +32,17 @@
     "css-loader": "^5.2.6",
     "media-query-plugin": "^1.5.0",
     "mini-css-extract-plugin": "^1.6.2",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.3.5",
     "postcss-loader": "^6.1.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.3.2",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
+    "size-plugin": "2.0.2",
     "ts-lit-plugin": "^1.2.1",
     "ts-loader": "^9.2.5",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.4.2",
     "webpack": "^5.41.1",
     "webpack-cli": "^4.7.2",

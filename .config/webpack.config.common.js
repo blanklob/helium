@@ -1,29 +1,32 @@
 // General
-const path = require('path')
+const path = require('path');
 
 // Webpack plugins
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts')
-const MediaQueryPlugin = require('media-query-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const MediaQueryPlugin = require('media-query-plugin');
+const SizePlugin = require('size-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 // Directories
-const srcDir = path.join(__dirname, 'src')
-const stylesDir = path.join(srcDir, 'styles')
-const scriptsDir = path.join(srcDir, 'app')
-const nodeDir = path.join(__dirname, 'node_modules')
-const entries = new Object()
+const rootDir = path.dirname(__dirname);
+const nodeDir = path.join(rootDir, 'node_modules');
+const srcDir = path.join(rootDir, 'src');
+const stylesDir = path.join(srcDir, 'styles');
+const scriptsDir = path.join(srcDir, 'app');
+const entries = new Object();
 
 // Add sections ass you wish (must be the same name as file)
 const sections = [
   'index',
-]
+];
 
 // Creating entries
 sections.map(sectionName => {
-  let sectionPath = path.join(stylesDir, `sections/_sections.${sectionName}.scss`)
-  let entryName = `section-${sectionName}`
-  entries[entryName] = sectionPath
-})
+  let sectionPath = path.join(stylesDir, `sections/_sections.${sectionName}.scss`);
+  let entryName = `section-${sectionName}`;
+  entries[entryName] = sectionPath;
+});
 
 // Common configuration
 module.exports = {
@@ -38,7 +41,7 @@ module.exports = {
   // Output
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, 'assets'),
+    path: path.resolve(rootDir, 'assets'),
     clean: true,
   },
   // Plugins
@@ -60,7 +63,12 @@ module.exports = {
         'screen and (max-width: 499px)': 'mobile',
         'screen and (max-width: 319px)': 'mobile',
       }
-  })
+    }),
+    // #4: Prints the gzipped sizes of assets.
+    new SizePlugin({
+      publish: false,
+      writeFile: false
+    }),
   ],
   // Webpack Loaders
   module: {
@@ -81,7 +89,12 @@ module.exports = {
           'css-loader',
           MediaQueryPlugin.loader,
           // Postcss
-          'postcss-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: require(path.join(__dirname, 'postcss.config.js'))
+            }
+          },
           // Compiles Sass to CSS
           'sass-loader',
         ],
@@ -102,6 +115,11 @@ module.exports = {
       Styles: stylesDir,
       NodeModules: nodeDir,
     },
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
+    plugins: [new TsconfigPathsPlugin({ configFile: path.join(rootDir, 'tsconfig.json') })]
   },
-}
+  stats: {
+    preset: 'errors-warnings',
+    version: false
+  },
+};

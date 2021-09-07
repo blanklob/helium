@@ -13,7 +13,7 @@
     -%}
 {% endcomment %}
 
-{%- capture image_class -%}c-img c-img--{{ image_type | default: 'default' }}{%- endcapture -%}
+{%- capture image_class -%}c-img --{{ image_type | default: 'default' }}{%- endcapture -%}
 {%- liquid
   assign image_final_width = ''
   assign image_final_height = ''

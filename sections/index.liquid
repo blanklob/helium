@@ -4,12 +4,13 @@
   <div class="o-container --s u-align-center" data-component-example>
     <div class="s-index__logo u-mb-md">{%- render 'components.icon' icon: 'shopify', icon_size: 120 -%}</div>
     <div class="s-index__wrapper">
-      <h2 class="s-index__heading u-mb-md">{{ section.settings.heading }}</h2>
-      <p class="s-index__subheading u-mb-l">{{ section.settings.subheading }}</p>
-      <a class="s-index__link c-btn --primary"
+      <h2 class="c-heading --h2 --bold u-mb-md">{{ section.settings.heading }}</h2>
+      <p class="c-body --b1 u-mb-l">{{ section.settings.subheading }}</p>
+      <a class="s-index__link c-btn c--primary"
         href="https://github.com/younessidbakkasse/shopify-webpack-with-os2-features"
-        target="_blank">{{ section.settings.link_label }}</a>
+        target="_blank" rel="noreferrer noopener">{{ section.settings.link_label }}</a>
     </div>
+    <simple-greeting class="c-greeting"></simple-greeting>
   </div>
 </div>
 

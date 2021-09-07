@@ -1,7 +1,14 @@
-export class SimpleGreeting extends HTMLElement {
+class SimpleGreeting extends HTMLElement {
+  greeting: string;
+
   constructor() {
-    super()
+    super();
+    this.greeting = 'Hello, world';
   }
-}
+};
 
 customElements.define('simple-greeting', SimpleGreeting);
+
+export type { SimpleGreeting };
+
+
