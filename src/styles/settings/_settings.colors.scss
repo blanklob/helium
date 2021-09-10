@@ -1,6 +1,6 @@
-/* ==========================================================================
-   ## BASE THEME COLOR SETTINGS
-   ========================================================================== */
+// ==========================================================================
+// ## SETTINGS: COLORS
+// ==========================================================================
 
 /// @content This file sets up the theme color variables.
 /// Basically, take the custom properties defined in the "snippets/style-liquid-tags.liquid"
@@ -29,8 +29,8 @@ $theme-color-text-body: var(--theme-color-text-body) !default;
 
 // Buttons ************************
 // Secondary button style can be added if needed.
-$theme-color-btn: var(--theme-color-btn) !default;
-$theme-color-btn-text: var(--theme-color-btn-text) !default;
+$theme-color-button: var(--theme-color-button) !default;
+$theme-color-button-text: var(--theme-color-button-text) !default;
 
 // Background ********************
 $theme-color-background: var(--theme-color-background) !default;

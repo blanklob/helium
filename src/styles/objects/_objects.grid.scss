@@ -1,17 +1,16 @@
-/* ==========================================================================
-   ## OBJECTS: GRID
-   ========================================================================== */
+// ==========================================================================
+// ## OBJECTS: GRID
+// ==========================================================================
 
 /// @author Tom Hare (colourgarden) <https://github.com/colourgarden>
 /// @link https://github.com/colourgarden/avalanche for more Docs.
 ///
 /// @content Object classes to create responsive grid layouts.
 //
-///   .o-grid {}
-///   .o-grid__cell {}
-///   .o-grid--middle {}
-///   .o-grid--auto {}
-///   and others...
+///   .o-grid {}          - Base grid parent container.
+///   .o-grid__cell {}    - Grid cell/child.
+///   .u-1/2 {}           - Grid cell/child width fraction.
+///   and others...Check the docs.
 ///
 
 @use 'sass:math';
@@ -146,9 +145,6 @@ $av-enable-grid-rev: true !default;
   }
 }
 
-/**
-  * GRID LAYOUT
-  */
 .#{avCreateBlockClassName()} {
   display: block;
   list-style: none;
@@ -278,10 +274,6 @@ $av-enable-grid-rev: true !default;
     }
   }
 }
-
-/**
-  * GRID WIDTHS
-  */
 
 // Loop default widths
 @include av-create-widths($av-widths);

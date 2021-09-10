@@ -9,15 +9,17 @@ const SizePlugin = require('size-plugin')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 // Directories
-const rootDir = path.dirname(__dirname)
+const rootDir = path.dirname(path.dirname(__dirname))
+const configDir = path.dirname(__dirname)
 const nodeDir = path.join(rootDir, 'node_modules')
 const srcDir = path.join(rootDir, 'src')
 const stylesDir = path.join(srcDir, 'styles')
 const scriptsDir = path.join(srcDir, 'app')
 const entries = new Object()
+console.log(rootDir)
 
 // Add sections ass you wish (must be the same name as file)
-const sections = ['index']
+const sections = ['welcome']
 
 // Creating entries
 sections.map((sectionName) => {
@@ -91,7 +93,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: require(path.join(
-                __dirname,
+                configDir,
                 'postcss.config.js'
               )),
             },

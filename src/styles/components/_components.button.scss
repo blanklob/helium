@@ -1,15 +1,16 @@
-/* ==========================================================================
-   ## COMPONENTS: BUTTON
-   ========================================================================== */
+// ==========================================================================
+// ## COMPONENT: BUTTON
+// ==========================================================================
 
 /// @content Component specific classes for buttons.
 /// This file contains suite of classes like.
 ///
-///   .c-btn {}         - base btn.
-///   .--primary {}     - primary btn.
+///   .c-button {}               - Base button.
+///   .c-button--secondary {}    - Secondary button.
+///   .c-button--l {}            - Large size button.
 ///   ...add others if you want.
 ///
-.c-btn {
+.c-button {
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -27,42 +28,37 @@
   min-height: 3rem;
   user-select: none;
   appearance: none;
-  transition: all 200ms ease-in;
-  text-transform: uppercase;
+  background-color: $theme-color-button;
+  color: $theme-color-button-text;
 
   /// Color variants
-  &,
-  &.--primary {
-    background-color: $theme-color-btn;
-    color: $theme-color-btn-text;
+  &.c-button--secondary {
+    background-color: $theme-color-button-text;
+    color: $theme-color-button;
+  }
 
-    @include actus {
-      outline: dashed 1px $theme-color-btn;
-    }
+  /// Size variants
+  &.c-button--l {
+    padding: em($theme-spacing-s) em($theme-spacing-xl);
   }
 
   /// State variation
-  &.--loading {
+  &.c-button--loading {
     background-color: transparent;
   }
 
-  &.--disabled,
+  &.c-button--disabled,
   &:disabled,
   &[aria-disabled='true'] {
     cursor: not-allowed;
-    background-color: rgba($color: $theme-color-btn, $alpha: 0.5);
+    background-color: $theme-color-button;
   }
 
   // Type variations
-  &.--none {
+  .c-button--none {
     background: transparent;
     margin: 0;
     border: 0;
     padding: 0;
-  }
-
-  .--tertiary {
-    min-width: 9rem;
-    min-height: 3.5rem;
   }
 }

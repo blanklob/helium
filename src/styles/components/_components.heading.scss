@@ -1,65 +1,53 @@
-/* ==========================================================================
-   ## COMPONENTS: HEADINGS & PARAGRAPHS
-   ========================================================================== */
+// ==========================================================================
+// ## COMPONENT: HEADING
+// ==========================================================================
 
-/// @content Component specific classes for headings.
+/// @content Component specific classes for heading.
 /// This file contains suite of classes like.
 ///
 ///   .c-heading {}       - Base heading font.
-///   .c-heading.--h1 {}  - H1 size heading.
-///   .--b1 {}            - Small body font.
-///   ...add others if you want.
+///   .c-heading--h1 {}   - H1 size heading.
+///   .c-body--b1 {}      - Big body font.
+///   ...add others as you wish.
 ///
 
 .c-heading {
   font-family: $theme-font-heading-family;
   font-style: $theme-font-heading-style;
+  font-weight: $theme-font-heading-weight;
   color: $theme-color-text-heading;
-  font-weight: normal;
-  letter-spacing: 0.05em;
   text-decoration: none;
 
   // Size variants
-  &,
-  &.--h1 {
-    // Font size: tools.mixins.scss
-    @include font-size(50px);
-    @include mq('to-xs') {
-      @include font-size(40px);
+  &.c-heading--h1 {
+    // Font size: "tools/_tools.mixins.scss"
+    @include font-size(40px);
+    @include mq('from-s') {
+      @include font-size(50px);
     }
   }
 
-  &.--h2 {
-    @include font-size(38px);
-    @include mq('to-xs') {
-      @include font-size(30px);
+  &.c-heading--h2 {
+    @include font-size(30px);
+    @include mq('from-s') {
+      @include font-size(38px);
     }
-  }
-
-  // Size variants
-  &.--bold {
-    font-weight: 700;
-  }
-
-  &.--light {
-    font-weight: 300;
   }
 }
 
 .c-body {
   font-family: $theme-font-body-family;
   font-style: $theme-font-body-style;
+  font-weight: $theme-font-body-weight;
   color: $theme-color-text-body;
-  font-weight: normal;
   text-decoration: none;
 
   // Size variants
-  &,
-  &.--b1 {
+  &.c-body--b1 {
     @include font-size(24px);
   }
 
-  &.--b2 {
+  &.c-body--b2 {
     @include font-size(18px);
   }
 }

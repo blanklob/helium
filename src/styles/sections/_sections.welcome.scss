@@ -1,0 +1,23 @@
+// ==========================================================================
+// ## SHOPIFY SECTION: WELCOME
+// ==========================================================================
+
+/// - SETTINGS & TOOLS
+/// Common settings and tools.
+//
+@import 'Styles/settings/settings';
+@import 'Styles/tools/tools';
+
+
+.s-welcome {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 45em;
+
+  .s-welcome__wrapper {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}

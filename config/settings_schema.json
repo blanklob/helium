@@ -69,7 +69,7 @@
       },
       {
         "type": "color",
-        "id": "theme_color_btn",
+        "id": "theme_color_button",
         "label": {
           "en": "Button",
           "fr": "Boutton"
@@ -78,12 +78,12 @@
       },
       {
         "type": "color",
-        "id": "theme_color_btn_text",
+        "id": "theme_color_button_text",
         "label": {
           "en": "Button text",
           "fr": "Texte du boutton"
         },
-        "default": "#F6F6F6"
+        "default": "#f6f6f6"
       },
       {
         "type": "header",

@@ -1,86 +1,77 @@
-/* ==========================================================================
-   ## BASE (COMMON FILE)
-   ========================================================================== */
+// ==========================================================================
+// ## BASE/MAIN
+// ==========================================================================
 
 /// @author Youness Id bakkasse <https://github.com/younessidbakkasse>
-/// @link https://github.com/younessidbakkasse/shopify-webpack-with-os2-features for more Docs.
-/// @link https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces Learn about namespaces.
 ///
-/// @throw
+/// @content
 ///   DO NOT ADD CLASSES OR RULES IN THIS FILE DIRECTLY.
 ///   Instead, use imports to add extensions or snippets you made along the project.
 ///
 ///
-/// @content Production build weights only ~14kb (~5kb gzipped)
+/// Production build weights only ~12kb (~3kb gzipped)
 ///
-/// - TOOLS
-/// Tools................Sharable settings and tools between section files and this file.
-///
-/// - CORE
+
+
+/// - SETTINGS & TOOLS (MUST BE AT THE TOP)
+/// Common settings and tools.
+//
+@import 'Styles/settings/settings';
+@import 'Styles/tools/tools';
+
+
+/// - GENERIC
 /// Normalize............A level playing field using @necolas’s Normalize.
 /// Print................Reset-like styles for print media.
 /// Page.................Set up our document’s defaults sizings.
 /// Media................Base media (images, videos) styles.
 /// Elements.............Sensibly and tersely share some global commonalities.
 ///
-///
-/// - SECTIONS
-/// Header...............Scoped shopify section styles.
-///
-///
+@import 'Styles/generic/generic.normalize';
+@import 'Styles/generic/generic.print';
+@import 'Styles/generic/generic.page';
+@import 'Styles/generic/generic.media';
+@import 'Styles/generic/generic.elements';
+
+
 /// - COMPONENTS
+// Build and include your project’s UI components.
+// Uncomment and add to this as necessary.
+///
 /// A11y................Shopify snippet for a11y.
 /// Button..............Specific styles for btn component and its variations.
 /// Heading.............Specific styles for heading component and its size variations.
-/// Icon................Specific styles for icon component.
+/// Form................Specific styles for form and its child components.
 ///
-///
-/// - OBJECTS
-/// Container............Helper classes for aligning elements inside containers.
-/// Grid.................Nudge bits of the DOM around with these spacing classes.
-/// Flex.................Helper utility classes to hide/show content.
-///
-///
-/// - UTILITIES
-/// Spacing..............Nudge bits of the DOM around with these spacing classes.
-/// Displaying...........Helper utility classes to hide/show content.
-/// Alignement...........Helper classes for aligning elements inside containers.
-/// Vendors..............Vendor css core styles.
-////
-////
-
-// SETTINGS
-@import 'Styles/tools';
-
-// CORE
-@import 'Styles/core/core.normalize';
-@import 'Styles/core/core.print';
-@import 'Styles/core/core.page';
-@import 'Styles/core/core.media';
-@import 'Styles/core/core.elements';
-
-// SECTIONS
-// Uncomment and add header or footer sections.
-// @import 'Styles/sections/sections.header';
-
-// COMPONENTS
-// Build and include your project’s UI components here.
-// Uncomment and add to this section as necessary.
 @import 'Styles/components/components.a11y';
 @import 'Styles/components/components.button';
 @import 'Styles/components/components.heading';
-@import 'Styles/components/components.icon';
+@import 'Styles/components/components.form';
 
-// OBJECTS
+
+/// - OBJECTS
 // Be aware that enabling offsets produces a large chunk of classes which might
 // bloat your CSS, depending on the amount of breakpoints you defined.
 // Only set this to `true` if you are absolutely sure about what you are doing.
+///
+/// Container............Helper classes for aligning elements inside containers.
+/// Grid.................Nudge bits of the DOM around with these spacing classes.
+///
 @import 'Styles/objects/objects.container';
 @import 'Styles/objects/objects.grid';
-// @import 'Styles/objects/objects.flex';
 
-// UTILITIES
-@import 'Styles/utilities/utilities.spacing';
-@import 'Styles/utilities/utilities.displaying';
-@import 'Styles/utilities/utilities.alignement';
-@import 'Styles/utilities/utilities.vendors';
+
+/// - UTILITIES
+/// Space................Nudge bits of the DOM around with these spacing classes.
+/// Display..............Helper utility classes to hide/show content.
+/// Align................Helper classes for aligning elements inside containers.
+///
+@import 'Styles/utilities/utilities.space';
+@import 'Styles/utilities/utilities.display';
+@import 'Styles/utilities/utilities.align';
+
+
+/// - Vendors
+///
+// @import 'Styles/vendors/vendors.swiper';
+

@@ -20,8 +20,8 @@
   "scripts": {
     "start": "run-p serve watch",
     "serve": "shopify theme serve",
-    "build": "webpack --config .config/webpack.config.prod.js",
-    "watch": "webpack watch --config .config/webpack.config.dev.js",
+    "build": "webpack --config .config/webpack/webpack.config.prod.js",
+    "watch": "webpack watch --config .config/webpack/webpack.config.dev.js",
     "zip": "run-s build && shopify theme package .",
     "lint": "shopify theme check --config .config/.theme-check.yml",
     "fix": "shopify theme check --config .config/.theme-check.yml -a",

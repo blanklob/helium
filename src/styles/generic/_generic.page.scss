@@ -1,6 +1,6 @@
-/* ==========================================================================
-   ## CORE: PAGE
-   ========================================================================== */
+// ==========================================================================
+// ## GENERIC: PAGE
+// ==========================================================================
 
 // Simple page-level setup.
 //
@@ -10,7 +10,6 @@
 //
 // 2. Ensure the page always fills at least the entire height of the viewport.
 ///
-
 html {
   box-sizing: border-box;
   font-size: 16px; // [1]
@@ -18,12 +17,6 @@ html {
   min-height: 100%; // [2]
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background-color: $theme-color-background;
-}
-
-// Hide anything that has class '--loading' if javascript is disabled
-.j--disabled:not(html) {
-  display: none !important;
 }
 
 // More sensible box-sizing

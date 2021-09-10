@@ -1,0 +1,15 @@
+// ==========================================================================
+// ## SETTINGS
+// ==========================================================================
+
+
+/// - SETTINGS
+/// Base.................Theme global variables and settings.
+/// Breakpoints..........Theme responsive breakpoints declaration.
+/// Colors...............Theme color variables and settings.
+/// Fonts................Theme font/typo variables and settings.
+///
+@import 'settings.base';
+@import 'settings.breakpoints';
+@import 'settings.colors';
+@import 'settings.fonts';

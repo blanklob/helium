@@ -1,6 +1,6 @@
-/* ==========================================================================
-   ## BASE THEME SETTINGS
-   ========================================================================== */
+// ==========================================================================
+// ## SETTINGS: BASE
+// ==========================================================================
 
 /// @content This core file sets up most important setup variables. They underpin
 /// a lot of how the framework functions and should be modified and
@@ -50,13 +50,3 @@ $theme-spacing-xl: $theme-base-unit * $theme-base-factor-xl; // 96px
 /// @access public
 ///
 $theme-context: development !default;
-
-// Mobile First ******************
-// This switch controls media queries generation.
-// Available values: mobile, desktop, both.
-/// @type Boolean
-/// @access public
-///
-/// @todo Implimentation.
-///
-$theme-reponsive-first-on: both !default;

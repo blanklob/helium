@@ -1,6 +1,6 @@
-/* ==========================================================================
-   ## CORE: NORMALIZE
-   ========================================================================== */
+// ==========================================================================
+// ## GENERIC: NORMALIZE
+// ==========================================================================
 
 /// @content Normalize.css v8.0.1 | A modern alternative to CSS resets
 /// @author Nicolas Gallagher (necolas) <https://github.com/necolas>
@@ -121,7 +121,6 @@ sup {
 /// Embedded content
 // Remove the border on images inside links in IE 10.
 ///
-
 img {
   border-style: none;
 }
@@ -130,7 +129,6 @@ img {
 // 1. Change the font styles in all browsers.
 // 2. Remove the margin in Firefox and Safari.
 ///
-
 button,
 input,
 optgroup,
@@ -188,7 +186,7 @@ button:-moz-focusring,
 [type='button']:-moz-focusring,
 [type='reset']:-moz-focusring,
 [type='submit']:-moz-focusring {
-  outline: 1px dotted ButtonText;
+  outline: 1px dotted inherit;
 }
 
 // Correct the padding in Firefox.
