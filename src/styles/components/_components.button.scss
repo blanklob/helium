@@ -10,6 +10,7 @@
 ///   .c-button--l {}            - Large size button.
 ///   ...add others if you want.
 ///
+
 .c-button {
   cursor: pointer;
   display: inline-flex;
@@ -38,8 +39,12 @@
   }
 
   /// Size variants
+  &.c-button--s {
+    min-width: 6rem;
+  }
+
   &.c-button--l {
-    padding: em($theme-spacing-s) em($theme-spacing-xl);
+    min-width: 20rem;
   }
 
   /// State variation

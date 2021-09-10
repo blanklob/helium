@@ -1,23 +1,27 @@
-{{ 'section-index.css' | asset_url | stylesheet_tag }}
+{{ 'section-welcome.css' | asset_url | stylesheet_tag }}
 
-<div class="o-container o-container--s u-align-center" data-section-id="{{- section.id -}}">
-  <div class="s-index__logo u-mb-md">{%- render 'component-icon' icon: 'shopify', icon_size: 120 -%}</div>
-  <div class="s-index__wrapper">
-    <h2 class="c-heading --h2 --bold u-mb-md">{{ section.settings.heading }}</h2>
-    <p class="c-body --b1 u-mb-l">{{ section.settings.subheading }}</p>
-    <a class="s-index__link c-btn c--primary"
+<div class="o-container o-container--s u-align-center"
+  data-section-id="{{- section.id -}}">
+  <div class="s-welcome__logo u-mb-md">{%- render 'component-icon' icon: 'shopify', icon_size: 120 -%}</div>
+  <div class="s-welcome__wrapper">
+    <h2 class="c-heading c-heading--h2 c-heading--bold u-mb-md">{{ section.settings.heading }}</h2>
+    <p class="c-body c-body--b1 u-mb-l">{{ section.settings.subheading }}</p>
+    <a class="s-welcome__link c-button"
       href="https://github.com/younessidbakkasse/shopify-webpack-with-os2-features"
       target="_blank" rel="noreferrer noopener">{{ section.settings.link_label }}</a>
   </div>
-  <simple-greeting class="c-greeting"></simple-greeting>
 </div>
 
 {% schema %}
 {
-  "name": "Index",
+  "name": "Welcome",
   "tag": "section",
-  "class": "s-index",
+  "class": "s-welcome",
   "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    },
     {
       "type": "text",
       "id": "heading",

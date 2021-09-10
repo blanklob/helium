@@ -46,7 +46,6 @@
     --theme-font-body-base-weight:   {{ theme_font_body.weight }};
   }
 
-  {% comment %}
   {% comment %} Heading font face {% endcomment %}
   {{- theme_font_heading | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
   {{- theme_font_heading | font_modify: 'weight', '400' | font_face: font_display: 'swap' -}}
@@ -56,7 +55,6 @@
   {{- theme_font_body | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
   {{- theme_font_body | font_modify: 'weight', '400' | font_face: font_display: 'swap' -}}
   {{- theme_font_body | font_modify: 'weight', '700' | font_face: font_display: 'swap' -}}
-  {% endcomment %}
 </style>
 
 {% comment %} JavaScript/Liquid Settings {% endcomment %}
@@ -71,8 +69,8 @@ Shopify = {
       secondary:   "{{- settings.theme_color_secondary -}}",
       textHeading: "{{- settings.theme_color_text_heading -}}",
       textBody:    "{{- settings.theme_color_text_body -}}",
-      btn:         "{{- settings.theme_color_btn -}}",
-      btnText:     "{{- settings.theme_color_btn_text -}}",
+      btn:         "{{- settings.theme_color_button -}}",
+      btnText:     "{{- settings.theme_color_button_text -}}",
       background:  "{{- settings.theme_color_background -}}",
     },
 
@@ -112,5 +110,5 @@ Shopify = {
     sections: {}
 };
 
-document.documentElement.className = document.documentElement.className.replace('j--disabled', 'j--enabled');
+document.documentElement.className = document.documentElement.className.replace('is-loading', 'is-loaded');
 </script>

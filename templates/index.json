@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "index"
+      "type": "welcome"
     }
   },
   "order": ["main"]
