@@ -19,8 +19,8 @@ jobs:
           lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
           ### Lighthouse CI settings
-          # lhci_min_score_performance: 0.4
-          # lhci_min_score_accessibility: 0.4
+          # lhci_min_score_performance: 0.9
+          # lhci_min_score_accessibility: 0.9
 
           ### Run Lighthouse test on specific product/collection.
           ### More: https://shopify.dev/themes/tools/lighthouse-ci#arguments
