@@ -6,12 +6,13 @@
 ehthumbs.db
 Thumbs.db
 
-# Environment #
+# Enviroment #
 src
 node_modules
 .config
 .github
 .vscode
+.docs
 package.json
 tsconfig.json
 

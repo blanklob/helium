@@ -15,18 +15,16 @@ npm-debug.log
 yarn-error.log
 .eslintcache
 
-# Packages #
-*.dmg
-*.jar
-*.rar
-*.tar
-*.zip
-
 # Others #
 *.sass-cache*
 .cache/*
 _site
 /.idea
 
+# Docs #
+.docs/*
+!.docs/content
+!.docs/images
+!.docs/README.md
 
 
