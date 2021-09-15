@@ -1,9 +1,9 @@
 ---
 title : "Docs"
-description: "Docs Doks."
+description: "Modern Shopify development Workflow docs"
 lead: ""
-date: 2020-10-06T08:48:23+00:00
-lastmod: 2020-10-06T08:48:23+00:00
+date: 2021-08-27T19:23:18+02:00
+lastmod: 2021-08-27T19:23:18+02:00
 draft: false
 images: []
 ---

@@ -18,10 +18,9 @@
   ],
   "scripts": {
     "init": "shx rm -rf .git && git init -b main",
-    "prepare": "yarn lint && shx rm -rf assets/* && touch assets/.gitkeep",
+    "clean": "yarn lint && shx rm -rf assets/* && touch assets/.gitkeep",
     "start": "run-p serve watch",
     "serve": "shopify theme serve",
-    "clean": "shx rm -rf .docs .vscode .github/*.md .github/ISSUE_TEMPLATE",
     "build": "webpack --config .config/webpack/webpack.config.prod.js",
     "watch": "webpack watch --config .config/webpack/webpack.config.dev.js",
     "zip": "run-s build && shopify theme package .",

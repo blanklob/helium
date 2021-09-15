@@ -12,13 +12,11 @@
 /// Production build weights only ~12kb (~3kb gzipped)
 ///
 
-
 /// - SETTINGS & TOOLS (MUST BE AT THE TOP)
 /// Common settings and tools.
 //
 @import 'Styles/settings/settings';
 @import 'Styles/tools/tools';
-
 
 /// - GENERIC
 /// Normalize............A level playing field using @necolas’s Normalize.
@@ -32,7 +30,6 @@
 @import 'Styles/generic/generic.page';
 @import 'Styles/generic/generic.media';
 @import 'Styles/generic/generic.elements';
-
 
 /// - COMPONENTS
 // Build and include your project’s UI components.
@@ -48,7 +45,6 @@
 @import 'Styles/components/components.heading';
 @import 'Styles/components/components.form';
 
-
 /// - OBJECTS
 // Be aware that enabling offsets produces a large chunk of classes which might
 // bloat your CSS, depending on the amount of breakpoints you defined.
@@ -60,7 +56,6 @@
 @import 'Styles/objects/objects.container';
 @import 'Styles/objects/objects.grid';
 
-
 /// - UTILITIES
 /// Space................Nudge bits of the DOM around with these spacing classes.
 /// Display..............Helper utility classes to hide/show content.
@@ -70,8 +65,6 @@
 @import 'Styles/utilities/utilities.display';
 @import 'Styles/utilities/utilities.align';
 
-
 /// - Vendors
 ///
 // @import 'Styles/vendors/vendors.swiper';
-

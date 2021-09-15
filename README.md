@@ -73,7 +73,6 @@ To verify that Shopify CLI is installed properly, run the following command:
 shopify version
 ```
 
-
 #### To learn how to install Shopify CLI on Windows or Linux refer to the other installation guides [here](https://shopify.dev/themes/tools/cli/installation).
 
 ## ⚡️Getting started
@@ -141,7 +140,6 @@ yarn zip
 ```shell
 yarn format
 ```
-
 
 - Fix auto simple liquid bugs same as `shopify theme check -a`.
 
