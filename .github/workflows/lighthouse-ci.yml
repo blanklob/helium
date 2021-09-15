@@ -14,15 +14,17 @@ jobs:
           store: ${{ secrets.SHOP_STORE }}
           password: ${{ secrets.SHOP_PASSWORD }}
 
+          ### If you want to add the ✅ status check on github,
+          ### you need to configure these using github secrets.
+          lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
           ### Lighthouse CI settings
           # lhci_min_score_performance: 0.4
           # lhci_min_score_accessibility: 0.4
 
+          ### Run Lighthouse test on specific product/collection.
+          ### More: https://shopify.dev/themes/tools/lighthouse-ci#arguments
           product_handle: 'black-field'
           collection_handle: 'frontpage'
-
-          ### If you want to add the ✅ status check on github,
-          ### you need to configure these using github secrets.
-          lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
           # For more infos check out: https://shopify.dev/themes/tools/lighthouse-ci
