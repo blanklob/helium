@@ -20,17 +20,20 @@
   text-align: center;
   text-decoration: none;
   border: 0;
-  border-radius: 0;
-  padding: em($theme-spacing-s) em($theme-spacing-l);
+  border-radius: .3rem;
+  padding: .7rem 1.4rem;
   font-family: $theme-font-heading-family;
   font-style: $theme-font-heading-style;
   font-weight: $theme-font-heading-weight;
-  min-width: 16rem;
-  min-height: 3rem;
+  font-size: 1.25rem;
   user-select: none;
   appearance: none;
   background-color: $theme-color-button;
   color: $theme-color-button-text;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   /// Color variants
   &.c-button--secondary {

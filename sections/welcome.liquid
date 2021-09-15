@@ -1,14 +1,28 @@
 {{ 'section-welcome.css' | asset_url | stylesheet_tag }}
 
-<div class="o-container o-container--s u-align-center"
-  data-section-id="{{- section.id -}}">
-  <div class="s-welcome__logo u-mb-md">{%- render 'component-icon' icon: 'shopify', icon_size: 120 -%}</div>
-  <div class="s-welcome__wrapper">
-    <h2 class="c-heading c-heading--h2 c-heading--bold u-mb-md">{{ section.settings.heading }}</h2>
-    <p class="c-body c-body--b1 u-mb-l">{{ section.settings.subheading }}</p>
-    <a class="s-welcome__link c-button"
-      href="https://github.com/younessidbakkasse/shopify-webpack-with-os2-features"
-      target="_blank" rel="noreferrer noopener">{{ section.settings.link_label }}</a>
+<div class="o-container o-container--md u-align-center" data-section-id="{{- section.id -}}">
+  <div class="s-welcome__wrapper u-mv-xl" style="max-width: 45rem;">
+    <h1 class="c-heading c-heading--h1 c-heading--bold u-mb-md">{{ section.settings.heading }}</h1>
+    <h2 class="c-heading c-heading--h2 u-mb-s">{{ section.settings.subheading }}</h2>
+    <a class="s-welcome__link c-button u-mb-md"
+      href="https://workflow.younessidbakkasse.com/docs"
+      target="_blank">{{ section.settings.link_label }}
+      {%- render 'component-icon'
+        icon: 'arrow',
+        icon_size: 20,
+        icon_class: 'u-ml-s'
+      -%}</a>
+    <p class="c-heading c-heading--h4">
+      Open-source MIT Licensed. <a href="https://github.com/younessidbakkasse/workflow" target="_blank">GitHub v1.1.0</a>
+    </p>
+  </div>
+  <div class="s-welcome__feature-wrapper o-grid o-grid--middle u-mb-l">
+    {% for block in section.blocks %}
+      <div class="s-welcome__feature o-grid__cell u-1/1 u-1/3@from-s u-mb-l">
+        <h2 class="c-heading c-heading--h2 c-heading--bold u-mb-md">{{ block.settings.heading }}</h2>
+        <h3 class="c-heading c-heading--h3">{{ block.settings.description }}</h3>
+      </div>
+    {% endfor %}
   </div>
 </div>
 
@@ -23,22 +37,37 @@
       "content": "General"
     },
     {
-      "type": "text",
+      "type": "textarea",
       "id": "heading",
-      "label": "Heading",
-      "default": "Modern Shopify development ⚙️ workflow, with Online Store 2.0 features and built with performance ⚡️ and accessibility in mind.."
+      "label": "Heading"
     },
     {
       "type": "textarea",
       "id": "subheading",
-      "label": "Subeading",
-      "default": "Thanks for choosing workflow for your Shopify Theme setup 👍."
+      "label": "Subeading"
     },
     {
       "type": "text",
       "id": "link_label",
-      "label": "Link label",
-      "default": "Check docs on Github"
+      "label": "Link label"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Card",
+      "type": "card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
     }
   ]
 }

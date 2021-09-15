@@ -1,8 +1,1 @@
-{
-  "sections": {
-    "main": {
-      "type": "welcome"
-    }
-  },
-  "order": ["main"]
-}
+{"sections"=>{"main"=>{"type"=>"welcome", "blocks"=>{"1"=>{"type"=>"card", "settings"=>{"heading"=>"Supports Shopify CLI", "description"=>"Built on top of the latest Shopify developer tooling ecosystem. To quickly scaffold, test, and share Shopify themes."}}, "2"=>{"type"=>"card", "settings"=>{"heading"=>"Fast by default ⚡️", "description"=>"Get 100 scores on Google Lighthouse by default. Workflow has built in code splitting, prefetches links, and lazy loads files with zero dependencies."}}, "3"=>{"type"=>"card", "settings"=>{"heading"=>"SEO-ready 🎯", "description"=>"Use sensible defaults for structured data, open graph, and Twitter cards. Or easily change the SEO settings to your liking."}}, "4"=>{"type"=>"card", "settings"=>{"heading"=>"Typescript and SCSS based 🌈", "description"=>"Hot Module Reloading on sass/typescript file changes for rapid development, Extensible, scalable OOCSS and BEM architecture."}}, "5"=>{"type"=>"card", "settings"=>{"heading"=>"Shopify Github integration", "description"=>"Connect your Github repository with Shopify, no extra branches needed, 100% compatible out of the box!"}}, "6"=>{"type"=>"card", "settings"=>{"heading"=>"Shopify CI & Theme linting ♻️", "description"=>"Ensure your theme is performant and tested with Theme check at every push to prevent bad code in your theme."}}}, "block_order"=>["1", "2", "3", "4", "5", "6"], "settings"=>{"heading"=>"Modern Shopify<br>development Workflow", "subheading"=>"A Shopify theme environment from scratch ⚙️, with Online Store 2.0 features. Built with performance ⚡️ and best practices in mind..", "link_label"=>"Get started"}}}, "order"=>["main"]}

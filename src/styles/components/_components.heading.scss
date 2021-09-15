@@ -21,17 +21,28 @@
   // Size variants
   &.c-heading--h1 {
     // Font size: "tools/_tools.mixins.scss"
-    @include font-size(40px);
+    @include font-size(38px);
     @include mq('from-s') {
-      @include font-size(50px);
+      @include font-size(52px);
     }
   }
 
   &.c-heading--h2 {
-    @include font-size(30px);
+    @include font-size(22px);
     @include mq('from-s') {
-      @include font-size(38px);
+      @include font-size(24px);
     }
+  }
+
+  &.c-heading--h3 {
+    @include font-size(17px);
+    @include mq('from-s') {
+      @include font-size(18px);
+    }
+  }
+
+  &.c-heading--bold {
+    font-weight: bold;
   }
 }
 

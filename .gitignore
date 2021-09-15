@@ -24,7 +24,6 @@ _site
 # Docs #
 .docs/*
 !.docs/content
-!.docs/images
 !.docs/README.md
 
 

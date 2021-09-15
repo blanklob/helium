@@ -23,6 +23,11 @@ details > * {
 
 a {
   text-decoration: none;
+  color: gray;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 // Hide empty elements

@@ -1,8 +1,1 @@
-{
-  "sections": {
-    "main": {
-      "type": "main-blog"
-    }
-  },
-  "order": ["main"]
-}
+{"sections"=>{"main"=>{"type"=>"main-blog"}}, "order"=>["main"]}
