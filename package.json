@@ -31,7 +31,7 @@
     "deploy": "run-s format build push"
   },
   "devDependencies": {
-    "css-loader": "^5.2.6",
+    "css-loader": "^6.2.0",
     "media-query-plugin": "^1.5.0",
     "mini-css-extract-plugin": "^1.6.2",
     "npm-run-all": "^4.1.5",
