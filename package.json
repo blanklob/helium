@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "init": "shx rm -rf .git && git init -b main",
+    "prepare": "shx rm -rf assets/* && touch assets/.gitkeep",
     "start": "run-p serve watch",
     "serve": "shopify theme serve",
     "clean": "shx rm -rf .docs .vscode .github/*.md .github/ISSUE_TEMPLATE",

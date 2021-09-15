@@ -1,8 +1,67 @@
 {
   "sections": {
     "main": {
-      "type": "welcome"
+      "type": "welcome",
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "heading": "Supports Shopify CLI",
+            "description": "Built on top of the latest Shopify developer tooling ecosystem. To quickly scaffold, test, and share Shopify themes."
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "heading": "Fast by default ⚡️",
+            "description": "Get 100 scores on Google Lighthouse by default. Workflow has built in code splitting, prefetches links, and lazy loads files with zero dependencies."
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "heading": "SEO-ready 🎯",
+            "description": "Use sensible defaults for structured data, open graph, and Twitter cards. Or easily change the SEO settings to your liking."
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "heading": "Typescript and SCSS based 🌈",
+            "description": "Hot Module Reloading on sass\/typescript file changes for rapid development, Extensible, scalable OOCSS and BEM architecture."
+          }
+        },
+        "card5": {
+          "type": "card",
+          "settings": {
+            "heading": "Shopify Github integration",
+            "description": "Connect your Github repository with Shopify, no extra branches needed, 100% compatible out of the box!"
+          }
+        },
+        "card6": {
+          "type": "card",
+          "settings": {
+            "heading": "Shopify CI & Theme linting ♻️",
+            "description": "Ensure your theme is performant and tested with Theme check at every push to prevent bad code in your theme."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "card5",
+        "card6"
+      ],
+      "settings": {
+        "heading": "Modern Shopify<br>development Workflow",
+        "subheading": "A Shopify theme environment from scratch ⚙️, with Online Store 2.0 features. Built with performance ⚡️ and best practices in mind..",
+        "link_label": "Get started"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
