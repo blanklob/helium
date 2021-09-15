@@ -5,7 +5,6 @@
 [![GitHub forks](https://img.shields.io/github/forks/younessidbakkasse/workflow)](https://GitHub.com/younessidbakkasse/workflow/network/)
 [![GitHub license](https://img.shields.io/github/license/younessidbakkasse/workflow)](https://github.com/younessidbakkasse/workflow/blob/master/LICENSE)
 [![Shopify Theme Check CI](https://github.com/younessidbakkasse/workflow/actions/workflows/theme-check-ci.yml/badge.svg)](https://github.com/younessidbakkasse/workflow/actions/workflows/theme-check-ci.yml)
-[![Shopify Lighthouse CI](https://github.com/younessidbakkasse/workflow/actions/workflows/lighthouse-ci.yml/badge.svg)](https://github.com/younessidbakkasse/workflow/actions/workflows/lighthouse-ci.yml)
 
 [Features](#features) |
 [Before you start](#before-you-start) |
