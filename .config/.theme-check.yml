@@ -10,6 +10,7 @@ MatchingTranslations:
 
 # Ignoring some files
 ignore:
-  - .config
+  - node_modules
+  - .*
   - tsconfig.json
   - package.json
