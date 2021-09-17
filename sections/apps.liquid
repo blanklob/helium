@@ -1,0 +1,32 @@
+<div class="{% if section.settings.include_padding %}o-container o-container--md{% endif %}"
+  data-section-id="{{ section.id }}">
+  {% for block in section.blocks %}
+    {% render block %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "App wrapper",
+  "tag": "section",
+  "class": "s-apps",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "include_padding",
+      "default": true,
+      "label": "Make section margins the same as theme"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "App wrapper"
+    }
+  ]
+}
+{% endschema %}

@@ -24,13 +24,13 @@ A Webpack, HTML-first, Typescript-only-as-needed approach to theme development. 
 - Webpack 5
 - Shopify-CLI
 - Shopify github Integration
-- Typescript features compiled to legacy code using the TSCompiler.
+- Modern ES6 syntax & features compiled to legacy code using the Babel.
 - Shopify lighthouse CI Github actions
 - Shopify Online Store 2 (Sections everywhere and JSON templates)
 - Shopify Linting (Theme Check)
 - Prettier (Formatting static assets) and Editorconfig file (for better collaborations)
 - SCSS/PostCSS (Autoprefixer and all PostCSS plugins)
-- Hot Module Reloading on sass/typescript file changes for rapid development
+- Hot Module Reloading on sass/modern ES6 file changes for rapid development
 - Extensible, scalable, Sass-based, OOCSS and BEM architecture for large and long-lasting UI projects.
 - Built with SEO and Accessibilty in mind.
 - Media queries code splitting built in.

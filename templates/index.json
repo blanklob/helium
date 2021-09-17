@@ -27,8 +27,8 @@
         "card4": {
           "type": "card",
           "settings": {
-            "heading": "Typescript and SCSS based 🌈",
-            "description": "Hot Module Reloading on sass\/typescript file changes for rapid development, Extensible, scalable OOCSS and BEM architecture."
+            "heading": "Modern ES6 and SCSS based 🌈",
+            "description": "Hot Module Reloading on sass\/ES6 file changes for rapid development, Extensible, scalable OOCSS and BEM architecture."
           }
         },
         "card5": {

@@ -1,42 +1,32 @@
 // General
 const path = require('path')
+const sectionsEntries = require("./utils/sections")
+const componentsEntries = require("./utils/components")
 
 // Webpack plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts')
 const MediaQueryPlugin = require('media-query-plugin')
 const SizePlugin = require('size-plugin')
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 // Directories
 const rootDir = path.dirname(path.dirname(__dirname))
 const configDir = path.dirname(__dirname)
+
 const nodeDir = path.join(rootDir, 'node_modules')
 const srcDir = path.join(rootDir, 'src')
-const stylesDir = path.join(srcDir, 'styles')
-const scriptsDir = path.join(srcDir, 'app')
-const entries = new Object()
-console.log(rootDir)
 
-// Add sections ass you wish (must be the same name as file)
-const sections = ['welcome']
-
-// Creating entries
-sections.map((sectionName) => {
-  let sectionPath = path.join(
-    stylesDir,
-    `sections/_sections.${sectionName}.scss`
-  )
-  let entryName = `section-${sectionName}`
-  entries[entryName] = sectionPath
-})
+const baseDir = path.join(srcDir, 'base')
+const sectionsDir = path.join(srcDir, 'sections')
+const componentsDir = path.join(srcDir, 'components')
 
 // Common configuration
 module.exports = {
   // Entry
   entry: {
-    base: [path.join(scriptsDir, 'base.ts'), path.join(stylesDir, 'base.scss')],
-    ...entries,
+    base: [path.join(baseDir, 'scripts/base.js'), path.join(baseDir, 'styles/base.scss')],
+    ...sectionsEntries(),
+    ...componentsEntries(),
   },
   // Output
   output: {
@@ -75,9 +65,14 @@ module.exports = {
     rules: [
       // #1: Bundling JavaScript
       {
-        test: /\.ts?$/,
-        use: 'ts-loader',
+        test: /\.m?js$/,
         exclude: nodeDir,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       },
       // #2: Bundling SCSS
       {
@@ -114,16 +109,11 @@ module.exports = {
   },
   resolve: {
     alias: {
-      App: scriptsDir,
-      Styles: stylesDir,
-      NodeModules: nodeDir,
-    },
-    extensions: ['.ts', '.js'],
-    plugins: [
-      new TsconfigPathsPlugin({
-        configFile: path.join(rootDir, 'tsconfig.json'),
-      }),
-    ],
+      base: baseDir,
+      sections: sectionsDir,
+      components: componentsDir,
+      nodeModules: nodeDir,
+    }
   },
   stats: {
     preset: 'errors-warnings',

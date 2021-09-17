@@ -1,12 +1,11 @@
 class SimpleGreeting extends HTMLElement {
-  greeting: string
-
   constructor() {
     super()
-    this.greeting = 'Hello, world'
+  }
+
+  connectedCallback() {
+    console.log('simple-greeting component is initialized 🔥')
   }
 }
 
 customElements.define('simple-greeting', SimpleGreeting)
-
-export type { SimpleGreeting }

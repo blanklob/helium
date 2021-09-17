@@ -1,0 +1,15 @@
+// ==========================================================================
+// ## COMPONENT: SIMPLE GREETINGS
+// ==========================================================================
+
+/// @content Component specific classes for buttons.
+/// This file contains suite of classes like.
+///
+///   .c-simple-greeting {}       - Base container.
+///   ...add others if you want.
+///
+@import 'base/styles/settings/settings';
+
+.c-simple-greeting {
+  background-color: $theme-color-button;
+}

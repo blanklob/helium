@@ -1,6 +1,16 @@
-{{ 'section-welcome.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'section-welcome.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'section-welcome.css' | asset_url | stylesheet_tag }}</noscript>
+<script src="{{ 'section-welcome.js' | asset_url }}" defer="defer"></script>
+
+{% comment %} Simple Web Component {% endcomment %}
+<simple-greeting></simple-greeting>
+<link rel="stylesheet" href="{{ 'component-simple-greeting.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-simple-greeting.css' | asset_url | stylesheet_tag }}</noscript>
+<script src="{{ 'component-simple-greeting.js' | asset_url }}" defer="defer"></script>
+
 
 <div class="o-container o-container--md u-align-center" data-section-id="{{- section.id -}}">
+
   <div class="s-welcome__wrapper u-mv-xl" style="max-width: 45rem;">
     <h1 class="c-heading c-heading--h1 c-heading--bold u-mb-md">{{ section.settings.heading }}</h1>
     <h2 class="c-heading c-heading--h2 u-mb-s">{{ section.settings.subheading }}</h2>
