@@ -29,7 +29,7 @@
     "pull": "shopify theme pull -n",
     "push": "shopify theme push",
     "deploy": "run-s format build push",
-    "prepare": "husky install"
+    "prepare": "husky install .config/.husky"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
