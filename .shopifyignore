@@ -6,7 +6,7 @@
 ehthumbs.db
 Thumbs.db
 
-# Enviroment #
+# Enviroment files #
 src
 node_modules
 .config
