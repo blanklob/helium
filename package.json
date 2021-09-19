@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "init": "shx rm -rf .git && git init -b main",
-    "clean": "yarn lint && shx rm -rf assets/* && touch assets/.gitkeep",
+    "clean": "shx rm -rf assets/* && touch assets/.gitkeep",
     "start": "run-p serve watch",
     "serve": "shopify theme serve",
     "build": "webpack --config .config/webpack/webpack.config.prod.js",
