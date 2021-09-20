@@ -4,6 +4,6 @@
 
 
 # Shell commandes before commiting
-yarn format
+# yarn format
 yarn lint
 # yarn build
