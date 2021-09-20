@@ -1,98 +1,112 @@
 ---
 title: "Commands"
-description: "Doks comes with commands for common tasks."
-lead: "Doks comes with commands for common tasks."
+description: "Workflow comes with commandes for common development tasks."
+lead: "Workflow comes with commandes for common development tasks."
 date: 2021-08-06T08:48:45+00:00
 lastmod: 2021-08-06T08:48:45+00:00
 draft: false
 images: []
-# menu:
-#   docs:
-#     parent: "introduction"
+menu:
+  docs:
+    parent: "introduction"
 weight: 120
 toc: true
 ---
 
 {{< alert icon="💡" text="You can change the commands in the scripts section of `./package.json`." />}}
 
-## create
+## init
 
-Create new content for your site:
-
-```bash
-npm run create [path] [flags]
-```
-
-See also the Hugo docs: [hugo new](https://gohugo.io/commands/hugo_new/).
-
-## lint
-
-Check scripts, styles, and markdown for errors:
+Initialize git and remove generated files:
 
 ```bash
-npm run lint
-```
-
-### scripts
-
-Check scripts for errors:
-
-```bash
-npm run lint:scripts [-- --fix]
-```
-
-### styles
-
-Check styles for errors:
-
-```bash
-npm run lint:styles [-- --fix]
-```
-
-### markdown
-
-Check markdown for errors:
-
-```bash
-npm run lint:markdown [-- --fix]
+yarn init
 ```
 
 ## clean
 
-Delete temporary directories:
+Delete generated asset files from the assets folder:
 
 ```bash
-npm run clean
+yarn clean
 ```
 
-## start
+## watch
 
-Start local development server:
+Watch source file and compile on changes:
 
 ```bash
-npm run start
+yarn watch
 ```
 
 ## build
 
-Build production website:
+Build assets for production website:
 
 ```bash
-npm run build
+yarn build
 ```
 
-### functions
 
-Build Lambda functions:
+## serve
+
+Start local theme development server on port ```9292```
 
 ```bash
-npm run build:functions
+yarn serve
 ```
 
-### preview
+Same as ```shopify theme serve```. Check [Shopify refrence](https://shopify.dev/themes/tools/cli/theme-commands#serve) for more infos.
 
-Build production website including draft and future content:
+
+## lint
+Check theme liquid files for errors:
 
 ```bash
-npm run build:preview
+yarn lint
 ```
+
+Same as ```shopify theme check```, it uses Shopify Theme Check under the hood. Check [Shopify refrence](https://shopify.dev/themes/tools/cli/theme-commands#check) for more infos.
+
+## format
+Run Prettier formating on source files:
+
+```bash
+yarn format
+```
+
+## pull
+Retrieves theme files from Shopify. Choose [developement] theme if you want to save local editor settings.
+
+
+```bash
+yarn pull
+```
+
+Make sure you saved the customizer settings if you use this commande to save local theme editor settings. Same as ```shopify theme pull``` Check [Shopify refrence](https://shopify.dev/themes/tools/cli/theme-commands#pull) for more infos.
+
+## push
+Uploads your local theme files to Shopify, overwriting the remote theme if specified. it ignores all directories in the .shopifyignore file.
+
+```bash
+yarn push
+```
+
+Same as ```shopify theme push``` Check [Shopify refrence](https://shopify.dev/themes/tools/cli/theme-commands#push) for more infos.
+
+
+## deploy
+Runs ```format```, ```build``` and ```push``` to deploy a tested and minified theme to Shopify servers.
+
+```bash
+yarn deploy
+```
+
+## zip
+Packages your local theme files into a ZIP file that can be uploaded to Shopify, it ignores all directories in the .shopifyignore file.
+
+```bash
+yarn zip
+```
+
+The generated ZIP uses the name ```theme_name-theme_version.zip```, based on parameters in your ```settings_schema.json``` file., Same as ```shopify theme package``` Check [Shopify refrence](https://shopify.dev/themes/tools/cli/theme-commands#package) for more infos.
