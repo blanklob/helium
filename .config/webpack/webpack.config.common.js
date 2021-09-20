@@ -1,7 +1,7 @@
 // General
 const path = require('path')
-const sectionsEntries = require("./utils/sections")
-const componentsEntries = require("./utils/components")
+const sectionsEntries = require('./utils/sections')
+const componentsEntries = require('./utils/components')
 
 // Webpack plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -24,7 +24,10 @@ const componentsDir = path.join(srcDir, 'components')
 module.exports = {
   // Entry
   entry: {
-    base: [path.join(baseDir, 'scripts/base.js'), path.join(baseDir, 'styles/base.scss')],
+    base: [
+      path.join(baseDir, 'scripts/base.js'),
+      path.join(baseDir, 'styles/base.scss'),
+    ],
     ...sectionsEntries(),
     ...componentsEntries(),
   },
@@ -70,9 +73,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       // #2: Bundling SCSS
       {
@@ -113,7 +116,7 @@ module.exports = {
       sections: sectionsDir,
       components: componentsDir,
       nodeModules: nodeDir,
-    }
+    },
   },
   stats: {
     preset: 'errors-warnings',

@@ -7,4 +7,3 @@
 yarn format
 yarn lint
 # yarn build
-yarn clean

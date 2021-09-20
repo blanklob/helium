@@ -2,14 +2,14 @@
 title: "Commands"
 description: "Doks comes with commands for common tasks."
 lead: "Doks comes with commands for common tasks."
-date: 2020-10-13T15:21:01+02:00
-lastmod: 2020-10-13T15:21:01+02:00
+date: 2021-08-06T08:48:45+00:00
+lastmod: 2021-08-06T08:48:45+00:00
 draft: false
 images: []
-menu:
-  docs:
-    parent: "prologue"
-weight: 130
+# menu:
+#   docs:
+#     parent: "introduction"
+weight: 120
 toc: true
 ---
 
