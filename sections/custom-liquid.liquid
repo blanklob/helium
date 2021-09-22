@@ -1,0 +1,22 @@
+<div class="s-custom-liquid o-container o-container--md" data-section-id="{{- section.id -}}">
+  {{- section.settings.custom_liquid -}}
+</div>
+
+{% schema %}
+{
+  "name": "Custom liquid",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "Liquid"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom liquid"
+    }
+  ]
+}
+{% endschema %}

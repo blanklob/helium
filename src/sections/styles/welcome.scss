@@ -6,6 +6,7 @@
 /// Common settings and tools.
 //
 @import 'base/styles/settings/settings';
+@import 'base/styles/tools/tools';
 
 .s-welcome {
   display: grid;
@@ -19,6 +20,22 @@
   }
 
   .s-welcome__feature-wrapper {
-    max-width: 1300px;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    column-gap: 30px;
+  }
+
+  @include mq('to-s') {
+    .s-welcome__feature-wrapper {
+      justify-content: center;
+      row-gap: 20px;
+    }
+  }
+
+  .s-welcome__feature {
+    width: 90%;
+    max-width: 360px;
   }
 }
