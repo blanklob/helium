@@ -35,6 +35,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(rootDir, 'assets'),
+    /* Remove this option to integrate it with your existing theme */
     clean: true,
   },
   // Plugins
