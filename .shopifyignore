@@ -14,7 +14,6 @@ node_modules
 .vscode
 .docs
 package.json
-tsconfig.json
 
 # Other files #
 /\.(txt|gif|jpg|png|md|lock)$/

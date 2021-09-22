@@ -27,7 +27,7 @@
     "lint": "shopify theme check --config .config/.theme-check.yml",
     "format": "prettier --config .config/prettier.config.js --ignore-path .config/.prettierignore --write .",
     "pull": "shopify theme pull -n",
-    "push": "shopify theme push",
+    "push": "shopify theme push --ignore \"config/*.json\"",
     "deploy": "run-s format build push",
     "prepare": "husky install .config/.husky"
   },

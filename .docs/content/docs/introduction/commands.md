@@ -86,7 +86,7 @@ yarn pull
 Make sure you saved the customizer settings if you use this commande to save local theme editor settings. Same as ```shopify theme pull``` Check [Shopify refrence](https://shopify.dev/themes/tools/cli/theme-commands#pull) for more infos.
 
 ## push
-Uploads your local theme files to Shopify, overwriting the remote theme if specified. it ignores all directories in the .shopifyignore file.
+Uploads your local theme files to Shopify, overwriting the remote theme if specified. it ignores all directories in the .shopifyignore file and the files in the ```config/*.json``` in order to prevent the overwriting of data when changed in the online theme customizer by the merchant.
 
 ```bash
 yarn push
