@@ -1,13 +1,9 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/uicrooks/shopify-theme-lab/master/.github/images/workflow.svg" width="250px">
+  <img src="https://raw.githubusercontent.com/younessidbakkasse/workflow/main/.github/images/workflow.svg" width="250px">
 </p>
 
-<h1 align="center">Workflow is a modern developement enviroment on Shopify</h1>
-<style>
-h1 {
-  max-width: 400px;
-}
-</style>
+<h1 id="foo" align="center">Modern developement enviroment<br> on Shopify</h1>
+
 <div align="center">
   
   [![GitHub issues](https://img.shields.io/github/issues/younessidbakkasse/workflow)](https://GitHub.com/younessidbakkasse/workflow/issues/)
@@ -16,12 +12,12 @@ h1 {
 [![Shopify Theme Check CI](https://github.com/younessidbakkasse/workflow/actions/workflows/theme-check-ci.yml/badge.svg)](https://github.com/younessidbakkasse/workflow/actions/workflows/theme-check-ci.yml)
  
 </div>
-
-This workflow was made as a follow-up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features for more information check [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store).
+<br>
+Workflow was made as a follow-up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features.
 
 ## 📝 Docs
 
-You can find the documentation [here.](https://workflow.younessidbakkasse.com/)
+You can find the documentation [here.](https://workflow.younessidbakkasse.com/) 📝
 
 ## 👋 Contributing
 
