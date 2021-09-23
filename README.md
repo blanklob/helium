@@ -1,5 +1,13 @@
-<h1 align="center">Workflow is a modern developement enviroment on Shopify</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/uicrooks/shopify-theme-lab/master/.github/images/workflow.svg" width="250px">
+</p>
 
+<h1 align="center">Workflow is a modern developement enviroment on Shopify</h1>
+<style>
+h1 {
+  max-width: 400px;
+}
+</style>
 <div align="center">
   
   [![GitHub issues](https://img.shields.io/github/issues/younessidbakkasse/workflow)](https://GitHub.com/younessidbakkasse/workflow/issues/)
