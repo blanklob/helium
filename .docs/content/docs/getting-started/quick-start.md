@@ -1,5 +1,5 @@
 ---
-title: "Quick Start"
+title: "Quick start"
 description: "The quick starter guide to install Workflow for your next Shopify theme development project."
 lead: "The quick starter guide to install Workflow for your next Shopify theme development project."
 date: 2021-08-06T08:48:45+00:00
@@ -8,31 +8,10 @@ draft: false
 images: []
 menu:
   docs:
-    parent: "introduction"
+    parent: "getting-started"
 weight: 110
 toc: true
 ---
-
-## Requirements
-
-### Nodejs
-
-Workflow uses yarn to centralize dependency management, making it easy to update build tooling, plugins, and build scripts:
-
-- Download and install [NodeJS v14+](https://nodejs.org/).
-- Download and install [Yarn v1.22+](https://yarnpkg.com/) for your platform.
-
-
-### Shopify CLI
-
-You also need to install the Shopify CLI, it replaces Theme Kit for most Shopify theme development tasks, it also accelerates your theme development process with the following features
-
-- Safely preview, test, and share changes to themes using development themes.
-- Hot reload changes when previewing a theme.
-- Push/pull and publish themes from the command line.
-- Populate test data for your theme, including products, customers, and draft orders.
-
-Follow these steps to install [Shopify CLI v2.22+](https://shopify.dev/themes/tools/cli/installation) first.
 
 
 ## Installation

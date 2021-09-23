@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts')
 const MediaQueryPlugin = require('media-query-plugin')
 const SizePlugin = require('size-plugin')
-const CopyPlugin = require("copy-webpack-plugin")
+const CopyPlugin = require('copy-webpack-plugin')
 
 // Directories
 const rootDir = path.dirname(path.dirname(__dirname))
@@ -21,7 +21,6 @@ const baseDir = path.join(srcDir, 'base')
 const sectionsDir = path.join(srcDir, 'sections')
 const componentsDir = path.join(srcDir, 'components')
 const sharedDir = path.join(srcDir, 'shared')
-
 
 // Common configuration
 module.exports = {
@@ -68,9 +67,7 @@ module.exports = {
     }),
     // #5: Copy files to assets directory
     new CopyPlugin({
-      patterns: [
-        { from: sharedDir, to: path.join(rootDir, 'assets') }
-      ],
+      patterns: [{ from: sharedDir, to: path.join(rootDir, 'assets') }],
     }),
   ],
   // Webpack Loaders

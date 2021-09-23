@@ -15,32 +15,50 @@ toc: true
 
 ## Before we start
 
-Before the installation and setup, this workflow is intended for developers who want to start a Shopify theme from scratch, loaded with boilerplate code, ready to scale with styling architectures and a section/components approache to fulfill Shopify theme development best practices.
+Before the installation and setup, Workflow is intended for developers who want to start a Shopify theme from scratch, loaded with boilerplate code, ready to scale with styling architectures and a section/components approache to fulfill Shopify theme development best practices, for more informations please check [Shopify theme best practices](https://shopify.dev/themes/best-practices).
 
 
-## Building themes with sections and blocks
+## Mission
 
-When you're designing a theme, you should consider when to provide functionality in a section or a block. Sections and blocks are modular components that give merchants the opportunity to customize and extend their theme. Merchants can add and remove sections and theme blocks, adjust section and block settings, and introduce app blocks and metafields.
+Workflow empowers developers of all skill levels to build quality Shopify themes with accessibiltity and performance in mind, in order to get the best developement experience out of the latest Shopify tools and technologies, while also accommodating more established developers through advanced configuration and flexibility.
 
-### Sections
+## Features
 
-Sections are available on all pages. You should ensure that your theme template's default content is available in a main template section, and that sections can be added, removed, and reordered. You can use sections to do the following:
+- Shopify Tools ⚙️
+  - Integrates with the Shopify CLI (Latest version)
+  - Online Store 2.0 support 
+  - Shopify CI & Theme linting ♻️
+  - Supports Shopify Github integration
+<br>
+<br>
+- Perfomrance and SEO ⚡️
+  - Built in code splitting and prefetches links
+  - Lighthouse CI
+  - Assets minification
+  - Structured data, open graph, and Twitter cards.
+<br>
+<br>
+- Browser compatibility 
+  - ES6 compiled with Babel
+  - Browserslist
+  - Postcss and autoprefixer
+<br>
+<br>
+- Configuration 🔧
+  - Webpack
+  - Husky for git hooks
+  - SASS/SCSS
+  - Editor config for collaborating
+  - Easy customizable configurations
+  - Scalable BEM and OOCSS architectures
 
-- To add, remove, or reorder content at the template level.
-- To control theme settings that are scoped to the entire section's layout and content.
+## Contributing
+
+Everyone is welcome to make Shopify theme development better! Please read the [Contributing guide](https://github.com/younessidbakkasse/workflow/blob/main/.github/CONTRIBUTING.md) before creating issues or submitting pull requests.
 
 
-### Blocks 
+## What's next ?
 
-You should provide theme blocks to add, remove, or reorder content at the section level, or when it enhances the usability of a section. Keep the following principles in mind when developing blocks:
-
-- Ensure that the theme settings are scoped to the block.
-- Choose a block layout that is appropriate for the content, and ensure that your blocks flow logically regardless of block type or sequence.
-- Select an appropriate flexibility level to introduce using blocks.
-
-
-## Installation
-
-Learn how to install Workflow [Quick start →]({{< relref "quick-start" >}})
+Get started with Workflow with this easy [guide →]({{< relref "system-requirements" >}})
 
 
