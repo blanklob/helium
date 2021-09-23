@@ -13,11 +13,11 @@
  
 </div>
 <br>
-Workflow was made as a follow-up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features for more information check [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store).
+Workflow was made as a follow-up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features.
 
 ## 📝 Docs
 
-You can find the documentation [here.](https://workflow.younessidbakkasse.com/)
+You can find the documentation [here.](https://workflow.younessidbakkasse.com/) 📝
 
 ## 👋 Contributing
 
