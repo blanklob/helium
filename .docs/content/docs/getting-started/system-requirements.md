@@ -28,12 +28,12 @@ Follow the instructions on how to get started with [Yarn v1.22+](https://yarnpkg
 
 We highly recommend using YARN for installing dependencies which making it easy to update build tooling, plugins, and build scripts and makes projects fast and reliable.
 
-It’s important to note, both of these package managers have their ups and downs and many of the fantastic features that initially launched with Yarn are now available with npm 5+, so feel free to use the one you are most comfortable with, if you want to use NPM you must delete the ```yarn.lock``` file before runing the install commande.
+It’s important to note, both of these package managers have their ups and downs and many of the fantastic features that initially launched with Yarn are now available with npm 5+, so feel free to use the one you are most comfortable with, if you want to use NPM you must delete the ```yarn.lock``` file before running the install command ```npm install```.
 
 
 ## Shopify CLI
 
-You also need to install the Shopify CLI, it replaces Theme Kit for most Shopify theme development tasks, it also accelerates your theme development process with the following features
+You also need to install the Shopify CLI, it replaces Theme Kit for most Shopify theme development tasks, it also accelerates your theme development process with the following features:
 
 - Safely preview, test, and share changes to themes using development themes.
 - Hot reload changes when previewing a theme.
@@ -51,4 +51,4 @@ We also recommend that you join the Github discussions to ask questions.
 
 ## What's next ?
 
-Start the quick start [guide →]({{< relref "quick-start" >}})
+Start the development server 🔥 in the quick start [guide →]({{< relref "quick-start" >}})

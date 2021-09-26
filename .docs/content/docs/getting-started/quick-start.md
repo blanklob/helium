@@ -14,9 +14,15 @@ toc: true
 ---
 
 
-## Installation
+## Development store
 
-### Create development store
+A development store is a free Shopify store that comes with limitations. As a Shopify Partner, you can create an unlimited number of development stores.
+
+We will use a development store to build our theme with Workflow. Development stores can be used with tools like Shopify CLI and the Shopify GitHub integration so that you can preview, test, and share themes that you're building.
+
+### Create a development store
+
+To create or access a development store, you need a [Shopify Partner account](https://www.shopify.com/partners).
 
 After creating your development store by following [these steps.](https://shopify.dev/themes/tools/development-stores#create-a-development-store-to-build-and-test-your-theme)
 
@@ -26,22 +32,36 @@ After creating your development store by following [these steps.](https://shopif
 shopify login --store <your-store.myshopify.com>
 ```
 
-2. Clone the Workflow with git or simply use the Shopify CLI commande.
+2. Clone the Workflow with git or simply use the Shopify CLI command.
 
 ```bash
 shopify theme init -u https://github.com/younessidbakkasse/workflow
 ```
 
-### Start development server
-Install Node dependencies and run the start development script.
+This Shopify CLI command will prompt you to choose a name for your theme, you can also use Git to install __Workflow__, by simply running the Git clone command.
+
+```bash
+git clone https://github.com/younessidbakkasse/workflow
+```
+
+## Start developing
+
+Now comes the fun part 🌈, To begin developing your very own theme with Workflow's development pipeline, you will first need to install Node dependencies, to do so run the command below.
 
 ```bash
 yarn install
+```
+
+Then __finally__ start the development server ⚡️ with the task.
+
+```bash
 yarn start
 ```
 
-Workflow will start the theme development webserver accessible by default at `http://localhost:9292`. Saved changes will live reload in the browser.
+> or, if you're using npm, ```npm run start```
 
-## Other commands
+Workflow will start the theme development server accessible by default at `http://localhost:9292` and Webpack watch mode in parallel, so every saved changes, will be compiled into the assets folder and live reload in the browser.
 
-Workflow comes with other commands for common tasks. [Commands →]({{< relref "commands" >}})
+## What's next ?
+
+Workflow follow a predetermined file structure 🗂, [Learn more here →]({{< relref "structure" >}})
