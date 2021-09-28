@@ -1,8 +1,4 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/younessidbakkasse/workflow/main/.github/images/workflow.svg" width="250px">
-</div>
-
-<h1 align="center">Modern developement enviroment<br> on Shopify</h1>
+<h1 align="center">⚡️ Workflow ⚡️<br> Modern developement <br> enviroment on Shopify</h1>
 
 <div align="center">
   
