@@ -5,18 +5,19 @@
   {%- render 'head-seo' -%}
 {% endcomment %}
 
-{%- liquid
-  assign seo_title = page_title | default: shop.name
-  assign seo_description = page_description | default: shop.description | default: shop.name
-  assign seo_url = canonical_url | default: shop.secure_url
-  assign seo_email = shop.email | default: false
-  assign seo_phone = shop.phone | default: false
--%}
+<link rel="canonical" href="{{- canonical_url -}}">
 
-<title>{{- seo_title | escape -}}</title>
-<meta name="description" content="{{- seo_description | escape -}}">
-<link rel="canonical" href="{{- seo_url -}}">
-<meta name="author" content="{{- shop.name -}}">
+<title>
+  {{ page_title }}
+  {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+  {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+  {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+</title>
+
+{%- if page_description -%}
+<meta name="description" content="{{- page_description | escape -}}">
+{% endif -%}
+
 
 {% comment %} Strcutured data {% endcomment %}
 <script type="application/ld+json">
@@ -25,9 +26,9 @@
   "@type": "Organization",
   "name": {{- shop.name | json -}},
   {%- if settings.logo -%}"logo": {{- settings.logo | image_url: 'master' | prepend: "https:" | json -}},{% endif %}
-  {%- if seo_email -%}"email": {{- seo_email | json -}},{% endif %}
-  {%- if seo_phone -%}"telephone": {{- seo_phone | json -}},{% endif %}
-  "url": {{- seo_url | append: page.url | json -}},
+  {%- if shop.email -%}"email": {{- shop.email | json -}},{% endif %}
+  {%- if shop.phone -%}"telephone": {{- shop.phone | json -}},{% endif %}
+  "url": {{- canonical_url | append: page.url | json -}},
   "sameAs": [
     {{ settings.social_twitter_link | json }},
     {{ settings.social_facebook_link | json }},
@@ -38,37 +39,76 @@
     {{ settings.social_youtube_link | json }},
     {{ settings.social_vimeo_link | json }}
   ],
-  "description": {{- seo_description | escape | json -}}
+  "description": {{- page_description | escape | json -}}
 }
 </script>
 
 {%- if request.page_type == 'index' -%}
-  {% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": {{- shop.name | json -}},
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {{- potential_action_target | json -}},
-        "query-input": "required name=search_term_string"
+{% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": {{- shop.name | json -}},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {{- potential_action_target | json -}},
+    "query-input": "required name=search_term_string"
+  },
+  "url": {{- shop.url | append: page.url | json -}}
+}
+</script>
+{%- endif -%}
+
+{%- if request.page_type == 'article' -%}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "articleBody": {{ article.content | strip_html | json }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ shop.url | append: page.url | json }}
+  },
+  "headline": {{ article.title | json }},
+  {% if article.excerpt != blank %}
+    "description": {{ article.excerpt | strip_html | json }},
+  {% endif %}
+  {% if article.image %}
+    {% assign image_size = article.image.width | append: 'x' %}
+    "image": [
+      {{ article | img_url: image_size | prepend: "https:" | json }}
+    ],
+  {% endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "author": {
+    "@type": "Person",
+    "name": {{ article.author | json }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    {% if settings.share_image %}
+      {% assign image_size = settings.share_image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": {{ settings.share_image.height | json }},
+        "url": {{ settings.share_image | img_url: image_size | prepend: "https:" | json }},
+        "width": {{ settings.share_image.width | json }}
       },
-      "url": {{- shop.url | append: page.url | json -}}
-    }
-  </script>
+    {% endif %}
+    "name": {{ shop.name | json }}
+  }
+}
+</script>
 {%- endif -%}
 
 {% comment %} Favicons {% endcomment %}
 {%- if settings.favicon != blank -%}
-  <link rel="shortcut icon" href="{{- settings.favicon | img_url: '16x16' -}}" sizes="16x16">
-  <link rel="shortcut icon" href="{{- settings.favicon | img_url: '32x32' -}}" sizes="32x32">
-  <link rel="shortcut icon" href="{{- settings.favicon | img_url: '48x48' -}}" sizes="48x48">
-  <link rel="shortcut icon" href="{{- settings.favicon | img_url: '96x96' -}}" sizes="48x48">
-  <link rel="apple-touch-icon" href="{{- settings.favicon | img_url: '180x180' -}}" sizes="180x180">
-  <link rel="apple-touch-icon" href="{{- settings.favicon | img_url: '192x192' -}}" sizes="192x192">
+<link rel="shortcut icon" href="{{- settings.favicon | img_url: '16x16' -}}" sizes="16x16">
+<link rel="shortcut icon" href="{{- settings.favicon | img_url: '32x32' -}}" sizes="32x32">
+<link rel="shortcut icon" href="{{- settings.favicon | img_url: '48x48' -}}" sizes="48x48">
+<link rel="shortcut icon" href="{{- settings.favicon | img_url: '96x96' -}}" sizes="48x48">
+<link rel="apple-touch-icon" href="{{- settings.favicon | img_url: '180x180' -}}" sizes="180x180">
+<link rel="apple-touch-icon" href="{{- settings.favicon | img_url: '192x192' -}}" sizes="192x192">
 {%- endif -%}
-
-
-
-

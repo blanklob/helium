@@ -1,0 +1,127 @@
+// ==========================================================================
+// ## TOOLS: MIXINS
+// ==========================================================================
+
+
+/// @content Generate `:hover` and `:focus` styles in one go.
+///
+/// @example scss - basic usage
+///   .foo {
+///     @include hocus {
+///        color: black;
+///     }
+///   }
+///
+/// @output Wraps the given content in `:focus` and `:hover` pseudo-classes.
+///   .foo:focus,
+///   .foo:hover {
+///     color: black;
+///   }
+///
+/// @type Mixin
+/// @access public
+///
+@mixin hocus {
+  &:focus,
+  &:hover {
+    @content;
+  }
+}
+
+/// @content Generate `:active` and `:focus` styles in one go.
+///
+/// @example scss - basic usage
+///   .foo {
+///     @include actus {
+///        color: white;
+///     }
+///   }
+///
+/// @output Wraps the given content in `:active` and `:focus` pseudo-classes.
+///   .foo:focus,
+///   .foo:active {
+///     color: white;
+///   }
+///
+/// @type Mixin
+/// @access public
+///
+@mixin actus {
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+/// @content Prevent text from wrapping into multiple lines for the current element.
+///
+/// 1. Ensure that the node has a maximum width after which truncation can occur.
+/// 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor nodes.
+///
+/// @param {Number} $width
+///   The maximum width of element, it's '100%' by default.
+///
+/// @example scss - basic usage
+///   .foo {
+///     @include truncate();
+///   }
+///
+/// @type Mixin
+/// @access public
+///
+@mixin truncate($width: 100%) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal; // [2]
+  @if $width {
+    max-width: $width; // [1]
+  }
+}
+
+/// @content A generator that makes working with media queries effortless and fun.
+///
+///
+/// @param {String} $alias
+///   The alias for the breakpoint example: xs, s, from-md...
+///
+/// @example scss - basic usage
+///   .foo {
+///     @include mq('from-xs') {
+///        color: black;
+///     }
+///   }
+///
+/// @type Mixin
+/// @access public
+///
+@mixin mq($alias) {
+  // Search breakpoint map for alias
+  $query: map-get($theme-breakpoints-queries, $alias);
+  // If alias exists, print out media query
+  @if $query {
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error "No breakpoint found for #{$alias}";
+  }
+}
+
+/// @content A mixin that makes elements fluid in there containers.
+///
+/// @param none
+///
+/// @example scss - basic usage
+///   .foo {
+///     @include fluid;
+///   }
+///
+/// @type Mixin
+/// @access public
+///
+@mixin fluid() {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}

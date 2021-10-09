@@ -1,0 +1,45 @@
+// ==========================================================================
+// ## UTILITIES: SPACE
+// ==========================================================================
+
+/// @content Utility classes to put specific spacing values into elements.
+///
+///   .u-ph-s {}     - small horizontal padding
+///   .u-m-l {}      - large margin
+///   .u-mv-none {}  - no vertical margin
+///   and others...
+///
+
+$theme-spacing-directions: (
+  null : null,
+  't'  :'-top',
+  'r'  :'-right',
+  'b'  :'-bottom',
+  'l'  :'-left',
+  'h'  :'-left' '-right',
+  'v'  :'-top' '-bottom',
+) !default;
+
+$theme-spacing-properties: (
+  'p'  :'padding',
+  'm'  :'margin',
+) !default;
+
+$theme-spacing-sizes: (
+  '-small'  :em(8px),
+  '-medium' :em(32px),
+  '-large'  :em(64px),
+  '-none'   :0,
+) !default;
+
+@each $property-namespace, $property in $theme-spacing-properties {
+  @each $direction-namespace, $direction-rules in $theme-spacing-directions {
+    @each $size-namespace, $size in $theme-spacing-sizes {
+      .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
+        @each $direction in $direction-rules {
+          #{$property}#{$direction}: $size !important;
+        }
+      }
+    }
+  }
+}

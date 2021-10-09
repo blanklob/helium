@@ -1,37 +1,30 @@
 <link rel="stylesheet" href="{{ 'section-welcome.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'section-welcome.css' | asset_url | stylesheet_tag }}</noscript>
-<script src="{{ 'section-welcome.js' | asset_url }}" defer="defer"></script>
-
-{% comment %} Simple Web Component {% endcomment %}
-<simple-greeting></simple-greeting>
-<link rel="stylesheet" href="{{ 'component-simple-greeting.css' | asset_url }}" media="print" onload="this.media='all'">
-<noscript>{{ 'component-simple-greeting.css' | asset_url | stylesheet_tag }}</noscript>
-<script src="{{ 'component-simple-greeting.js' | asset_url }}" defer="defer"></script>
 
 
-<div class="o-container o-container--md u-align-center" data-section-id="{{- section.id -}}">
-
-  <div class="s-welcome__wrapper u-mv-xl" style="max-width: 45rem;">
-    <h1 class="c-heading c-heading--h1 c-heading--bold u-mb-md">{{ section.settings.heading }}</h1>
-    <h2 class="c-heading c-heading--h2 u-mb-s">{{ section.settings.subheading }}</h2>
-    <a class="s-welcome__link c-button u-mb-md"
+<div class="o-container --medium u-align-center">
+  <div class="welcome__wrapper u-mv-large" style="max-width: 45rem;">
+    <h1 class="c-heading --h1 --bold u-mb-medium">{{ section.settings.heading }}</h1>
+    <h2 class="c-heading --h2 u-mb-small">{{ section.settings.subheading }}</h2>
+    <a class="welcome__link c-button u-mb-medium"
       href="https://workflow.younessidbakkasse.com/docs/introduction/overview/"
       target="_blank">{{ section.settings.link_label }}
       {%- render 'component-icon'
         icon: 'arrow',
-        icon_size: 20,
-        icon_class: 'u-ml-s'
+        icon_size: 20
       -%}</a>
-    <p class="c-heading c-heading--h4">
+    <p class="c-heading --h4">
       Open-source MIT Licensed. <a href="https://github.com/younessidbakkasse/workflow" target="_blank">GitHub v1.1.0</a>
     </p>
   </div>
-  <div class="s-welcome__feature-wrapper u-mb-l">
+  <div class="welcome__feature-wrapper u-mb-large">
     {% for block in section.blocks %}
-      <div class="s-welcome__feature u-mb-l">
-        <h2 class="c-heading c-heading--h2 c-heading--bold u-mb-md">{{ block.settings.heading }}</h2>
-        <h3 class="c-heading c-heading--h3">{{ block.settings.description }}</h3>
+      {%- if block.settings.heading != blank and block.settings.description != blank -%}
+      <div class="welcome__feature u-mb-l">
+        <h2 class="c-heading --h2 --bold u-mb-medium">{{ block.settings.heading }}</h2>
+        <h3 class="c-heading --h3">{{ block.settings.description }}</h3>
       </div>
+      {% endif %}
     {% endfor %}
   </div>
 </div>
@@ -40,7 +33,7 @@
 {
   "name": "Welcome",
   "tag": "section",
-  "class": "s-welcome",
+  "class": "welcome",
   "max_blocks": 6,
   "settings": [
     {

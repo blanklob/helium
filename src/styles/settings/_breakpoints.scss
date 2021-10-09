@@ -1,0 +1,24 @@
+// ==========================================================================
+// ## SETTINGS: BREAKPOINTS
+// ==========================================================================
+
+/// @content This core file sets up reponsive breakpoints.
+/// These are the same breakpoints that are used in reponsive
+///
+/// @throw
+///   Global variable name must always start with '$theme-' prefix/namespace.
+///
+/// @type Map
+/// @access public
+///
+/// Add as you wish.
+$theme-breakpoints: (
+  // Dont remove base!
+  'base': 0px,
+  'xs': 320px,
+  's': 500px,
+  'md': 800px,
+  'l': 1025px,
+  'xl': 1200px,
+  'xxl': 1440px
+) !default;

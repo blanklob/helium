@@ -1,0 +1,29 @@
+// ==========================================================================
+// ## SETTINGS: COLORS
+// ==========================================================================
+
+/// @content This file sets up the theme color variables.
+///
+/// Global variable name must always start with '$theme-' prefix/namespace.
+/// This file is mounted to the global settings liquid file.
+
+// All these colors can be changed in the theme customizer/editor,
+// they should never be hardcoded!
+/// @type String
+/// @access public
+
+// Global brand colors *********************
+$theme-color-primary: var(--theme-color-primary) !default;
+$theme-color-secondary: var(--theme-color-secondary) !default;
+
+// Headings and body **************
+$theme-color-text-heading: var(--theme-color-text-heading) !default;
+$theme-color-text-body: var(--theme-color-text-body) !default;
+
+// Buttons ************************
+// Secondary button style can be added if needed.
+$theme-color-button: var(--theme-color-button) !default;
+$theme-color-button-text: var(--theme-color-button-text) !default;
+
+// Background ********************
+$theme-color-background: var(--theme-color-background) !default;

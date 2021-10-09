@@ -5,46 +5,54 @@
   {%- render 'head-metas' -%}
 {% endcomment %}
 
-
 {% comment %} Social sharing {% endcomment %}
 {%- liquid
-  assign metas_title = page_title | default: shop.name
-  assign metas_url = canonical_url | default: shop.secure_url
-  assign metas_type = 'website'
-  assign metas_description = page_description | default: shop.description | default: shop.name
-  assign metas_color = settings.primary_color | default: false
+  assign og_title = page_title | default: shop.name
+  assign og_url = canonical_url | default: shop.url
+  assign og_type = 'website'
+  assign og_description = page_description | default: shop.description | default: shop.name
 
   if request.page_type == 'product'
-    assign metas_type = 'product'
+    assign og_type = 'product'
   elsif request.page_type == 'article'
-    assign metas_type = 'article'
+    assign og_type = 'article'
   elsif request.page_type == 'collection'
-    assign metas_type = 'product.group'
+    assign og_type = 'product.group'
   elsif request.page_type == 'password'
-    assign metas_url = shop.url
+    assign og_url = shop.url
   endif
--%}
+%}
 
 <meta property="og:site_name" content="{{ shop.name }}">
-<meta property="og:url" content="{{ metas_url }}">
-<meta property="og:title" content="{{ metas_title }}">
-<meta property="og:type" content="{{ metas_type }}">
-<meta property="og:description" content="{{ metas_description | escape }}">
-
-{%- if request.page_type == 'product' -%}
-  <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
-  <meta property="og:price:currency" content="{{ cart.currency.iso_code }}">
-{%- endif -%}
+<meta property="og:url" content="{{ og_url }}">
+<meta property="og:title" content="{{ og_title | escape }}">
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:description" content="{{ og_description | escape }}">
 
 {%- if page_image -%}
-  <meta property="og:image" content="http:{{ page_image | img_url: 'master' }}">
-  <meta property="og:image:secure_url" content="https:{{ page_image | img_url: 'master' }}">
-  <meta property="og:image:width" content="{{ page_image.width }}">
-  <meta property="og:image:height" content="{{ page_image.height }}">
+<meta property="og:image" content="http:{{ page_image | img_url: 'master' }}">
+<meta property="og:image:secure_url" content="https:{{ page_image | img_url: 'master' }}">
+<meta property="og:image:width" content="{{ page_image.width }}">
+<meta property="og:image:height" content="{{ page_image.height }}">
 {%- endif -%}
 
-{% comment %} Theme color {% endcomment %}
-{%- if metas_color -%}
-  <meta name="theme-color" content="{{- metas_color -}}">
-  <meta name="msapplication-TileColor" content="{{- metas_color -}}">
+{%- if request.page_type == 'product' -%}
+<meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
+<meta property="og:price:currency" content="{{ cart.currency.iso_code }}">
 {%- endif -%}
+
+{%- if settings.social_twitter_link != blank -%}
+<meta name="twitter:site" content="{{ settings.social_twitter_link | split: 'twitter.com/' | last | prepend: '@' }}">
+{%- endif -%}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ og_title | escape }}">
+<meta name="twitter:description" content="{{ og_description | escape }}">
+
+{% comment %} Theme color {% endcomment %}
+{%- if settings.primary_color -%}
+<meta name="theme-color" content="{{ settings.primary_color }}">
+<meta name="msapplication-TileColor" content="{{ settings.primary_color }}">
+{%- endif -%}
+
+{% comment %} <link rel="manifest" href="{{ 'manifest.json' | asset_url }}"> {% endcomment %}
+

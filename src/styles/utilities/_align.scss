@@ -1,0 +1,53 @@
+// ==========================================================================
+// ## UTILITIES: ALIGN
+// ==========================================================================
+
+/// @content Utility classes to align elements inside containers.
+///
+///   .u-float-left {}    - Float to the left.
+///   .u-align-middle {}  - Align in the middle.
+///   and others...
+///
+
+// Floats
+.u-float-left {
+  float: left !important;
+}
+
+.u-float-right {
+  float: right !important;
+}
+
+// Horizontal alignement
+.u-align-left {
+  text-align: left !important;
+}
+
+.u-align-right {
+  text-align: right !important;
+}
+
+.u-align-center {
+  text-align: center !important;
+}
+
+// Vertical alignement
+.u-align-top {
+  vertical-align: top !important;
+}
+
+.u-align-baseline {
+  vertical-align: baseline !important;
+}
+
+.u-align-bottom {
+  vertical-align: bottom !important;
+}
+
+.u-align-middle {
+  vertical-align: middle !important;
+}
+
+.u-align-top {
+  vertical-align: top !important;
+}

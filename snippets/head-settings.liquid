@@ -12,98 +12,101 @@
 {% endcomment %}
 
 {% comment %} Style/Liquid Settings {% endcomment %}
-{%- assign theme_font_heading = settings.theme_font_heading -%}
-{%- assign theme_font_body    = settings.theme_font_body -%}
+{%- liquid
+  assign font_header_bold = settings.fonts_header | font_modify: 'weight', 'bold'
+  assign font_body_bold = settings.fonts_body | font_modify: 'weight', 'bold'
 
+  assign font_header_italic= settings.fonts_header | font_modify: 'style', 'italic'
+  assign font_body_italic = settings.fonts_body | font_modify: 'style', 'italic'
 
-{%- unless theme_font_heading.system? -%}
-  <link rel="preload" href="{{ theme_font_heading | font_url }}" type="font/woff2" as="font" crossorigin>
-{%- endunless -%}
-{%- unless theme_font_body.system? -%}
-  <link rel="preload" href="{{ theme_font_body | font_url }}" type="font/woff2" as="font" crossorigin>
-{%- endunless -%}
+  assign font_header_bold_italic= font_header_bold | font_modify: 'style', 'italic'
+  assign font_body_bold_italic = font_body_bold | font_modify: 'style', 'italic'
+-%}
 
-<style>
-  :root {
-    {% comment %} Theme colors declaration {% endcomment %}
-    --theme-color-primary:      {{ settings.theme_color_primary }};
-    --theme-color-secondary:    {{ settings.theme_color_secondary }};
-    --theme-color-text-heading: {{ settings.theme_color_text_heading }};
-    --theme-color-text-body:    {{ settings.theme_color_text_body }};
-    --theme-color-button:       {{ settings.theme_color_button }};
-    --theme-color-button-text:  {{ settings.theme_color_button_text }};
-    --theme-color-background:   {{ settings.theme_color_background }};
-
-
-    {% comment %} Heading font declaration {% endcomment %}
-    --theme-font-heading-family:      {{ theme_font_heading.family }}, {{ theme_font_heading.fallback_families }};
-    --theme-font-heading-style:       {{ theme_font_heading.style }};
-    --theme-font-heading-base-weight: {{ theme_font_heading.weight }};
-
-    {% comment %} Body font declaration {% endcomment %}
-    --theme-font-body-family:        {{ theme_font_body.family }}, {{ theme_font_body.fallback_families }};
-    --theme-font-body-style:         {{ theme_font_body.style }};
-    --theme-font-body-base-weight:   {{ theme_font_body.weight }};
-  }
-
-  {% comment %} Heading font face {% endcomment %}
-  {{- theme_font_heading | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
-  {{- theme_font_heading | font_modify: 'weight', '400' | font_face: font_display: 'swap' -}}
-  {{- theme_font_heading | font_modify: 'weight', '700' | font_face: font_display: 'swap' -}}
+{%- style -%}
+  {% comment %} Header font face {% endcomment %}
+  {{ settings.fonts_header | font_face: font_display: 'swap' }}
+  {{ font_header_bold | font_face: font_display: 'swap' }}
+  {{ font_header_italic | font_face: font_display: 'swap' }}
+  {{ font_header_bold_italic | font_face: font_display: 'swap' }}
 
   {% comment %} Body font face {% endcomment %}
-  {{- theme_font_body | font_modify: 'weight', '300' | font_face: font_display: 'swap' -}}
-  {{- theme_font_body | font_modify: 'weight', '400' | font_face: font_display: 'swap' -}}
-  {{- theme_font_body | font_modify: 'weight', '700' | font_face: font_display: 'swap' -}}
-</style>
+  {{ settings.fonts_body | font_face: font_display: 'swap' }}
+  {{ font_body_bold | font_face: font_display: 'swap' }}
+  {{ font_body_italic | font_face: font_display: 'swap' }}
+  {{ font_body_bold_italic | font_face: font_display: 'swap' }}
+
+  {% comment %} Theme custom properties {% endcomment %}
+  :root {
+    --font-heading-family: {{ settings.fonts_header.family }}, {{ settings.fonts_header.fallback_families }};
+    --font-heading-style: {{ settings.fonts_header.style }};
+    --font-heading-weight: {{ settings.fonts_header.weight }};
+
+    --font-body-family: {{ settings.fonts_body.family }}, {{ settings.fonts_body.fallback_families }};
+    --font-body-style: {{ settings.fonts_body.style }};
+    --font-body-weight: {{ settings.fonts_body.weight }};
+
+    --color-base-text: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
+    --color-base-background-primary: {{ settings.colors_background_primary.red }}, {{ settings.colors_background_primary.green }}, {{ settings.colors_background_primary.blue }};
+    --color-base-background-secondary: {{ settings.colors_background_secondary.red }}, {{ settings.colors_background_secondary.green }}, {{ settings.colors_background_secondary.blue }};
+    --color-base-solid-button: {{ settings.colors_solid_button.red }}, {{ settings.colors_solid_button.green }}, {{ settings.colors_solid_button.blue }};
+    --color-base-outline-button: {{ settings.colors_outline_button.red }}, {{ settings.colors_outline_button.green }}, {{ settings.colors_outline_button.blue }};
+    --color-base-accent-primary: {{ settings.colors_accent_primary.red }}, {{ settings.colors_accent_primary.green }}, {{ settings.colors_accent_primary.blue }};
+    --color-base-accent-secondary: {{ settings.colors_accent_secondary.red }}, {{ settings.colors_accent_secondary.green }}, {{ settings.colors_accent_secondary.blue }};
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html {
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.4;
+    min-height: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 100%;
+    min-height: 100%;
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    line-height: 1.4;
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    background-color: rgba(var(--color-base-background-primary), 1);
+  }
+
+  @media screen and (min-width: 750px) {
+    body {
+      font-size: 1.6rem;
+    }
+  }
+{%- endstyle -%}
 
 {% comment %} JavaScript/Liquid Settings {% endcomment %}
 <script>
-if ((typeof window.Shopify) == 'undefined') {
-  window.Shopify = {};
-}
+  window.routes = {
+    cart: '{{- routes.cart_url -}}'',
+    cartAdd: '{{ routes.cart_add_url }}',
+    cartChange: '{{ routes.cart_change_url }}',
+    cartUpdate: '{{ routes.cart_update_url }}',
+    predictiveSearch: '{{ routes.predictive_search_url }}',
+    recommendations:  '{{ routes.product_recommendations_url }}',
+  };
 
-Shopify = {
-    colors: {
-      primary:     "{{- settings.theme_color_primary -}}",
-      secondary:   "{{- settings.theme_color_secondary -}}",
-      textHeading: "{{- settings.theme_color_text_heading -}}",
-      textBody:    "{{- settings.theme_color_text_body -}}",
-      btn:         "{{- settings.theme_color_button -}}",
-      btnText:     "{{- settings.theme_color_button_text -}}",
-      background:  "{{- settings.theme_color_background -}}",
-    },
+  window.cartStrings = {
+    error: `{{ 'sections.cart.cart_error' | t }}`,
+    quantityError: `{{ 'sections.cart.cart_quantity_error' | t }}`
+  };
 
-    fonts: {
-      heading: "{{- settings.theme_font_heading.family | remove: '"' -}}",
-      body:    "{{- settings.theme_font_body.family | remove: '"' -}}"
-    },
-
-    breakpoints: {
-      base: 0,
-      xs:   320,
-      s:    500,
-      md:   800,
-      l:    1025,
-      xl:   1200,
-      xxl:  1440
-    },
-
-    routes: {
-      root:             "{{- routes.root_url -}}",
-      account:          "{{- routes.account_url -}}",
-      search:           "{{- routes.search_url -}}",
-      predictiveSearch: "{{- routes.predictive_search_url -}}",
-      recommendations:  "{{ routes.product_recommendations_url }}",
-      cart:             "{{- routes.cart_url -}}",
-      addCartItem:      "{{- routes.cart_add_url -}}",
-      changeCart:       "{{- routes.cart_change_url -}}",
-      clearCart:        "{{- routes.cart_clear_url -}}",
-      updateCart:       "{{- routes.cart_update_url -}}",
-    },
-
-    sections: {}
-};
-
-document.documentElement.className = document.documentElement.className.replace('is-loading', 'is-loaded');
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'has-js');
 </script>
+

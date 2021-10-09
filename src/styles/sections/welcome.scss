@@ -1,0 +1,36 @@
+// ==========================================================================
+// ## SHOPIFY DYNAMIC SECTION: WELCOME
+// ==========================================================================
+
+
+.welcome {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  .welcome__wrapper {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .welcome__feature-wrapper {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    column-gap: 30px;
+  }
+
+  @include mq('to-s') {
+    .welcome__feature-wrapper {
+      justify-content: center;
+      row-gap: 20px;
+    }
+  }
+
+  .welcome__feature {
+    width: 90%;
+    max-width: 360px;
+  }
+}

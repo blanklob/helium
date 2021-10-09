@@ -1,6 +1,14 @@
 {
   "accessibility": {
     "skip_to_content": "Skip to main content",
+    "refresh_page": "Refresh the page",
     "close": "Close"
+  },
+  "sections": {
+    "cart": {
+      "empty": "Your cart is empty",
+      "cart_error": "There was an error while updating your cart. Please try again.",
+      "cart_quantity_error": "You can only add [quantity] of this item to your cart."
+    }
   }
 }

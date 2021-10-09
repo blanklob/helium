@@ -1,0 +1,45 @@
+// ==========================================================================
+// ## LAYOUT: GIFTCARD
+// ==========================================================================
+
+/// @content
+///   DO NOT ADD CLASSES OR RULES IN THIS FILE DIRECTLY.
+///   Instead, use imports to add extensions or snippets you made along the project.
+///
+///
+/// Production build weights only ~4kb (~1kb gzipped)
+///
+
+/// - SETTINGS & TOOLS (MUST BE AT THE TOP)
+/// Common settings and tools.
+//
+@import './settings/colors';
+@import './settings/fonts';
+// @import './settings/breakpoints';
+
+@import './tools/functions';
+@import './tools/mixins';
+
+/// - GENERIC
+/// Reset............A level playing field using @necolas’s Normalize.
+/// Print................Reset-like styles for print media.
+///
+@import './generic/reset';
+@import './generic/print';
+
+/// - COMPONENTS
+// Build and include your project’s UI components.
+// Uncomment and add to this as necessary.
+///
+/// Button..............Specific styles for btn component and its variations.
+/// Typeface............Specific styles for heading component and its size variations.
+///
+@import './components/button';
+@import './components/heading';
+// @import './components/price';
+
+/// - SECTIONS
+///
+/// Main giftcard..............Shopify only giftcard main static section.
+///
+@import './sections/main-giftcard';

@@ -1,0 +1,15 @@
+{% comment %}
+    Renders a product card component
+
+    Accepts:
+    - product_card_product: {Object} Product Liquid object (optional)
+    - media_size: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+    - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+    - show_vendor: {Boolean} Show the product vendor. Default: false
+    - show_rating: {Boolean} Show the product rating. Default: false
+
+    Usage:
+    {%- render 'component-product-card', show_vendor: section.settings.show_vendor -%}
+{% endcomment %}
+
+<div class="c-product-card"></div>

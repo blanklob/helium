@@ -1,0 +1,126 @@
+// ==========================================================================
+// ## GENERIC: ELEMENTS
+// ==========================================================================
+
+// Some common declarations for certain elements.
+///
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+
+details > * {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Hide empty elements
+a:empty,
+ul:empty,
+dl:empty,
+div:empty,
+section:empty,
+article:empty,
+p:empty,
+h1:empty,
+h2:empty,
+h3:empty,
+h4:empty,
+h5:empty,
+h6:empty {
+  display: none !important;
+}
+
+p,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+// 1. Single taps should be dispatched immediately on clickable elements
+///
+a,
+area,
+button,
+input,
+label,
+select,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation; // [1]
+  touch-action: manipulation;
+}
+
+[hreflang] > abbr[title] {
+  text-decoration: none;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+button {
+  cursor: pointer;
+}
+
+.a11y {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  transform: translateY(-150%);
+  transition: none;
+
+  &:focus-within {
+    transform: translateY(0%);
+  }
+}
+
+// 1. Fluid images for responsive purposes.
+// 2. Offset `alt` text from surrounding copy.
+// 3. Setting `vertical-align` removes the whitespace that appears under `img`
+//    elements when they are dropped into a page as-is. Safer alternative to
+//    using `display: block;`.
+///
+img {
+  max-width: 100%; // [1]
+  font-style: italic; // [2]
+  vertical-align: middle; // [3]
+}
+
+// 4. Setting `vertical-align` removes the whitespace that appears under `img`
+// elements when they are dropped into a page as-is.
+//
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; // [4]
+}
+
+// 5. SVG elements should fallback to their surrounding text color.
+//
+svg {
+  fill: currentColor; // [5]
+}

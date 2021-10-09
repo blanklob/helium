@@ -8,221 +8,181 @@
     "theme_support_url": "https://github.com/younessidbakkasse/workflow/issues"
   },
   {
-    "name": "Colors",
+    "name": "t:settings_schema.colors.name",
     "settings": [
       {
         "type": "header",
-        "content": {
-          "en": "Brand",
-          "fr": "Marque"
-        }
+        "content": "t:settings_schema.colors.settings.header_primary_colors.content"
       },
       {
         "type": "color",
-        "id": "theme_color_primary",
-        "label": {
-          "en": "Primary color",
-          "fr": "Couleur primaire"
-        },
-        "default": "#e5e5e5"
+        "id": "colors_solid_button",
+        "default": "#FFFFFF",
+        "label": "t:settings_schema.colors.settings.colors_solid_button.label",
+        "info": "t:settings_schema.colors.settings.colors_solid_button.info"
       },
       {
         "type": "color",
-        "id": "theme_color_secondary",
-        "label": {
-          "en": "Secondary color",
-          "fr": "Couleur secondaire"
-        },
-        "default": "#333333"
+        "id": "colors_accent_primary",
+        "default": "#121212",
+        "label": "t:settings_schema.colors.settings.colors_accent_primary.label",
+        "info": "t:settings_schema.colors.settings.colors_accent_primary.info"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_secondary",
+        "default": "#334FB4",
+        "label": "t:settings_schema.colors.settings.colors_accent_secondary.label"
       },
       {
         "type": "header",
-        "content": {
-          "en": "Text",
-          "fr": "Texte"
-        }
+        "content": "t:settings_schema.colors.settings.header_secondary_colors.content"
       },
       {
         "type": "color",
-        "id": "theme_color_text_heading",
-        "label": {
-          "en": "Heading",
-          "fr": "En-têtes"
-        },
-        "default": "#222222"
+        "id": "colors_text",
+        "default": "#121212",
+        "label": "t:settings_schema.colors.settings.colors_text.label",
+        "info": "t:settings_schema.colors.settings.colors_text.info"
       },
       {
         "type": "color",
-        "id": "theme_color_text_body",
-        "label": {
-          "en": "Body text",
-          "fr": "Corps du texte"
-        },
-        "default": "#777777"
-      },
-      {
-        "type": "header",
-        "content": {
-          "en": "Buttons",
-          "fr": "Bouttons"
-        }
+        "id": "colors_outline_button",
+        "default": "#121212",
+        "label": "t:settings_schema.colors.settings.colors_outline_button.label",
+        "info": "t:settings_schema.colors.settings.colors_outline_button.info"
       },
       {
         "type": "color",
-        "id": "theme_color_button",
-        "label": {
-          "en": "Button",
-          "fr": "Boutton"
-        },
-        "default": "#222222"
+        "id": "colors_background_primary",
+        "default": "#FFFFFF",
+        "label": "t:settings_schema.colors.settings.colors_background_primary.label"
       },
       {
         "type": "color",
-        "id": "theme_color_button_text",
-        "label": {
-          "en": "Button text",
-          "fr": "Texte du boutton"
-        },
-        "default": "#f6f6f6"
-      },
-      {
-        "type": "header",
-        "content": {
-          "en": "Page",
-          "fr": "Page"
-        }
-      },
-      {
-        "type": "color",
-        "id": "theme_color_background",
-        "label": {
-          "en": "Background",
-          "fr": "Fond"
-        },
-        "default": "#f7f7f7"
+        "id": "colors_background_secondary",
+        "default": "#F3F3F3",
+        "label": "t:settings_schema.colors.settings.colors_background_secondary.label"
       }
     ]
   },
   {
-    "name": {
-      "en": "Typefaces",
-      "fr": "Polices"
-    },
+    "name": "t:settings_schema.typography.name",
     "settings": [
       {
         "type": "header",
-        "content": {
-          "en": "Heading",
-          "fr": "Titre"
-        }
+        "content": "t:settings_schema.typography.settings.header_headings.content"
       },
       {
         "type": "font_picker",
-        "id": "theme_font_heading",
-        "label": {
-          "en": "Font family",
-          "fr": "Famille de police"
-        },
-        "default": "sans-serif"
+        "id": "fonts_header",
+        "default": "serif",
+        "label": "t:settings_schema.typography.settings.fonts_header.label",
+        "info": "t:settings_schema.typography.settings.fonts_header.info"
       },
       {
         "type": "header",
-        "content": {
-          "en": "Body",
-          "fr": "Corps"
-        }
+        "content": "t:settings_schema.typography.settings.header_body.content"
       },
       {
         "type": "font_picker",
-        "id": "theme_font_body",
-        "label": {
-          "en": "Font family",
-          "fr": "Famille de police"
-        },
-        "default": "sans-serif"
+        "id": "fonts_body",
+        "default": "sans-serif",
+        "label": "t:settings_schema.typography.settings.fonts_body.label",
+        "info": "t:settings_schema.typography.settings.fonts_body.info"
       }
     ]
   },
   {
-    "name": {
-      "en": "Favicon",
-      "fr": "Favicon"
-    },
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "favicon",
-        "label": {
-          "en": "Favicon image",
-          "fr": "Image favicon"
-        },
-        "info": {
-          "en": "Will be scaled down to 180x180px",
-          "fr": "Sera réduite à 180x180 px"
-        }
-      }
-    ]
-  },
-  {
-    "name": "Socials",
+    "name": "t:settings_schema.social_media.name",
     "settings": [
       {
         "type": "header",
-        "content": "Links"
+        "content": "t:settings_schema.social_media.settings.header.content"
       },
       {
         "type": "text",
         "id": "social_twitter_link",
-        "label": "Twitter",
-        "info": "www.twitter.com/shopify"
+        "label": "t:settings_schema.social_media.settings.social_twitter_link.label",
+        "info": "t:settings_schema.social_media.settings.social_twitter_link.info"
       },
       {
         "type": "text",
         "id": "social_facebook_link",
-        "label": "Facebook",
-        "info": "www.facebook.com/shopify"
+        "label": "t:settings_schema.social_media.settings.social_facebook_link.label",
+        "info": "t:settings_schema.social_media.settings.social_facebook_link.info"
       },
       {
         "type": "text",
         "id": "social_pinterest_link",
-        "label": "Pinterest",
-        "info": "www.pinterest.com/shopify"
+        "label": "t:settings_schema.social_media.settings.social_pinterest_link.label",
+        "info": "t:settings_schema.social_media.settings.social_pinterest_link.info"
       },
       {
         "type": "text",
         "id": "social_instagram_link",
-        "label": "Instagram",
-        "info": "www.instagram.com/shopify"
+        "label": "t:settings_schema.social_media.settings.social_instagram_link.label",
+        "info": "t:settings_schema.social_media.settings.social_instagram_link.info"
       },
       {
         "type": "text",
         "id": "social_tiktok_link",
-        "label": "Tiktok",
-        "info": "www.tiktok.com/shopify"
+        "label": "t:settings_schema.social_media.settings.social_tiktok_link.label",
+        "info": "t:settings_schema.social_media.settings.social_tiktok_link.info"
       },
       {
         "type": "text",
         "id": "social_tumblr_link",
-        "label": "Tumblr",
-        "info": "www.tumblr.com/shopify"
+        "label": "t:settings_schema.social_media.settings.social_tumblr_link.label",
+        "info": "t:settings_schema.social_media.settings.social_tumblr_link.info"
       },
       {
         "type": "text",
         "id": "social_snapchat_link",
-        "label": "Snapchat",
-        "info": "www.snapchat.com/shopify"
+        "label": "t:settings_schema.social_media.settings.social_snapchat_link.label",
+        "info": "t:settings_schema.social_media.settings.social_snapchat_link.info"
       },
       {
         "type": "text",
         "id": "social_youtube_link",
-        "label": "Youtube",
-        "info": "https://www.youtube.com/shopify"
+        "label": "t:settings_schema.social_media.settings.social_youtube_link.label",
+        "info": "t:settings_schema.social_media.settings.social_youtube_link.info"
       },
       {
         "type": "text",
         "id": "social_vimeo_link",
-        "label": "Vimeo",
-        "info": "https://www.vimeo.com/shopify"
+        "label": "t:settings_schema.social_media.settings.social_vimeo_link.label",
+        "info": "t:settings_schema.social_media.settings.social_vimeo_link.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.favicon.name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "t:settings_schema.favicon.settings.favicon.label",
+        "info": "t:settings_schema.favicon.settings.favicon.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.currency_format.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.currency_format.settings.content"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.currency_format.settings.paragraph"
+      },
+      {
+        "type": "checkbox",
+        "id": "currency_code_enabled",
+        "label": "t:settings_schema.currency_format.settings.currency_code_enabled.label",
+        "default": true
       }
     ]
   }
