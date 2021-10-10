@@ -1,0 +1,21 @@
+{% comment %}
+    Renders an article card for a given blog with settings to either show the date or not.
+
+    Accepts:
+    - blog: {Object} Blog object
+    - article: {Object} Article object
+    - show_date: {String} The setting either show the article date or not. If it's not included it will not show the image by default
+    - show_author: {String} The setting either show the article author or not. If it's not included it will not show the author by default
+
+    Usage:
+    {%- render 'component-article-card'
+      blog: blog,
+      article: article,
+      show_date: section.settings.show_date
+    -%}
+{% endcomment %}
+
+<article class="c-article-card" aria-labelledby="Article-{{ article.id }}">
+  <a href="{{ article.url }}" class="c-article_content">
+  </a>
+</article>

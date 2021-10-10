@@ -11,8 +11,12 @@
 ///
 
 .c-heading,
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $theme-font-heading-family;
   font-style: $theme-font-heading-style;
   font-weight: $theme-font-heading-weight;
@@ -24,17 +28,17 @@ h4, h5, h6 {
   // Size variants
   h1,
   &.--h1 {
-    font-size: rem(38px)
+    font-size: rem(38px);
   }
 
   h2,
   &.--h2 {
-    font-size: rem(22px)
+    font-size: rem(22px);
   }
 
   h3,
   &.--h3 {
-    font-size: rem(17px)
+    font-size: rem(17px);
   }
 
   &.--bold {
@@ -51,11 +55,11 @@ h4, h5, h6 {
 
   // Size variants
   &.--h1 {
-    font-size: rem(24px)
+    font-size: rem(24px);
   }
 
   &.--h2 {
-    font-size: rem(18px)
+    font-size: rem(18px);
   }
 
   &.--italic {

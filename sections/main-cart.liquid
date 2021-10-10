@@ -1,13 +1,12 @@
 <link rel="stylesheet" href="{{ 'section-main-cart.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'section-main-cart.css' | asset_url | stylesheet_tag }}</noscript>
 
-<div class="o-container o-container--md" data-section-id="{{- section.id -}}"></div>
+<div class="cart o-container --medium"></div>
 
 {% schema %}
 {
-  "name": "Cart",
-  "tag": "aside",
-  "class": "s-cart",
+  "name": "t:sections.cart.name",
+  "tag": "section",
   "settings": []
 }
 {% endschema %}

@@ -11,25 +11,25 @@
 ///
 
 $theme-spacing-directions: (
-  null : null,
-  't'  :'-top',
-  'r'  :'-right',
-  'b'  :'-bottom',
-  'l'  :'-left',
-  'h'  :'-left' '-right',
-  'v'  :'-top' '-bottom',
+  null: null,
+  't': '-top',
+  'r': '-right',
+  'b': '-bottom',
+  'l': '-left',
+  'h': '-left' '-right',
+  'v': '-top' '-bottom',
 ) !default;
 
 $theme-spacing-properties: (
-  'p'  :'padding',
-  'm'  :'margin',
+  'p': 'padding',
+  'm': 'margin',
 ) !default;
 
 $theme-spacing-sizes: (
-  '-small'  :em(8px),
-  '-medium' :em(32px),
-  '-large'  :em(64px),
-  '-none'   :0,
+  '-small': em(8px),
+  '-medium': em(32px),
+  '-large': em(64px),
+  '-none': 0,
 ) !default;
 
 @each $property-namespace, $property in $theme-spacing-properties {

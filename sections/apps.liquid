@@ -1,19 +1,18 @@
-<div class="{% if section.settings.include_padding %}o-container --medium{% endif %}">
+<section class="{% if section.settings.include_container %}o-container --medium{% endif %}">
   {% for block in section.blocks %}
     {% render block %}
   {% endfor %}
-</div>
+</section>
 
 {% schema %}
 {
-  "name": "App wrapper",
-  "tag": "section",
+  "name": "t:sections.apps.name",
   "settings": [
     {
       "type": "checkbox",
-      "id": "include_padding",
+      "id": "include_container",
       "default": true,
-      "label": "Make section margins the same as theme"
+      "label": "t:sections.apps.settings.include_container.label"
     }
   ],
   "blocks": [
@@ -23,7 +22,7 @@
   ],
   "presets": [
     {
-      "name": "App wrapper"
+      "name": "t:sections.apps.presets.name"
     }
   ]
 }

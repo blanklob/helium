@@ -1,13 +1,12 @@
 <link rel="stylesheet" href="{{ 'section-main-blog.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}</noscript>
 
-<div class="o-container o-container--md" data-section-id="{{- section.id -}}"></div>
+<div class="blog o-container --medium"></div>
 
 {% schema %}
 {
-  "name": "Blog",
+  "name": "t:sections.blog.name",
   "tag": "section",
-  "class": "s-blog",
   "settings": []
 }
 {% endschema %}

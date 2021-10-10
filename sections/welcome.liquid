@@ -2,76 +2,78 @@
 <noscript>{{ 'section-welcome.css' | asset_url | stylesheet_tag }}</noscript>
 
 
-<div class="o-container --medium u-align-center">
-  <div class="welcome__wrapper u-mv-large" style="max-width: 45rem;">
-    <h1 class="c-heading --h1 --bold u-mb-medium">{{ section.settings.heading }}</h1>
-    <h2 class="c-heading --h2 u-mb-small">{{ section.settings.subheading }}</h2>
-    <a class="welcome__link c-button u-mb-medium"
+<div class="welcome o-container --medium u-align-center">
+  <div class="welcome_wrapper c-heading u-mv-large" style="max-width: 45rem;">
+    <h1 class="--h1 --bold u-mb-medium">{{ section.settings.heading }}</h1>
+    <h2 class="--h2 u-mb-small">{{ section.settings.subheading }}</h2>
+    <a class="welcome_link c-button u-mb-medium"
       href="https://workflow.younessidbakkasse.com/docs/introduction/overview/"
       target="_blank">{{ section.settings.link_label }}
       {%- render 'component-icon'
         icon: 'arrow',
         icon_size: 20
       -%}</a>
-    <p class="c-heading --h4">
+    <p class="--h4">
       Open-source MIT Licensed. <a href="https://github.com/younessidbakkasse/workflow" target="_blank">GitHub v1.1.0</a>
     </p>
   </div>
-  <div class="welcome__feature-wrapper u-mb-large">
+
+  <div class="welcome_feature-wrapper u-mb-large">
     {% for block in section.blocks %}
       {%- if block.settings.heading != blank and block.settings.description != blank -%}
-      <div class="welcome__feature u-mb-l">
-        <h2 class="c-heading --h2 --bold u-mb-medium">{{ block.settings.heading }}</h2>
-        <h3 class="c-heading --h3">{{ block.settings.description }}</h3>
+      <div class="welcome_feature c-heading u-mb-large">
+        <h2 class="--h2 --bold u-mb-medium">{{ block.settings.heading }}</h2>
+        <h3 class="--h3">{{ block.settings.description }}</h3>
       </div>
       {% endif %}
     {% endfor %}
   </div>
 </div>
 
+
 {% schema %}
 {
-  "name": "Welcome",
+  "name": "t:sections.welcome.name",
   "tag": "section",
-  "class": "welcome",
   "max_blocks": 6,
   "settings": [
     {
-      "type": "header",
-      "content": "General"
-    },
-    {
       "type": "textarea",
       "id": "heading",
-      "label": "Heading"
+      "label": "t:sections.welcome.settings.heading.label"
     },
     {
       "type": "textarea",
       "id": "subheading",
-      "label": "Subeading"
+      "label": "t:sections.welcome.settings.subheading.label"
     },
     {
       "type": "text",
       "id": "link_label",
-      "label": "Link label"
+      "label": "t:sections.welcome.settings.link_label.label"
     }
   ],
   "blocks": [
     {
-      "name": "Card",
+      "name": "t:sections.welcome.blocks.card.name",
       "type": "card",
       "settings": [
         {
           "type": "text",
           "id": "heading",
-          "label": "Heading"
+          "label": "t:sections.welcome.blocks.card.settings.heading.label"
         },
         {
           "type": "textarea",
           "id": "description",
-          "label": "Description"
+          "label": "t:sections.welcome.blocks.card.settings.description.label"
         }
       ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.welcome.presets.name"
     }
   ]
 }

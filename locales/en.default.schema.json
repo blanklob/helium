@@ -119,5 +119,116 @@
       }
     }
   },
-  "sections": {}
+  "sections": {
+    "header": {
+      "name": "Header"
+    },
+    "footer": {
+      "name": "Footer"
+    },
+    "custom-liquid": {
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": {
+          "label": "Custom Liquid",
+          "info": "Add app snippets or other Liquid code to create advanced customizations."
+        }
+      },
+      "presets": {
+        "name": "Custom Liquid"
+      }
+    },
+    "apps": {
+      "name": "Apps",
+      "settings": {
+        "include_container": {
+          "label": "Make section margins the same as theme"
+        }
+      },
+      "presets": {
+        "name": "Apps"
+      }
+    },
+    "404": {
+      "name": "404"
+    },
+    "account": {
+      "name": "Account"
+    },
+    "activate_account": {
+      "name": "Activate account"
+    },
+    "adresses": {
+      "name": "Adresses"
+    },
+    "article": {
+      "name": "Article"
+    },
+    "blog": {
+      "name": "Blog"
+    },
+    "cart": {
+      "name": "Cart"
+    },
+    "collection": {
+      "name": "Collection"
+    },
+    "list_collections": {
+      "name": "List collections"
+    },
+    "login": {
+      "name": "Login"
+    },
+    "order": {
+      "name": "Order"
+    },
+    "page": {
+      "name": "Page"
+    },
+    "password": {
+      "name": "Password"
+    },
+    "product": {
+      "name": "Product"
+    },
+    "register": {
+      "name": "Register"
+    },
+    "reset_password": {
+      "name": "Reset password"
+    },
+    "search": {
+      "name": "Search"
+    },
+    "welcome": {
+      "name": "Welcome",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "subheading": {
+          "label": "Subeading"
+        },
+        "link_label": {
+          "label": "Link label"
+        }
+      },
+      "blocks": {
+        "card": {
+          "name": "Card",
+          "settings": {
+            "heading": {
+              "label": "Heading"
+            },
+            "description": {
+              "label": "Description"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Welcome"
+      }
+    }
+  }
 }
