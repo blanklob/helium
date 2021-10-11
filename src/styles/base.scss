@@ -7,7 +7,7 @@
 ///   Instead, use imports to add extensions or snippets you made along the project.
 ///
 ///
-/// Production build weights only ~10kb (~3kb gzipped)
+/// Production build weights only ~10kb (~2.5kb gzipped)
 ///
 
 /// - SETTINGS & TOOLS (MUST BE AT THE TOP)
@@ -37,7 +37,7 @@
 /// Typeface............Specific styles for heading component and its size variations.
 ///
 @import './components/button';
-@import './components/heading';
+@import './components/typeface';
 // @import './components/price';
 
 /// - SECTIONS

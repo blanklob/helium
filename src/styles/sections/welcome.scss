@@ -7,13 +7,13 @@
   justify-content: center;
   align-items: center;
 
-  .welcome__wrapper {
+  .welcome_wrapper {
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
   }
 
-  .welcome__feature-wrapper {
+  .welcome_feature-wrapper {
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
@@ -21,14 +21,14 @@
     column-gap: 30px;
   }
 
-  @include mq('to-s') {
-    .welcome__feature-wrapper {
+  @media screen and (max-width: 749px) {
+    .welcome_feature-wrapper {
       justify-content: center;
       row-gap: 20px;
     }
   }
 
-  .welcome__feature {
+  .welcome_feature {
     width: 90%;
     max-width: 360px;
   }

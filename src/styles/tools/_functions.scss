@@ -23,7 +23,7 @@
     @error "`#{$size}` needs to be a number.";
   }
 
-  @return math.div($size, $theme-font-base-size) * 1em;
+  @return math.div($size, $font-base-size) * 1em;
 }
 
 /// @content Function that converts the given pixel value to its REM quivalent.
@@ -45,5 +45,5 @@
     @error "`#{$size}` needs to be a number.";
   }
 
-  @return math.div($size, $theme-font-base-size) * 1rem;
+  @return math.div($size, $font-base-size) * 1rem;
 }

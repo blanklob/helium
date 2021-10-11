@@ -31,7 +31,7 @@
       {
         "type": "color",
         "id": "colors_accent_secondary",
-        "default": "#334FB4",
+        "default": "#4B4B4B",
         "label": "t:settings_schema.colors.settings.colors_accent_secondary.label"
       },
       {
@@ -76,7 +76,7 @@
       {
         "type": "font_picker",
         "id": "fonts_header",
-        "default": "serif",
+        "default": "sans-serif",
         "label": "t:settings_schema.typography.settings.fonts_header.label",
         "info": "t:settings_schema.typography.settings.fonts_header.info"
       },

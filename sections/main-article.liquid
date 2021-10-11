@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="{{ 'section-main-article.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'section-main-article.css' | asset_url | stylesheet_tag }}</noscript>
 
-<div class="article o-container --medium"></div>
+<div class="article o-container --medium">
+  {%- render 'component-article-card' -%}
+</div>
 
 {% schema %}
 {

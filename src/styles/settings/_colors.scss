@@ -4,26 +4,31 @@
 
 /// @content This file sets up the theme color variables.
 ///
-/// Global variable name must always start with '$theme-' prefix/namespace.
 /// This file is mounted to the global settings liquid file.
 
 // All these colors can be changed in the theme customizer/editor,
-// they should never be hardcoded!
+// Ude the base colors to create more color schemas.
 /// @type String
 /// @access public
 
-// Global brand colors *********************
-$theme-color-primary: var(--theme-color-primary) !default;
-$theme-color-secondary: var(--theme-color-secondary) !default;
+// Global brand colors
+$color-base-primary: rgba(var(--color-base-accent-primary), 1) !default;
+$color-base-secondary: rgba(var(--color-base-accent-secondary), 1) !default;
 
-// Headings and body **************
-$theme-color-text-heading: var(--theme-color-text-heading) !default;
-$theme-color-text-body: var(--theme-color-text-body) !default;
+// Text
+$color-base-text: rgba(var(--color-base-text), 1) !default;
 
-// Buttons ************************
+// Buttons
 // Secondary button style can be added if needed.
-$theme-color-button: var(--theme-color-button) !default;
-$theme-color-button-text: var(--theme-color-button-text) !default;
+$color-base-solid-button: rgba(var(--color-base-solid-button), 1) !default;
+$color-base-outline-button: rgba(var(--color-base-outline-button), 1) !default;
 
-// Background ********************
-$theme-color-background: var(--theme-color-background) !default;
+// Background
+$color-base-background-primary: rgba(
+  var(--color-base-background-primary),
+  1
+) !default;
+$color-base-background-secondary: rgba(
+  var(--color-base-background-secondary),
+  1
+) !default;

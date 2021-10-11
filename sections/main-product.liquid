@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="{{ 'section-main-product.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'section-main-product.css' | asset_url | stylesheet_tag }}</noscript>
 
-<div class="product o-container --medium" ></div>
+<div class="product o-container --medium" >
+  {%- render 'component-product-card' -%}
+</div>
 
 
 {% schema %}

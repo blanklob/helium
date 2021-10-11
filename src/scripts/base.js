@@ -1,7 +1,1 @@
-/*
- *  BASE/APP
- */
-
-// import './utils/utils.fetch'
-// import './utils/utils.search'
-// import './utils/utils.router'
+console.log('Hello from Theme Layout 👋.')

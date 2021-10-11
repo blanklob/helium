@@ -3,32 +3,39 @@ const path = require('path')
 
 // Get root and component dir
 const rootDir = path.dirname(path.dirname(path.dirname(__dirname)))
-const componentsPath = path.join(path.join(rootDir, 'src'), 'components')
+const stylesDir = path.join(path.join(rootDir, 'src'), 'styles')
+const scriptsDir = path.join(path.join(rootDir, 'src'), 'scripts')
+
 
 module.exports = function () {
   const entrypoints = {}
-  const componentsStylesPath = path.join(componentsPath, 'styles')
-  const componentsScriptsPath = path.join(componentsPath, 'scripts')
+  const componentsStyles = path.join(stylesDir, 'components')
+  const componentsScripts = path.join(scriptsDir, 'components')
 
-  fs.readdirSync(componentsStylesPath).forEach((file) => {
+  fs.readdirSync(componentsStyles).forEach((file) => {
     const componentName = path.parse(file).name
-    entrypoints[`component-${componentName}`] = []
-
-    entrypoints[`component-${componentName}`].push(
-      path.join(componentsStylesPath, `${componentName}.scss`)
-    )
+    if (!componentName.startsWith('_')) {
+      entrypoints[`component-${componentName}`] = []
+      entrypoints[`component-${componentName}`].push(
+        path.join(componentsStyles, `${componentName}.scss`)
+      )
+    }
   })
 
-  fs.readdirSync(componentsScriptsPath).forEach((file) => {
+  fs.readdirSync(componentsScripts).forEach((file) => {
     const componentName = path.parse(file).name
-    const sectionsScript = path.join(
-      componentsScriptsPath,
+    const componentFile = path.join(
+      componentsScripts,
       `${componentName}.js`
     )
 
-    if (fs.existsSync(sectionsScript)) {
+    if (fs.existsSync(componentFile)) {
+      if (!entrypoints.hasOwnProperty(`component-${componentName}`)) {
+        entrypoints[`component-${componentName}`] = []
+      }
+
       entrypoints[`component-${componentName}`].push(
-        path.join(componentsScriptsPath, `${componentName}.js`)
+        path.join(componentsScripts, `${componentName}.js`)
       )
     }
   })

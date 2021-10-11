@@ -3,17 +3,12 @@
 // ==========================================================================
 
 /// @content Basic Theme font variables extracted from css custom properties
-/// defined in the "snippets/style-liquid-tags.liquid" file.
+/// defined in the "snippets/head-settings.liquid" file.
 ///
 /// This file sets up the theme font variables.
-/// Basically, take the custom properties defined in the "snippets/style-liquid-tags.liquid"
+/// Basically, take the custom properties defined in the "snippets/head-settings.liquid"
 /// file and turned them to SCSS $variables.
 ///
-/// @throw
-///   Global variable name must always start with '$theme-' prefix/namespace.
-///
-/// @throw
-///   This file is mounted to the global settings liquid file.
 
 // All these font properties can be changed in the theme customizer/editor.
 /// @type String
@@ -21,17 +16,14 @@
 ///
 
 // Heading text ************************
-$theme-font-heading-family: var(--theme-font-heading-family) !default;
-$theme-font-heading-style: var(--theme-font-heading-style) !default;
-$theme-font-heading-weight: var(--theme-font-heading-weight) !default;
+$font-heading-family: var(--font-heading-family) !default;
+$font-heading-style: var(--font-heading-style) !default;
+$font-heading-weight: var(--font-heading-weight) !default;
 
 // Body text ************************
-$theme-font-body-family: var(--theme-font-body-family) !default;
-$theme-font-body-style: var(--theme-font-body-style) !default;
-$theme-font-body-weight: var(--theme-font-body-weight) !default;
+$font-body-family: var(--font-body-family) !default;
+$font-body-style: var(--font-body-style) !default;
+$font-body-weight: var(--font-body-weight) !default;
 
 // Base size & line-height ************************
-$theme-font-base-size: 16px !default;
-
-// The base line height, line-height depends on font-size.
-$theme-font-base-line-height: 6px !default; // 6px
+$font-base-size: 16px !default;

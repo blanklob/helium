@@ -1,10 +1,72 @@
 {%- layout 'giftcard' -%}
 
-<div id="qrCode" title="{{- gift_card.qr_identifier -}}"></div>
-<script type="text/javascript">
-  var qrCode = new QRCode(document.getElementById("qrCode"), {
-    text:   "{{- gift_card.qr_identifier -}}",
-    width:  120,
-    height: 120
+<section class="gift-card">
+  <div class="gift-card_image-wrapper">
+    <img src="{{ 'gift-card/card.svg' | shopify_asset_url }}" alt="Giftcard image" class="gift-card_image" height="{{ 570 | divided_by: 1.5 }}" width="570" loading="lazy">
+  </div>
+  <div class="gift-card_qr-code" data-identifier="{{ gift_card.qr_identifier }}"></div>
+  <div class="gift-card_information">
+    <input
+      type="text"
+      class="gift-card_number"
+      value="{{ gift_card.code | format_code }}"
+      aria-label="{{ 'templates.gift_card.gift_card_code' | t }}"
+      readonly
+    >
+    <div class="gift-card_copy-code">
+      <button class="link gift-card_copy-link">{{ 'templates.gift_card.copy_code' | t }}</button>
+      <span class="gift-card_copy-success form__message" role="status"></span>
+      <template>
+        {%- render 'component-icon' icon: 'success' -%}{{ 'templates.gift_card.copy_code_success' | t }}
+      </template>
+    </div>
+    {%- if gift_card.pass_url -%}
+      <a href="{{ gift_card.pass_url }}" class="gift_card_apple-wallet">
+        <img src="{{ 'gift-card/add-to-apple-wallet.svg' | shopify_asset_url }}" width="120" height="40" alt="{{ 'templates.gift_card.add_to_apple_wallet' | t }}" loading="lazy">
+      </a>
+    {%- endif -%}
+    <div class="gift-card_buttons no-print">
+      <a
+        href="{{ shop.url }}"
+        class="c-button"
+        target="_blank"
+        rel="noopener"
+        aria-describedby="a11y-new-window-message"
+      >
+        {{ 'templates.gift_card.shop_link' | t }}
+      </a>
+      <button type="button"
+        class="c-button --secondary"
+        onclick="window.print();"
+      >
+        {{ 'templates.gift_card.print_gift_card' | t }}
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  var string = { 'qrImageAlt': {{ 'templates.gift_card.qr_image_alt' | t | json }} };
+
+  document.addEventListener('DOMContentLoaded', function() {
+   new QRCode( document.querySelector('.gift-card__qr-code'), {
+    text: document.querySelector('.gift-card__qr-code').dataset.identifier,
+    width: 120,
+    height: 120,
+    imageAltText: string.qrImageAlt
+    });
+  });
+
+  var template = document.getElementsByTagName("template")[0];
+  var clonedTemplate = template.content.cloneNode(true);
+  var isMessageDisplayed = false;
+
+  document.querySelector('.gift-card__copy-link').addEventListener('click', () => {
+    navigator.clipboard.writeText(document.querySelector('.gift-card__number').value).then(function () {
+      if (!isMessageDisplayed) {
+        document.querySelector('.gift-card__copy-success').appendChild(clonedTemplate);
+        isMessageDisplayed = true;
+      }
+    });
   });
 </script>

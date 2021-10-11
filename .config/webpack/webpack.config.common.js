@@ -6,7 +6,6 @@ const componentsEntries = require('./utils/components')
 // Webpack plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts')
-const MediaQueryPlugin = require('media-query-plugin')
 const SizePlugin = require('size-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
@@ -17,18 +16,22 @@ const configDir = path.dirname(__dirname)
 const nodeDir = path.join(rootDir, 'node_modules')
 const srcDir = path.join(rootDir, 'src')
 
-const baseDir = path.join(srcDir, 'base')
-const sectionsDir = path.join(srcDir, 'sections')
-const componentsDir = path.join(srcDir, 'components')
-const sharedDir = path.join(srcDir, 'shared')
+const scriptsDir = path.join(srcDir, 'scripts')
+const stylesDir = path.join(srcDir, 'styles')
+const publicDir = path.join(srcDir, 'public')
 
 // Common configuration
 module.exports = {
   // Entry
   entry: {
-    base: [
-      path.join(baseDir, 'scripts/base.js'),
-      path.join(baseDir, 'styles/base.scss'),
+    base: [path.join(scriptsDir, 'base.js'), path.join(stylesDir, 'base.scss')],
+    password: [
+      path.join(scriptsDir, 'password.js'),
+      path.join(stylesDir, 'password.scss'),
+    ],
+    giftcard: [
+      path.join(scriptsDir, 'giftcard.js'),
+      path.join(stylesDir, 'giftcard.scss'),
     ],
     ...sectionsEntries(),
     ...componentsEntries(),
@@ -46,28 +49,14 @@ module.exports = {
     new RemoveEmptyScriptsPlugin(),
     // #2: Extract CSS to separate css file
     new MiniCssExtractPlugin({ filename: '[name].css' }),
-    // #3: Split CSS using media queries
-    new MediaQueryPlugin({
-      include: ['base'],
-      queries: {
-        'screen and (min-width: 1440px)': 'desktop',
-        'screen and (min-width: 1200px)': 'desktop',
-        'screen and (min-width: 1025px)': 'desktop',
-        'screen and (min-width: 800px)': 'desktop',
-
-        'screen and (max-width: 799px)': 'mobile',
-        'screen and (max-width: 499px)': 'mobile',
-        'screen and (max-width: 319px)': 'mobile',
-      },
-    }),
-    // #4: Prints the gzipped sizes of assets.
+    // #3: Prints the gzipped sizes of assets.
     new SizePlugin({
       publish: false,
       writeFile: false,
     }),
-    // #5: Copy files to assets directory
+    // #4: Copy files to assets directory
     new CopyPlugin({
-      patterns: [{ from: sharedDir, to: path.join(rootDir, 'assets') }],
+      patterns: [{ from: publicDir, to: path.join(rootDir, 'assets') }],
     }),
   ],
   // Webpack Loaders
@@ -92,7 +81,6 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           // Translates CSS into CommonJS
           'css-loader',
-          MediaQueryPlugin.loader,
           // Postcss
           {
             loader: 'postcss-loader',
@@ -119,10 +107,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      base: baseDir,
-      sections: sectionsDir,
-      components: componentsDir,
-      nodeModules: nodeDir,
+      styles: stylesDir,
+      scripts: scriptsDir,
+      public: publicDir,
     },
   },
   stats: {

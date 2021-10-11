@@ -185,6 +185,9 @@
     "page": {
       "name": "Page"
     },
+    "header_password": {
+      "name": "Password header"
+    },
     "password": {
       "name": "Password"
     },

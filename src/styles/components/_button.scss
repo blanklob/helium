@@ -24,9 +24,9 @@ button,
   border: 0;
   border-radius: rem(5px);
   padding: rem(12px) rem(22px);
-  font-family: $theme-font-heading-family;
-  font-style: $theme-font-heading-style;
-  font-weight: $theme-font-heading-weight;
+  font-family: $font-heading-family;
+  font-style: $font-heading-style;
+  font-weight: $font-heading-weight;
   font-size: 1.25rem;
   user-select: none;
   appearance: none;
@@ -38,13 +38,14 @@ button,
   /// Color variants
   &,
   &.--primary {
-    background-color: $theme-color-button;
-    color: $theme-color-button-text;
+    background-color: $color-base-solid-button;
+    color: $color-base-background-primary;
   }
 
   &.--secondary {
-    background-color: $theme-color-button-text;
-    color: $theme-color-button;
+    background-color: transparent;
+    color: $color-base-outline-button;
+    border: 1px solid $color-base-outline-button;
   }
 
   /// Size variants
@@ -58,7 +59,8 @@ button,
 
   /// State variation
   &.--loading {
-    background-color: transparent;
+    cursor: not-allowed;
+    opacity: 0.8;
   }
 
   &.--disabled,
