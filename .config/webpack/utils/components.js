@@ -6,7 +6,6 @@ const rootDir = path.dirname(path.dirname(path.dirname(__dirname)))
 const stylesDir = path.join(path.join(rootDir, 'src'), 'styles')
 const scriptsDir = path.join(path.join(rootDir, 'src'), 'scripts')
 
-
 module.exports = function () {
   const entrypoints = {}
   const componentsStyles = path.join(stylesDir, 'components')
@@ -24,10 +23,7 @@ module.exports = function () {
 
   fs.readdirSync(componentsScripts).forEach((file) => {
     const componentName = path.parse(file).name
-    const componentFile = path.join(
-      componentsScripts,
-      `${componentName}.js`
-    )
+    const componentFile = path.join(componentsScripts, `${componentName}.js`)
 
     if (fs.existsSync(componentFile)) {
       if (!entrypoints.hasOwnProperty(`component-${componentName}`)) {

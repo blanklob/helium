@@ -17,7 +17,7 @@
       {
         "type": "color",
         "id": "colors_solid_button",
-        "default": "#FFFFFF",
+        "default": "#222222",
         "label": "t:settings_schema.colors.settings.colors_solid_button.label",
         "info": "t:settings_schema.colors.settings.colors_solid_button.info"
       },
@@ -41,14 +41,14 @@
       {
         "type": "color",
         "id": "colors_text",
-        "default": "#121212",
+        "default": "#252525",
         "label": "t:settings_schema.colors.settings.colors_text.label",
         "info": "t:settings_schema.colors.settings.colors_text.info"
       },
       {
         "type": "color",
         "id": "colors_outline_button",
-        "default": "#121212",
+        "default": "#222222",
         "label": "t:settings_schema.colors.settings.colors_outline_button.label",
         "info": "t:settings_schema.colors.settings.colors_outline_button.info"
       },

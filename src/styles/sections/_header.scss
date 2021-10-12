@@ -1,3 +1,15 @@
 // ==========================================================================
 // ## SHOPIFY STATIC SECTION: HEADER
 // ==========================================================================
+
+.header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .header_logo {
+    font-size: 1.4rem;
+  }
+}

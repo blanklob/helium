@@ -1,0 +1,27 @@
+// ==========================================================================
+// ## COMPONENT: DARK MODE BUTTON
+// ==========================================================================
+
+dark-mode-button {
+  .c-button {
+    padding: 8px;
+    border-radius: 100%;
+  }
+}
+
+.is-dark {
+  body {
+    background-color: rgba(var(--color-base-solid-button), 0.98);
+    color: rgba(var(--color-base-background-primary), 0.98);
+  }
+
+  .c-heading,
+  .c-body {
+    color: rgba(var(--color-base-background-primary), 0.96);
+  }
+
+  .c-button {
+    background-color: rgba(var(--color-base-background-primary), 0.96);
+    color: rgba(var(--color-base-solid-button), 0.98);;
+  }
+}

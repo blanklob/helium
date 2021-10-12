@@ -3,6 +3,7 @@
 
     Accepts:
     - icon: {string} Icon name (required)
+    - icon_size {string} Icon width and height (optional)
 
     Usage:
     {%- render 'component-icon' icon: 'arrow' -%}
@@ -13,32 +14,37 @@
 {%- case icon -%}
   {% comment %} UI icons {% endcomment %}
   {%- when 'arrow' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 14 10" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 14 10" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor">
     </svg>
 
   {%- when '3d-model' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 18 21" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 18 21" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path d="M7.67998 20.629L1.28002 16.723C0.886205 16.4784 0.561675 16.1368 0.337572 15.731C0.113468 15.3251 -0.00274623 14.8686 -1.39464e-05 14.405V6.59497C-0.00238367 6.13167 0.113819 5.6755 0.33751 5.26978C0.561202 4.86405 0.884959 4.52227 1.278 4.27698L7.67796 0.377014C8.07524 0.131403 8.53292 0.000877102 8.99999 9.73346e-08C9.46678 -0.000129605 9.92446 0.129369 10.322 0.374024V0.374024L16.722 4.27399C17.1163 4.51985 17.4409 4.86287 17.6647 5.27014C17.8885 5.67742 18.0039 6.13529 18 6.59998V14.409C18.0026 14.8725 17.8864 15.3289 17.6625 15.7347C17.4386 16.1405 17.1145 16.4821 16.721 16.727L10.321 20.633C9.92264 20.8742 9.46565 21.0012 8.99999 21C8.53428 20.9998 8.07761 20.8714 7.67998 20.629V20.629ZM8.72398 2.078L2.32396 5.97803C2.22303 6.04453 2.14066 6.13551 2.08452 6.24255C2.02838 6.34959 2.00031 6.46919 2.00298 6.59003V14.4C2.00026 14.5205 2.02818 14.6396 2.08415 14.7463C2.14013 14.853 2.22233 14.9438 2.32298 15.01L7.99999 18.48V10.919C8.00113 10.5997 8.08851 10.2867 8.25292 10.0129C8.41732 9.73922 8.65267 9.51501 8.93401 9.36401L15.446 5.841L9.28001 2.08002C9.19614 2.02738 9.09901 1.99962 8.99999 2C8.90251 1.99972 8.8069 2.02674 8.72398 2.078V2.078Z" fill="currentColor"/>
     </svg>
 
   {%- when 'account' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 18 19" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 18 19" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4.5a3 3 0 116 0 3 3 0 01-6 0zm3-4a4 4 0 100 8 4 4 0 000-8zm5.58 12.15c1.12.82 1.83 2.24 1.91 4.85H1.51c.08-2.6.79-4.03 1.9-4.85C4.66 11.75 6.5 11.5 9 11.5s4.35.26 5.58 1.15zM9 10.5c-2.5 0-4.65.24-6.17 1.35C1.27 12.98.5 14.93.5 18v.5h17V18c0-3.07-.77-5.02-2.33-6.15-1.52-1.1-3.67-1.35-6.17-1.35z" fill="currentColor">
     </svg>
 
   {%- when 'caret' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 10 6" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 10 6" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
     </svg>
 
   {%- when 'cart-empty' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 40 40" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 40 40" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path d="m15.75 11.8h-3.16l-.77 11.6a5 5 0 0 0 4.99 5.34h7.38a5 5 0 0 0 4.99-5.33l-.78-11.61zm0 1h-2.22l-.71 10.67a4 4 0 0 0 3.99 4.27h7.38a4 4 0 0 0 4-4.27l-.72-10.67h-2.22v.63a4.75 4.75 0 1 1 -9.5 0zm8.5 0h-7.5v.63a3.75 3.75 0 1 0 7.5 0z" fill="currentColor" fill-rule="evenodd"/>
     </svg>
 
+  {%- when 'moon' -%}
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 24 24" fill="none">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+
   {%- when 'cart' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 40 40" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 40 40" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill="currentColor" fill-rule="evenodd" d="M20.5 6.5a4.75 4.75 0 00-4.75 4.75v.56h-3.16l-.77 11.6a5 5 0 004.99 5.34h7.38a5 5 0 004.99-5.33l-.77-11.6h-3.16v-.57A4.75 4.75 0 0020.5 6.5zm3.75 5.31v-.56a3.75 3.75 0 10-7.5 0v.56h7.5zm-7.5 1h7.5v.56a3.75 3.75 0 11-7.5 0v-.56zm-1 0v.56a4.75 4.75 0 109.5 0v-.56h2.22l.71 10.67a4 4 0 01-3.99 4.27h-7.38a4 4 0 01-4-4.27l.72-10.67h2.22z"/>
     </svg>
 
@@ -48,28 +54,28 @@
     </svg>
 
   {%- when 'clipboard' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 11 13" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 11 13" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M2 1a1 1 0 011-1h7a1 1 0 011 1v9a1 1 0 01-1 1V1H2zM1 2a1 1 0 00-1 1v9a1 1 0 001 1h7a1 1 0 001-1V3a1 1 0 00-1-1H1zm0 10V3h7v9H1z" fill="currentColor"/>
     </svg>
 
   {%- when 'close-small' -%}
-    <svg class="{{- icon_class -}}" width="12" height="13" fill="none" viewBox="0 0 12 13" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} width="12" height="13" fill="none" viewBox="0 0 12 13" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path d="M8.48627 9.32917L2.82849 3.67098" stroke="#333030" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M2.88539 9.38504L8.42932 3.61524" stroke="#333030" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
 
   {%- when 'close' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 18 17" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 18 17" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
     </svg>
 
   {%- when 'minus' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 10 2" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 10 2" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z" fill="currentColor">
     </svg>
 
   {%- when 'filter' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 11 20 20" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 11 20 20" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <line x1="16.5" y1="17.5" x2="3.5" y2="17.5" stroke="#3F7972" stroke-linecap="round"/>
       <line x1="16.5" y1="24.5" x2="3.5" y2="24.5" stroke="#3F7972" stroke-linecap="round"/>
       <circle cx="13" cy="24.5" r="2" fill="white" stroke="#3F7972"/>
@@ -77,12 +83,12 @@
     </svg>
 
   {%- when 'hamburger' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 18 16" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 18 16" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M7 0h3a2 2 0 012 2v3a1 1 0 01-.3.7l-6 6a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4l6-6A1 1 0 017 0zm2 2a1 1 0 102 0 1 1 0 00-2 0z" fill="currentColor">
     </svg>
 
   {%- when 'padlock' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 16 21" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 16 21" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M5.03 1.79A3.73 3.73 0 018 .5c1.28 0 2.28.48 2.97 1.29.67.8 1 1.87 1.03 3V7.5h3c.28 0 .5.22.5.5v12a.5.5 0 01-.5.5H1a.5.5 0 01-.5-.5V8c0-.28.22-.5.5-.5h3V4.8c0-1.1.36-2.15 1.03-3.01zM11 6.4v1.09H5V4.82c.03-.99.31-1.82.8-2.4A2.75 2.75 0 018 1.49c1.01 0 1.73.37 2.2.93.49.58.77 1.41.8 2.4V6.4zM1.5 8.49v11h13v-11h-13zm6.51 2.5a1.5 1.5 0 00-.7 2.82v2.5a.68.68 0 001.36 0v-2.47A1.5 1.5 0 008 11l.01-.01z" clip-rule="evenodd" fill="currentColor" />
     </svg>
 
@@ -92,104 +98,115 @@
     </svg>
 
   {%- when 'play' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 10 14" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 10 14" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M1.48177 0.814643C0.81532 0.448245 0 0.930414 0 1.69094V12.2081C0 12.991 0.858787 13.4702 1.52503 13.0592L10.5398 7.49813C11.1918 7.09588 11.1679 6.13985 10.4965 5.77075L1.48177 0.814643Z" fill="currentColor"/>
     </svg>
 
   {%- when 'plus' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 10 10" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 10 10" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor">
     </svg>
 
   {%- when 'error' -%}
-    <svg class="{{- icon_class -}}" viewBox="0 0 13 13" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} viewBox="0 0 13 13" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
       <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
       <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
       <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
     </svg>
 
+  {%- when 'sun' -%}
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64">
+      </line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78">
+      </line><line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+
   {%- when 'success' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 13 13" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 13 13" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path d="M6.5 12.35C9.73087 12.35 12.35 9.73086 12.35 6.5C12.35 3.26913 9.73087 0.65 6.5 0.65C3.26913 0.65 0.65 3.26913 0.65 6.5C0.65 9.73086 3.26913 12.35 6.5 12.35Z" fill="#428445" stroke="white" stroke-width="0.7"/>
       <path d="M5.53271 8.66357L9.25213 4.68197" stroke="white"/>
       <path d="M4.10645 6.7688L6.13766 8.62553" stroke="white">
     </svg>
 
   {%- when 'zoom' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 19 19" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 19 19" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z" fill="currentColor"/>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z" fill="currentColor"/>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z" fill="currentColor"/>
     </svg>
 
   {%- when 'tick' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 20 20" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 20 20" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill="#108043" stroke="#fff" d="M16.136 6.979h0l.003-.004a1.499 1.499 0 00-2.275-1.954l-5.945 6.777-1.858-1.859A1.499 1.499 0 103.94 12.06l2.999 3s0 0 0 0c.289.29.675.44 1.1.439h.019a1.5 1.5 0 001.08-.522l6.998-7.998z"/>
     </svg>
 
   {%- when 'remove' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 16 16" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 16 16" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path d="M14 3h-3.53a3.07 3.07 0 00-.6-1.65C9.44.82 8.8.5 8 .5s-1.44.32-1.87.85A3.06 3.06 0 005.53 3H2a.5.5 0 000 1h1.25v10c0 .28.22.5.5.5h8.5a.5.5 0 00.5-.5V4H14a.5.5 0 000-1zM6.91 1.98c.23-.29.58-.48 1.09-.48s.85.19 1.09.48c.2.24.3.6.36 1.02h-2.9c.05-.42.17-.78.36-1.02zm4.84 11.52h-7.5V4h7.5v9.5z" fill="currentColor"/>
       <path d="M6.55 5.25a.5.5 0 00-.5.5v6a.5.5 0 001 0v-6a.5.5 0 00-.5-.5zM9.45 5.25a.5.5 0 00-.5.5v6a.5.5 0 001 0v-6a.5.5 0 00-.5-.5z" fill="currentColor"/>
     </svg>
 
   {%- when 'share' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 13 12" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 13 12" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path d="M1.625 8.125V10.2917C1.625 10.579 1.73914 10.8545 1.9423 11.0577C2.14547 11.2609 2.42102 11.375 2.70833 11.375H10.2917C10.579 11.375 10.8545 11.2609 11.0577 11.0577C11.2609 10.8545 11.375 10.579 11.375 10.2917V8.125" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M6.14775 1.27137C6.34301 1.0761 6.65959 1.0761 6.85485 1.27137L9.56319 3.9797C9.75845 4.17496 9.75845 4.49154 9.56319 4.6868C9.36793 4.88207 9.05135 4.88207 8.85609 4.6868L6.5013 2.33203L4.14652 4.6868C3.95126 4.88207 3.63468 4.88207 3.43942 4.6868C3.24415 4.49154 3.24415 4.17496 3.43942 3.9797L6.14775 1.27137Z" fill="currentColor"/>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 1.125C6.77614 1.125 7 1.34886 7 1.625V8.125C7 8.40114 6.77614 8.625 6.5 8.625C6.22386 8.625 6 8.40114 6 8.125V1.625C6 1.34886 6.22386 1.125 6.5 1.125Z" fill="currentColor"/>
     </svg>
 
   {%- when 'unavailable' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 20 20" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 20 20" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill="#DE3618" stroke="#fff" d="M13.94 3.94L10 7.878l-3.94-3.94A1.499 1.499 0 103.94 6.06L7.88 10l-3.94 3.94a1.499 1.499 0 102.12 2.12L10 12.12l3.94 3.94a1.497 1.497 0 002.12 0 1.499 1.499 0 000-2.12L12.122 10l3.94-3.94a1.499 1.499 0 10-2.121-2.12z"/>
     </svg>
 
   {% comment %} Social media icons {% endcomment %}
   {%- when 'facebook' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 18 18" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 18 18" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill="currentColor" d="M16.42.61c.27 0 .5.1.69.28.19.2.28.42.28.7v15.44c0 .27-.1.5-.28.69a.94.94 0 01-.7.28h-4.39v-6.7h2.25l.31-2.65h-2.56v-1.7c0-.4.1-.72.28-.93.18-.2.5-.32 1-.32h1.37V3.35c-.6-.06-1.27-.1-2.01-.1-1.01 0-1.83.3-2.45.9-.62.6-.93 1.44-.93 2.53v1.97H7.04v2.65h2.24V18H.98c-.28 0-.5-.1-.7-.28a.94.94 0 01-.28-.7V1.59c0-.27.1-.5.28-.69a.94.94 0 01.7-.28h15.44z">
     </svg>
 
   {%- when 'instagram' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 18 18" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 18 18" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill="currentColor" d="M8.77 1.58c2.34 0 2.62.01 3.54.05.86.04 1.32.18 1.63.3.41.17.7.35 1.01.66.3.3.5.6.65 1 .12.32.27.78.3 1.64.05.92.06 1.2.06 3.54s-.01 2.62-.05 3.54a4.79 4.79 0 01-.3 1.63c-.17.41-.35.7-.66 1.01-.3.3-.6.5-1.01.66-.31.12-.77.26-1.63.3-.92.04-1.2.05-3.54.05s-2.62 0-3.55-.05a4.79 4.79 0 01-1.62-.3c-.42-.16-.7-.35-1.01-.66-.31-.3-.5-.6-.66-1a4.87 4.87 0 01-.3-1.64c-.04-.92-.05-1.2-.05-3.54s0-2.62.05-3.54c.04-.86.18-1.32.3-1.63.16-.41.35-.7.66-1.01.3-.3.6-.5 1-.65.32-.12.78-.27 1.63-.3.93-.05 1.2-.06 3.55-.06zm0-1.58C6.39 0 6.09.01 5.15.05c-.93.04-1.57.2-2.13.4-.57.23-1.06.54-1.55 1.02C1 1.96.7 2.45.46 3.02c-.22.56-.37 1.2-.4 2.13C0 6.1 0 6.4 0 8.77s.01 2.68.05 3.61c.04.94.2 1.57.4 2.13.23.58.54 1.07 1.02 1.56.49.48.98.78 1.55 1.01.56.22 1.2.37 2.13.4.94.05 1.24.06 3.62.06 2.39 0 2.68-.01 3.62-.05.93-.04 1.57-.2 2.13-.41a4.27 4.27 0 001.55-1.01c.49-.49.79-.98 1.01-1.56.22-.55.37-1.19.41-2.13.04-.93.05-1.23.05-3.61 0-2.39 0-2.68-.05-3.62a6.47 6.47 0 00-.4-2.13 4.27 4.27 0 00-1.02-1.55A4.35 4.35 0 0014.52.46a6.43 6.43 0 00-2.13-.41A69 69 0 008.77 0z"/>
       <path fill="currentColor" d="M8.8 4a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.43a2.92 2.92 0 110-5.85 2.92 2.92 0 010 5.85zM13.43 5a1.05 1.05 0 100-2.1 1.05 1.05 0 000 2.1z">
     </svg>
 
   {%- when 'pinterest' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 17 18" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 17 18" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill="currentColor" d="M8.48.58a8.42 8.42 0 015.9 2.45 8.42 8.42 0 011.33 10.08 8.28 8.28 0 01-7.23 4.16 8.5 8.5 0 01-2.37-.32c.42-.68.7-1.29.85-1.8l.59-2.29c.14.28.41.52.8.73.4.2.8.31 1.24.31.87 0 1.65-.25 2.34-.75a4.87 4.87 0 001.6-2.05 7.3 7.3 0 00.56-2.93c0-1.3-.5-2.41-1.49-3.36a5.27 5.27 0 00-3.8-1.43c-.93 0-1.8.16-2.58.48A5.23 5.23 0 002.85 8.6c0 .75.14 1.41.43 1.98.28.56.7.96 1.27 1.2.1.04.19.04.26 0 .07-.03.12-.1.15-.2l.18-.68c.05-.15.02-.3-.11-.45a2.35 2.35 0 01-.57-1.63A3.96 3.96 0 018.6 4.8c1.09 0 1.94.3 2.54.89.61.6.92 1.37.92 2.32 0 .8-.11 1.54-.33 2.21a3.97 3.97 0 01-.93 1.62c-.4.4-.87.6-1.4.6-.43 0-.78-.15-1.06-.47-.27-.32-.36-.7-.26-1.13a111.14 111.14 0 01.47-1.6l.18-.73c.06-.26.09-.47.09-.65 0-.36-.1-.66-.28-.89-.2-.23-.47-.35-.83-.35-.45 0-.83.2-1.13.62-.3.41-.46.93-.46 1.56a4.1 4.1 0 00.18 1.15l.06.15c-.6 2.58-.95 4.1-1.08 4.54-.12.55-.16 1.2-.13 1.94a8.4 8.4 0 01-5-7.65c0-2.3.81-4.28 2.44-5.9A8.04 8.04 0 018.48.57z">
     </svg>
 
   {%- when 'snapchat' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 392 386" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 392 386" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path d="M390.3 282.3a27.2 27.2 0 00-13.8-14.7l-3-1.6-5.4-2.7a117 117 0 01-42.7-36.6 83 83 0 01-7.3-13c-.8-2.4-.8-3.8-.2-5 .6-1 1.4-1.9 2.4-2.5a1073.6 1073.6 0 0117.7-11.7 49.5 49.5 0 0016-17.1 33.6 33.6 0 00-30.8-49.7 44.8 44.8 0 00-11.8 1.6c.1-9 0-18.6-.9-27.9A105 105 0 00257.4 16 122 122 0 00196 .3c-22.5 0-43 5.3-61.3 15.7a104.6 104.6 0 00-53.2 85.4c-.8 9.4-1 19-.8 27.9a44.8 44.8 0 00-12-1.6 33.7 33.7 0 00-30.8 49.7A49.6 49.6 0 0054 194.6l9.1 6 8.3 5.4c1 .7 2 1.6 2.6 2.7.7 1.3.7 2.7-.2 5.3-2 4.5-4.5 8.7-7.3 12.8a116.5 116.5 0 01-41.4 36c-9.5 5-19.3 8.3-23.4 19.5-3.1 8.5-1 18.2 6.9 26.3 2.9 3 6.2 5.6 10 7.6 7.7 4.2 15.9 7.5 24.4 9.8a16 16 0 015 2.2c2.9 2.5 2.4 6.3 6.3 12 2 2.8 4.4 5.3 7.2 7.3 8.1 5.6 17.2 6 26.8 6.3 8.7.3 18.5.7 29.8 4.4 4.7 1.5 9.5 4.5 15.1 8a110 110 0 0062.8 19.6c30.8 0 49.4-11.4 63-19.7a77.9 77.9 0 0114.9-7.9c11.2-3.7 21-4 29.8-4.4 9.6-.4 18.7-.7 26.8-6.3 3.3-2.3 6.2-5.4 8.2-9 2.8-4.7 2.7-8 5.3-10.3 1.4-1 3-1.7 4.6-2.1 8.7-2.3 17-5.6 24.8-9.9A39 39 0 00384 308l.1-.1c7.5-8 9.4-17.4 6.3-25.6zM362.9 297c-16.8 9.2-27.9 8.3-36.5 13.8-7.4 4.8-3 15-8.4 18.6-6.5 4.6-26-.3-51 8-20.6 6.8-33.8 26.5-71 26.5-37.1 0-50-19.6-71-26.6-25-8.2-44.4-3.4-51-8-5.3-3.6-1-13.8-8.3-18.5-8.7-5.6-19.8-4.6-36.5-13.8-10.7-5.9-4.6-9.5-1.1-11.2 60.6-29.4 70.3-74.7 70.7-78 .5-4.1 1.1-7.3-3.4-11.5-4.3-4-23.5-15.8-28.9-19.6-8.8-6.1-12.6-12.3-9.8-19.8 2-5.3 6.9-7.2 12-7.2 1.6 0 3.2.2 4.8.5 9.7 2.1 19.1 7 24.5 8.3l2 .2c3 0 4-1.4 3.8-4.7-.7-10.6-2.2-31.3-.5-50.6a80 80 0 0121-51.3A93.7 93.7 0 01196 22.3c43.8 0 66.8 24.1 71.7 29.7a80 80 0 0121 51.3c1.7 19.3.2 40-.5 50.5-.2 3.5.9 4.8 3.8 4.8.6 0 1.3 0 2-.3 5.4-1.3 14.8-6.1 24.5-8.2a19 19 0 014.8-.5c5.1 0 10 2 12 7.2 2.8 7.5-1 13.7-9.9 19.8-5.3 3.7-24.5 15.6-28.8 19.6-4.5 4.2-4 7.4-3.4 11.4.4 3.5 10 48.8 70.7 78 3.6 1.8 9.6 5.5-1 11.4z" fill="currentColor">
     </svg>
 
   {%- when 'tiktok' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 16 18" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 16 18" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path d="M8.02 0H11s-.17 3.82 4.13 4.1v2.95s-2.3.14-4.13-1.26l.03 6.1a5.52 5.52 0 11-5.51-5.52h.77V9.4a2.5 2.5 0 101.76 2.4L8.02 0z" fill="currentColor">
     </svg>
 
   {%- when 'tumblr' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 91 161" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 91 161" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M64 160.3c-24 0-42-12.3-42-41.8V71.3H.3V45.7c24-6.2 34-26.9 35.2-44.7h24.9v40.5h29v29.8h-29v41.1c0 12.3 6.2 16.6 16.1 16.6h14v31.3H64" fill="currentColor">
     </svg>
 
   {%- when 'twitter' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 18 15" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 18 15" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill="currentColor" d="M17.64 2.6a7.33 7.33 0 01-1.75 1.82c0 .05 0 .13.02.23l.02.23a9.97 9.97 0 01-1.69 5.54c-.57.85-1.24 1.62-2.02 2.28a9.09 9.09 0 01-2.82 1.6 10.23 10.23 0 01-8.9-.98c.34.02.61.04.83.04 1.64 0 3.1-.5 4.38-1.5a3.6 3.6 0 01-3.3-2.45A2.91 2.91 0 004 9.35a3.47 3.47 0 01-2.02-1.21 3.37 3.37 0 01-.8-2.22v-.03c.46.24.98.37 1.58.4a3.45 3.45 0 01-1.54-2.9c0-.61.14-1.2.45-1.79a9.68 9.68 0 003.2 2.6 10 10 0 004.08 1.07 3 3 0 01-.13-.8c0-.97.34-1.8 1.03-2.48A3.45 3.45 0 0112.4.96a3.49 3.49 0 012.54 1.1c.8-.15 1.54-.44 2.23-.85a3.4 3.4 0 01-1.54 1.94c.74-.1 1.4-.28 2.01-.54z">
     </svg>
 
   {%- when 'vimeo' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 100 87" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 100 87" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M100 20.4c-.5 9.7-7.3 23-20.4 40C66 78.1 54.5 87 45 87c-5.8 0-10.7-5.4-14.7-16.2l-8.1-29.6C19.2 30.4 16 25 12.6 25c-.8 0-3.4 1.6-7.9 4.7l-4.7-6 14.6-13c6.6-5.8 11.5-8.8 14.8-9C37.2.8 42 6.1 43.8 17.5c2 12.3 3.3 20 4 23 2.3 10.2 4.7 15.3 7.4 15.3 2.1 0 5.3-3.3 9.5-10a39.2 39.2 0 006.7-15c.6-5.8-1.7-8.7-6.7-8.7-2.4 0-4.9.6-7.4 1.7C62.2 7.7 71.6-.1 85.4.4c10.3.3 15.1 7 14.6 20" fill="currentColor">
     </svg>
 
   {%- when 'youtube' -%}
-    <svg class="{{- icon_class -}}" fill="none" viewBox="0 0 100 70" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+    <svg class="{{- icon_class -}}" {% if icon_size %}width="{{ icon_size }}" height="{{ icon_size }}"{% endif %} fill="none" viewBox="0 0 100 70" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <path d="M98 11c2 7.7 2 24 2 24s0 16.3-2 24a12.5 12.5 0 01-9 9c-7.7 2-39 2-39 2s-31.3 0-39-2a12.5 12.5 0 01-9-9c-2-7.7-2-24-2-24s0-16.3 2-24c1.2-4.4 4.6-7.8 9-9 7.7-2 39-2 39-2s31.3 0 39 2c4.4 1.2 7.8 4.6 9 9zM40 50l26-15-26-15v30z" fill="currentColor">
     </svg>
 {%- endcase -%}

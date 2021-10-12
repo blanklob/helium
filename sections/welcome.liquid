@@ -3,27 +3,27 @@
 
 
 <div class="welcome o-container --medium u-align-center">
-  <div class="welcome_wrapper c-heading u-mv-large" style="max-width: 45rem;">
-    <h1 class="--h1 --bold u-mb-medium">{{ section.settings.heading }}</h1>
-    <h2 class="--h2 u-mb-small">{{ section.settings.subheading }}</h2>
-    <a class="welcome_link c-button --primary u-mb-medium"
+  <div class="welcome_wrapper u-mv-large" style="max-width: 45rem;">
+    <h1 class="c-heading --h1 --bold u-mb-small">{{ section.settings.heading }}</h1>
+    <h2 class="c-heading --h2 u-mb-small">{{ section.settings.subheading }}</h2>
+    <a class="c-button --primary u-mv-small"
       href="https://workflow.younessidbakkasse.com/docs/introduction/overview/"
       target="_blank">{{ section.settings.link_label }}
       {%- render 'component-icon'
         icon: 'arrow',
         icon_size: 20
       -%}</a>
-    <p class="--h4">
-      Open-source MIT Licensed. <a href="https://github.com/younessidbakkasse/workflow" target="_blank">GitHub v1.1.0</a>
+    <p class="c-heading --h4">
+      Open-source MIT Licensed. <a href="https://github.com/younessidbakkasse/workflow" target="_blank">GitHub v1.2.0</a>
     </p>
   </div>
 
-  <div class="welcome_feature-wrapper u-mb-large">
+  <div class="welcome_feature-wrapper u-mb-medium">
     {% for block in section.blocks %}
       {%- if block.settings.heading != blank and block.settings.description != blank -%}
-      <div class="welcome_feature c-heading u-mb-large">
-        <h2 class="--h2 --bold u-mb-medium">{{ block.settings.heading }}</h2>
-        <h3 class="--h3">{{ block.settings.description }}</h3>
+      <div class="welcome_feature u-mb-medium">
+        <h2 class="c-body --h1 --bold u-mb-small">{{ block.settings.heading }}</h2>
+        <h3 class="c-body --h2">{{ block.settings.description }}</h3>
       </div>
       {% endif %}
     {% endfor %}

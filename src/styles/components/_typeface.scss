@@ -28,21 +28,33 @@ h6 {
   // Size variants
   h1,
   &.--h1 {
-    font-size: rem(38px);
+    font-size: rem(54px);
+    line-height: 1.2;
+    @media screen and (max-width: 750px) {
+      font-size: rem(38px);
+    }
   }
 
   h2,
   &.--h2 {
-    font-size: rem(22px);
+    font-size: rem(26px);
+    @media screen and (max-width: 750px) {
+      font-size: rem(22px);
+    }
   }
 
   h3,
   &.--h3 {
+    font-size: rem(19px);
+  }
+
+  h4,
+  &.--h4 {
     font-size: rem(17px);
   }
 
   &.--bold {
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 
@@ -51,6 +63,7 @@ h6 {
   font-style: $font-body-style;
   font-weight: $font-body-weight;
   color: $color-base-text;
+  line-height: 1.5;
   text-decoration: none;
 
   // Size variants
@@ -59,10 +72,14 @@ h6 {
   }
 
   &.--h2 {
-    font-size: rem(18px);
+    font-size: rem(19px);
   }
 
   &.--italic {
     font-style: italic;
+  }
+
+  &.--bold {
+    font-weight: 700;
   }
 }

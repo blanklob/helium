@@ -23,15 +23,17 @@ button,
   text-decoration: none;
   border: 0;
   border-radius: rem(5px);
-  padding: rem(12px) rem(22px);
+  padding: rem(12px) rem(18px);
   font-family: $font-heading-family;
   font-style: $font-heading-style;
   font-weight: $font-heading-weight;
-  font-size: 1.25rem;
+  font-size: rem(20px);
   user-select: none;
   appearance: none;
+  transition: transform 200ms ease-in;
 
-  &:hover {
+  &:hover,
+  &.--primary:hover {
     text-decoration: none;
   }
 
