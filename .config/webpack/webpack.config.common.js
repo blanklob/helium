@@ -56,9 +56,7 @@ module.exports = {
     }),
     // #4: Copy files to assets directory
     new CopyPlugin({
-      patterns: [
-        { from: publicDir, to: "[name][ext]" }
-      ],
+      patterns: [{ from: publicDir, to: '[name][ext]' }],
     }),
   ],
   // Webpack Loaders
