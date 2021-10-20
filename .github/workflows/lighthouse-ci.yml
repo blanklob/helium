@@ -24,7 +24,8 @@ jobs:
 
           ### Run Lighthouse test on specific product/collection.
           ### More: https://shopify.dev/themes/tools/lighthouse-ci#arguments
-          product_handle: 'black-field'
-          collection_handle: 'frontpage'
+
+          # product_handle: 'black-field'
+          # collection_handle: 'frontpage'
 
           # For more infos check out: https://shopify.dev/themes/tools/lighthouse-ci
