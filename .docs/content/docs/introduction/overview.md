@@ -31,7 +31,7 @@ Workflow empowers developers of all skill levels to build quality Shopify themes
   - Supports Shopify Github integration
 <br>
 <br>
-- Perfomrance and SEO ⚡️
+- Performance and SEO ⚡️
   - Built in code splitting and prefetches links
   - Lighthouse CI
   - Assets minification
