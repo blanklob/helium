@@ -4,6 +4,7 @@
   "description": "Modern Shopify development workflow, with Online Store 2.0 features and built with performance and accessibility in mind..",
   "repository": "https://github.com/younessidbakkasse/workflow.git",
   "author": "Youness Id bakkasse",
+  "private": true,
   "license": "MIT",
   "keywords": [
     "workflow",
