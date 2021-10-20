@@ -1,4 +1,19 @@
 {
+  "general": {
+    "social": {
+      "title": {
+        "twitter": "Twitter",
+        "facebook": "Facebook",
+        "pinterest": "Pinterest",
+        "instagram": "Instagram",
+        "tumblr": "Tumblr",
+        "snapchat": "Snapchat",
+        "youtube": "YouTube",
+        "vimeo": "Vimeo",
+        "tiktok": "TikTok"
+      }
+    }
+  },
   "accessibility": {
     "skip_to_content": "Skip to main content",
     "refresh_page": "Refresh the page",

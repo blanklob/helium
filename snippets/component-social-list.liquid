@@ -1,0 +1,80 @@
+{% comment %}
+    Renders a social list.
+    Usage:
+    {%- render 'component-social-list' -%}
+{% endcomment %}
+
+<ul class="c-social-list" role="list">
+  {%- if settings.social_twitter_link != blank -%}
+    <li class="c-social-list_item">
+      <a href="{{ settings.social_twitter_link }}" class="c-social-list_link">
+        {%- render 'component-icon' icon: 'twitter' -%}
+        <span class="u-hide-visually">{{ 'general.social.title.twitter' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_facebook_link != blank -%}
+    <li class="c-social-list_item">
+      <a href="{{ settings.social_facebook_link }}" class="c-social-list_link">
+        {%- render 'component-icon' icon: 'facebook' -%}
+        <span class="u-hide-visually">{{ 'general.social.title.facebook' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_pinterest_link != blank -%}
+    <li class="c-social-list_item">
+      <a href="{{ settings.social_pinterest_link }}" class="c-social-list_link">
+        {%- render 'component-icon' icon: 'pinterest' -%}
+        <span class="u-hide-visually">{{ 'general.social.title.pinterest' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_instagram_link != blank -%}
+    <li class="c-social-list_item">
+      <a href="{{ settings.social_instagram_link }}" class="c-social-list_link">
+        {%- render 'component-icon' icon: 'instagram' -%}
+        <span class="u-hide-visually">{{ 'general.social.title.instagram' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_tiktok_link != blank -%}
+    <li class="c-social-list_item">
+      <a href="{{ settings.social_tiktok_link }}" class="c-social-list_link">
+        {%- render 'component-icon' icon: 'tiktok' -%}
+        <span class="u-hide-visually">{{ 'general.social.title.tiktok' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_tumblr_link != blank -%}
+    <li class="c-social-list_item">
+      <a href="{{ settings.social_tumblr_link }}" class="c-social-list_link">
+        {%- render 'component-icon' icon: 'tumblr' -%}
+        <span class="u-hide-visually">{{ 'general.social.title.tumblr' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_snapchat_link != blank -%}
+    <li class="c-social-list_item">
+      <a href="{{ settings.social_snapchat_link }}" class="c-social-list_link">
+        {%- render 'component-icon' icon: 'snapchat' -%}
+        <span class="u-hide-visually">{{ 'general.social.title.snapchat' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_youtube_link != blank -%}
+    <li class="c-social-list_item">
+      <a href="{{ settings.social_youtube_link }}" class="c-social-list_link">
+        {%- render 'component-icon' icon: 'youtube' -%}
+        <span class="u-hide-visually">{{ 'general.social.title.youtube' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_vimeo_link != blank -%}
+    <li class="c-social-list_item">
+      <a href="{{ settings.social_vimeo_link }}" class="c-social-list_link">
+        {%- render 'component-icon' icon: 'vimeo' -%}
+        <span class="u-hide-visually">{{ 'general.social.title.vimeo' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+</ul>

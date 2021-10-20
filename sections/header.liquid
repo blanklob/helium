@@ -1,8 +1,8 @@
 {{ 'component-dark-mode-button.css' | asset_url | stylesheet_tag }}
 <script src="{{- 'component-dark-mode-button.js' | asset_url -}}" defer></script>
 
-<header class="header o-container --medium">
-  <div class="header_logo c-heading --bold">Workflow.</div>
+<header class="header o-container -medium">
+  <div class="header_logo c-heading -bold">Workflow.</div>
   <dark-mode-button>
     <button class="c-button" type="button" aria-label="Toggle dark mode">
       {%- render 'component-icon' icon: 'moon', icon_size: 15 -%}

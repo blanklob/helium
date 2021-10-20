@@ -1,6 +1,14 @@
 ### Changelog
 
 All notable changes to this project will be documented in this file.
+> xx October 2021 v1.2.1
+
+- ✨ Added social list component.
+- 🐛 Fixed some issues with password layout.
+- ♻️ Changed BEM to minimal BEM instead of ```block__element--modifier``` now it's ```block_element -modifier```.
+- Added a form to password page.
+
+
 > 13 October 2021 v1.2.0
 
 - ✨ Improved the structure.

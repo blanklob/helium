@@ -5,9 +5,9 @@
 /// @content Component specific classes for buttons.
 /// This file contains suite of classes like.
 ///
-///   .c-button {}               - Base button.
-///   .c-button.--secondary {}   - Secondary button theme.
-///   .c-button.--large {}       - Large size button.
+///   .c-button {}              - Base button.
+///   .c-button.-secondary {}   - Secondary button theme.
+///   .c-button.-large {}       - Large size button.
 ///   ...add others if you want.
 ///
 
@@ -33,39 +33,39 @@ button,
   transition: transform 200ms ease-in;
 
   &:hover,
-  &.--primary:hover {
+  &.-primary:hover {
     text-decoration: none;
   }
 
   /// Color variants
   &,
-  &.--primary {
+  &.-primary {
     background-color: $color-base-solid-button;
     color: $color-base-background-primary;
   }
 
-  &.--secondary {
+  &.-secondary {
     background-color: transparent;
     color: $color-base-outline-button;
     border: 1px solid $color-base-outline-button;
   }
 
   /// Size variants
-  &.--small {
+  &.-small {
     min-width: 6rem;
   }
 
-  &.--large {
+  &.-large {
     min-width: 20rem;
   }
 
   /// State variation
-  &.--loading {
+  &.-loading {
     cursor: not-allowed;
     opacity: 0.8;
   }
 
-  &.--disabled,
+  &.-disabled,
   &:disabled,
   &[aria-disabled='true'] {
     cursor: not-allowed;

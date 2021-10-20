@@ -17,4 +17,4 @@ src/**/**/*.json
 package.json
 
 # Other files #
-/\.(txt|gif|jpg|png|md|lock)$/
+/\.(txt|md|lock)$/

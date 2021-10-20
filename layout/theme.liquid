@@ -28,7 +28,6 @@
     -%}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
-
     <script src="{{- 'base.js' | asset_url -}}" defer></script>
 
     <!-- Start vendor third party libaries -->
@@ -40,11 +39,11 @@
   </head>
   <body class="layout-theme template-{{- template.name -}}{%- if template.suffix -%}-{{- template.suffix -}}{%- endif -%}">
     {% comment %} Accessibilty {% endcomment %}
-    <div class="a11y o-container --medium u-pv-small" tabindex="-1">
-      <a role="button" class="c-button --small" href="#main-content">
+    <div class="a11y o-container -medium u-pv-small" tabindex="-1">
+      <a role="button" class="c-button -small" href="#main-content">
         {{- "accessibility.skip_to_content" | t -}}
       </a>
-      <button type="button" class="c-button --small" onclick="this.blur();">{{ "accessibility.close" | t }}</button>
+      <button type="button" class="c-button -small" onclick="this.blur();">{{ "accessibility.close" | t }}</button>
     </div>
 
     {%- section 'header' -%}

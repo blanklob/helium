@@ -20,14 +20,14 @@ h6 {
   font-family: $font-heading-family;
   font-style: $font-heading-style;
   font-weight: $font-heading-weight;
-  color: $color-base-text;
+  color: inherit;
   text-decoration: none;
 }
 
 .c-heading {
   // Size variants
   h1,
-  &.--h1 {
+  &.-h1 {
     font-size: rem(54px);
     line-height: 1.2;
     @media screen and (max-width: 750px) {
@@ -36,7 +36,7 @@ h6 {
   }
 
   h2,
-  &.--h2 {
+  &.-h2 {
     font-size: rem(26px);
     @media screen and (max-width: 750px) {
       font-size: rem(22px);
@@ -44,17 +44,21 @@ h6 {
   }
 
   h3,
-  &.--h3 {
+  &.-h3 {
     font-size: rem(19px);
   }
 
   h4,
-  &.--h4 {
+  &.-h4 {
     font-size: rem(17px);
   }
 
-  &.--bold {
+  &.-bold {
     font-weight: 700;
+  }
+
+  &.upper {
+    text-transform: uppercase;
   }
 }
 
@@ -62,24 +66,28 @@ h6 {
   font-family: $font-body-family;
   font-style: $font-body-style;
   font-weight: $font-body-weight;
-  color: $color-base-text;
+  color: inherit;
   line-height: 1.5;
   text-decoration: none;
 
   // Size variants
-  &.--h1 {
+  &.-h1 {
     font-size: rem(24px);
   }
 
-  &.--h2 {
+  &.-h2 {
     font-size: rem(19px);
   }
 
-  &.--italic {
+  &.-h3 {
+    font-size: rem(15px);
+  }
+
+  &.-italic {
     font-style: italic;
   }
 
-  &.--bold {
+  &.-bold {
     font-weight: 700;
   }
 }

@@ -9,7 +9,7 @@
     {%- render 'component-icon' icon: 'arrow' -%}
 {% endcomment %}
 
-{%- capture icon_class -%}c-icon --{{ icon }}{%- endcapture -%}
+{%- capture icon_class -%}c-icon -{{ icon }}{%- endcapture -%}
 
 {%- case icon -%}
   {% comment %} UI icons {% endcomment %}
