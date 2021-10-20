@@ -24,4 +24,12 @@ dark-mode-button {
     background-color: rgba(var(--color-base-background-primary), 0.96);
     color: rgba(var(--color-base-solid-button), 0.98);
   }
+
+  .c-field {
+    border-color: rgba(var(--color-base-background-primary), 0.96);
+    &_input {
+      color: rgba(var(--color-base-background-primary), 0.96);
+    }
+  }
+
 }

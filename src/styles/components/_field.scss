@@ -1,0 +1,63 @@
+// ==========================================================================
+// ## COMPONENT: FIELD
+// ==========================================================================
+
+/// @content Component specific classes for buttons.
+/// This file contains suite of classes like.
+//
+///   .c-field {}   - Base field class.
+//
+
+.c-field {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  max-width: 22em;
+  margin: 0 auto;
+  border: 1px solid $color-base-outline-button;
+  border-radius: rem(3px);
+
+  &_label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    left: 1rem;
+    transform-origin: center left;
+    transform: translateY(-50%);
+    transition: transform 200ms ease;
+    pointer-events: none;
+    cursor: text;
+  }
+
+  &_input {
+    padding: 0.8rem 1rem 0.2rem;
+    flex: 1;
+  }
+
+  &_label,
+  &_input {
+    font-family: $font-body-family;
+    font-style: $font-heading-style;
+    font-weight: $font-heading-weight;
+    text-decoration: none;
+  }
+
+  .c-field_input::placeholder {
+    color: transparent;
+  }
+
+  &_input:active + &_label,
+  &_input:focus + &_label,
+  &_input:focus-visible + &_label,
+  &_input:not(:placeholder-shown) + &_label,
+  &_input:-webkit-autofill + &_label {
+    transform: translateY(-100%) scale(0.6);
+  }
+
+  // State variations
+  &.-error {
+    border-color: rgba(240, 0, 0, 0.9);
+  }
+}

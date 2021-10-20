@@ -13,7 +13,7 @@ node_modules
 .github
 .vscode
 .docs
-src/**/**/*.json
+src/public/*.json
 package.json
 
 # Other files #

@@ -2,8 +2,8 @@ class DarkModeButton extends HTMLElement {
   constructor() {
     super()
     this.button = this.querySelector('button')
-    this.moonIcon = this.querySelector('.--moon')
-    this.sunIcon = this.querySelector('.--sun')
+    this.moonIcon = this.querySelector('.-moon')
+    this.sunIcon = this.querySelector('.-sun')
     this.sunIcon.classList.add('u-hide')
 
     if (!this.button) return
