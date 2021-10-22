@@ -1,6 +1,6 @@
 {
   "name": "workflow",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Modern Shopify development workflow, with Online Store 2.0 features and built with performance and accessibility in mind..",
   "repository": "https://github.com/younessidbakkasse/workflow.git",
   "author": "Youness Id bakkasse",
@@ -30,6 +30,7 @@
     "pull": "shopify theme pull -n",
     "push": "shopify theme push --ignore \"config/*.json\"",
     "deploy": "run-s format build push",
+    "create": "run-s format build shopify theme push --unpublished",
     "prepare": "husky install .config/.husky"
   },
   "devDependencies": {
