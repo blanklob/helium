@@ -110,3 +110,13 @@ yarn zip
 ```
 
 The generated ZIP uses the name ```theme_name-theme_version.zip```, based on parameters in your ```settings_schema.json``` file., Same as ```shopify theme package``` Check [Shopify refrence](https://shopify.dev/themes/tools/cli/theme-commands#package) for more infos.
+
+## create
+
+Runs ```format``` and ```build``` to minify and build a ZIP file that is then deployed to Shopify in a new unpublished theme.
+
+Requires use of `yarn run`, since `yarn create` is a standard Yarn command.
+
+```bash
+yarn run create
+```

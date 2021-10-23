@@ -30,7 +30,7 @@
     "pull": "shopify theme pull -n",
     "push": "shopify theme push --ignore \"config/*.json\"",
     "deploy": "run-s format build push",
-    "create": "run-s format build shopify theme push --unpublished",
+    "create": "run-s format build && shopify theme push --unpublished",
     "prepare": "husky install .config/.husky"
   },
   "devDependencies": {
