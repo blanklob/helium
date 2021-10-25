@@ -12,13 +12,24 @@
 /// @access public
 ///
 /// Add as you wish.
+
+$breakpoint-xs: 425px !default;
+$breakpoint-sm: 750px !default;
+$breakpoint-md: 1025px !default;
+$breakpoint-lg: 1200px !default;
+$breakpoint-xlg: 1440px !default;
+
+$breakpoint-xxs-max: ($breakpoint-xs - 1);
+$breakpoint-xs-max: ($breakpoint-sm - 1);
+$breakpoint-sm-max: ($breakpoint-md - 1);
+$breakpoint-md-max: ($breakpoint-lg - 1);
+$breakpoint-lg-max: ($breakpoint-xlg - 1);
+
 $breakpoints: (
-  // Dont remove base!
-  'base': 0px,
-  'xs': 320px,
-  's': 500px,
-  'md': 800px,
-  'l': 1025px,
-  'xl': 1200px,
-  'xxl': 1440px
+  xxs: 0px,
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xlg: $breakpoint-xlg,
 ) !default;

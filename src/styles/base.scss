@@ -7,7 +7,7 @@
 ///   Instead, use imports to add extensions or snippets you made along the project.
 ///
 ///
-/// Production build weights only ~10kb (~2.5kb gzipped)
+/// Production build weights only ~25kb (~4kb gzipped)
 ///
 
 /// - SETTINGS & TOOLS (MUST BE AT THE TOP)
@@ -15,7 +15,7 @@
 //
 @import './settings/colors';
 @import './settings/fonts';
-// @import './settings/breakpoints';
+@import './settings/breakpoints';
 
 @import './tools/functions';
 @import './tools/mixins';
@@ -59,7 +59,7 @@
 /// Container............Helper classes for aligning elements inside containers.
 ///
 @import './objects/container';
-// @import './objects/grid';
+@import './objects/grid';
 
 /// - UTILITIES
 /// Space................Nudge bits of the DOM around with these spacing classes.

@@ -1,6 +1,15 @@
 ### Changelog
 
 All notable changes to this project will be documented in this file.
+> XX October 2021 v1.2.2
+
+- ✨ Added grid object for easy responsive grid layouts.
+- ✨ Added hidden responsive utility classes.
+- ⏫ Upgraded some dependecies. 
+<!-- - 📝 Updated the docs with latest structure. -->
+<!-- - 🐛 Fixed issues and refactored code. -->
+
+
 > 20 October 2021 v1.2.1
 
 - ✨ Added social list component.

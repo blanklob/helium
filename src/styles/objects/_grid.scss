@@ -6,3 +6,772 @@
 ///
 ///   .o-grid {}             - Base grid.
 ///
+
+// --------------------------------------------------
+// grid variables
+// --------------------------------------------------
+
+@use 'sass:math';
+// Prefix
+// -------------------------
+// You can optionally namespace grid classes to avoid clashing with other css frameworks
+// e.g. setting $grid-prefix as "grid-" here would cause col-sm-6 to become grid-col-sm-6
+// Example: $grid-prefix: grid-;
+// By default this is an empty string
+$grid-prefix: 'o-' !default;
+
+// Legacy support
+// -------------------------
+// grid adds a lot of css propertie to support older browsers that don't support flexbox layout.
+// If you prefer to use this as a purely flexbox grid without legacy support then set this to false
+$legacy-support: false !default;
+
+// Grid
+// -------------------------
+$grid-columns: 12 !default; // number of columns
+
+// --------------------------------------------------
+// grid mixins
+// --------------------------------------------------
+//
+
+@mixin make-grid-grid($class) {
+  @include loop-grid-columns($grid-columns, $class, width);
+}
+
+@mixin calc-grid-columns($index, $class, $type) {
+  @if $type == width and $index > 0 {
+    .#{$grid-prefix}#{$class}#{$index} {
+      width: percentage(math.div($index, $grid-columns));
+      @if $legacy-support == true {
+        *width: percentage(math.div($index, $grid-columns)) -
+          0.1; // ie7 css hack
+      }
+    }
+  }
+}
+
+@mixin loop-grid-columns($index, $class, $type) {
+  @if $index >= 0 {
+    @include calc-grid-columns($index, $class, $type);
+    // next iteration
+    @include loop-grid-columns(($index - 1), $class, $type);
+  }
+}
+
+// defaults for auto cols
+@mixin setup-auto-cols() {
+  @include flex(1, 0, 0px); // a unit on last value is required by IE10-11
+
+  @if $legacy-support == true {
+    width: auto;
+  }
+}
+
+// --------------------------------------------------
+// inline-block specific mixins
+// --------------------------------------------------
+
+@mixin setup-whitespace() {
+  @if $legacy-support == true {
+    letter-spacing: -0.31em;
+    *letter-spacing: normal;
+    word-spacing: -0.43em;
+  }
+}
+
+@mixin reset-whitespace() {
+  @if $legacy-support == true {
+    letter-spacing: normal;
+    word-spacing: normal;
+    white-space: normal;
+  }
+}
+
+@mixin reset-text-align() {
+  //
+  // We want to reset any text-align properties set by the grid
+  // (required for the inline-block fallback)
+  // but we don't want to override any text-align properties
+  // set on the individual col-x element
+  // or on any of it's child elements
+  //
+  // 1) set to left by default (works everywhere)
+  // 2) set to start (respects right to left text)
+  //
+  text-align: left;
+  text-align: start;
+  -moz-text-align-last: left;
+  -moz-text-align-last: start;
+  text-align-last: left;
+  text-align-last: start;
+}
+
+// --------------------------------------------------
+// order class generation mixins
+// --------------------------------------------------
+
+@mixin order($order: 0) {
+  -ms-flex-order: $order;
+  -webkit-order: $order;
+  order: $order;
+}
+
+@mixin make-order-helpers() {
+  @include loop-order-helpers($grid-columns);
+}
+
+@mixin loop-order-helpers($index, $breakpoint: null) {
+  @if $index >= 0 {
+    .#{$grid-prefix}order#{$breakpoint}-#{$index} {
+      @include order($index);
+    }
+    // next iteration
+    @include loop-order-helpers(($index - 1), $breakpoint);
+  }
+}
+
+// --------------------------------------------------
+// offset class generation mixins
+// --------------------------------------------------
+@mixin offset($index: 0) {
+  $offset: math.div($index, $grid-columns);
+  // convert to percentage only if not zero
+  @if $offset != 0 {
+    $offset: percentage($offset);
+  }
+  margin-left: $offset;
+  @if $legacy-support == true {
+    *margin-left: percentage(math.div($index, $grid-columns)) -
+      0.1; // ie7 css hack
+  }
+}
+
+@mixin make-offset-helpers() {
+  @include loop-offset-helpers($grid-columns - 1);
+}
+
+@mixin loop-offset-helpers($index, $breakpoint: null) {
+  @if $index > 0 and $breakpoint == null {
+    .#{$grid-prefix}offset#{$breakpoint}-#{$index} {
+      @include offset($index);
+    }
+    // next iteration
+    @include loop-offset-helpers(($index - 1), $breakpoint);
+  } @else if $index >= 0 and $breakpoint != null {
+    .#{$grid-prefix}offset#{$breakpoint}-#{$index} {
+      @include offset($index);
+    }
+    // next iteration
+    @include loop-offset-helpers(($index - 1), $breakpoint);
+  }
+}
+
+// --------------------------------------------------
+// grid modifier mixins
+// --------------------------------------------------
+
+//
+// display
+// ---
+
+@mixin display-flex() {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+//
+// flex
+// ---
+
+@mixin flex($grow: 0, $shrink: 1, $basis: auto) {
+  @if $basis == 0 {
+    -ms-flex: $grow $shrink auto; //ie10 needs auto
+  } @else {
+    -ms-flex: $grow $shrink $basis;
+  }
+
+  -webkit-flex: $grow $shrink $basis;
+  flex: $grow $shrink $basis;
+}
+
+@mixin flex-grow($grow: 1) {
+  -ms-flex-positive: $grow;
+  -webkit-flex-grow: $grow;
+  flex-grow: $grow;
+}
+
+@mixin flex-shrink($shrink: 1) {
+  -ms-flex-negative: $shrink;
+  -webkit-flex-shrink: $shrink;
+  flex-shrink: $shrink;
+}
+
+@mixin flex-basis($basis: auto) {
+  -ms-flex-preferred-size: $basis;
+  -webkit-flex-basis: $basis;
+  flex-basis: $basis;
+}
+
+@mixin flex-flow($direction: row, $wrap: nowrap) {
+  -ms-flex-wrap: $wrap;
+  -ms-flex-direction: $direction;
+  -webkit-flex-flow: $direction $wrap;
+  flex-flow: $direction $wrap;
+}
+
+@mixin flex-wrap($wrap: wrap) {
+  -ms-flex-wrap: $wrap;
+  -webkit-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-direction($direction: row) {
+  -ms-flex-direction: $direction;
+  -webkit-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+//
+// align
+// ---
+
+@mixin align-items($align: stretch) {
+  @include ms-align-items($align);
+  -webkit-align-items: $align;
+  align-items: $align;
+}
+
+@mixin align-self($align: stretch) {
+  @include ms-align-self($align);
+  -webkit-align-self: $align;
+  align-self: $align;
+}
+
+@mixin align-content($align: stretch) {
+  @include ms-align-content($align);
+  -webkit-align-content: $align;
+  align-content: $align;
+}
+
+//
+// ie10 syntax for align
+// ---
+
+@mixin ms-align-items($align) {
+  @if $align == 'flex-start' {
+    -ms-flex-align: start;
+  } @else if $align == 'flex-end' {
+    -ms-flex-align: end;
+  } @else {
+    -ms-flex-align: $align;
+  }
+}
+
+@mixin ms-align-self($align) {
+  @if $align == 'flex-start' {
+    -ms-flex-item-align: start;
+  } @else if $align == 'flex-end' {
+    -ms-flex-item-align: end;
+  } @else {
+    -ms-flex-item-align: $align;
+  }
+}
+
+@mixin ms-align-content($align) {
+  @if $align == 'flex-start' {
+    -ms-flex-line-pack: start;
+  } @else if $align == 'flex-end' {
+    -ms-flex-line-pack: end;
+  } @else if $align == 'space-between' {
+    -ms-flex-line-pack: justify;
+  } @else if $align == 'space-around' {
+    -ms-flex-line-pack: distribute;
+  } @else {
+    -ms-flex-line-pack: $align;
+  }
+}
+
+//
+// justify-content
+//
+// Uses "text-align" for the fallback inline-block grid
+// "text-align" is globally supported and works on all rows except the last
+// "text-align-last", where supported, handles the last line (and, happily, grids with only one row)
+// ---
+
+@mixin justify-content-start() {
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin justify-content-end() {
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+@mixin justify-content-center() {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+@mixin justify-content-space-between() {
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+@mixin justify-content-space-around() {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+// --------------------------------------------------
+// grid
+// --------------------------------------------------
+
+.#{$grid-prefix}grid {
+  @include display-flex();
+  @include flex-wrap();
+  position: relative;
+  @include setup-whitespace();
+
+  &::before,
+  &::after {
+    @include reset-whitespace();
+  }
+  // handle when lists are used as a grid
+  list-style-type: none;
+}
+
+// --------------------------------------------------
+// grid col defaults
+// --------------------------------------------------
+
+[class*='#{$grid-prefix}col-'] {
+  @include reset-whitespace();
+  position: relative;
+  width: 100%;
+  vertical-align: top;
+  // padding: $grid-grid-spacing;
+
+  &::before,
+  &::after {
+    @include reset-whitespace();
+  }
+
+  // // handle grids nested in columns
+  // .#{$grid-prefix}grid {
+  //     @include flex(1, 1, auto);
+  //     margin: -$grid-grid-spacing;
+  // }
+
+  @if $legacy-support == true {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+}
+
+// --------------------------------------------------
+// grid generation
+// --------------------------------------------------
+
+@include make-grid-grid(col-);
+
+@media screen and (min-width: $breakpoint-xs) {
+  @include make-grid-grid(col-xs-);
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  @include make-grid-grid(col-sm-);
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  @include make-grid-grid(col-md-);
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  @include make-grid-grid(col-lg-);
+}
+
+@media screen and (min-width: $breakpoint-xlg) {
+  @include make-grid-grid(col-xlg-);
+}
+
+// --------------------------------------------------
+// grid col-auto
+// --------------------------------------------------
+
+.#{$grid-prefix}col-auto {
+  @include setup-auto-cols();
+}
+
+@media screen and (min-width: $breakpoint-xs) {
+  .#{$grid-prefix}col-xs-auto {
+    @include setup-auto-cols();
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  .#{$grid-prefix}col-sm-auto {
+    @include setup-auto-cols();
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .#{$grid-prefix}col-md-auto {
+    @include setup-auto-cols();
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .#{$grid-prefix}col-lg-auto {
+    @include setup-auto-cols();
+  }
+}
+
+@media screen and (min-width: $breakpoint-xlg) {
+  .#{$grid-prefix}col-xlg-auto {
+    @include setup-auto-cols();
+  }
+}
+
+// --------------------------------------------------
+// grid order helpers generation
+// --------------------------------------------------
+
+@include make-order-helpers();
+
+@media screen and (min-width: $breakpoint-xs) {
+  @include loop-order-helpers($grid-columns, '-xs');
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  @include loop-order-helpers($grid-columns, '-sm');
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  @include loop-order-helpers($grid-columns, '-md');
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  @include loop-order-helpers($grid-columns, '-lg');
+}
+
+@media screen and (min-width: $breakpoint-xlg) {
+  @include loop-order-helpers($grid-columns, '-xlg');
+}
+
+// --------------------------------------------------
+// grid offset helpers generation
+// --------------------------------------------------
+
+@include make-offset-helpers();
+
+@media screen and (min-width: $breakpoint-xs) {
+  @include loop-offset-helpers($grid-columns - 1, '-xs');
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  @include loop-offset-helpers($grid-columns - 1, '-sm');
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  @include loop-offset-helpers($grid-columns - 1, '-md');
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  @include loop-offset-helpers($grid-columns - 1, '-lg');
+}
+
+@media screen and (min-width: $breakpoint-xlg) {
+  @include loop-offset-helpers($grid-columns - 1, '-xlg');
+}
+
+// --------------------------------------------------
+// grid modifiers
+// --------------------------------------------------
+
+// --------------------------------------------------
+// flex-wrap
+// --------------------------------------------------
+
+.#{$grid-prefix}wrap {
+  @include flex-wrap(wrap);
+}
+
+.#{$grid-prefix}no-wrap {
+  @include flex-wrap(nowrap);
+
+  // This is mostly needed to stop the grid contents overflowing in the
+  // ie10 implementation of flexbox but it can't hurt in other browsers
+  // as it is the desired behaviour of non wrapping flex items
+  [class*='#{$grid-prefix}col-'] {
+    @include flex-shrink(1);
+  }
+}
+
+.#{$grid-prefix}wrap-reverse {
+  @include flex-wrap(wrap-reverse);
+}
+
+// --------------------------------------------------
+// flex-direction
+// --------------------------------------------------
+
+.#{$grid-prefix}direction-row {
+  @include flex-direction(row);
+}
+
+.#{$grid-prefix}direction-row-reverse {
+  @include flex-direction(row-reverse);
+}
+
+.#{$grid-prefix}direction-column {
+  @include flex-direction(column);
+}
+
+.#{$grid-prefix}direction-column-reverse {
+  @include flex-direction(column-reverse);
+}
+
+// --------------------------------------------------
+// align items (cross axis)
+// --------------------------------------------------
+
+.#{$grid-prefix}align-start {
+  @include align-items(flex-start);
+}
+
+.#{$grid-prefix}align-end {
+  @include align-items(flex-end);
+
+  @if $legacy-support == true {
+    // fallback to legacy vertical-align
+    [class*='#{$grid-prefix}col-'] {
+      vertical-align: bottom;
+    }
+  }
+}
+
+.#{$grid-prefix}align-center {
+  @include align-items(center);
+
+  @if $legacy-support == true {
+    // fallback to legacy vertical-align
+    [class*='#{$grid-prefix}col-'] {
+      vertical-align: middle;
+    }
+  }
+}
+
+.#{$grid-prefix}align-baseline {
+  @include align-items(baseline);
+}
+
+// --------------------------------------------------
+// align content (cross axis)
+// --------------------------------------------------
+
+.#{$grid-prefix}align-content-start {
+  @include align-content(flex-start);
+}
+
+.#{$grid-prefix}align-content-end {
+  @include align-content(flex-end);
+
+  // fallback to legacy vertical-align
+  [class*='#{$grid-prefix}col-'] {
+    vertical-align: bottom;
+  }
+}
+
+.#{$grid-prefix}align-content-center {
+  @include align-content(center);
+}
+
+.#{$grid-prefix}align-content-space-between {
+  @include align-content(space-between);
+}
+
+.#{$grid-prefix}align-content-space-around {
+  @include align-content(space-around);
+}
+
+// --------------------------------------------------
+// align-self
+// --------------------------------------------------
+
+.#{$grid-prefix}align-self-stretch {
+  @include align-self(stretch);
+}
+
+.#{$grid-prefix}align-self-start {
+  @include align-self(flex-start);
+}
+
+.#{$grid-prefix}align-self-end {
+  @include align-self(flex-end);
+  vertical-align: bottom;
+}
+
+.#{$grid-prefix}align-self-center {
+  @include align-self(center);
+  vertical-align: middle;
+}
+
+.#{$grid-prefix}align-self-baseline {
+  @include align-self(baseline);
+  vertical-align: baseline;
+}
+
+// --------------------------------------------------
+// justify-content (main axis)
+// --------------------------------------------------
+
+.#{$grid-prefix}justify-start {
+  @include justify-content-start();
+
+  @if $legacy-support == true {
+    &.grid {
+      text-align: left;
+    }
+  }
+}
+
+.#{$grid-prefix}justify-end {
+  @include justify-content-end();
+
+  @if $legacy-support == true {
+    &.grid {
+      text-align: right;
+      -moz-text-align-last: right;
+      text-align-last: right;
+
+      [class*='#{$grid-prefix}col-'] {
+        @include reset-text-align();
+      }
+    }
+  }
+}
+
+.#{$grid-prefix}justify-center {
+  @include justify-content-center();
+
+  @if $legacy-support == true {
+    &.grid {
+      text-align: center;
+      -moz-text-align-last: center;
+      text-align-last: center;
+
+      [class*='#{$grid-prefix}col-'] {
+        @include reset-text-align();
+      }
+    }
+  }
+}
+
+.#{$grid-prefix}justify-space-between {
+  @include justify-content-space-between();
+
+  @if $legacy-support == true {
+    &.grid {
+      text-align: justify;
+      -moz-text-align-last: justify;
+      text-align-last: justify;
+
+      [class*='#{$grid-prefix}col-'] {
+        @include reset-text-align();
+      }
+    }
+  }
+}
+
+.#{$grid-prefix}justify-space-around {
+  @include justify-content-space-around();
+
+  @if $legacy-support == true {
+    &.grid {
+      text-align: justify;
+      -moz-text-align-last: justify;
+      text-align-last: justify;
+
+      [class*='#{$grid-prefix}col-'] {
+        @include reset-text-align();
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// cosmetic grid modifiers
+// --------------------------------------------------
+
+// Removes internal padding from all columns in a grid
+.#{$grid-prefix}grid-bleed {
+  [class*='#{$grid-prefix}col-'] {
+    padding: 0;
+  }
+}
+
+// --------------------------------------------------
+// col modifiers
+// --------------------------------------------------
+
+// Makes a column element into a flexbox column
+.#{$grid-prefix}col-grid {
+  @include display-flex();
+  @include flex-direction(column);
+
+  &.#{$grid-prefix}direction-row {
+    @include flex-direction(row);
+  }
+}
+
+// // Removes internal padding from all columns in a grid
+// .#{$grid-prefix}col-bleed {
+//     padding: 0;
+// }
+
+// // Removes horizontal padding from all columns in a grid
+// .#{$grid-prefix}col-bleed-x {
+//     padding: $grid-grid-spacing 0;
+// }
+
+// // Removes vertical padding from all columns in a grid
+// .#{$grid-prefix}col-bleed-y {
+//     padding: 0 $grid-grid-spacing;
+// }
+
+// --------------------------------------------------
+// col-grid contents
+// --------------------------------------------------
+
+.#{$grid-prefix}flex-img {
+  display: block;
+  @include flex(0, 0, auto);
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  @if $legacy-support == true {
+    *width: auto;
+  }
+}
+
+.#{$grid-prefix}flex-footer {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 0;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
