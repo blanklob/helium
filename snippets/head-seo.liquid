@@ -105,10 +105,10 @@
 
 {% comment %} Favicons {% endcomment %}
 {%- if settings.favicon != blank -%}
-<link rel="shortcut icon" href="{{- settings.favicon | img_url: '16x16' -}}" sizes="16x16">
-<link rel="shortcut icon" href="{{- settings.favicon | img_url: '32x32' -}}" sizes="32x32">
-<link rel="shortcut icon" href="{{- settings.favicon | img_url: '48x48' -}}" sizes="48x48">
-<link rel="shortcut icon" href="{{- settings.favicon | img_url: '96x96' -}}" sizes="48x48">
-<link rel="apple-touch-icon" href="{{- settings.favicon | img_url: '180x180' -}}" sizes="180x180">
-<link rel="apple-touch-icon" href="{{- settings.favicon | img_url: '192x192' -}}" sizes="192x192">
+<link rel="shortcut icon" href="{{ settings.favicon | img_url: '16x16' }}" sizes="16x16">
+<link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" sizes="32x32">
+<link rel="shortcut icon" href="{{ settings.favicon | img_url: '48x48' }}" sizes="48x48">
+<link rel="shortcut icon" href="{{ settings.favicon | img_url: '96x96' }}" sizes="96x96">
+<link rel="apple-touch-icon" href="{{ settings.favicon | img_url: '180x180' }}" sizes="180x180">
+<link rel="apple-touch-icon" href="{{ settings.favicon | img_url: '192x192' }}" sizes="192x192">
 {%- endif -%}

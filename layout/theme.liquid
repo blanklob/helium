@@ -28,10 +28,10 @@
     -%}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    <script src="{{- 'base.js' | asset_url -}}" defer></script>
+    <script src="{{- 'base.js' | asset_url -}}" defer=defer></script>
 
     <!-- Start vendor third party libaries -->
-    {% comment %} <script src="{{- 'vendors.js' | asset_url -}}" defer></script> {% endcomment %}
+    <script src="{{- 'vendors.js' | asset_url -}}" defer=defer></script>
     <!-- End vendor third party libaries -->
 
     <!-- Header hook for plugins -->

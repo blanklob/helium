@@ -125,9 +125,11 @@
   padding-right: 0;
 }
 
+// Media query mixins
+
 // Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
 // Makes the @content apply to the given breakpoint and wider.
-@mixin media-breakpoint-up($name, $breakpoints: $breakpoints) {
+@mixin mq-up($name, $breakpoints: $breakpoints) {
   $min: breakpoint-min($name, $breakpoints);
 
   @if $min {
@@ -141,7 +143,7 @@
 
 // Media of at most the maximum breakpoint width. No query for the largest breakpoint.
 // Makes the @content apply to the given breakpoint and narrower.
-@mixin media-breakpoint-down($name, $breakpoints: $breakpoints) {
+@mixin mq-down($name, $breakpoints: $breakpoints) {
   $max: breakpoint-max($name, $breakpoints);
 
   @if $max {
@@ -156,9 +158,9 @@
 // Media between the breakpoint's minimum and maximum widths.
 // No minimum for the smallest breakpoint, and no maximum for the largest one.
 // Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
-@mixin media-breakpoint-only($name, $breakpoints: $breakpoints) {
-  @include media-breakpoint-up($name, $breakpoints) {
-    @include media-breakpoint-down($name, $breakpoints) {
+@mixin mq-only($name, $breakpoints: $breakpoints) {
+  @include mq-up($name, $breakpoints) {
+    @include mq-down($name, $breakpoints) {
       @content;
     }
   }

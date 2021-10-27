@@ -7,9 +7,6 @@
 ///   .o-grid {}             - Base grid.
 ///
 
-// --------------------------------------------------
-// grid variables
-// --------------------------------------------------
 
 @use 'sass:math';
 // Prefix
@@ -734,21 +731,6 @@ $grid-columns: 12 !default; // number of columns
   }
 }
 
-// // Removes internal padding from all columns in a grid
-// .#{$grid-prefix}col-bleed {
-//     padding: 0;
-// }
-
-// // Removes horizontal padding from all columns in a grid
-// .#{$grid-prefix}col-bleed-x {
-//     padding: $grid-grid-spacing 0;
-// }
-
-// // Removes vertical padding from all columns in a grid
-// .#{$grid-prefix}col-bleed-y {
-//     padding: 0 $grid-grid-spacing;
-// }
-
 // --------------------------------------------------
 // col-grid contents
 // --------------------------------------------------
@@ -773,5 +755,3 @@ $grid-columns: 12 !default; // number of columns
     margin-bottom: 0;
   }
 }
-
-

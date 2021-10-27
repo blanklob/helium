@@ -17,6 +17,39 @@
 
 /// Reponsive hiding utility classes.
 /// @todo
+/// Reponsive hiding utility classes.
+@mixin responsive-hide-helpers() {
+  // We need to handle xxs and xlg breakpoints differently
+  $hide-breakpoints: map-remove($breakpoints, xxs, xlg);
+
+  .u-hide-xxs {
+    @include mq-only('xxs') {
+      display: none !important;
+    }
+  }
+
+  @each $bp in map-keys($hide-breakpoints) {
+    .u-hide-#{$bp}-up {
+      @include mq-up($bp) {
+        display: none !important;
+      }
+    }
+
+    .u-hide-#{$bp}-down {
+      @include mq-down($bp) {
+        display: none !important;
+      }
+    }
+  }
+
+  .u-hide-xlg {
+    @include mq-only('xlg') {
+      display: none !important;
+    }
+  }
+}
+
+@include responsive-hide-helpers();
 
 // Hide only visually, but have it available for screen readers.
 .u-hide-visually {

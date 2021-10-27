@@ -1,14 +1,13 @@
 ### Changelog
 
 All notable changes to this project will be documented in this file.
-> XX October 2021 v1.2.2
+> 28 October 2021 v1.2.2
 
 - ✨ Added grid object for easy responsive grid layouts.
-- ✨ Added hidden responsive utility classes.
+- 🔥 Added hidden responsive utility classes.
 - ⏫ Upgraded some dependecies. 
-<!-- - 📝 Updated the docs with latest structure. -->
-<!-- - 🐛 Fixed issues and refactored code. -->
-
+- 🐛 Fixed issues and refactored code.
+- 🧰 Added media query mixins.
 
 > 20 October 2021 v1.2.1
 
