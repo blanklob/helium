@@ -47,7 +47,7 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.4.1",
     "sass": "^1.43.3",
-    "sass-loader": "^12.2.0",
+    "sass-loader": "^12.3.0",
     "shx": "^0.3.3",
     "size-plugin": "2.0.2",
     "webpack": "^5.64.0",
