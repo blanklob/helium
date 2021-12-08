@@ -168,4 +168,4 @@ workflow/                             📁 root of the theme
 
 ## What's next ?
 
-Workflow comes with other commands 🧰 for common tasks. [Check commands here →]({{< relref "structure" >}})
+Workflow comes with other commands 🧰 for common tasks. [Check commands here →]({{< relref "commands" >}})
