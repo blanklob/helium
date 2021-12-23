@@ -25,7 +25,7 @@ jobs:
           ### Run Lighthouse test on specific product/collection.
           ### More: https://shopify.dev/themes/tools/lighthouse-ci#arguments
 
-          product_handle: 'worst-sneakers'
-          collection_handle: 'sneakers'
+          # product_handle: 'worst-sneakers'
+          # collection_handle: 'sneakers'
 
           # For more infos check out: https://shopify.dev/themes/tools/lighthouse-ci

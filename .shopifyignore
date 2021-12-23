@@ -1,4 +1,7 @@
-# OS generated files #
+# See https://shopify.dev/themes/tools/cli#excluding-files-from-shopify-cli
+# for more about ignoring files while using Shopify CLI.
+
+# Misc
 .DS_Store
 .DS_Store?
 .Spotlight-V100
@@ -6,15 +9,8 @@
 ehthumbs.db
 Thumbs.db
 
-# Enviroment files #
+# Dependencies
 src
 node_modules
-.config
 .github
-.vscode
-.docs
-src/public/*.json
 package.json
-
-# Other files #
-/\.(txt|md|lock)$/

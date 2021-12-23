@@ -1,0 +1,5 @@
+# Mark the theme root
+root: .
+
+# Please don't disable any theme check linting for better
+# theme development
