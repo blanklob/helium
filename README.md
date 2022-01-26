@@ -13,7 +13,9 @@ To get started clone the repository.
 shopify theme init -u https://github.com/idbakkasse/helium.git
 ```
 
-Then lunch the development server on the `helium` folder
+> Pro tip: click the `Use this template` button above to start from a fresh repositry.
+
+Then lunch the development server on `localhost:9292`
 
 ```shell
 shopify theme serve
