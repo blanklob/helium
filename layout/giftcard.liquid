@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="{{- request.locale.iso_code -}}" dir="ltr">
+<html class="no-js" lang="{{- request.locale.iso_code -}}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -38,13 +38,13 @@
   <body class="layout-giftcard template-{{- template.name -}}{%- if template.suffix -%}-{{- template.suffix -}}{%- endif -%}">
     {% comment %} Accessibilty {% endcomment %}
     <div class="a11y container -medium u-pv-small" tabindex="-1">
-      <a role="button" class="button -small" href="#main-content">
+      <a role="button" class="button -small" href="#mainContent">
         {{- "accessibility.skip_to_content" | t -}}
       </a>
       <button type="button" class="button -small" onclick="this.blur();">{{ "accessibility.close" | t }}</button>
     </div>
 
-    <main id="main-content" role="main" class="u-focus-none" tabindex="-1">
+    <main id="mainContent" role="main" class="u-focus-none" tabindex="-1">
       {{ content_for_layout }}
     </main>
 

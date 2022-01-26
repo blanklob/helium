@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="{{- request.locale.iso_code -}}" dir="ltr">
+<html class="no-js" lang="{{- request.locale.iso_code -}}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -20,6 +20,7 @@
 
     <link rel="preload" href="{{ 'base.css' | asset_url }}" as="style">
     <link rel="preload" href="{{ 'base.js' | asset_url }}" as="script">
+    <link rel="preload" href="{{ 'vendors.js' | asset_url }}" as="script">
 
     {%- liquid
       render 'head-seo'
@@ -28,19 +29,24 @@
     -%}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    <script src="{{- 'base.js' | asset_url -}}" defer=defer></script>
+    <script src="{{- 'base.js' | asset_url -}}" defer="defer"></script>
 
     <!-- Start vendor third party libaries -->
-    <script src="{{- 'vendors.js' | asset_url -}}" defer=defer></script>
+    <script src="{{- 'vendors.js' | asset_url -}}" defer="defer"></script>
     <!-- End vendor third party libaries -->
 
     <!-- Header hook for plugins -->
     {{ content_for_header }}
   </head>
-  <body class="layout-theme template-{{- template.name -}}{%- if template.suffix -%}-{{- template.suffix -}}{%- endif -%}">
-    {% comment %} Accessibilty {% endcomment %}
-    <div class="a11y container -medium u-pv-small" tabindex="-1">
-      <a role="button" class="button -small" href="#main-content">
+  
+  {%- capture template_name -%}
+    {{- template.name -}}{%- if template.suffix -%}-{{- template.suffix -}}{%- endif -%}
+  {%- endcapture -%}
+  
+  <body class="layout-theme template-{{- template_name -}}">
+    
+    <div class="a11y-skip-to-content container -medium u-pv-small" tabindex="-1">
+      <a role="button" class="button -small" href="#mainContent">
         {{- "accessibility.skip_to_content" | t -}}
       </a>
       <button type="button" class="button -small" onclick="this.blur();">{{ "accessibility.close" | t }}</button>
@@ -48,7 +54,7 @@
 
     {%- section 'header' -%}
 
-    <main id="main-content" role="main" class="u-focus-none" tabindex="-1">
+    <main id="mainContent" role="main" class="u-focus-none" tabindex="-1">
       {{ content_for_layout }}
     </main>
 

@@ -2,13 +2,32 @@
 
 > This was made as a follow-up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features.
 
-[![GitHub stars](https://img.shields.io/github/stars/idbakkasse/helium)](https://GitHub.com/idbakkasse/helium/stargazers/)
-[![GitHub license](https://img.shields.io/github/license/idbakkasse/helium)](https://github.com/idbakkasse/helium/blob/master/LICENSE)
-[![Shopify Theme Check CI](https://github.com/idbakkasse/helium/actions/workflows/theme-check.yml/badge.svg)](https://github.com/idbakkasse/helium/actions/workflows/theme-check.yml)
-
+[![Shopify Theme Check][theme-check-badge]][theme-check-url]
 
 ## Quick started
 
+Make sure you have Shopify CLI installed.
+To get started clone the repository.
+
+```shell
+shopify theme init -u https://github.com/idbakkasse/helium.git
+```
+
+Then lunch the development server on the `helium` folder
+
+```shell
+shopify theme serve
+```
+
+Or simply using NPM/Yarn (recommended)
+
+```shell
+npm run serve
+```
+
+> ℹ️ You'll need to authenticate to your development Shopify store in order to get started.
+
+Happy coding!
 
 ## Documentation
 
@@ -27,3 +46,8 @@ Everyone is welcome to make Shopify theme development better! Please read the [C
 ## License
 
 Copyright (c) 2022 Youness Idbakkasse. See [LICENSE](.github/LICENSE) for further details.
+
+<!-- Badges and links -->
+[theme-check-badge]: https://github.com/younessidbakkasse/workflow/actions/workflows/check.yml/badge.svg
+
+[theme-check-url]: https://github.com/younessidbakkasse/helium/actions/workflows/check.yml
