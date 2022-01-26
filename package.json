@@ -16,12 +16,12 @@
   ],
   "scripts": {
     "serve": "helium serve",
-    "start": "helium watch",
+    "watch": "helium watch",
     "build": "helium build",
     "lint": "helium lint"
   },
   "devDependencies": {
-    "@youness/helium": "^1.0.0"
+    "@younessidbakkasse/helium": "^0.0.4"
   },
   "dependencies": {},
   "engines": {
