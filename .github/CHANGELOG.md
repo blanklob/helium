@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+> 28 December 2022 v2.0.0
+
+- ✨ 
+- 🔥 Changed some utility classes.
+- ⏫ Removed some dependecies. 
+- 🐛 Fixed issues and refactored code.
+
+
 > 28 October 2021 v1.2.2
 
 - ✨ Added grid object for easy responsive grid layouts.

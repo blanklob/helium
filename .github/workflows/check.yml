@@ -1,5 +1,6 @@
 # Theme check CI
 # For more info check: https://shopify.dev/themes/tools/theme-check
+
 name: Shopify Theme Check
 on: [push]
 jobs:

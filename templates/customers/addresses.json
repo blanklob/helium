@@ -4,5 +4,7 @@
       "type": "main-adresses"
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

@@ -4,5 +4,7 @@
       "type": "main-account"
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

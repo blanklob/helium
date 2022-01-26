@@ -75,9 +75,8 @@
     "description": {{ article.excerpt | strip_html | json }},
   {% endif %}
   {% if article.image %}
-    {% assign image_size = article.image.width | append: 'x' %}
     "image": [
-      {{ article | img_url: image_size | prepend: "https:" | json }}
+      {{ article.image | image_url: width: article.image.width, height: article.image.height | json }}
     ],
   {% endif %}
   "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
@@ -89,12 +88,11 @@
   "publisher": {
     "@type": "Organization",
     {% if settings.share_image %}
-      {% assign image_size = settings.share_image.width | append: 'x' %}
       "logo": {
         "@type": "ImageObject",
+        "width": {{ settings.share_image.width | json }},
         "height": {{ settings.share_image.height | json }},
-        "url": {{ settings.share_image | img_url: image_size | prepend: "https:" | json }},
-        "width": {{ settings.share_image.width | json }}
+        "url": {{ settings.share_image | image_url: width: settings.share_image.width, height: settings.share_image.height | json }}
       },
     {% endif %}
     "name": {{ shop.name | json }}
@@ -105,10 +103,10 @@
 
 {% comment %} Favicons {% endcomment %}
 {%- if settings.favicon != blank -%}
-<link rel="shortcut icon" href="{{ settings.favicon | img_url: '16x16' }}" sizes="16x16">
-<link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" sizes="32x32">
-<link rel="shortcut icon" href="{{ settings.favicon | img_url: '48x48' }}" sizes="48x48">
-<link rel="shortcut icon" href="{{ settings.favicon | img_url: '96x96' }}" sizes="96x96">
-<link rel="apple-touch-icon" href="{{ settings.favicon | img_url: '180x180' }}" sizes="180x180">
-<link rel="apple-touch-icon" href="{{ settings.favicon | img_url: '192x192' }}" sizes="192x192">
+<link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 16, height: 16 }}" sizes="16x16">
+<link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" sizes="32x32">
+<link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 48, height: 48 }}" sizes="48x48">
+<link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 96, height: 96 }}" sizes="96x96">
+<link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180, height: 180 }}" sizes="180x180">
+<link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 192, height: 192 }}" sizes="192x192">
 {%- endif -%}

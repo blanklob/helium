@@ -4,5 +4,7 @@
       "type": "main-search"
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

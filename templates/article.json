@@ -4,5 +4,7 @@
       "type": "main-article"
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

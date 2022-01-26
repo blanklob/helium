@@ -4,5 +4,7 @@
       "type": "main-blog"
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

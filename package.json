@@ -1,60 +1,33 @@
 {
   "name": "helium",
   "version": "2.0.0",
-  "description": "Modern Shopify development workflow, with Online Store 2.0 features and built with performance and accessibility in mind..",
+  "description": "Modern Shopify development workflow, with Online Store 2.0 features and built with performance and best practices in mind..",
   "repository": "idbakkasse/helium",
-  "author": "Youness Idbakkasse",
+  "author": "Youness Idbakkasse <youness@idbakkasse.com>",
   "license": "MIT",
   "keywords": [
     "helium",
     "shopify",
-    "babel",
-    "sass",
-    "postcss"
+    "starter",
+    "boilerplate",
+    "themes"
   ],
   "browserslist": [
     "defaults"
   ],
   "scripts": {
-    "init": "shx rm -rf .git && git init -b main",
-    "clean": "shx rm -rf assets/* && touch assets/.gitkeep",
-    "start": "run-p serve watch",
-    "serve": "shopify theme serve",
-    "build": "webpack --config .config/webpack/webpack.config.prod.js",
-    "watch": "webpack watch --config .config/webpack/webpack.config.dev.js",
-    "zip": "run-s build && shopify theme package .",
-    "lint": "shopify theme check --config .config/.theme-check.yml",
-    "format": "prettier --config .config/prettier.config.js --ignore-path .config/.prettierignore --write .",
-    "pull": "shopify theme pull -n",
-    "push": "shopify theme push --ignore \"config/*.json\"",
-    "deploy": "run-s format build push",
-    "create": "run-s format build && shopify theme push --unpublished",
-    "prepare": "husky install .config/.husky"
+    "serve": "helium serve",
+    "watch": "helium watch",
+    "build": "helium build",
+    "lint": "helium lint"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
-    "babel-loader": "^8.2.3",
-    "copy-webpack-plugin": "^9.0.1",
-    "css-loader": "^6.5.1",
-    "husky": "^7.0.4",
-    "mini-css-extract-plugin": "^2.4.4",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.3.11",
-    "postcss-loader": "^6.2.0",
-    "postcss-preset-env": "^6.7.0",
-    "prettier": "^2.4.1",
-    "sass": "^1.43.4",
-    "sass-loader": "^12.3.0",
-    "shx": "^0.3.3",
-    "size-plugin": "2.0.2",
-    "webpack": "^5.64.1",
-    "webpack-cli": "^4.8.0",
-    "webpack-merge": "^5.8.0",
-    "webpack-remove-empty-scripts": "^0.7.1"
+    "@idbakkasse/helium": "^0.1.0"
+  },
+  "dependencies": {
   },
   "engines": {
-    "node": ">=14.0.0"
-  },
-  "dependencies": {}
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  }
 }

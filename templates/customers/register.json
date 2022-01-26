@@ -4,5 +4,7 @@
       "type": "main-register"
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

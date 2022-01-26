@@ -22,6 +22,7 @@ const publicDir = path.join(srcDir, 'public')
 
 // Common configuration
 module.exports = {
+  mode: 'production',
   // Entry
   entry: {
     base: [path.join(scriptsDir, 'base.js'), path.join(stylesDir, 'base.scss')],
