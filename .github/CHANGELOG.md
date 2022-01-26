@@ -1,6 +1,7 @@
-### Changelog
+# Changelog
 
 All notable changes to this project will be documented in this file.
+
 > 28 October 2021 v1.2.2
 
 - ✨ Added grid object for easy responsive grid layouts.

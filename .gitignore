@@ -1,4 +1,4 @@
-# OS generated files #
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -6,7 +6,7 @@
 ehthumbs.db
 Thumbs.db
 
-# Environment files #
+# Environment files
 node_modules
 deploy.log
 npm-debug.log
@@ -15,15 +15,10 @@ npm-debug.log
 yarn-error.log
 .eslintcache
 
-# Others #
+# Others
 *.sass-cache*
 .cache/*
 _site
 /.idea
-
-# Docs #
-.docs/*
-!.docs/content
-!.docs/README.md
 
 
