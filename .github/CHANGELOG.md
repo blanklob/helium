@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 - ✨ 
 - 🔥 Changed some utility classes.
-- ⏫ Removed some dependecies. 
+- ⏫ Removed some dependecies amd some deprecated Shopify filters. 
 - 🐛 Fixed issues and refactored code.
 
 

@@ -43,13 +43,14 @@
 // @import './components/price';
 
 /// - SECTIONS
-// These are base section.
 ///
-/// Header..............Shopify static section.
-/// Footer..............Shopify static section.
+/// Header..............Shopify section.
+/// Footer..............Shopify section.
+/// Weclome..............Shopify dynamic section.
 ///
 @import './sections/header';
 @import './sections/footer';
+@import './sections/welcome';
 
 /// - OBJECTS
 // Be aware that enabling offsets produces a large chunk of classes which might
