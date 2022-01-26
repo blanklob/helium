@@ -4,12 +4,12 @@
 
 /// @content Object classes for diffrentes container sizes.
 ///
-///   .o-container {}          - Base container.
-///   .o-container.-small {}   - Small container.
+///   .container {}          - Base container.
+///   .container.-small {}   - Small container.
 ///   and others, add as you wish...
 ///
 
-.o-container {
+.container {
   width: 100%;
   margin: {
     left: auto;
@@ -19,22 +19,22 @@
   }
 
   &.-small {
-    padding-left: em(8px);
-    padding-right: em(8px);
+    padding-left: rem(8px);
+    padding-right: rem(8px);
   }
 
   &,
   &.-medium {
-    padding-left: em(16px);
-    padding-right: em(16px);
+    padding-left: rem(16px);
+    padding-right: rem(16px);
   }
 
   &.-large {
-    padding-left: em(32px);
-    padding-right: em(32px);
+    padding-left: rem(32px);
+    padding-right: rem(32px);
   }
 
   &.-narrow {
-    max-width: 30em;
+    max-width: 30rem;
   }
 }

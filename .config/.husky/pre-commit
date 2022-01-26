@@ -1,9 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-. "$(dirname "$0")/common.sh"
-
-
-# Shell commandes before commiting
-yarn format
-yarn lint
-# yarn build

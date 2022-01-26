@@ -5,15 +5,15 @@
 /// @content Component specific classes for buttons.
 /// This file contains suite of classes like.
 ///
-///   .c-button {}              - Base button.
-///   .c-button.-secondary {}   - Secondary button theme.
-///   .c-button.-large {}       - Large size button.
+///   .button {}              - Base button.
+///   .button.-secondary {}   - Secondary button.
+///   .button.-large {}       - Large size button.
 ///   ...add others if you want.
 ///
 
-.c-button,
+
 button,
-[role='button'] {
+.button {
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -65,7 +65,6 @@ button,
     opacity: 0.8;
   }
 
-  &.-disabled,
   &:disabled,
   &[aria-disabled='true'] {
     cursor: not-allowed;

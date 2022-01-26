@@ -1,4 +1,4 @@
-# OS generated files #
+# OS generated files
 .DS_Store
 .DS_Store?
 .Spotlight-V100
@@ -6,15 +6,15 @@
 ehthumbs.db
 Thumbs.db
 
-# Enviroment files #
+# Enviroment files
 src
 node_modules
 .config
 .github
 .vscode
 .docs
-src/public/*.json
+src
 package.json
 
-# Other files #
+# Other files
 /\.(txt|md|lock)$/

@@ -1,1 +1,1 @@
-console.log('Hello from Theme Layout 👋.')
+window.console.log('Hello from Theme Layout 👋.')

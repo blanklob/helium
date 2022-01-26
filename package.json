@@ -1,16 +1,14 @@
 {
-  "name": "workflow",
-  "version": "1.2.2",
+  "name": "helium",
+  "version": "2.0.0",
   "description": "Modern Shopify development workflow, with Online Store 2.0 features and built with performance and accessibility in mind..",
-  "repository": "https://github.com/younessidbakkasse/workflow.git",
-  "author": "Youness Id bakkasse",
-  "private": true,
+  "repository": "idbakkasse/helium",
+  "author": "Youness Idbakkasse",
   "license": "MIT",
   "keywords": [
-    "workflow",
-    "webpack",
-    "babel",
+    "helium",
     "shopify",
+    "babel",
     "sass",
     "postcss"
   ],

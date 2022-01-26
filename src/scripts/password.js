@@ -1,1 +1,1 @@
-console.log('Hello from Password Layout 👋.')
+window.console.log('Hello from Password Layout 👋.')

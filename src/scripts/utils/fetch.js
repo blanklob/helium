@@ -1,1 +1,1 @@
-console.log('Hello from fetch utility.')
+window.console.log('Hello from fetch utility.')

@@ -1,1 +1,1 @@
-console.log('Hello from Giftcard Layout 👋.')
+window.console.log('Hello from Giftcard Layout 👋.')

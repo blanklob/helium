@@ -5,10 +5,10 @@
 /// @content Component specific classes for buttons.
 /// This file contains suite of classes like.
 //
-///   .c-field {}   - Base field class.
+///   .field {}   - Base field class.
 //
 
-.c-field {
+.field {
   position: relative;
   display: flex;
   align-items: stretch;
@@ -44,7 +44,7 @@
     text-decoration: none;
   }
 
-  .c-field_input::placeholder {
+  .field_input::placeholder {
     color: transparent;
   }
 

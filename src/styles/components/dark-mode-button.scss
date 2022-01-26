@@ -3,7 +3,7 @@
 // ==========================================================================
 
 dark-mode-button {
-  .c-button {
+  .button {
     padding: 0.5rem;
     border-radius: 100%;
   }
@@ -15,17 +15,17 @@ dark-mode-button {
     color: rgba(var(--color-base-background-primary), 0.98);
   }
 
-  .c-heading,
-  .c-body {
+  .heading,
+  .body {
     color: rgba(var(--color-base-background-primary), 0.96);
   }
 
-  .c-button {
+  .button {
     background-color: rgba(var(--color-base-background-primary), 0.96);
     color: rgba(var(--color-base-solid-button), 0.98);
   }
 
-  .c-field {
+  .field {
     border-color: rgba(var(--color-base-background-primary), 0.96);
     &_input {
       color: rgba(var(--color-base-background-primary), 0.96);

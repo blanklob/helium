@@ -4,7 +4,7 @@
 
 /// @todo Object classes for flex and grid layouts.
 ///
-///   .o-grid {}             - Base grid.
+///   .grid {}             - Base grid.
 ///
 
 @use 'sass:math';
@@ -14,7 +14,7 @@
 // e.g. setting $grid-prefix as "grid-" here would cause col-sm-6 to become grid-col-sm-6
 // Example: $grid-prefix: grid-;
 // By default this is an empty string
-$grid-prefix: 'o-' !default;
+$grid-prefix: '' !default;
 
 // Legacy support
 // -------------------------
