@@ -22,10 +22,9 @@
     "lint": "helium lint"
   },
   "devDependencies": {
-    "@idbakkasse/helium": "^0.1.0"
+    "@idbakkasse/helium": "^0.1.2"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=7.0.0"
