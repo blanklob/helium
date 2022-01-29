@@ -9,7 +9,7 @@
 [![ETH][eth-badge]][eth-url]
 [![SOL][sol-badge]][sol-url]
 
-## Quick started
+## Quick starter
 
 Make sure you have the following minimum versions:
 
