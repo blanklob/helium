@@ -30,7 +30,8 @@ shopify theme init -u https://github.com/idbakkasse/helium.git
 
 > Pro tip: click the `Use this template` button above to start from a fresh repositry.
 
-Then lunch the development server on `localhost:9292` using NPM/Yarn
+Then lunch the development server on `localhost:9292` using NPM/Yarn.
+
 The command will also run Helium's watch mode on files.
 
 ```shell
