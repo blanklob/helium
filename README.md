@@ -16,7 +16,13 @@ Make sure you have the following minimum versions:
 * Shopify CLI >= 2.4.0
 * Node >= 14.0.0
 
-To get started clone the repository.
+> ℹ️ You'll need to authenticate to your development Shopify store before runing the development server.
+
+```shell
+shopify login --store your-store.myshopify.com
+```
+
+Get started by cloning the repository.
 
 ```shell
 shopify theme init -u https://github.com/idbakkasse/helium.git
@@ -31,13 +37,7 @@ The command will also run Helium's watch mode on files.
 npm run serve
 ```
 
-> ℹ️ You'll need to authenticate to your development Shopify store in order to get started.
-
-```shell
-shopify login --store your-store.myshopify.com
-```
-
-Happy coding!
+Happy coding :penguin:
 
 ## Documentation
 
