@@ -2,9 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
-> 28 December 2022 v2.0.0
+> 29 December 2022 v2.0.0
 
-- ✨ 
+- ✨ Removed all unnecessary configuation files that depend on users like editorconfig etc..
+- ✨ Added a Helium CLI based on Esbuild for fast build times.
 - 🔥 Changed some utility classes.
 - ⏫ Removed some dependecies amd some deprecated Shopify filters. 
 - 🐛 Fixed issues and refactored code.

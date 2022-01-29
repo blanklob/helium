@@ -20,7 +20,6 @@
 
     <link rel="preload" href="{{ 'base.css' | asset_url }}" as="style">
     <link rel="preload" href="{{ 'base.js' | asset_url }}" as="script">
-    <link rel="preload" href="{{ 'vendors.js' | asset_url }}" as="script">
 
     {%- liquid
       render 'head-seo'
@@ -30,10 +29,6 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <script src="{{- 'base.js' | asset_url -}}" defer="defer"></script>
-
-    <!-- Start vendor third party libaries -->
-    <script src="{{- 'vendors.js' | asset_url -}}" defer="defer"></script>
-    <!-- End vendor third party libaries -->
 
     <!-- Header hook for plugins -->
     {{ content_for_header }}
