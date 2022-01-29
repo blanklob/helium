@@ -11,13 +11,13 @@ We're really glad you're reading this, because we would love to have more develo
 
 ## Before contributing
 
-If you encounter a bug or think of a useful feature for Workflow, please [create a new issue](https://github.com/younessidbakkasse/workflow/issues/new). Creating an issue before jumping into code ensures we can discuss it and determine whether it aligns with the direction of the theme.
+If you encounter a bug or think of a useful feature for Helium, please [create a new issue](https://github.com/idbakkasse/helium/issues/new). Creating an issue before jumping into code ensures we can discuss it and determine whether it aligns with the direction of the theme.
 
 If you want to contribute to the theme, regardless of whether it's a small bug fix or correcting a typo, please feel free to do so. Any help goes a long way! Also, contributions aren't necessarily all code related. Other contributions can be in the form of issues, pull requests, discussions, etc.
 
 ## Scope
 
-This Github repository exists for the theme development community to discuss and solve problems directly related to Workflow. It **is not the place** to discuss general theme development problems, nor the place to seek help for non-Workflow related problems.
+This Github repository exists for the theme development community to discuss and solve problems directly related to Helium. It **is not the place** to discuss general theme development problems, nor the place to seek help for non-related problems.
 
 Theme development is a big topic and it's completely normal that you will encounter problems which might require you to reach out for help. In fact, we provide several knowledge and support platforms for theme development already:
 
@@ -25,7 +25,7 @@ Theme development is a big topic and it's completely normal that you will encoun
 
 ## Theme code principles
 
-Before contributing to Workflow, please read the following theme code principles to better understand our fundamental approach to theme development. The expectation is that you follow these principles as you build for Workflow.
+Before contributing to Helium, please read the following theme code principles to better understand our fundamental approach to theme development. The expectation is that you follow these principles as you build for Helium.
 
 ### Why these principles?
 
@@ -88,16 +88,17 @@ And since legacy browsers are often the slowest, we don’t burden them with pol
 
 ## Contributing code
 
-You can follow these steps to go from setting up a store to creating a pull request for Workflow.
+You can follow these steps to go from setting up a store to creating a pull request for helium.
 
 >:information_source: We'll assume you're already set up with Git and GitHub (if you're not familiar with these, [start with these docs](https://docs.github.com/en/github/getting-started-with-github/quickstart/set-up-git)).
 
 1. Set up a [development store](https://shopify.dev/themes/tools/development-stores) so you can test your code changes (assuming you don't already have a store).
 2. Install the [Shopify CLI](https://github.com/shopify/shopify-cli) by following [these steps](https://shopify.dev/themes/tools/cli/installation).
 3. Fork the repository, clone it and create a new branch:
+
 ```sh
-git clone git@github.com:your-username/workflow.git
-cd workflow
+git clone git@github.com:your-username/helium.git
+cd helium
 git checkout -b your-new-branch-name
 ```
 4. Launch a development server:
@@ -114,11 +115,10 @@ git commit -a -m="Your commit message"
 git push origin your-new-branch-name
 ```
 8. Open a pull request. See [GitHub's official documentation](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) for more details.
-9. Before you can merge your pull request, you must sign Shopify's [Contributor License Agreement (CLA)](https://cla.shopify.com/).
 
 ## Reporting a bug
 
-Bugs are tracked as [GitHub issues](https://github.com/younessidbakkasse/workflow/issues). Search open issues to see if someone else has reported a similar bug. If it's something new, [open an issue](https://github.com/younessidbakkasse/workflow/issues/new). We'll use the issue to have a conversation about the problem you want to fix.
+Bugs are tracked as [GitHub issues](https://github.com/idbakkasse/helium/issues). Search open issues to see if someone else has reported a similar bug. If it's something new, [open an issue](https://github.com/idbakkasse/helium/issues/new). We'll use the issue to have a conversation about the problem you want to fix.
 
 When creating a new issue, please ensure the issue is clear and include additional details to help maintainers reproduce it:
 
@@ -131,7 +131,7 @@ When creating a new issue, please ensure the issue is clear and include addition
 
 ## Reviewing
 
-We (the Themes team) review every single PR. The purpose of reviews is to create the best version of Workflow we can for merchants, developers, and others who use it.
+We (the Themes team) review every single PR. The purpose of reviews is to create the best version of Helium we can for merchants, developers, and others who use it.
 
 :yellow_heart: Reviews are always respectful, acknowledging that everyone did the best possible job with the knowledge they had at the time.
 :yellow_heart: Reviews discuss content, not the person who created it.
@@ -146,10 +146,6 @@ For code changes, make sure that you:
 - [ ] Check new or updated Liquid docs to confirm that the code used is up to date and isn't deprecated.
 - [ ] If there are any failing checks in your PR, troubleshoot them until they're all passing.
 - [ ] Add @username/themes-front-end-developers as a reviewer.
-
-### Pull request template
-
-When you open a pull request, you must fill out the "Ready for review" template before we can review your PR. This template helps reviewers understand your changes and the purpose of your pull request.
 
 ### Suggested changes
 
