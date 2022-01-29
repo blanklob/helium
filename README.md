@@ -11,7 +11,11 @@
 
 ## Quick started
 
-Make sure you have Shopify CLI installed.
+Make sure you have the following minimum versions:
+
+* Shopify CLI >= 2.4.0
+* Node >= 14.0.0
+
 To get started clone the repository.
 
 ```shell
