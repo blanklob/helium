@@ -1,6 +1,6 @@
 # Helium 
 
-> This was made as a follow-up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features.
+> A Shopify theme environment from scratch ⚙️, with Online Store 2.0 features. Built with performance ⚡️ and best practices in mind, has sensible defaults for structured data, open graphs. Hot Module Reloading on SASS/ES6 file changes for rapid development and many other features...
 
 [![Shopify Theme Check][theme-check-badge]][theme-check-url]
 [![Downloads][npm-downloads-badge]][npm-downloads-url]
@@ -9,7 +9,9 @@
 [![ETH][eth-badge]][eth-url]
 [![SOL][sol-badge]][sol-url]
 
-## Quick started
+This  was made as a follow-up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features.
+
+## Quick starter
 
 Make sure you have the following minimum versions:
 
@@ -76,4 +78,4 @@ MIT License Copyright (c) 2022 Youness Idbakkasse. See [LICENSE](.github/LICENSE
 [eth-url]: https://blockchain.com/eth/address/0xC7e149f2c455a1C72AB320f27bC05Bc01AF6d439
 
 [sol-badge]: https://img.shields.io/badge/SOL-f5f5f5?style=flat-square&colorA=260400&colorB=260400
-[sol-url]: https://explorer.solana.com/address/4DBq6KZ89j1zfjrgVa8qS1113DQZzFLhkdMVUj2aBojZ
+[sol-url]: https://blockchain.com/sol/address/4DBq6KZ89j1zfjrgVa8qS1113DQZzFLhkdMVUj2aBojZ
