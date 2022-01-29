@@ -76,4 +76,4 @@ MIT License Copyright (c) 2022 Youness Idbakkasse. See [LICENSE](.github/LICENSE
 [eth-url]: https://blockchain.com/eth/address/0xC7e149f2c455a1C72AB320f27bC05Bc01AF6d439
 
 [sol-badge]: https://img.shields.io/badge/SOL-f5f5f5?style=flat-square&colorA=260400&colorB=260400
-[sol-url]: https://blockchain.com/sol/address/4DBq6KZ89j1zfjrgVa8qS1113DQZzFLhkdMVUj2aBojZ
+[sol-url]: https://explorer.solana.com/address/4DBq6KZ89j1zfjrgVa8qS1113DQZzFLhkdMVUj2aBojZ
