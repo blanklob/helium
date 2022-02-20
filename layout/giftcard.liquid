@@ -34,7 +34,9 @@
 
     <!-- Header hook for plugins -->
     {{ content_for_header }}
-  </head>
+  {% render 'weglot_hreftags' %}
+{% render 'weglot_switcher' %}
+</head>
   <body class="layout-giftcard template-{{- template.name -}}{%- if template.suffix -%}-{{- template.suffix -}}{%- endif -%}">
     {% comment %} Accessibilty {% endcomment %}
     <div class="a11y container -medium u-pv-small" tabindex="-1">

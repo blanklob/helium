@@ -32,7 +32,9 @@
 
     <!-- Header hook for plugins -->
     {{ content_for_header }}
-  </head>
+  {% render 'weglot_hreftags' %}
+{% render 'weglot_switcher' %}
+</head>
   
   {%- capture template_name -%}
     {{- template.name -}}{%- if template.suffix -%}-{{- template.suffix -}}{%- endif -%}
