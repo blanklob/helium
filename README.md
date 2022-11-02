@@ -20,7 +20,7 @@ shopify login --store your-store.myshopify.com
 Get started by cloning the repository.
 
 ```shell
-shopify theme init -u https://github.com/idbakkasse/helium.git
+shopify theme init -u https://github.com/blanklob/helium.git
 ```
 
 > Pro tip: click the `Use this template` button above to start from a fresh repositry.
@@ -35,20 +35,10 @@ npm run serve
 
 Happy coding :penguin:
 
-## Documentation
-
-You can find more about the commands and how to use this worflow in the right way in the documentation [here](https://helium.idbakkasse.com)
-
-## Demo 
-
-You can check Helium shopify demo [here](https://idbakkasse-helium.myshopify.com)
-
-> Demo store password is `idbakkasse/helium`
-
 ## Contributing
 
 Everyone is welcome to make Shopify theme development better! Please read the [Contributing guide](.github/CONTRIBUTING.md) before creating issues or submitting pull requests.
 
 ## License
 
-MIT License Copyright (c) 2022 Youness Idbakkasse. See [LICENSE](.github/LICENSE) for further details.
+MIT License Copyright (c) 2022 Blanklob. See [LICENSE](.github/LICENSE) for further details.
