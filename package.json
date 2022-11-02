@@ -2,8 +2,8 @@
   "name": "helium",
   "version": "2.0.0",
   "description": "Modern Shopify development workflow, with Online Store 2.0 features and built with performance and best practices in mind..",
-  "repository": "idbakkasse/helium",
-  "author": "Youness Idbakkasse <youness@idbakkasse.com>",
+  "repository": "blanklob/helium",
+  "author": "Blanklob <hello@blanklob.com>",
   "license": "MIT",
   "keywords": [
     "helium",
