@@ -2,13 +2,6 @@
 
 > A Shopify theme environment from scratch ⚙️, with Online Store 2.0 features. Built with performance ⚡️ and best practices in mind, has sensible defaults for structured data, open graphs. Hot Module Reloading on SASS/ES6 file changes for rapid development and many other features...
 
-[![Shopify Theme Check][theme-check-badge]][theme-check-url]
-[![Downloads][npm-downloads-badge]][npm-downloads-url]
-[![Discord][discord-badge]][discord-url]
-[![Twitter][twitter-badge]][twitter-url]
-[![ETH][eth-badge]][eth-url]
-[![SOL][sol-badge]][sol-url]
-
 This  was made as a follow-up to the Shopify Unite 2021 event revealing the new theme online store 2.0 that has supports for JSON templates and section everywhere concept and few other features.
 
 ## Quick starter
@@ -59,23 +52,3 @@ Everyone is welcome to make Shopify theme development better! Please read the [C
 ## License
 
 MIT License Copyright (c) 2022 Youness Idbakkasse. See [LICENSE](.github/LICENSE) for further details.
-
-<!-- Badges and links -->
-[theme-check-badge]: https://img.shields.io/github/workflow/status/idbakkasse/helium/Shopify%20Theme%20Check?style=flat-square&colorA=260400&colorB=FCFCFC
-[theme-check-url]: https://github.com/younessidbakkasse/helium/actions/workflows/check.yml
-
-[npm-downloads-badge]: https://img.shields.io/npm/dt/@idbakkasse/helium?style=flat-square&colorA=260400&colorB=FCFCFC
-[npm-downloads-url]: https://npmjs.com/package/@idbakkasse/helium
-
-<!-- Badges and links for branding -->
-[twitter-badge]: https://img.shields.io/twitter/follow/iidbakkasse?label=Twitter&style=flat-square&colorA=260400&colorB=FCFCFC&logo=twitter&logoColor=FCFCFC
-[twitter-url]: https://twitter.com/iidbakkasse
-
-[discord-badge]: https://img.shields.io/discord/928403077818638397?style=flat-square&colorA=260400&label=discord&colorB=FCFCFC&logo=discord&logoColor=FCFCFC
-[discord-url]: https://discord.gg/zhnBNXhxes
-
-[eth-badge]: https://img.shields.io/badge/ETH-f5f5f5?style=flat-square&colorA=260400&colorB=260400
-[eth-url]: https://blockchain.com/eth/address/0xC7e149f2c455a1C72AB320f27bC05Bc01AF6d439
-
-[sol-badge]: https://img.shields.io/badge/SOL-f5f5f5?style=flat-square&colorA=260400&colorB=260400
-[sol-url]: https://blockchain.com/sol/address/4DBq6KZ89j1zfjrgVa8qS1113DQZzFLhkdMVUj2aBojZ
